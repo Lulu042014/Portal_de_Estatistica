@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>fl – Portal de Estatistica e Ciencia de Dados</title>
+<title>Ferramentas e Linguagens – Portal de Estatistica e Ciencia de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,10 +20,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -67,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -148,17 +186,214 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#linguagem-c-e-c" id="toc-linguagem-c-e-c" class="nav-link" data-scroll-target="#linguagem-c-e-c">Linguagem C e C++</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-em-c" id="toc-exemplo-em-c" class="nav-link" data-scroll-target="#exemplo-em-c">Exemplo em C++</a></li>
+  <li><a href="#interpretação" id="toc-interpretação" class="nav-link" data-scroll-target="#interpretação">Interpretação</a></li>
+  </ul></li>
+  <li><a href="#git-e-controle-de-versões-para-projetos-de-dados" id="toc-git-e-controle-de-versões-para-projetos-de-dados" class="nav-link" data-scroll-target="#git-e-controle-de-versões-para-projetos-de-dados">Git e Controle de Versões para Projetos de Dados</a>
+  <ul class="collapse">
+  <li><a href="#fluxo-básico-de-git" id="toc-fluxo-básico-de-git" class="nav-link" data-scroll-target="#fluxo-básico-de-git">Fluxo básico de Git</a></li>
+  <li><a href="#interpretação-1" id="toc-interpretação-1" class="nav-link" data-scroll-target="#interpretação-1">Interpretação</a></li>
+  </ul></li>
+  <li><a href="#sql-para-análise-de-dados" id="toc-sql-para-análise-de-dados" class="nav-link" data-scroll-target="#sql-para-análise-de-dados">SQL para Análise de Dados</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-de-consulta" id="toc-exemplo-de-consulta" class="nav-link" data-scroll-target="#exemplo-de-consulta">Exemplo de consulta</a></li>
+  <li><a href="#interpretação-2" id="toc-interpretação-2" class="nav-link" data-scroll-target="#interpretação-2">Interpretação</a></li>
+  </ul></li>
+  <li><a href="#jupyter-notebooks-e-ambientes-interativos" id="toc-jupyter-notebooks-e-ambientes-interativos" class="nav-link" data-scroll-target="#jupyter-notebooks-e-ambientes-interativos">Jupyter Notebooks e Ambientes Interativos</a>
+  <ul class="collapse">
+  <li><a href="#principais-características" id="toc-principais-características" class="nav-link" data-scroll-target="#principais-características">Principais características</a></li>
+  </ul></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
+  <li><a href="#referências-bibliográficas" id="toc-referências-bibliográficas" class="nav-link" data-scroll-target="#referências-bibliográficas">Referências Bibliográficas</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ferramentas e Linguagens</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="introdução" class="level2">
+<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
+<p>A Ciência de Dados combina estatística, programação e gerenciamento de dados para extrair insights valiosos. Para que um profissional da área atue de forma eficaz, é necessário o domínio de ferramentas que garantam eficiência computacional, controle de versões e acesso estruturado às informações. Este capítulo aborda três pilares fundamentais: <strong>C e C++</strong>, <strong>Git</strong> e <strong>SQL</strong>. Cada seção detalha conceitos, aplicações e exemplos práticos que demonstram a importância dessas tecnologias em projetos reais de análise e modelagem de dados.</p>
+</section>
+<section id="linguagem-c-e-c" class="level2">
+<h2 class="anchored" data-anchor-id="linguagem-c-e-c">Linguagem C e C++</h2>
+<p>A linguagem C foi criada por Dennis Ritchie nos anos 1970 e é conhecida por sua eficiência e controle direto sobre recursos do sistema. Seu baixo nível de abstração a torna uma escolha popular para o desenvolvimento de sistemas operacionais, compiladores e ferramentas de alto desempenho.</p>
+<p>O C++, criado por Bjarne Stroustrup na década de 1980, adicionou recursos de Programação Orientada a Objetos (POO) e programação genérica, permitindo a construção de aplicações modulares, reutilizáveis e mais fáceis de manter. Além disso, C++ suporta múltiplos paradigmas de programação, oferecendo grande flexibilidade.</p>
+<p>Na Ciência de Dados, C e C++ são usados principalmente para desenvolver bibliotecas de desempenho crítico, como TensorFlow, PyTorch e OpenCV. Essas bibliotecas fornecem interfaces para linguagens como Python, mas o núcleo de processamento pesado é implementado em C++ para garantir velocidade e eficiência.</p>
+<section id="exemplo-em-c" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-em-c">Exemplo em C++</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;vector&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> dados <span class="op">=</span> <span class="op">{</span><span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">40</span><span class="op">,</span> <span class="dv">50</span><span class="op">};</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> soma <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> valor <span class="op">:</span> dados<span class="op">)</span> soma <span class="op">+=</span> valor<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"Soma dos elementos: "</span> <span class="op">&lt;&lt;</span> soma <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">Interpretação</h3>
+<p>Esse trecho percorre um vetor de inteiros somando seus elementos — uma operação simples, mas que ilustra por que C++ é tão usado em bibliotecas de alto desempenho: o controle explícito sobre tipos e memória permite otimizações que uma linguagem interpretada como Python não consegue replicar com a mesma eficiência em laços de baixo nível.</p>
+</section>
+</section>
+<section id="git-e-controle-de-versões-para-projetos-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="git-e-controle-de-versões-para-projetos-de-dados">Git e Controle de Versões para Projetos de Dados</h2>
+<p>Git é um sistema de controle de versões distribuído que permite rastrear alterações e trabalhar colaborativamente. Em Ciência de Dados, é essencial para:</p>
+<ul>
+<li>Manter histórico de scripts e notebooks</li>
+<li>Criar branches sem comprometer a versão principal</li>
+<li>Reverter mudanças com segurança</li>
+<li>Integrar com GitHub/GitLab para colaboração e CI/CD</li>
+</ul>
+<section id="fluxo-básico-de-git" class="level3">
+<h3 class="anchored" data-anchor-id="fluxo-básico-de-git">Fluxo básico de Git</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analise_dados.py</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Analise exploratoria inicial"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> otimizacao_modelo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="interpretação-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-1">Interpretação</h3>
+<p>Esse fluxo mostra o ciclo mínimo de trabalho: iniciar o repositório, registrar um arquivo, salvar um “ponto de restauração” com <code>commit</code>, e criar uma ramificação (<code>branch</code>) isolada para testar uma ideia — como otimizar um modelo — sem arriscar quebrar a versão principal do projeto.</p>
+</section>
+</section>
+<section id="sql-para-análise-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="sql-para-análise-de-dados">SQL para Análise de Dados</h2>
+<p>SQL é a linguagem padrão para consulta e manipulação em bancos relacionais. É amplamente usada para explorar, limpar, transformar e integrar dados antes da modelagem.</p>
+<section id="exemplo-de-consulta" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-de-consulta">Exemplo de consulta</h3>
+<p>Para tornar o exemplo executável, criamos uma pequena tabela <code>vendas</code> em um banco SQLite em memória e rodamos a consulta de verdade.</p>
+<div id="b14c4c64" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">":memory:"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>vendas <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"categoria"</span>: [<span class="st">"Eletrônicos"</span>, <span class="st">"Eletrônicos"</span>, <span class="st">"Roupas"</span>, <span class="st">"Roupas"</span>, <span class="st">"Livros"</span>],</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"preco"</span>: [<span class="dv">1200</span>, <span class="dv">800</span>, <span class="dv">90</span>, <span class="dv">150</span>, <span class="dv">45</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"quantidade"</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">30</span>],</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data"</span>: [<span class="st">"2025-01-05"</span>, <span class="st">"2025-01-18"</span>, <span class="st">"2025-01-10"</span>, <span class="st">"2025-01-22"</span>, <span class="st">"2025-01-15"</span>]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>vendas.to_sql(<span class="st">"vendas"</span>, conn, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT categoria,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">       AVG(preco) AS preco_medio,</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">       SUM(quantidade) AS total_vendido</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">FROM vendas</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">WHERE data BETWEEN '2025-01-01' AND '2025-01-31'</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">GROUP BY categoria</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">ORDER BY total_vendido DESC;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(query, conn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">categoria</th>
+<th data-quarto-table-cell-role="th">preco_medio</th>
+<th data-quarto-table-cell-role="th">total_vendido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Roupas</td>
+<td>120.0</td>
+<td>32</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Livros</td>
+<td>45.0</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Eletrônicos</td>
+<td>1000.0</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="interpretação-2" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-2">Interpretação</h3>
+<p>A consulta agrupa as vendas por categoria, calculando o preço médio e o total de unidades vendidas em janeiro de 2025. Note que <strong>Roupas</strong> lidera em volume vendido apesar do preço médio mais baixo — um padrão comum em análises de vendas, onde categorias de menor valor unitário costumam ter maior giro. Esse tipo de agregação é a base de praticamente qualquer relatório ou dashboard de negócio.</p>
+</section>
+</section>
+<section id="jupyter-notebooks-e-ambientes-interativos" class="level2">
+<h2 class="anchored" data-anchor-id="jupyter-notebooks-e-ambientes-interativos">Jupyter Notebooks e Ambientes Interativos</h2>
+<p>Jupyter Notebook é um ambiente interativo amplamente utilizado em Ciência de Dados para combinar código, visualizações e texto em um único documento. Ele permite executar células de código individualmente, o que facilita experimentação incremental, ensino, relatórios reprodutíveis e prototipagem de modelos.</p>
+<section id="principais-características" class="level3">
+<h3 class="anchored" data-anchor-id="principais-características">Principais características</h3>
+<ul>
+<li>Integração de código + texto + gráficos em um único arquivo (<code>.ipynb</code>)</li>
+<li>Execução em células com feedback imediato</li>
+<li>Documentação integrada usando Markdown e LaTeX</li>
+<li>Suporte a múltiplas linguagens (Python, R, Julia, SQL, etc.)</li>
+<li>Exportação para PDF/HTML</li>
+<li>Versões avançadas como JupyterLab, Google Colab e notebooks do VS Code</li>
+</ul>
+<p>Na prática profissional, Jupyter é utilizado nas fases de exploração, limpeza, análise, construção de protótipos de modelos e comunicação de resultados. Aliás, é exatamente essa tecnologia (via <code>reticulate</code> e o motor Jupyter) que executa os exemplos em Python neste próprio portal.</p>
+</section>
+</section>
+<section id="conclusão" class="level2">
+<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
+<p>O domínio de C/C++ fornece base para entender estruturas de alto desempenho. O Git garante versionamento e colaboração. O SQL viabiliza acesso e transformação de dados em escala. Já o Jupyter Notebook serve como interface prática para análise iterativa e comunicação de resultados. Em conjunto, essas ferramentas compõem fundamentos operacionais essenciais para a atuação em Ciência de Dados.</p>
+</section>
+<section id="referências-bibliográficas" class="level2">
+<h2 class="anchored" data-anchor-id="referências-bibliográficas">Referências Bibliográficas</h2>
+<ul>
+<li>KERNIGHAN, Brian; RITCHIE, Dennis. <em>The C Programming Language</em>. Prentice Hall, 1988.</li>
+<li>STROUSTRUP, Bjarne. <em>The C++ Programming Language</em>. Addison-Wesley, 2013.</li>
+<li>CHACON, Scott; STRAUB, Ben. <em>Pro Git</em>. Apress, 2014. Disponível em: https://git-scm.com/book</li>
+<li>DATE, C. J. <em>An Introduction to Database Systems</em>. Pearson, 2003.</li>
+<li>SILBERSCHATZ, A.; KORTH, H.; SUDARSHAN, S. <em>Database System Concepts</em>. McGraw-Hill, 2020.</li>
+</ul>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
