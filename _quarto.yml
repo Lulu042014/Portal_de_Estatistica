@@ -10,7 +10,7 @@ website:
       - text: "Sobre o Projeto"
         href: sobre.qmd
       - text: "Fundamentos de Ciência de Dados"
-        href: FDC.qmd 
+        href: FCD.qmd 
       - text: "Fundamentos de Programação"
         href: FP.qmd
       - text: "Ferramentas e Linguagens"
