@@ -1,0 +1,109 @@
+---
+title: "Visualização de Dados"
+format: html
+---
+
+## O que é Visualização de Dados?
+
+A **Visualização de Dados** é a área que transforma números e informações abstratas em representações gráficas, facilitando a identificação de padrões, tendências, outliers e relações que seriam difíceis de perceber apenas olhando para tabelas.
+
+É uma etapa central da **Análise Exploratória de Dados (EDA)**: antes de aplicar qualquer modelo estatístico ou de Machine Learning, é fundamental *olhar* para os dados.
+
+### Por que visualizar antes de modelar?
+
+Um exemplo clássico é o **Quarteto de Anscombe**: quatro conjuntos de dados com médias, variâncias e correlações praticamente idênticas — mas que, quando plotados, revelam padrões completamente diferentes (uma reta, uma curva, um outlier isolado, etc.). Isso mostra que estatísticas resumo (média, desvio padrão) escondem informação que só um gráfico revela.
+
+## Principais tipos de gráficos
+
+| Gráfico | Quando usar |
+|----|----|
+| Histograma | Distribuição de uma variável numérica |
+| Boxplot | Comparar distribuições, identificar outliers |
+| Gráfico de dispersão (scatter) | Relação entre duas variáveis numéricas |
+| Gráfico de barras | Comparar categorias |
+| Gráfico de linha | Evolução ao longo do tempo (séries temporais) |
+| Heatmap | Correlação entre múltiplas variáveis |
+
+## Exemplo prático em R (ggplot2)
+
+O pacote `ggplot2` é o padrão de mercado para visualização em R, baseado na "gramática dos gráficos" (camadas que se somam).
+
+```{r}
+library(ggplot2)
+
+set.seed(42)
+dados <- data.frame(
+  altura = rnorm(200, mean = 170, sd = 10),
+  peso = rnorm(200, mean = 70, sd = 12)
+)
+
+ggplot(dados, aes(x = altura, y = peso)) +
+  geom_point(alpha = 0.6, color = "#2c3e50") +
+  geom_smooth(method = "lm", color = "#e74c3c", se = FALSE) +
+  labs(title = "Relação entre altura e peso (dados simulados)",
+       x = "Altura (cm)", y = "Peso (kg)") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(dados, aes(x = altura)) +
+  geom_histogram(bins = 20, fill = "#3498db", color = "white") +
+  labs(title = "Distribuição da altura", x = "Altura (cm)", y = "Frequência") +
+  theme_minimal()
+```
+
+### Interpretação
+
+O gráfico de dispersão mostra a nuvem de pontos entre altura e peso, com uma linha de tendência ajustada por regressão linear. O histograma, por sua vez, evidencia o formato aproximadamente normal (em sino) da distribuição da altura simulada — algo que não seria óbvio olhando apenas para a média e o desvio padrão em uma tabela.
+
+## Exemplo prático em Python (matplotlib e seaborn)
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import pandas as pd
+
+np.random.seed(42)
+dados = pd.DataFrame({
+    "altura": np.random.normal(170, 10, 200),
+    "peso": np.random.normal(70, 12, 200)
+})
+
+sns.set_style("whitegrid")
+fig, ax = plt.subplots(figsize=(6, 4))
+sns.regplot(data=dados, x="altura", y="peso", scatter_kws={"alpha": 0.6}, line_kws={"color": "red"}, ax=ax)
+ax.set_title("Relação entre altura e peso (dados simulados)")
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+fig, ax = plt.subplots(figsize=(6, 4))
+sns.boxplot(data=dados, y="peso", ax=ax, color="#3498db")
+ax.set_title("Distribuição do peso")
+plt.tight_layout()
+plt.show()
+```
+
+### Interpretação
+
+O boxplot resume a distribuição do peso em quartis: a caixa representa os 50% centrais dos dados (entre o 1º e o 3º quartil), a linha central é a mediana, e os pontos fora dos "bigodes" indicam possíveis outliers.
+
+## Boas práticas
+
+-   **Escolha o gráfico certo para a pergunta certa** — um gráfico de linha não faz sentido para dados categóricos, por exemplo.
+-   **Evite poluição visual**: cores em excesso, gráficos 3D desnecessários e efeitos decorativos atrapalham a leitura.
+-   **Sempre rotule os eixos** e inclua um título que explique o que o gráfico mostra.
+-   **Cuidado com a escala dos eixos**: começar o eixo Y fora do zero pode exagerar diferenças e distorcer a interpretação.
+-   **Considere o daltonismo**: paletas de cores como `viridis` (disponível tanto em R quanto em Python) são acessíveis a pessoas com diferentes tipos de daltonismo.
+
+## Aplicação real em Ciência de Dados
+
+Na prática, a visualização de dados aparece em várias etapas de um projeto:
+
+-   **Antes da modelagem**: para entender a distribuição das variáveis, detectar outliers e decidir sobre transformações (normalização, log, etc.)
+-   **Durante a modelagem**: para avaliar resíduos de um modelo de regressão ou a matriz de confusão de um classificador
+-   **Depois da modelagem**: para comunicar resultados a públicos não técnicos, em dashboards e relatórios
+
+Ferramentas interativas como **Streamlit** e **Plotly**, mencionadas na apresentação do projeto, permitem ir além dos gráficos estáticos, criando visualizações onde o usuário pode explorar os dados em tempo real.

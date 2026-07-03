@@ -27,6 +27,8 @@ website:
         href: IF.qmd
       - text: "Pré-processamento e Limpeza de Dados"
         href: PLD.qmd
+      - text: "Visualização de Dados"
+        href: visualizacao.qmd
   page-footer: "(c) 2025 Equipe do Portal"
     
 format:
