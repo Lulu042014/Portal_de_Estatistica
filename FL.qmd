@@ -1,0 +1,124 @@
+---
+title: "Ferramentas e Linguagens"
+format: html
+---
+
+## Introdução
+
+A Ciência de Dados combina estatística, programação e gerenciamento de dados para extrair insights valiosos. Para que um profissional da área atue de forma eficaz, é necessário o domínio de ferramentas que garantam eficiência computacional, controle de versões e acesso estruturado às informações. Este capítulo aborda três pilares fundamentais: **C e C++**, **Git** e **SQL**. Cada seção detalha conceitos, aplicações e exemplos práticos que demonstram a importância dessas tecnologias em projetos reais de análise e modelagem de dados.
+
+## Linguagem C e C++
+
+A linguagem C foi criada por Dennis Ritchie nos anos 1970 e é conhecida por sua eficiência e controle direto sobre recursos do sistema. Seu baixo nível de abstração a torna uma escolha popular para o desenvolvimento de sistemas operacionais, compiladores e ferramentas de alto desempenho.
+
+O C++, criado por Bjarne Stroustrup na década de 1980, adicionou recursos de Programação Orientada a Objetos (POO) e programação genérica, permitindo a construção de aplicações modulares, reutilizáveis e mais fáceis de manter. Além disso, C++ suporta múltiplos paradigmas de programação, oferecendo grande flexibilidade.
+
+Na Ciência de Dados, C e C++ são usados principalmente para desenvolver bibliotecas de desempenho crítico, como TensorFlow, PyTorch e OpenCV. Essas bibliotecas fornecem interfaces para linguagens como Python, mas o núcleo de processamento pesado é implementado em C++ para garantir velocidade e eficiência.
+
+### Exemplo em C++
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> dados = {10, 20, 30, 40, 50};
+    int soma = 0;
+    for (int valor : dados) soma += valor;
+    cout << "Soma dos elementos: " << soma << endl;
+    return 0;
+}
+```
+
+### Interpretação
+
+Esse trecho percorre um vetor de inteiros somando seus elementos — uma operação simples, mas que ilustra por que C++ é tão usado em bibliotecas de alto desempenho: o controle explícito sobre tipos e memória permite otimizações que uma linguagem interpretada como Python não consegue replicar com a mesma eficiência em laços de baixo nível.
+
+## Git e Controle de Versões para Projetos de Dados
+
+Git é um sistema de controle de versões distribuído que permite rastrear alterações e trabalhar colaborativamente. Em Ciência de Dados, é essencial para:
+
+- Manter histórico de scripts e notebooks
+- Criar branches sem comprometer a versão principal
+- Reverter mudanças com segurança
+- Integrar com GitHub/GitLab para colaboração e CI/CD
+
+### Fluxo básico de Git
+
+```bash
+git init
+git add analise_dados.py
+git commit -m "Analise exploratoria inicial"
+git checkout -b otimizacao_modelo
+```
+
+### Interpretação
+
+Esse fluxo mostra o ciclo mínimo de trabalho: iniciar o repositório, registrar um arquivo, salvar um "ponto de restauração" com `commit`, e criar uma ramificação (`branch`) isolada para testar uma ideia — como otimizar um modelo — sem arriscar quebrar a versão principal do projeto.
+
+## SQL para Análise de Dados
+
+SQL é a linguagem padrão para consulta e manipulação em bancos relacionais. É amplamente usada para explorar, limpar, transformar e integrar dados antes da modelagem.
+
+### Exemplo de consulta
+
+Para tornar o exemplo executável, criamos uma pequena tabela `vendas` em um banco SQLite em memória e rodamos a consulta de verdade.
+
+```{python}
+import sqlite3
+import pandas as pd
+
+conn = sqlite3.connect(":memory:")
+
+vendas = pd.DataFrame({
+    "categoria": ["Eletrônicos", "Eletrônicos", "Roupas", "Roupas", "Livros"],
+    "preco": [1200, 800, 90, 150, 45],
+    "quantidade": [3, 5, 20, 12, 30],
+    "data": ["2025-01-05", "2025-01-18", "2025-01-10", "2025-01-22", "2025-01-15"]
+})
+vendas.to_sql("vendas", conn, index=False)
+
+query = """
+SELECT categoria,
+       AVG(preco) AS preco_medio,
+       SUM(quantidade) AS total_vendido
+FROM vendas
+WHERE data BETWEEN '2025-01-01' AND '2025-01-31'
+GROUP BY categoria
+ORDER BY total_vendido DESC;
+"""
+
+pd.read_sql_query(query, conn)
+```
+
+### Interpretação
+
+A consulta agrupa as vendas por categoria, calculando o preço médio e o total de unidades vendidas em janeiro de 2025. Note que **Roupas** lidera em volume vendido apesar do preço médio mais baixo — um padrão comum em análises de vendas, onde categorias de menor valor unitário costumam ter maior giro. Esse tipo de agregação é a base de praticamente qualquer relatório ou dashboard de negócio.
+
+## Jupyter Notebooks e Ambientes Interativos
+
+Jupyter Notebook é um ambiente interativo amplamente utilizado em Ciência de Dados para combinar código, visualizações e texto em um único documento. Ele permite executar células de código individualmente, o que facilita experimentação incremental, ensino, relatórios reprodutíveis e prototipagem de modelos.
+
+### Principais características
+
+- Integração de código + texto + gráficos em um único arquivo (`.ipynb`)
+- Execução em células com feedback imediato
+- Documentação integrada usando Markdown e LaTeX
+- Suporte a múltiplas linguagens (Python, R, Julia, SQL, etc.)
+- Exportação para PDF/HTML
+- Versões avançadas como JupyterLab, Google Colab e notebooks do VS Code
+
+Na prática profissional, Jupyter é utilizado nas fases de exploração, limpeza, análise, construção de protótipos de modelos e comunicação de resultados. Aliás, é exatamente essa tecnologia (via `reticulate` e o motor Jupyter) que executa os exemplos em Python neste próprio portal.
+
+## Conclusão
+
+O domínio de C/C++ fornece base para entender estruturas de alto desempenho. O Git garante versionamento e colaboração. O SQL viabiliza acesso e transformação de dados em escala. Já o Jupyter Notebook serve como interface prática para análise iterativa e comunicação de resultados. Em conjunto, essas ferramentas compõem fundamentos operacionais essenciais para a atuação em Ciência de Dados.
+
+## Referências Bibliográficas
+
+- KERNIGHAN, Brian; RITCHIE, Dennis. *The C Programming Language*. Prentice Hall, 1988.
+- STROUSTRUP, Bjarne. *The C++ Programming Language*. Addison-Wesley, 2013.
+- CHACON, Scott; STRAUB, Ben. *Pro Git*. Apress, 2014. Disponível em: https://git-scm.com/book
+- DATE, C. J. *An Introduction to Database Systems*. Pearson, 2003.
+- SILBERSCHATZ, A.; KORTH, H.; SUDARSHAN, S. *Database System Concepts*. McGraw-Hill, 2020.
