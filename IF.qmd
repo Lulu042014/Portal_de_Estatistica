@@ -3,136 +3,97 @@ title: "Inferência Estatística"
 format: html
 ---
 
-### **Introdução**
+## Introdução
 
 De acordo com Morettin e Bussab (2017, p.276), o objetivo da Inferência Estatística é produzir afirmações sobre determinada característica da população a partir de informações colhidas de uma parte dessa população.
 
-Ou seja, é como uma espécie de "ponte" que nos permite usar as informações obtidas da amostra para fazer afirmações ou estimativas sobre a população (maior).
+Ou seja, é como uma espécie de "ponte" que nos permite usar as informações obtidas da amostra para fazer afirmações ou estimativas sobre a população (maior). É como se a amostra representasse a população e, com base nessa representação, podemos fazer previsões, tirar conclusões e tomar decisões sobre a característica que estamos interessados em estudar.
 
-É como se a amostra representasse a população e, com base nessa representação, podemos fazer previsões, tirar conclusões e tomar decisões sobre a característica que estamos interessados em estudar.
-
-### **População e Amostra**
+## População e Amostra
 
 Segundo Werkema (2014, p.10), população é a totalidade dos elementos de um universo sobre o qual desejamos estabelecer conclusões ou exercer ações. A população de interesse pode ser finita ou infinita. Uma população finita possui um número limitado de elementos. Já a população infinita possui um número não limitado de elementos.
 
-Morettin e Bussab (2017, p.276) dizem que, uma amostra é um subconjunto de uma população. A ideia é que, ao estudar essa amostra, seja possível fazer inferências ou tirar conclusões sobre toda a população, sem precisar analisar todos os seus elementos.
+Morettin e Bussab (2017, p.276) dizem que uma amostra é um subconjunto de uma população. A ideia é que, ao estudar essa amostra, seja possível fazer inferências ou tirar conclusões sobre toda a população, sem precisar analisar todos os seus elementos.
 
-### **Testes de Hipóteses**
+## Testes de Hipóteses
 
-#### ***Conceito***
+### Conceito
 
 Os testes de hipóteses são procedimentos estatísticos utilizados para tomar decisões sobre afirmações ou suposições feitas a respeito de uma população com base em informações obtidas a partir de uma amostra. O objetivo principal de um teste de hipóteses é avaliar se os dados fornecem evidências suficientes para rejeitar ou não uma afirmação sobre o parâmetro populacional.
 
-As afirmações que são testadas em um teste de hipóteses são chamadas de hipóteses estatísticas. Uma hipótese é geralmente dividida em duas partes: a hipótese nula H0 e a hipótese alternativa H1. A hipótese nula é a afirmação inicial que assume que não há efeito ou diferença real, enquanto a hipótese alternativa é a afirmação que o pesquisador pretende testar e mostra a direção da diferença ou efeito.
+As afirmações que são testadas em um teste de hipóteses são chamadas de hipóteses estatísticas. Uma hipótese é geralmente dividida em duas partes: a hipótese nula $H_0$ e a hipótese alternativa $H_1$. A hipótese nula é a afirmação inicial que assume que não há efeito ou diferença real, enquanto a hipótese alternativa é a afirmação que o pesquisador pretende testar e mostra a direção da diferença ou efeito.
 
-#### ***Hipóteses Estatísticas***
+### Hipóteses Estatísticas
 
-A partir de amostras, realizamos inferências suposições sobre os parâmetros de uma população, o que implica em formular suposições que podem ser verídicas ou não. São exemplos de hipóteses estatísticas:
+A partir de amostras, realizamos inferências e suposições sobre os parâmetros de uma população, o que implica em formular suposições que podem ser verídicas ou não. São exemplos de hipóteses estatísticas:
 
-A média populacional de renda dos residentes de um determinado bairro é de R\$ 3.500, ou seja,
+- A média populacional de renda dos residentes de um determinado bairro é de R\$ 3.500, ou seja, $\mu = 3500$
+- A proporção de estudantes aprovados em um exame é de 75%, o que equivale a $p = 0{,}75$
 
-• μ = 3500
+### Tipos de Hipóteses
 
-A proporção de estudantes aprovados em um exame é de 75%, o que equivale a
+No procedimento de teste de hipóteses, são elaboradas duas proposições, conhecidas como Hipótese Nula $H_0$ e Hipótese Alternativa $H_1$. Ambas estão relacionadas, principalmente, a um parâmetro que representa um valor na população e à sua estimativa correspondente a partir da amostra.
 
-• p = 0,75
+A Hipótese Nula $H_0$ representa a suposição que está sujeita a teste. Em outras palavras, é a hipótese que se busca verificar por meio do teste estatístico.
 
-#### ***Tipos de Hipóteses***
+A Hipótese Alternativa $H_1$ engloba todas as outras possíveis proposições que são distintas da Hipótese Nula. É uma afirmação que se coloca como alternativa à Hipótese Nula, refletindo diferentes cenários ou resultados que podem ocorrer. Recapitulando:
 
-No procedimento de teste de hipóteses, são elaboradas duas proposições, conhecidas como Hipótese Nula Hº e Hipótese Alternativa H1. Ambas estão relacionadas, principalmente, a um parâmetro que representa um valor na população e à sua estimativa correspondente a partir da amostra.
+- **Hipótese Nula ($H_0$):** sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador.
+- **Hipótese Alternativa ($H_1$):** tem a obrigação de refutar a hipótese nula em todos os casos.
 
-A Hipótese Nula Hº representa a suposição que está sujeita a teste. Em outras palavras, é a hipótese que se busca verificar por meio do teste estatístico.
+### Tipos de Teste
 
-A Hipótese Alternativa H1 engloba todas as outras possíveis proposições que são distintas da Hipótese Nula. É uma afirmação que se coloca como alternativa à Hipótese Nula, refletindo diferentes cenários ou resultados que podem ocorrer. Recapitulando:
+Um teste estatístico de hipótese é um procedimento que, quando aplicado a valores amostrais, orienta a escolha entre aceitar ou rejeitar uma hipótese específica. Em geral, quando o parâmetro de interesse é a média ($\mu$) de uma população, as hipóteses nula e alternativa são formuladas da seguinte maneira:
 
-• Hipótese Nula (Hº): sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador.
+- **Teste bicaudal ou bilateral:** $H_0 : \mu = \mu_0$, $H_1 : \mu \neq \mu_0$
+- **Teste unicaudal ou unilateral à direita:** $H_1 : \mu > \mu_0$
+- **Teste unicaudal ou unilateral à esquerda:** $H_1 : \mu < \mu_0$
 
-• Hipótese Alternativa (H1): tem a obrigação de refutar a hipótese nula em todos os casos.
+### Nível de Significância
 
-#### ***Tipos de Teste***
+Ao tomar uma decisão com base na análise de hipóteses estatísticas, existe sempre a possibilidade de cometer um erro, o que significa aceitar erroneamente uma hipótese. Essa probabilidade é denominada nível de significância e é representada por $\alpha$.
 
-Um teste estatístico de hipótese é um procedimento que, quando aplicado a valores amostrais, orienta a escolha entre aceitar ou rejeitar uma hipótese específica. Em geral, quando o parâmetro de interesse é a média (μ) de uma população, as hipóteses nula e alternativa são formuladas da seguinte maneira:
-
-• Teste bicaudal ou bilateral: Hº : μ = μº, H1 : μ̸ =μ0
-
-• Teste unicaudal ou unilateral à direita: H1 : μ \> μ0
-
-• Teste unicaudal ou unilateral à esquerda: H1 : μ \< μ0
-
-#### ***Nível de Significância***
-
-Ao tomar uma decisão com base na análise de hipóteses estatísticas, existe sempre a possibilidade de cometer um erro, o que significa aceitar erroneamente uma hipótese. Essa probabilidade é denominada nível de significância e é representada por α.
-
-#### ***Tipos de Erros***
+### Tipos de Erros
 
 Em um teste de hipótese, existem duas categorias de erros possíveis. Um erro de decisão ocorre quando uma hipótese que é comprovadamente falsa é aceita como verdadeira, ou quando uma hipótese que é verdadeira é erroneamente considerada falsa.
 
-• Erro do Tipo 1: ocorre quando a hipótese Hº é rejeitada, mesmo que seja verdadeira. O nível de significância do teste, representado por α, indica a probabilidade de cometer esse tipo de erro.
+- **Erro do Tipo I:** ocorre quando a hipótese $H_0$ é rejeitada, mesmo que seja verdadeira. O nível de significância do teste, representado por $\alpha$, indica a probabilidade de cometer esse tipo de erro.
+- **Erro do Tipo II:** ocorre quando a hipótese $H_0$ é aceita, embora seja falsa. Rejeitar $H_0$ implica a aceitação de $H_1$, e vice-versa. A probabilidade de cometer um erro do Tipo II é igual a $1 - \alpha$.
 
-• Erro do Tipo 2: ocorre quando a hipótese Hº é aceita, embora seja falsa. Rejeitar Hº implica a aceitação de H1, e vice-versa. A probabilidade de cometer um erro do Tipo 2 é igual a 1 menos o nível de significância (1 − α).
+### Regiões de Aceitação e Rejeição
 
-#### ***Regiões de Aceitação e Rejeição***
+- **Região de Aceitação:** é a região onde a hipótese nula $H_0$ é considerada válida.
+- **Região de Rejeição:** é a região onde a hipótese nula $H_0$ é descartada, e é o oposto da região de aceitação — também conhecida como região crítica.
 
-• Região de Aceitação
-
-É a região onde a hipótese nula Hº é considerada válida.
-
-• Região de Rejeição
-
-É a região onde a hipótese nula Hº é descartada, e é o oposto da região de aceitação, que também é conhecida como região crítica.
-
-#### ***Construção do Teste***
+### Construção do Teste
 
 A construção de um teste de hipóteses envolve os seguintes passos:
 
-1.  [**Formular as hipóteses e o tipo de teste:**]{.underline}
+1. **Formular as hipóteses e o tipo de teste** — a hipótese nula $H_0$ sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador; a hipótese alternativa $H_1$ tem a obrigação de refutar a hipótese nula em todos os casos. Teste bicaudal $\mu \neq \mu_0$, teste unilateral à direita $\mu > \mu_0$ ou teste unilateral à esquerda $\mu < \mu_0$.
 
-• A hipótese nula Hº sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador.
+2. **Escolher o nível de significância $\alpha$** — a probabilidade de cometer um erro do Tipo I, ou seja, rejeitar a hipótese nula quando ela é verdadeira. É geralmente definido em 5% (0,05) ou 1% (0,01).
 
-• A hipótese alternativa H1 tem a obrigação de refutar a hipótese nula em todos os casos
+3. **Selecionar a estatística de teste apropriada** — depende da natureza dos dados e do parâmetro que está sendo testado. Algumas delas são:
+   - **Teste t de Student:** usado para testar diferenças entre médias de duas amostras ou uma amostra em relação a um valor teórico
+   - **Teste Z:** similar ao teste t de Student, mas usado quando a população tem distribuição normal e o desvio padrão populacional é conhecido
+   - **Teste Qui-quadrado:** utilizado para testar a independência entre duas variáveis categóricas
+   - **Teste de ANOVA (Análise de Variância):** usado para testar a igualdade de médias entre três ou mais grupos
+   - **Teste de Wilcoxon-Mann-Whitney:** usado para testar diferenças entre medianas de duas amostras independentes
+   - **Teste de Kolmogorov-Smirnov:** utilizado para testar se uma amostra segue uma determinada distribuição teórica
 
-• Teste bicaudal μ̸ = μ0, teste unilateral à direita μ \> μ0 ou teste unilateral à esquerda μ \< μ0.
+4. **Calcular o valor da estatística de teste** — após escolher o teste, a estatística é calculada a partir dos dados da amostra e usada para comparar com um valor crítico.
 
-2.  [**Escolher o nível de significância α:**]{.underline}
+5. **Comparar o valor da estatística de teste com o valor crítico** — determinado pelo nível de significância e pelo tipo de teste (bicaudal ou unilateral). Se o valor da estatística estiver na região de rejeição, rejeitamos $H_0$ e aceitamos $H_1$. Caso contrário, não rejeitamos $H_0$.
 
-O nível de significância é a probabilidade de cometer um erro do tipo I, ou seja, rejeitar a hipótese nula quando ela é verdadeira. É geralmente definido comumente em 5% (0,05) ou 1% (0,01).
+6. **Interpretar os resultados** — com base na decisão tomada, interpretamos os resultados do teste e tiramos conclusões sobre $H_0$ e $H_1$.
 
-3.  [**Selecionar a estatística de teste apropriada:**]{.underline}
+### Teste de Hipóteses para a Média Populacional ($\mu$)
 
-A escolha da estatística de teste depende da natureza dos dados e do parâmetro que está sendo testado. Algumas delas são:
-
-• Teste t de Student: Usado para testar diferenças entre médias de duas amostras ou uma amostra em relação a um valor teórico.
-
-• Teste Z: Similar ao teste t de Student, mas é usado quando a população tem uma distribuição normal e o desvio padrão populacional é conhecido.
-
-• Teste Qui-quadrado: Utilizado para testar a independência entre duas variáveis categóricas.
-
-• Teste de ANOVA (Análise de Variância): Usado para testar a igualdade de médias entre três ou mais grupos.
-
-• Teste de Wilcoxon-Mann-Whitney: Usado para testar diferenças entre medianas de duas amostras independentes.
-
-• Teste de Kolmogorov-Smirnov : Utilizado para testar se uma amostra segue uma determinada distribuição teórica.
-
-4.  [**Calcular o valor da estatística de teste:**]{.underline}
-
-Após escolher o teste, a estatística de teste é calculada a partir dos dados da amostra e é usada para comparar com um valor crítico.
-
-5.  [**Comparar o valor da estatística de teste com o valor crítico:**]{.underline}
-
-Você compara o valor da estatística de teste com o valor crítico adequado, determinado pelo nível de significância e pelo tipo de teste (bicaudal ou uni- lateral). A decisão de rejeitar ou não rejeitar a hipótese nula é tomada com base nessa comparação. Se o valor da estatística de teste estiver na região de rejeição, rejeitamos a hipótese nula e aceitamos a hipótese alternativa. Caso contrário, não rejeitamos a hipótese nula.
-
-6.  [**Interpretar os resultados:**]{.underline}
-
-Com base na decisão tomada, interpretamos os resultados do teste e tiramos conclusões sobre a hipótese nula e a hipótese alternativa.
-
-#### ***Teste de Hipóteses para a Média Populacional (μ)***
-
-1.  **Determinar a hipótese nula Hº : μ = μ0;**
-
-2.  **Determinar a hipótese alternativa;**
+1. Determinar a hipótese nula $H_0 : \mu = \mu_0$
+2. Determinar a hipótese alternativa:
 
 $$
-H_1 : 
+H_1 :
 \begin{cases}
 \mu \ne \mu_0 \\
 \mu > \mu_0 \\
@@ -140,31 +101,20 @@ H_1 :
 \end{cases}
 $$
 
-3.  **Fixar o nível de significância α;**
+3. Fixar o nível de significância $\alpha$
+4. Determinar a região de rejeição (bilateral, unilateral à direita ou unilateral à esquerda)
+5. Calcular a estatística amostral:
 
-4.  **Determinar a região de rejeição (bilateral, unilateral à direita ou unilateral à esquerda);**
-
-5.  **Calcular a estatística amostral;**
-
-$$
-z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}
-$$
-
-$$
-t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
-$$
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}} \qquad t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
 
 onde:
 
-• X é a média da amostra;
+- $\bar{x}$ é a média da amostra
+- $\mu_0$ é a média da população (hipótese a ser testada)
+- $\sigma$ é o desvio padrão da população
+- $n$ é o número de elementos da amostra. Para grandes amostras ($n \geq 30$) pode-se utilizar o desvio padrão da amostra ($s$). Quando a amostra for pequena ($n < 30$), devemos utilizar a distribuição de Student.
 
-• μ0 é a média da população (hipótese a ser testada);
-
-• σ é o desvio padrão da população;
-
-• n é o número de elementos da amostra. Para grandes amostras n ≥ 30 pode-se utilizar o desvio padrão da amostra (s). Quando a amostra for pequena n ≤ 30 devemos utilizar a distribuição de Student.
-
-6.  **Conclusões:**
+6. Conclusões:
 
 $$
 \begin{aligned}
@@ -177,7 +127,7 @@ $$
 Os valores críticos de z associados aos níveis de significância mais utilizados estão apresentados na tabela a seguir.
 
 | Nível de significância α | Valor crítico Z (unilateral) | Valor crítico Z (bilateral) |
-|----|----|----|
+|---|---|---|
 | 0,002 | 2,88 | 3,08 |
 | 0,005 | 2,58 | 2,81 |
 | 0,010 | 2,33 | 2,58 |
@@ -186,83 +136,72 @@ Os valores críticos de z associados aos níveis de significância mais utilizad
 
 Tabela 1: Valores críticos da distribuição normal padrão para diferentes níveis de significância.
 
-OBS.: Os valores críticos de t devem ser retirados da tabela da Distribuição de Student, visto que dependem do grau de liberdade v = n − 1. Nos testes bilaterais, para determinar o t crítico, utilizar como parâmetro na tabela de Student a metade do valor do nível de significância.
+> **Observação:** os valores críticos de t devem ser retirados da tabela da Distribuição de Student, visto que dependem do grau de liberdade $v = n - 1$. Nos testes bilaterais, para determinar o t crítico, utiliza-se como parâmetro na tabela de Student a metade do valor do nível de significância.
 
-#### ***Teste de Hipóteses para a Proporção Populacional (p)***
+### Teste de Hipóteses para a Proporção Populacional ($p$)
 
-1.  **Estabelecer a hipótese nula Hº: p = pº;**
-
-2.  **Estabelecer a hipótese alternativa;** $$
-    \begin{aligned}
-    H_1 &: \; p \ne p_0 \\
-    H_1 &: \; p > p_0 \\
-    H_1 &: \; p < p_0
-    \end{aligned}
-    $$
-
-3.  **Fixar o nível de significância α;**
-
-4.  **Determinar a região de rejeição;**
-
-5.  **Calcular a estatística Zcalc:**
-
-$$
-Z_{\text{calc}} = \frac{\hat{p} - p}{\sqrt{\frac{pq}{n}}}
-$$
-
-onde:
-
-•ˆp é a proporção ou percentagem da amostra.
-
-• p é a proporção ou percentagem da população.
-
-• q é (1 - p).
-
-• n é o número de elementos da amostra.
-
-6.  **Conclusões:**
+1. Estabelecer a hipótese nula $H_0: p = p_0$
+2. Estabelecer a hipótese alternativa:
 
 $$
 \begin{aligned}
-\text{(a)} &\quad \text{Se } |Z_{\text{calc}}| > Z_{\alpha/2}, \text{ rejeita-se } H_0, \text{ onde: } Z_{\alpha/2} = Z_{\text{crítico}} = Z(\textit{tabelado}). \\
+H_1 &: \; p \ne p_0 \\
+H_1 &: \; p > p_0 \\
+H_1 &: \; p < p_0
+\end{aligned}
+$$
+
+3. Fixar o nível de significância $\alpha$
+4. Determinar a região de rejeição
+5. Calcular a estatística $Z_{\text{calc}}$:
+
+$$Z_{\text{calc}} = \frac{\hat{p} - p}{\sqrt{\frac{pq}{n}}}$$
+
+onde:
+
+- $\hat{p}$ é a proporção ou percentagem da amostra
+- $p$ é a proporção ou percentagem da população
+- $q$ é $(1 - p)$
+- $n$ é o número de elementos da amostra
+
+6. Conclusões:
+
+$$
+\begin{aligned}
+\text{(a)} &\quad \text{Se } |Z_{\text{calc}}| > Z_{\alpha/2}, \text{ rejeita-se } H_0, \text{ onde } Z_{\alpha/2} \text{ é o valor crítico tabelado}. \\
 \text{(b)} &\quad \text{Se } Z > Z_{\alpha}, \text{ rejeita-se } H_0. \\
 \text{(c)} &\quad \text{Se } Z < -Z_{\alpha}, \text{ rejeita-se } H_0.
 \end{aligned}
 $$
 
-### **Métodos de Estimação**
+## Métodos de Estimação
 
-Nessa seção veremos duas maneiras de estimar parâmetros a partir dos estima- dores selecionados: a estimação por ponto e a estimação por intervalo de confiança.
+Nesta seção veremos duas maneiras de estimar parâmetros a partir dos estimadores selecionados: a estimação por ponto e a estimação por intervalo de confiança.
 
-#### ***Estimação por Ponto***
+### Estimação por Ponto
 
-É o processo através do qual obtemos um único ponto, ou seja, um único valor para estimar o parâmetro. Exemplo: Amostra (1, 3, 5)
+É o processo através do qual obtemos um único ponto, ou seja, um único valor para estimar o parâmetro. Exemplo: amostra (1, 3, 5)
 
-$$
-\bar{x} = \frac{1 + 3 + 5}{3} = 3 \leftarrow \text{estimativa pontual de } \mu \tag{4}
-$$
+$$\bar{x} = \frac{1 + 3 + 5}{3} = 3 \quad \leftarrow \text{estimativa pontual de } \mu$$
 
-$$
-S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estimativa pontual de } \sigma^2 \tag{5}
-$$
+$$S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \quad \leftarrow \text{estimativa pontual de } \sigma^2$$
 
-#### ***Estimação Intervalar***
+### Estimação Intervalar
 
-A estimação por ponto é uma técnica prática e comum para obter uma estimativa do valor de um parâmetro desconhecido em uma população, com base em informações amostrais. No entanto, é importante ressaltar que essas estimativas estão sujeitas a um certo grau de incerteza, uma vez que as estimativas pontuais podem diferir do valor real do parâmetro. Para obter uma melhor noção da incerteza associada à estimação, construímos o que chamamos de "intervalo de confiança"em torno da estimativa pontual. Todo intervalo de confiança conta com dois parâmetros importantes, são eles:
+A estimação por ponto é uma técnica prática e comum para obter uma estimativa do valor de um parâmetro desconhecido em uma população, com base em informações amostrais. No entanto, é importante ressaltar que essas estimativas estão sujeitas a um certo grau de incerteza, uma vez que as estimativas pontuais podem diferir do valor real do parâmetro. Para obter uma melhor noção da incerteza associada à estimação, construímos o que chamamos de "intervalo de confiança" em torno da estimativa pontual. Todo intervalo de confiança conta com dois parâmetros importantes:
 
-• α = significância
+- $\alpha$ = significância
+- $1 - \alpha$ = confiança
 
-• 1 − α = confiança
+Por serem variáveis aleatórias, os estimadores pontuais possuem uma distribuição de probabilidade (distribuições amostrais). Com isso, podemos apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido — a estimativa intervalar, ou intervalo de confiança. Os intervalos de confiança são obtidos a partir da distribuição amostral de seus estimadores.
 
-Por serem variáveis aleatórias, os estimadores pontuais possuem uma distribuição de probabilidade (distribuições amostrais). Com isso, podemos apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido → estimativa intervalar ou intervalo de confiança. Os intervalos de confiança são obtidos a partir da distribuição amostral de seus estimadores.
+## Exemplos Computacionais em R e Python
 
-### Exemplos computacionais em R e Python
-
-#### Sobre População e Amostra
+### Intervalo de confiança para a média
 
 Um instituto de pesquisa quer estimar a altura média de adultos em uma cidade de 500.000 habitantes. Para isso, eles selecionam aleatoriamente uma amostra de 1.000 adultos e medem suas alturas. A altura média na amostra é de 170 cm com um desvio padrão de 10 cm. Calcule um intervalo de confiança de 95% para a altura média da população.
 
-#### Exemplo em Python:
+**Exemplo em Python:**
 
 ```{python}
 import numpy as np
@@ -273,23 +212,22 @@ n = 1000
 mean_sample = 170
 sd_sample = 10
 
-# Erro padrao
-se = sd_sample / np.sqrt ( n )
+# Erro padrão
+se = sd_sample / np.sqrt(n)
 
-# Valor critico para 95% de confianca
-z = norm.ppf (0.975)
+# Valor crítico para 95% de confiança
+z = norm.ppf(0.975)
 
-# Intervalo de confianca
+# Intervalo de confiança
 ci_lower = mean_sample - z * se
 ci_upper = mean_sample + z * se
 
-# Mostrar os resultados
-print ( " Media amostral : " , mean_sample , " cm " )
-print ( " Erro padrao : " , se , " cm " )
-print ( " Intervalo de confianca 95%: ({:.2f} cm ) " . format ( ci_lower, ci_upper ) )
+print("Media amostral:", mean_sample, "cm")
+print("Erro padrao:", se, "cm")
+print("Intervalo de confianca 95%: ({:.2f}, {:.2f}) cm".format(ci_lower, ci_upper))
 ```
 
-#### Exemplo em R:
+**Exemplo em R:**
 
 ```{r}
 # Dados
@@ -298,7 +236,7 @@ mean_sample <- 170
 sd_sample <- 10
 
 # Erro padrao
-se <- sd_sample / sqrt ( n )
+se <- sd_sample / sqrt(n)
 
 # Valor critico para 95% de confianca
 z <- 1.96
@@ -307,17 +245,16 @@ z <- 1.96
 ci_lower <- mean_sample - z * se
 ci_upper <- mean_sample + z * se
 
-# Mostrar os resultados
 cat("Media amostral:", mean_sample, "cm\n")
 cat("Erro padrao:", se, "cm\n")
 cat("Intervalo de confianca 95%:", ci_lower, "a", ci_upper, "\n")
 ```
 
-Uma empresa quer saber a proporção de seus 1.000 funcionários que estão satisfeitos com o ambiente de trabalho. Para isso, ela decide entrevistar uma amostra aleatória de 100 funcionários. Dos 100 entrevistados, 78 disseram estar satisfeitos.
+### Intervalo de confiança para a proporção
 
-Calcule um intervalo de confiança de 95% para a proporção de todos os funcionários da empresa que estão satisfeitos com o ambiente de trabalho.
+Uma empresa quer saber a proporção de seus 1.000 funcionários que estão satisfeitos com o ambiente de trabalho. Para isso, ela decide entrevistar uma amostra aleatória de 100 funcionários. Dos 100 entrevistados, 78 disseram estar satisfeitos. Calcule um intervalo de confiança de 95% para a proporção de todos os funcionários da empresa que estão satisfeitos com o ambiente de trabalho.
 
-#### Exemplo em Python:
+**Exemplo em Python:**
 
 ```{python}
 import numpy as np
@@ -325,13 +262,13 @@ from scipy.stats import norm
 
 # Dados
 n = 100
-x =78
+x = 78
 
 # Proporcao amostral
 p_hat = x / n
 
 # Erro padrao
-se = np.sqrt( p_hat * (1 - p_hat ) / n )
+se = np.sqrt(p_hat * (1 - p_hat) / n)
 
 # Valor critico para 95% de confianca
 z = norm.ppf(0.975)
@@ -340,13 +277,12 @@ z = norm.ppf(0.975)
 ci_lower = p_hat - z * se
 ci_upper = p_hat + z * se
 
-# Mostrar resultados
-print ( " Proporcao amostral : " , p_hat )
-print ( " Erro padrao : " , se )
-print ( " Intervalo de confianca 95%: ({:.4f} , ({:.4f}) ".format ( ci_lower , ci_upper ) )
+print("Proporcao amostral:", p_hat)
+print("Erro padrao:", se)
+print("Intervalo de confianca 95%: ({:.4f}, {:.4f})".format(ci_lower, ci_upper))
 ```
 
-#### Exemplo em R:
+**Exemplo em R:**
 
 ```{r}
 # Dados
@@ -357,7 +293,7 @@ x <- 78
 p_hat <- x / n
 
 # Erro padrao
-se <- sqrt ( p_hat * (1 - p_hat ) / n )
+se <- sqrt(p_hat * (1 - p_hat) / n)
 
 # Valor critico para 95% de confianca
 z <- 1.96
@@ -366,89 +302,74 @@ z <- 1.96
 ci_lower <- p_hat - z * se
 ci_upper <- p_hat + z * se
 
-# Mostrar resultados
-cat ( " Proporcao amostral : " , p_hat , "\n")
-cat ( " Erro padrao : " , se ,"\n")
-cat ( " Intervalo de confianca 95%: " ,ci_lower , " a " , ci_upper ," \n " )
+cat("Proporcao amostral:", p_hat, "\n")
+cat("Erro padrao:", se, "\n")
+cat("Intervalo de confianca 95%:", ci_lower, "a", ci_upper, "\n")
 ```
 
-#### Sobre Teste de Hipóteses
-
-Teste de Hipóteses para Média
+### Teste de Hipóteses para a Média
 
 Suponha que uma empresa de e-commerce deseje avaliar se o tempo médio de entrega de seus pedidos é menor do que 4 dias. Para isso, eles coletam uma amostra aleatória de 50 pedidos e registram o tempo de entrega de cada um deles. O tempo médio de entrega na amostra é de 3,8 dias, e o desvio padrão é de 0,6 dias.
 
-A hipótese nula H0 é que o tempo médio de entrega é igual a 4 dias, e a hipótese alternativa H1 é que o tempo médio de entrega é menor do que 4 dias.
+A hipótese nula $H_0$ é que o tempo médio de entrega é igual a 4 dias, e a hipótese alternativa $H_1$ é que o tempo médio de entrega é menor do que 4 dias.
 
-#### Exemplo em Python:
+**Exemplo em Python:**
 
 ```{python}
 import numpy as np
 from scipy.stats import ttest_1samp
 
-# Dados da amostra
-amostra = np.array ([3.2 , 3.9 , 3.7 , 4.1 , 3.6 , 3.9 , 4.2 , 3.8 ,
-3.5 , 3.9 ,
-4.0 , 3.6 , 3.9 , 3.7 , 3.8 , 3.5 , 3.9 , 4.0 ,
-3.8 , 4.1 ,
-3.7 , 3.9 , 4.3 , 3.6 , 3.9 , 3.7 , 4.0 , 3.8 ,
-4.2 , 3.9 ,
-4.1 , 3.6 , 4.0 , 3.8 , 3.9 , 3.7 , 3.5 , 3.9 ,
-3.6 , 4.1 ,
-3.7 , 3.8 , 3.5 , 3.9 , 3.6 , 3.8 , 4.0 , 3.9 ,
-3.7 , 3.5])
+# Dados da amostra (tempos de entrega em dias)
+amostra = np.array([3.2, 3.9, 3.7, 4.1, 3.6, 3.9, 4.2, 3.8, 3.5, 3.9,
+                     4.0, 3.6, 3.9, 3.7, 3.8, 3.5, 3.9, 4.0, 3.8, 4.1,
+                     3.7, 3.9, 4.3, 3.6, 3.9, 3.7, 4.0, 3.8, 4.2, 3.9,
+                     4.1, 3.6, 4.0, 3.8, 3.9, 3.7, 3.5, 3.9, 3.6, 4.1,
+                     3.7, 3.8, 3.5, 3.9, 3.6, 3.8, 4.0, 3.9, 3.7, 3.5])
 
 # Realizando o teste de hipoteses
-resultado_teste = ttest_1samp( amostra , popmean =4 , alternative = 'less')
+resultado_teste = ttest_1samp(amostra, popmean=4, alternative='less')
 
-# Extraindo os resultados do teste
-valor_p = resultado_teste.pvalue
-estatistica_teste = resultado_teste.statistic
-
-# Exibindo os resultados
-print( " Resultado do Teste de Hipoteses para Medias no Python " )
-print( " Valor-p : " , valor_p )
-print( " Estatistica do Teste : " , estatistica_teste )
+print("Resultado do Teste de Hipoteses para Medias no Python")
+print("Valor-p:", resultado_teste.pvalue)
+print("Estatistica do Teste:", resultado_teste.statistic)
 ```
 
-Exemplo em R:
+**Exemplo em R:**
 
 ```{r}
-# Dados da amostra
-amostra <- c (3.2 , 3.9 , 3.7 , 4.1 , 3.6 , 3.9 , 4.2 , 3.8 , 3.5 , 3.9 ,
-4.0 , 3.6 , 3.9 , 3.7 , 3.8 , 3.5 , 3.9 , 4.0 , 3.8 , 4.1 ,
-3.7 , 3.9 , 4.3 , 3.6 , 3.9 , 3.7 , 4.0 , 3.8 , 4.2 , 3.9 ,
-4.1 , 3.6 , 4.0 , 3.8 , 3.9 , 3.7 , 3.5 , 3.9 , 3.6 , 4.1 ,
-3.7 , 3.8 , 3.5 , 3.9 , 3.6 , 3.8 , 4.0 , 3.9 , 3.7 , 3.5)
+# Dados da amostra (tempos de entrega em dias)
+amostra <- c(3.2, 3.9, 3.7, 4.1, 3.6, 3.9, 4.2, 3.8, 3.5, 3.9,
+             4.0, 3.6, 3.9, 3.7, 3.8, 3.5, 3.9, 4.0, 3.8, 4.1,
+             3.7, 3.9, 4.3, 3.6, 3.9, 3.7, 4.0, 3.8, 4.2, 3.9,
+             4.1, 3.6, 4.0, 3.8, 3.9, 3.7, 3.5, 3.9, 3.6, 4.1,
+             3.7, 3.8, 3.5, 3.9, 3.6, 3.8, 4.0, 3.9, 3.7, 3.5)
 
 # Realizando o teste de hipoteses
-resultado_teste <- t.test ( amostra , mu = 4 , alternative = "less")
+resultado_teste <- t.test(amostra, mu = 4, alternative = "less")
 
-# Extraindo os resultados do teste
-valor_p <- resultado_teste $ p.value
-estatistica_teste <- resultado_teste $ statistic
-
-# Exibindo os resultados
-cat( " Resultado do Teste de Hipoteses para Medias no R \n " )
-cat( " Valor-p : " , valor_p , " \n " )
-cat( " Estatistica do Teste : " , estatistica_teste )
+cat("Resultado do Teste de Hipoteses para Medias no R\n")
+cat("Valor-p:", resultado_teste$p.value, "\n")
+cat("Estatistica do Teste:", resultado_teste$statistic, "\n")
 ```
 
-### **Referências**
+### Interpretação
 
-• Morettin, P. A.; Bussab, W. O. Estatística Básica. São Paulo: Editora Saraiva, 2017.
+Em ambos os casos, o valor-p obtido é extremamente pequeno (bem abaixo de 0,05), o que significa que **rejeitamos $H_0$**: há evidência estatística forte de que o tempo médio real de entrega é, de fato, menor que 4 dias. Note que R e Python chegam exatamente ao mesmo valor-p e à mesma estatística de teste — o que é esperado, já que ambos implementam o mesmo teste t de Student sobre os mesmos dados.
 
-• Werkema, C. Inferência Estatística. Grupo GEN, 2014.
+## Referências
 
-### **A Apêndice A: Comparação entre Parâmetros Populacionais e Estatísticas Amostrais**
+- Morettin, P. A.; Bussab, W. O. *Estatística Básica*. São Paulo: Editora Saraiva, 2017.
+- Werkema, C. *Inferência Estatística*. Grupo GEN, 2014.
 
-Na tabela a seguir, será apresentado os principais parâmetros da população e estatísticas da amostra. Esses parâmetros e estatísticas são valores numéricos que nos permitem resumir e descrever características importantes da população e da amostra.
+## Apêndice A: Comparação entre Parâmetros Populacionais e Estatísticas Amostrais
+
+Na tabela a seguir, são apresentados os principais parâmetros da população e estatísticas da amostra. Esses parâmetros e estatísticas são valores numéricos que nos permitem resumir e descrever características importantes da população e da amostra.
 
 | Parâmetros (População) | Estatísticas (Amostra) |
-|------------------------|------------------------|
-| Média μ                | Média $\bar{x}$        |
-| Desvio padrão $\sigma$ | Desvio padrão ${s}$    |
-| Variância $\sigma^2$   | Variância $s^2$        |
-| Proporção p            | Proporção $pˆ$         |
+|---|---|
+| Média $\mu$ | Média $\bar{x}$ |
+| Desvio padrão $\sigma$ | Desvio padrão $s$ |
+| Variância $\sigma^2$ | Variância $s^2$ |
+| Proporção $p$ | Proporção $\hat{p}$ |
 
-Os parâmetros populacionais, como a média e o desvio padrão , são medidas que resumem características da população como um todo. Por outro lado, as estatísticas amostrais, como a média amostral x e o desvio padrão amostral s, são calculadas a partir dos dados coletados na amostra e servem como estimativas dos parâmetros populacionais
+Os parâmetros populacionais, como a média e o desvio padrão, são medidas que resumem características da população como um todo. Por outro lado, as estatísticas amostrais, como a média amostral $\bar{x}$ e o desvio padrão amostral $s$, são calculadas a partir dos dados coletados na amostra e servem como estimativas dos parâmetros populacionais.
