@@ -44,6 +44,7 @@ website:
 format:
   html:
     theme: flatly
+    css: globalStyle.css
     toc: true
 
 editor: visual
