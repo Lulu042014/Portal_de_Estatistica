@@ -1,0 +1,216 @@
+---
+title: "SQL e Bancos de Dados"
+format: html
+---
+
+## Introdução
+
+Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum **banco de dados relacional**. Saber consultar, filtrar e combinar essas informações com SQL (*Structured Query Language*) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo.
+
+## O Modelo Relacional
+
+Um banco de dados relacional organiza informações em **tabelas** (também chamadas de relações), onde:
+
+-   cada **linha** representa um registro (ex: um cliente, um pedido)
+-   cada **coluna** representa um atributo desse registro (ex: nome, data, valor)
+-   cada tabela tem uma **chave primária** (*primary key*) — um identificador único para cada linha
+-   tabelas se relacionam entre si por meio de **chaves estrangeiras** (*foreign keys*), que apontam para a chave primária de outra tabela
+
+Essa estrutura evita duplicação de dados: em vez de repetir o nome e endereço de um cliente em cada pedido que ele faz, guardamos essa informação uma única vez na tabela `clientes`, e cada pedido só referencia o `id` desse cliente.
+
+## Comandos SQL Fundamentais
+
+SQL é dividido, de forma simplificada, em dois grupos de comandos:
+
+**DDL (Data Definition Language)** — define a estrutura do banco:
+
+-   `CREATE TABLE` — cria uma tabela
+-   `ALTER TABLE` — modifica uma tabela existente
+-   `DROP TABLE` — remove uma tabela
+
+**DML (Data Manipulation Language)** — manipula os dados:
+
+-   `SELECT` — consulta dados
+-   `INSERT` — insere novos registros
+-   `UPDATE` — atualiza registros existentes
+-   `DELETE` — remove registros
+
+## Cláusulas do SELECT
+
+Uma consulta `SELECT` completa geralmente segue esta ordem lógica:
+
+``` sql
+SELECT colunas
+FROM tabela
+WHERE condição
+GROUP BY coluna
+HAVING condição_do_grupo
+ORDER BY coluna
+LIMIT n;
+```
+
+-   **`WHERE`** filtra linhas individuais, antes de qualquer agrupamento
+-   **`GROUP BY`** agrupa linhas que compartilham um valor, geralmente combinado com funções agregadas (`SUM`, `AVG`, `COUNT`, `MAX`, `MIN`)
+-   **`HAVING`** filtra grupos já formados pelo `GROUP BY` — diferente do `WHERE`, que filtra linhas antes do agrupamento
+-   **`ORDER BY`** ordena o resultado final
+-   **`LIMIT`** restringe o número de linhas retornadas
+
+## JOINs: Combinando Tabelas
+
+O poder de um banco relacional está em combinar dados de várias tabelas através de **joins**:
+
+-   **`INNER JOIN`** — retorna apenas as linhas que têm correspondência em ambas as tabelas
+-   **`LEFT JOIN`** — retorna todas as linhas da tabela à esquerda, mesmo sem correspondência na direita (preenchendo com `NULL`)
+-   **`RIGHT JOIN`** — o oposto do `LEFT JOIN`
+-   **`FULL JOIN`** — retorna todas as linhas de ambas as tabelas, com ou sem correspondência
+
+```{mermaid}
+erDiagram
+    CLIENTES ||--o{ PEDIDOS : "faz"
+    CLIENTES {
+        int id PK
+        string nome
+        string cidade
+    }
+    PEDIDOS {
+        int id PK
+        int cliente_id FK
+        string produto
+        float valor
+        string data
+    }
+```
+
+O diagrama acima mostra a relação entre `clientes` e `pedidos`: cada cliente pode fazer vários pedidos (relação um-para-muitos), e a coluna `cliente_id` em `pedidos` é a chave estrangeira que aponta para o `id` em `clientes`.
+
+## Normalização
+
+Normalização é o processo de organizar tabelas para reduzir redundância e evitar inconsistências. As formas normais mais citadas são:
+
+-   **1ª Forma Normal (1FN):** cada coluna deve conter valores atômicos (não múltiplos valores em uma célula)
+-   **2ª Forma Normal (2FN):** atende a 1FN e todo atributo não-chave depende da chave primária inteira
+-   **3ª Forma Normal (3FN):** atende a 2FN e não há dependências entre atributos não-chave (elimina dependências transitivas)
+
+Na prática, bancos bem projetados costumam parar na 3FN — normalizar demais pode tornar as consultas desnecessariamente complexas, exigindo joins em excesso.
+
+## Exemplo Prático: consultando um banco relacional
+
+Vamos criar duas tabelas relacionadas (`clientes` e `pedidos`) em um banco SQLite em memória e explorar consultas reais.
+
+```{python}
+import sqlite3
+import pandas as pd
+
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Criação das tabelas (DDL)
+cursor.execute("""
+CREATE TABLE clientes (
+    id INTEGER PRIMARY KEY,
+    nome TEXT,
+    cidade TEXT
+)
+""")
+
+cursor.execute("""
+CREATE TABLE pedidos (
+    id INTEGER PRIMARY KEY,
+    cliente_id INTEGER,
+    produto TEXT,
+    valor REAL,
+    data TEXT,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+)
+""")
+
+# Inserção de dados (DML)
+clientes = [
+    (1, "Ana", "Itapajé"),
+    (2, "Carlos", "Fortaleza"),
+    (3, "Beatriz", "Sobral"),
+    (4, "Diego", "Itapajé"),
+]
+cursor.executemany("INSERT INTO clientes VALUES (?, ?, ?)", clientes)
+
+pedidos = [
+    (1, 1, "Notebook", 3200.00, "2025-01-10"),
+    (2, 1, "Mouse", 90.00, "2025-01-15"),
+    (3, 2, "Monitor", 950.00, "2025-01-12"),
+    (4, 3, "Teclado", 250.00, "2025-01-20"),
+    (5, 1, "Headset", 320.00, "2025-02-02"),
+    (6, 2, "Notebook", 3400.00, "2025-02-05"),
+]
+cursor.executemany("INSERT INTO pedidos VALUES (?, ?, ?, ?, ?)", pedidos)
+conn.commit()
+
+print("Tabelas criadas e populadas com sucesso.")
+```
+
+### Consulta 1: JOIN simples
+
+```{python}
+query1 = """
+SELECT c.nome, c.cidade, p.produto, p.valor, p.data
+FROM clientes c
+INNER JOIN pedidos p ON c.id = p.cliente_id
+ORDER BY p.data;
+"""
+pd.read_sql_query(query1, conn)
+```
+
+### Consulta 2: agregação com GROUP BY
+
+```{python}
+query2 = """
+SELECT c.nome, COUNT(p.id) AS total_pedidos, SUM(p.valor) AS total_gasto
+FROM clientes c
+INNER JOIN pedidos p ON c.id = p.cliente_id
+GROUP BY c.nome
+ORDER BY total_gasto DESC;
+"""
+pd.read_sql_query(query2, conn)
+```
+
+### Consulta 3: LEFT JOIN (incluindo clientes sem pedidos)
+
+```{python}
+query3 = """
+SELECT c.nome, c.cidade, COUNT(p.id) AS total_pedidos
+FROM clientes c
+LEFT JOIN pedidos p ON c.id = p.cliente_id
+GROUP BY c.nome
+ORDER BY total_pedidos;
+"""
+pd.read_sql_query(query3, conn)
+```
+
+### Consulta 4: subconsulta (subquery)
+
+```{python}
+query4 = """
+SELECT nome, cidade
+FROM clientes
+WHERE id IN (
+    SELECT cliente_id FROM pedidos WHERE valor > 1000
+);
+"""
+pd.read_sql_query(query4, conn)
+```
+
+### Interpretação
+
+-   A **Consulta 1** mostra como um `INNER JOIN` conecta cada pedido ao nome e cidade do cliente correspondente — sem isso, a tabela `pedidos` sozinha seria só uma lista de IDs sem contexto.
+-   A **Consulta 2** demonstra o padrão mais comum em relatórios de negócio: agrupar por cliente e agregar valores, revelando que Carlos é quem mais gastou apesar de ter feito menos pedidos que Ana — um bom exemplo de por que `COUNT` e `SUM` juntos contam uma história mais completa que qualquer um sozinho.
+-   A **Consulta 3** usa `LEFT JOIN` propositalmente: como todos os clientes cadastrados fizeram pelo menos um pedido, ninguém aparece com zero — mas se Beatriz e Diego não tivessem pedidos, essa consulta ainda os listaria (com `total_pedidos = 0`), diferente do `INNER JOIN`, que os teria simplesmente omitido.
+-   A **Consulta 4** ilustra uma subconsulta: primeiro descobrimos quais `cliente_id` têm pedidos acima de R\$ 1.000, depois filtramos a tabela de clientes com base nesse resultado.
+
+## Aplicação real em Ciência de Dados
+
+Antes de qualquer análise estatística ou modelo de Machine Learning, é comum que os dados estejam espalhados em várias tabelas de um banco de produção — pedidos, clientes, produtos, pagamentos. Escrever consultas SQL bem construídas (com os `JOIN`s e agregações certas) é frequentemente o que determina se o dataset final para análise está completo e correto, ou se está sutilmente enviesado por informação faltante ou duplicada.
+
+## Referências
+
+-   Date, C. J. *An Introduction to Database Systems*. Pearson, 2003.
+-   Silberschatz, A.; Korth, H.; Sudarshan, S. *Database System Concepts*. McGraw-Hill, 2020.
+-   Elmasri, R.; Navathe, S. B. *Fundamentals of Database Systems*. Pearson.

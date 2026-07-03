@@ -29,6 +29,8 @@ website:
         href: PLD.qmd
       - text: "Visualização de Dados"
         href: visualizacao.qmd
+      - text: "SQL e Bancos de Dados"
+        href: SQL.qmd
   page-footer: "(c) 2025 Equipe do Portal"
     
 format:
