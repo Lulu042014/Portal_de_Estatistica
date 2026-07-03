@@ -1,0 +1,53 @@
+/* Estilo global do Portal — blocos de código com tema escuro (inspirado no VS Code) */
+
+pre {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #d4d4d4;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+pre code {
+  background-color: transparent;
+  color: #d4d4d4;
+}
+
+/* Código inline (fora de blocos ```) mantém um contraste mais leve */
+p code, li code, td code {
+  background-color: #2d2d2d;
+  color: #ce9178;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Realce de sintaxe — classes geradas pelo motor Pandoc/Skylighting do Quarto */
+.co  { color: #6a9955; font-style: italic; } /* Comentário */
+.st  { color: #ce9178; }                     /* String */
+.ss  { color: #ce9178; }                     /* String especial */
+.sc  { color: #d7ba7d; }                     /* Caractere especial */
+.ch  { color: #ce9178; }                     /* Char */
+.kw  { color: #569cd6; font-weight: 600; }   /* Palavra-chave */
+.cf  { color: #c586c0; font-weight: 600; }   /* Controle de fluxo (if, for, return...) */
+.dv  { color: #b5cea8; }                     /* Número inteiro */
+.bn  { color: #b5cea8; }                     /* Número em outra base */
+.fl  { color: #b5cea8; }                     /* Número decimal */
+.dt  { color: #4ec9b0; }                     /* Tipo de dado */
+.fu  { color: #dcdcaa; }                     /* Função */
+.va  { color: #9cdcfe; }                     /* Variável */
+.vs  { color: #ce9178; }                     /* String verbatim */
+.op  { color: #d4d4d4; }                     /* Operador */
+.ot  { color: #569cd6; }                     /* Outro */
+.im  { color: #c586c0; }                     /* Import/módulo */
+.pp  { color: #c586c0; }                     /* Preprocessador */
+.cn  { color: #4fc1ff; }                     /* Constante */
+.bu  { color: #4ec9b0; }                     /* Função/tipo embutido */
+.al  { color: #f44747; font-weight: 600; }   /* Alerta */
+.er  { color: #f44747; text-decoration: underline; } /* Erro */
+.wa  { color: #cd9731; font-style: italic; } /* Aviso */
+.an, .do, .cv { color: #6a9955; }            /* Anotação / documentação */
