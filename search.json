@@ -147,256 +147,151 @@
     "text": "Aplicação real em Ciência de Dados\nAs medidas apresentadas aqui não são só exercícios teóricos — elas aparecem o tempo todo em projetos reais: a média e o desvio padrão são usados para normalizar variáveis antes de treinar modelos de Machine Learning; a variância ajuda a identificar quais atributos carregam mais informação (ou mais ruído); e a probabilidade é a base de modelos probabilísticos, testes A/B e da própria Inferência Estatística, tema da próxima página do portal."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Portal de Estatística e Ciência de Dados",
+    "objectID": "ML.html",
+    "href": "ML.html",
+    "title": "Machine Learning: Fundamentos",
     "section": "",
-    "text": "O Portal de Estatística e Ciência de Dados surgiu como iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), coordenado pelo professor Hitalo. Com o compromisso de ampliar o acesso ao conhecimento científico, o projeto tem como objetivo principal oferecer conteúdos introdutórios e tutoriais acessíveis sobre estatística e ciência de dados.\nVoltado para estudantes de graduação, pós-graduação e demais interessados na área, o portal busca facilitar o aprendizado de conceitos fundamentais, técnicas estatísticas e aplicações práticas por meio de materiais didáticos, exemplos comentados e recursos interativos."
+    "text": "Machine Learning (aprendizado de máquina) é o ramo da Ciência de Dados dedicado a construir sistemas que aprendem padrões a partir de dados, em vez de seguir regras explicitamente programadas. Ao invés de escrever “se a idade for maior que X e a renda maior que Y, então classifique como cliente premium”, um modelo de ML aprende essa regra (e outras muito mais complexas) sozinho, a partir de exemplos.\nEssa é a diferença fundamental em relação à programação tradicional: no lugar de Regras + Dados → Resultado, o Machine Learning inverte a lógica para Dados + Resultado → Regras."
   },
   {
-    "objectID": "FCD.html",
-    "href": "FCD.html",
-    "title": "Fundamentos de Ciência de Dados",
+    "objectID": "ML.html#introdução",
+    "href": "ML.html#introdução",
+    "title": "Machine Learning: Fundamentos",
     "section": "",
-    "text": "Ciência de Dados é a área interdisciplinar que combina Estatística, Programação e Conhecimento de Domínio para transformar dados brutos em insights acionáveis, suportando decisões baseadas em evidências:\n\nDados → Informação → Conhecimento → Ação\n\nEm um e-commerce, por exemplo, dados de cliques, compras e tempo de navegação são usados para recomendar produtos, estimar demanda e personalizar ofertas — um caso que retomamos com código mais adiante."
+    "text": "Machine Learning (aprendizado de máquina) é o ramo da Ciência de Dados dedicado a construir sistemas que aprendem padrões a partir de dados, em vez de seguir regras explicitamente programadas. Ao invés de escrever “se a idade for maior que X e a renda maior que Y, então classifique como cliente premium”, um modelo de ML aprende essa regra (e outras muito mais complexas) sozinho, a partir de exemplos.\nEssa é a diferença fundamental em relação à programação tradicional: no lugar de Regras + Dados → Resultado, o Machine Learning inverte a lógica para Dados + Resultado → Regras."
   },
   {
-    "objectID": "FCD.html#o-que-é-ciência-de-dados",
-    "href": "FCD.html#o-que-é-ciência-de-dados",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "",
-    "text": "Ciência de Dados é a área interdisciplinar que combina Estatística, Programação e Conhecimento de Domínio para transformar dados brutos em insights acionáveis, suportando decisões baseadas em evidências:\n\nDados → Informação → Conhecimento → Ação\n\nEm um e-commerce, por exemplo, dados de cliques, compras e tempo de navegação são usados para recomendar produtos, estimar demanda e personalizar ofertas — um caso que retomamos com código mais adiante."
+    "objectID": "ML.html#tipos-de-aprendizado",
+    "href": "ML.html#tipos-de-aprendizado",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Tipos de Aprendizado",
+    "text": "Tipos de Aprendizado\n\nAprendizado Supervisionado: o modelo aprende a partir de exemplos rotulados (temos o “gabarito”). Divide-se em:\n\nRegressão — prevê um valor numérico contínuo (ex: preço de um imóvel)\nClassificação — prevê uma categoria (ex: e-mail é spam ou não)\n\nAprendizado Não Supervisionado: o modelo encontra padrões em dados sem rótulos (ex: agrupar clientes em segmentos via clustering)\nAprendizado por Reforço: um agente aprende por tentativa e erro, recebendo recompensas ou penalidades (ex: um agente jogando xadrez)\n\nEste guia foca no aprendizado supervisionado, que é o ponto de partida mais comum."
   },
   {
-    "objectID": "FCD.html#definição",
-    "href": "FCD.html#definição",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Definição",
-    "text": "Definição\nCiência de Dados é o conjunto de métodos, processos e sistemas que permitem coletar, organizar, analisar e comunicar resultados a partir de dados, com o propósito de gerar valor para organizações e sociedade."
+    "objectID": "ML.html#divisão-em-treino-e-teste",
+    "href": "ML.html#divisão-em-treino-e-teste",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Divisão em Treino e Teste",
+    "text": "Divisão em Treino e Teste\nUm erro comum de iniciantes é avaliar um modelo usando os mesmos dados com que ele foi treinado — isso quase sempre superestima a qualidade do modelo, porque ele já “viu” as respostas.\nA prática padrão é dividir os dados em dois conjuntos:\n\nConjunto de treino (geralmente 70-80% dos dados) — usado para o modelo aprender os padrões\nConjunto de teste (os 20-30% restantes) — usado apenas para avaliar o modelo em dados que ele nunca viu, simulando o uso real\n\nEssa divisão é o que permite saber se um modelo vai generalizar bem para novos dados, ou se apenas “decorou” o conjunto de treino."
   },
   {
-    "objectID": "FCD.html#componentes-principais",
-    "href": "FCD.html#componentes-principais",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Componentes principais",
-    "text": "Componentes principais\n\nEstatística e Probabilidade — inferência, testes de hipótese, incerteza\nComputação — linguagens (Python, R, SQL), estruturas de dados, automação\nConhecimento de Domínio — entendimento do problema e das métricas de negócio\nComunicação e Visualização — contar a história dos dados de forma clara"
+    "objectID": "ML.html#overfitting-e-underfitting",
+    "href": "ML.html#overfitting-e-underfitting",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Overfitting e Underfitting",
+    "text": "Overfitting e Underfitting\n\nUnderfitting (subajuste): o modelo é simples demais para capturar os padrões dos dados — erra tanto no treino quanto no teste.\nOverfitting (sobreajuste): o modelo é complexo demais e “decora” até o ruído dos dados de treino — acerta quase tudo no treino, mas erra muito no teste, porque aprendeu particularidades que não se repetem em dados novos.\nAjuste ideal (bom generalização): o modelo captura o padrão real dos dados sem se apegar ao ruído — desempenho parecido (e bom) tanto no treino quanto no teste.\n\nEsse equilíbrio é conhecido como o trade-off viés-variância (bias-variance tradeoff): modelos simples têm alto viés (underfitting), modelos complexos têm alta variância (overfitting)."
   },
   {
-    "objectID": "FCD.html#etapas-do-processo-de-ciência-de-dados",
-    "href": "FCD.html#etapas-do-processo-de-ciência-de-dados",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Etapas do Processo de Ciência de Dados",
-    "text": "Etapas do Processo de Ciência de Dados\nDois frameworks descrevem bem o fluxo de trabalho típico: CRISP-DM e OSEMN. Embora usem nomes diferentes, ambos seguem essencialmente o mesmo ciclo — entender o problema, preparar os dados, explorar, modelar e comunicar resultados.\n\n\n\n\n\nflowchart LR\n    A[Entendimento do Negócio] --&gt; B[Entendimento dos Dados]\n    B --&gt; C[Preparação dos Dados]\n    C --&gt; D[Modelagem]\n    D --&gt; E[Avaliação]\n    E --&gt; F[Implementação]\n    E -.retorno.-&gt; B\n\n\n\n\n\n\n\nCRISP-DM (Cross Industry Standard Process for Data Mining)\n\nEntendimento do Negócio — definir objetivos, restrições e critérios de sucesso\nEntendimento dos Dados — coleta inicial, análise exploratória e avaliação de qualidade\nPreparação dos Dados — limpeza, integração e transformação (feature engineering)\nModelagem — seleção de algoritmos, ajuste de hiperparâmetros e validação\nAvaliação — verificar alinhamento com os objetivos e riscos de negócio\nImplementação — operacionalização (batch/tempo real), documentação e entrega\n\n\n\nOSEMN (Obtain, Scrub, Explore, Model, Interpret)\n\nObtain — obter dados (APIs, bancos, arquivos, web)\nScrub — limpar e preparar dados; tratar outliers e valores ausentes\nExplore — explorar padrões e hipóteses; visualização e estatística descritiva\nModel — construir modelos preditivos/descritivos; avaliar generalização\nInterpret — interpretar e comunicar resultados; gerar recomendações"
+    "objectID": "ML.html#validação-cruzada-k-fold",
+    "href": "ML.html#validação-cruzada-k-fold",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Validação Cruzada (k-fold)",
+    "text": "Validação Cruzada (k-fold)\nDividir os dados uma única vez em treino/teste pode dar uma avaliação enganosa, dependendo de qual “sorte” caiu em cada conjunto. A validação cruzada k-fold resolve isso dividindo os dados em \\(k\\) partes (folds), treinando o modelo \\(k\\) vezes — cada vez usando uma parte diferente como teste e as demais como treino — e depois calculando a média do desempenho. Isso dá uma estimativa muito mais confiável da capacidade de generalização do modelo."
   },
   {
-    "objectID": "FCD.html#exemplo-prático-um-mini-pipeline-osemn",
-    "href": "FCD.html#exemplo-prático-um-mini-pipeline-osemn",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Exemplo prático: um mini pipeline OSEMN",
-    "text": "Exemplo prático: um mini pipeline OSEMN\nVamos aplicar as cinco etapas do OSEMN a uma versão simplificada do exemplo de e-commerce citado no início da página.\n\nimport pandas as pd\nimport numpy as np\n\n# 1. Obtain — em um cenário real viria de um banco de dados ou API;\n# aqui simulamos dados de navegação de um e-commerce\nnp.random.seed(7)\nn = 300\ndados = pd.DataFrame({\n    \"tempo_navegacao_min\": np.random.exponential(scale=5, size=n),\n    \"cliques\": np.random.poisson(lam=8, size=n),\n    \"comprou\": np.random.binomial(1, p=0.25, size=n)\n})\n\n# Introduzindo alguns valores ausentes de propósito, como aconteceria na vida real\ndados.loc[np.random.choice(n, 15, replace=False), \"tempo_navegacao_min\"] = np.nan\n\ndados.head()\n\n\n\n\n\n\n\n\ntempo_navegacao_min\ncliques\ncomprou\n\n\n\n\n0\n0.396885\n4\n1\n\n\n1\n7.568793\n12\n0\n\n\n2\n2.884909\n8\n1\n\n\n3\n6.427093\n7\n0\n\n\n4\n19.081181\n4\n1\n\n\n\n\n\n\n\n\n# 2. Scrub — tratamento de valores ausentes\nprint(\"Valores ausentes antes:\", dados[\"tempo_navegacao_min\"].isna().sum())\ndados[\"tempo_navegacao_min\"] = dados[\"tempo_navegacao_min\"].fillna(\n    dados[\"tempo_navegacao_min\"].median()\n)\nprint(\"Valores ausentes depois:\", dados[\"tempo_navegacao_min\"].isna().sum())\n\nValores ausentes antes: 15\nValores ausentes depois: 0\n\n\n\n# 3. Explore — estatística descritiva e relação entre variáveis\ndados.groupby(\"comprou\")[[\"tempo_navegacao_min\", \"cliques\"]].mean()\n\n\n\n\n\n\n\n\ntempo_navegacao_min\ncliques\n\n\ncomprou\n\n\n\n\n\n\n0\n4.452907\n7.896714\n\n\n1\n5.395305\n7.678161\n\n\n\n\n\n\n\n\n# 4. Model — um modelo simples de regressão logística\nfrom sklearn.linear_model import LogisticRegression\n\nX = dados[[\"tempo_navegacao_min\", \"cliques\"]]\ny = dados[\"comprou\"]\n\nmodelo = LogisticRegression()\nmodelo.fit(X, y)\n\nprint(\"Coeficientes:\", dict(zip(X.columns, modelo.coef_[0])))\n\nCoeficientes: {'tempo_navegacao_min': np.float64(0.04492347081331268), 'cliques': np.float64(-0.030455291323640863)}\n\n\n\nInterpretação (etapa Interpret)\nCoeficientes positivos indicam que mais cliques e mais tempo de navegação estão associados a uma maior chance de compra — algo esperado, mas agora quantificado. Em um projeto real, o próximo passo seria validar esse modelo com dados de teste, avaliar métricas como acurácia e AUC, e comunicar o resultado para o time de marketing com uma recomendação de ação: por exemplo, priorizar campanhas de retenção para usuários com baixo tempo de navegação."
+    "objectID": "ML.html#métricas-de-avaliação",
+    "href": "ML.html#métricas-de-avaliação",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Métricas de Avaliação",
+    "text": "Métricas de Avaliação\nPara regressão (variável numérica):\n\nMSE (Erro Quadrático Médio): média dos erros ao quadrado — penaliza mais os erros grandes\nRMSE (Raiz do MSE): mesma unidade da variável original, mais fácil de interpretar\nR² (coeficiente de determinação): proporção da variância explicada pelo modelo (0 a 1, quanto maior melhor)\n\nPara classificação (variável categórica):\n\nAcurácia: proporção de previsões corretas sobre o total\nPrecisão: dos casos que o modelo previu como positivos, quantos realmente eram positivos\nRecall (sensibilidade): dos casos realmente positivos, quantos o modelo conseguiu identificar\nF1-score: média harmônica entre precisão e recall, útil quando as classes são desbalanceadas\nMatriz de confusão: tabela que cruza previsões com valores reais, mostrando acertos e os dois tipos de erro (falsos positivos e falsos negativos)"
   },
   {
-    "objectID": "FCD.html#diferenças-entre-estatística-ciência-de-dados-machine-learning-e-engenharia-de-dados",
-    "href": "FCD.html#diferenças-entre-estatística-ciência-de-dados-machine-learning-e-engenharia-de-dados",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Diferenças entre Estatística, Ciência de Dados, Machine Learning e Engenharia de Dados",
-    "text": "Diferenças entre Estatística, Ciência de Dados, Machine Learning e Engenharia de Dados\n\n\n\n\n\n\n\n\nÁrea\nObjetivo\nExemplo\n\n\n\n\nEstatística\nAnalisar dados para explicar fenômenos e testar hipóteses\nVerificar se uma campanha elevou as vendas com significância\n\n\nCiência de Dados\nIntegrar estatística, computação e domínio para extrair conhecimento\nConstruir dashboards e modelos para prever demanda\n\n\nMachine Learning\nAprender padrões para prever ou classificar novos casos\nRecomendação de filmes em plataformas de streaming\n\n\nEngenharia de Dados\nProjetar e manter infraestrutura de dados (coleta, armazenamento, processamento)\nCriar pipelines em Spark/SQL para milhões de registros\n\n\n\nEssas áreas são complementares: a Estatística fornece a base teórica para modelos e inferência, o Machine Learning fornece algoritmos para predição e segmentação, a Engenharia de Dados garante dados confiáveis e acessíveis, e a Ciência de Dados integra as três frentes para gerar valor de negócio."
+    "objectID": "ML.html#exemplo-prático-1-regressão",
+    "href": "ML.html#exemplo-prático-1-regressão",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Exemplo Prático 1: Regressão",
+    "text": "Exemplo Prático 1: Regressão\nVamos prever um valor numérico (salário) a partir de uma variável (anos de experiência), avaliando o modelo em dados de teste que ele nunca viu.\n\nimport numpy as np\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error, r2_score\n\nnp.random.seed(42)\nn = 100\nexperiencia = np.random.uniform(0, 20, n)\nsalario = 3000 + 450 * experiencia + np.random.normal(0, 800, n)  # relação linear + ruído\n\nX = experiencia.reshape(-1, 1)\ny = salario\n\nX_treino, X_teste, y_treino, y_teste = train_test_split(X, y, test_size=0.3, random_state=42)\n\nmodelo = LinearRegression()\nmodelo.fit(X_treino, y_treino)\n\ny_pred = modelo.predict(X_teste)\n\nrmse = np.sqrt(mean_squared_error(y_teste, y_pred))\nr2 = r2_score(y_teste, y_pred)\n\nprint(f\"Coeficiente (por ano de experiência): {modelo.coef_[0]:.2f}\")\nprint(f\"Intercepto: {modelo.intercept_:.2f}\")\nprint(f\"RMSE no conjunto de teste: {rmse:.2f}\")\nprint(f\"R² no conjunto de teste: {r2:.4f}\")\n\nCoeficiente (por ano de experiência): 431.34\nIntercepto: 3094.32\nRMSE no conjunto de teste: 635.46\nR² no conjunto de teste: 0.9536\n\n\n\nInterpretação\nO R² próximo de 1 indica que o modelo explica bem a variação do salário a partir da experiência nos dados de teste — não nos dados de treino, o que é a avaliação que realmente importa. O RMSE está na mesma unidade do salário (R$), facilitando dizer: “em média, o modelo erra a previsão em cerca de R$ {valor}”."
   },
   {
-    "objectID": "FCD.html#tipos-de-dados",
-    "href": "FCD.html#tipos-de-dados",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Tipos de Dados",
-    "text": "Tipos de Dados\n\nEstruturados — organizados em tabelas (linhas/colunas). Exemplos: transações, cadastros, armazenados em bancos SQL.\nSemiestruturados — organização flexível (chave-valor/árvore). Exemplos: JSON, XML, logs, comuns em data lakes e APIs.\nNão estruturados — sem esquema fixo. Exemplos: texto livre, imagens, áudio e vídeo, analisados via NLP, visão computacional e técnicas de big data."
+    "objectID": "ML.html#exemplo-prático-2-classificação",
+    "href": "ML.html#exemplo-prático-2-classificação",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Exemplo Prático 2: Classificação",
+    "text": "Exemplo Prático 2: Classificação\nAgora vamos prever uma categoria: se um cliente vai comprar ou não, a partir de idade e renda.\n\nfrom sklearn.datasets import make_classification\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score\n\nX, y = make_classification(n_samples=300, n_features=2, n_informative=2, n_redundant=0,\n                             n_clusters_per_class=1, random_state=42)\n\nX_treino, X_teste, y_treino, y_teste = train_test_split(X, y, test_size=0.3, random_state=42)\n\nmodelo_clf = LogisticRegression()\nmodelo_clf.fit(X_treino, y_treino)\n\ny_pred_clf = modelo_clf.predict(X_teste)\n\nprint(\"Matriz de confusão:\")\nprint(confusion_matrix(y_teste, y_pred_clf))\nprint()\nprint(f\"Acurácia: {accuracy_score(y_teste, y_pred_clf):.3f}\")\nprint(f\"Precisão: {precision_score(y_teste, y_pred_clf):.3f}\")\nprint(f\"Recall: {recall_score(y_teste, y_pred_clf):.3f}\")\nprint(f\"F1-score: {f1_score(y_teste, y_pred_clf):.3f}\")\n\nMatriz de confusão:\n[[44  2]\n [ 2 42]]\n\nAcurácia: 0.956\nPrecisão: 0.955\nRecall: 0.955\nF1-score: 0.955\n\n\n\nInterpretação\nA matriz de confusão mostra quatro números: verdadeiros negativos e falsos positivos na primeira linha, falsos negativos e verdadeiros positivos na segunda. Se o recall for baixo, o modelo está deixando passar muitos casos positivos reais (por exemplo, clientes que comprariam, mas o modelo não identificou); se a precisão for baixa, o modelo está “alarmando” demais, classificando casos negativos como positivos."
   },
   {
-    "objectID": "FCD.html#referências",
-    "href": "FCD.html#referências",
-    "title": "Fundamentos de Ciência de Dados",
-    "section": "Referências",
-    "text": "Referências\n\nProvost, F.; Fawcett, T. Data Science for Business. O’Reilly.\nKuhn, M.; Johnson, K. Feature Engineering and Selection. Chapman & Hall/CRC.\nHan, J.; Pei, J.; Kamber, M. Data Mining: Concepts and Techniques. Morgan Kaufmann.\nMurphy, K. Probabilistic Machine Learning. MIT Press.\nGoodfellow, I.; Bengio, Y.; Courville, A. Deep Learning. MIT Press."
+    "objectID": "ML.html#exemplo-prático-3-visualizando-o-overfitting",
+    "href": "ML.html#exemplo-prático-3-visualizando-o-overfitting",
+    "title": "Machine Learning: Fundamentos",
+    "section": "Exemplo Prático 3: Visualizando o Overfitting",
+    "text": "Exemplo Prático 3: Visualizando o Overfitting\nVamos treinar árvores de decisão com profundidades crescentes e comparar o desempenho no treino versus no teste — o padrão clássico de overfitting deve aparecer conforme a árvore fica mais complexa.\n\nimport matplotlib.pyplot as plt\nfrom sklearn.tree import DecisionTreeClassifier\n\nprofundidades = range(1, 15)\nacuracia_treino = []\nacuracia_teste = []\n\nfor profundidade in profundidades:\n    arvore = DecisionTreeClassifier(max_depth=profundidade, random_state=42)\n    arvore.fit(X_treino, y_treino)\n    acuracia_treino.append(arvore.score(X_treino, y_treino))\n    acuracia_teste.append(arvore.score(X_teste, y_teste))\n\nfig, ax = plt.subplots(figsize=(6, 4))\nax.plot(profundidades, acuracia_treino, marker=\"o\", label=\"Treino\")\nax.plot(profundidades, acuracia_teste, marker=\"o\", label=\"Teste\")\nax.set_xlabel(\"Profundidade da árvore (complexidade do modelo)\")\nax.set_ylabel(\"Acurácia\")\nax.set_title(\"Overfitting: acurácia de treino vs. teste\")\nax.legend()\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nInterpretação\nConforme a árvore fica mais profunda (mais complexa), a acurácia no treino sobe continuamente, se aproximando de 100% — o modelo está “decorando” os dados de treino. Mas a acurácia no teste para de melhorar e pode até piorar a partir de um certo ponto: esse é o sinal visual clássico de overfitting. O ponto ideal de complexidade é onde a curva de teste atinge seu pico, antes de começar a divergir da curva de treino."
   },
   {
-    "objectID": "visualizacao.html",
-    "href": "visualizacao.html",
-    "title": "Visualização de Dados",
-    "section": "",
-    "text": "A Visualização de Dados é a área que transforma números e informações abstratas em representações gráficas, facilitando a identificação de padrões, tendências, outliers e relações que seriam difíceis de perceber apenas olhando para tabelas.\nÉ uma etapa central da Análise Exploratória de Dados (EDA): antes de aplicar qualquer modelo estatístico ou de Machine Learning, é fundamental olhar para os dados.\n\n\nUm exemplo clássico é o Quarteto de Anscombe: quatro conjuntos de dados com médias, variâncias e correlações praticamente idênticas — mas que, quando plotados, revelam padrões completamente diferentes (uma reta, uma curva, um outlier isolado, etc.). Isso mostra que estatísticas resumo (média, desvio padrão) escondem informação que só um gráfico revela."
-  },
-  {
-    "objectID": "visualizacao.html#o-que-é-visualização-de-dados",
-    "href": "visualizacao.html#o-que-é-visualização-de-dados",
-    "title": "Visualização de Dados",
-    "section": "",
-    "text": "A Visualização de Dados é a área que transforma números e informações abstratas em representações gráficas, facilitando a identificação de padrões, tendências, outliers e relações que seriam difíceis de perceber apenas olhando para tabelas.\nÉ uma etapa central da Análise Exploratória de Dados (EDA): antes de aplicar qualquer modelo estatístico ou de Machine Learning, é fundamental olhar para os dados.\n\n\nUm exemplo clássico é o Quarteto de Anscombe: quatro conjuntos de dados com médias, variâncias e correlações praticamente idênticas — mas que, quando plotados, revelam padrões completamente diferentes (uma reta, uma curva, um outlier isolado, etc.). Isso mostra que estatísticas resumo (média, desvio padrão) escondem informação que só um gráfico revela."
-  },
-  {
-    "objectID": "visualizacao.html#principais-tipos-de-gráficos",
-    "href": "visualizacao.html#principais-tipos-de-gráficos",
-    "title": "Visualização de Dados",
-    "section": "Principais tipos de gráficos",
-    "text": "Principais tipos de gráficos\n\n\n\n\n\n\n\nGráfico\nQuando usar\n\n\n\n\nHistograma\nDistribuição de uma variável numérica\n\n\nBoxplot\nComparar distribuições, identificar outliers\n\n\nGráfico de dispersão (scatter)\nRelação entre duas variáveis numéricas\n\n\nGráfico de barras\nComparar categorias\n\n\nGráfico de linha\nEvolução ao longo do tempo (séries temporais)\n\n\nHeatmap\nCorrelação entre múltiplas variáveis"
-  },
-  {
-    "objectID": "visualizacao.html#exemplo-prático-em-r-ggplot2",
-    "href": "visualizacao.html#exemplo-prático-em-r-ggplot2",
-    "title": "Visualização de Dados",
-    "section": "Exemplo prático em R (ggplot2)",
-    "text": "Exemplo prático em R (ggplot2)\nO pacote ggplot2 é o padrão de mercado para visualização em R, baseado na “gramática dos gráficos” (camadas que se somam).\n\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.4.3\n\nset.seed(42)\ndados &lt;- data.frame(\n  altura = rnorm(200, mean = 170, sd = 10),\n  peso = rnorm(200, mean = 70, sd = 12)\n)\n\nggplot(dados, aes(x = altura, y = peso)) +\n  geom_point(alpha = 0.6, color = \"#2c3e50\") +\n  geom_smooth(method = \"lm\", color = \"#e74c3c\", se = FALSE) +\n  labs(title = \"Relação entre altura e peso (dados simulados)\",\n       x = \"Altura (cm)\", y = \"Peso (kg)\") +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(dados, aes(x = altura)) +\n  geom_histogram(bins = 20, fill = \"#3498db\", color = \"white\") +\n  labs(title = \"Distribuição da altura\", x = \"Altura (cm)\", y = \"Frequência\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nInterpretação\nO gráfico de dispersão mostra a nuvem de pontos entre altura e peso, com uma linha de tendência ajustada por regressão linear. O histograma, por sua vez, evidencia o formato aproximadamente normal (em sino) da distribuição da altura simulada — algo que não seria óbvio olhando apenas para a média e o desvio padrão em uma tabela."
-  },
-  {
-    "objectID": "visualizacao.html#exemplo-prático-em-python-matplotlib-e-seaborn",
-    "href": "visualizacao.html#exemplo-prático-em-python-matplotlib-e-seaborn",
-    "title": "Visualização de Dados",
-    "section": "Exemplo prático em Python (matplotlib e seaborn)",
-    "text": "Exemplo prático em Python (matplotlib e seaborn)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport numpy as np\nimport pandas as pd\n\nnp.random.seed(42)\ndados = pd.DataFrame({\n    \"altura\": np.random.normal(170, 10, 200),\n    \"peso\": np.random.normal(70, 12, 200)\n})\n\nsns.set_style(\"whitegrid\")\nfig, ax = plt.subplots(figsize=(6, 4))\nsns.regplot(data=dados, x=\"altura\", y=\"peso\", scatter_kws={\"alpha\": 0.6}, line_kws={\"color\": \"red\"}, ax=ax)\nax.set_title(\"Relação entre altura e peso (dados simulados)\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(figsize=(6, 4))\nsns.boxplot(data=dados, y=\"peso\", ax=ax, color=\"#3498db\")\nax.set_title(\"Distribuição do peso\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nInterpretação\nO boxplot resume a distribuição do peso em quartis: a caixa representa os 50% centrais dos dados (entre o 1º e o 3º quartil), a linha central é a mediana, e os pontos fora dos “bigodes” indicam possíveis outliers."
-  },
-  {
-    "objectID": "visualizacao.html#boas-práticas",
-    "href": "visualizacao.html#boas-práticas",
-    "title": "Visualização de Dados",
-    "section": "Boas práticas",
-    "text": "Boas práticas\n\nEscolha o gráfico certo para a pergunta certa — um gráfico de linha não faz sentido para dados categóricos, por exemplo.\nEvite poluição visual: cores em excesso, gráficos 3D desnecessários e efeitos decorativos atrapalham a leitura.\nSempre rotule os eixos e inclua um título que explique o que o gráfico mostra.\nCuidado com a escala dos eixos: começar o eixo Y fora do zero pode exagerar diferenças e distorcer a interpretação.\nConsidere o daltonismo: paletas de cores como viridis (disponível tanto em R quanto em Python) são acessíveis a pessoas com diferentes tipos de daltonismo."
-  },
-  {
-    "objectID": "visualizacao.html#aplicação-real-em-ciência-de-dados",
-    "href": "visualizacao.html#aplicação-real-em-ciência-de-dados",
-    "title": "Visualização de Dados",
+    "objectID": "ML.html#aplicação-real-em-ciência-de-dados",
+    "href": "ML.html#aplicação-real-em-ciência-de-dados",
+    "title": "Machine Learning: Fundamentos",
     "section": "Aplicação real em Ciência de Dados",
-    "text": "Aplicação real em Ciência de Dados\nNa prática, a visualização de dados aparece em várias etapas de um projeto:\n\nAntes da modelagem: para entender a distribuição das variáveis, detectar outliers e decidir sobre transformações (normalização, log, etc.)\nDurante a modelagem: para avaliar resíduos de um modelo de regressão ou a matriz de confusão de um classificador\nDepois da modelagem: para comunicar resultados a públicos não técnicos, em dashboards e relatórios\n\nFerramentas interativas como Streamlit e Plotly, mencionadas na apresentação do projeto, permitem ir além dos gráficos estáticos, criando visualizações onde o usuário pode explorar os dados em tempo real."
+    "text": "Aplicação real em Ciência de Dados\nTodo o pipeline construído nas páginas anteriores do portal — estatística descritiva para entender os dados, pré-processamento para limpá-los, visualização para explorá-los — culmina exatamente aqui: um modelo de Machine Learning bem avaliado (com divisão treino/teste correta, métricas apropriadas e atenção ao overfitting) é o que transforma dados históricos em previsões confiáveis para decisões futuras, seja prever demanda, detectar fraude, ou recomendar produtos."
   },
   {
-    "objectID": "PLD.html",
-    "href": "PLD.html",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "",
-    "text": "O pré-processamento de dados corresponde ao conjunto de técnicas aplicadas a dados brutos para torná-los adequados à análise estatística e computacional. Tradicionalmente, essa etapa é considerada essencial para garantir a qualidade e consistência dos dados e, mais recentemente, passou a ser indispensável também no treinamento de modelos de aprendizado de máquina e inteligência artificial. Em síntese, trata-se do processo de transformar dados iniciais em um formato mais estruturado e confiável para tarefas de análise de dados, estatística e ciência de dados."
-  },
-  {
-    "objectID": "PLD.html#o-que-é-pré-processamento",
-    "href": "PLD.html#o-que-é-pré-processamento",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "",
-    "text": "O pré-processamento de dados corresponde ao conjunto de técnicas aplicadas a dados brutos para torná-los adequados à análise estatística e computacional. Tradicionalmente, essa etapa é considerada essencial para garantir a qualidade e consistência dos dados e, mais recentemente, passou a ser indispensável também no treinamento de modelos de aprendizado de máquina e inteligência artificial. Em síntese, trata-se do processo de transformar dados iniciais em um formato mais estruturado e confiável para tarefas de análise de dados, estatística e ciência de dados."
-  },
-  {
-    "objectID": "PLD.html#coleta-e-integração-de-dados",
-    "href": "PLD.html#coleta-e-integração-de-dados",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "Coleta e Integração de Dados",
-    "text": "Coleta e Integração de Dados\nA coleta de dados pode ser realizada a partir de diversas fontes, como bancos de dados relacionais, arquivos CSV, APIs, sensores, questionários e dados da web. Quando esses dados vêm de diferentes origens, é necessário integrá-los em um único conjunto para análise.\nA integração de dados consiste em combinar informações de várias fontes de modo a criar um dataset unificado, garantindo consistência e evitando contradições. Esse processo exige cuidados como:\n\nPadronização de formatos: uniformização de estruturas, por exemplo datas no padrão AAAA-MM-DD\nCorrespondência de atributos/esquemas: alinhar campos equivalentes entre bases (ex.: id_cliente ↔︎ cod_cliente)\nEliminação de redundâncias e desduplicação: remover registros repetidos garantindo unicidade\n\nUma coleta ampla e uma integração bem executada são fundamentais para análises estatísticas, aprendizado de máquina e aplicações em ciência de dados."
-  },
-  {
-    "objectID": "PLD.html#técnicas-de-limpeza-valores-ausentes-outliers-duplicações",
-    "href": "PLD.html#técnicas-de-limpeza-valores-ausentes-outliers-duplicações",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)",
-    "text": "Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)\nA limpeza de dados identifica e corrige inconsistências que possam comprometer análises ou modelos. Entre as técnicas mais comuns:\n\nTratamento de valores ausentes: excluir registros ou imputar (média, mediana, moda ou métodos avançados como KNN Imputer)\nRemoção de duplicatas: eliminar ou consolidar registros repetidos\nCorreção de formatos inconsistentes: padronizar tipos e unidades (datas, maiúsculas/minúsculas, medidas)\nDetecção e tratamento de outliers: via boxplot, z-score, IQR ou métodos não supervisionados; pode-se remover ou transformar"
-  },
-  {
-    "objectID": "PLD.html#transformações-e-normalização-de-dados",
-    "href": "PLD.html#transformações-e-normalização-de-dados",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "Transformações e Normalização de Dados",
-    "text": "Transformações e Normalização de Dados\nTransformações ajustam os dados para formatos adequados à modelagem, especialmente quando algoritmos são sensíveis a escala.\n\nNormalização (Min-Max): reescala para [0,1]; útil em métodos baseados em distância\nPadronização (Z-score): média 0 e desvio padrão 1\nTransformações log/Box-Cox: reduzem assimetria\nCodificação de variáveis categóricas: one-hot ou label encoding\nEngenharia/extração de atributos: criação, seleção ou redução (PCA, autoencoders)"
-  },
-  {
-    "objectID": "PLD.html#codificação-de-variáveis-categóricas",
-    "href": "PLD.html#codificação-de-variáveis-categóricas",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "Codificação de Variáveis Categóricas",
-    "text": "Codificação de Variáveis Categóricas\n\nOne-Hot Encoding: cria uma coluna por categoria (0/1); adequado para dados nominais\nLabel Encoding: mapeia categorias para inteiros; só razoável para variáveis ordinais\nTarget Encoding: mapeia categorias para estatísticas da variável-alvo (ex.: média); risco de overfitting"
-  },
-  {
-    "objectID": "PLD.html#feature-engineering-criação-seleção-e-extração",
-    "href": "PLD.html#feature-engineering-criação-seleção-e-extração",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "Feature Engineering (Criação, Seleção e Extração)",
-    "text": "Feature Engineering (Criação, Seleção e Extração)\nProcesso criativo que transforma dados brutos em variáveis mais representativas:\n\nCriação: derivar novas variáveis (ex.: idade a partir da data de nascimento)\nSeleção: escolher as mais relevantes com correlação, testes, árvores ou métodos automáticos\nExtração: reduzir dimensionalidade via PCA ou Autoencoders preservando informação essencial\n\n\nUm bom Feature Engineering costuma impactar mais o desempenho de um modelo do que a escolha do algoritmo em si."
-  },
-  {
-    "objectID": "PLD.html#exemplo-prático-um-mini-pipeline-de-pré-processamento",
-    "href": "PLD.html#exemplo-prático-um-mini-pipeline-de-pré-processamento",
-    "title": "Pré-processamento e Limpeza de Dados",
-    "section": "Exemplo prático: um mini pipeline de pré-processamento",
-    "text": "Exemplo prático: um mini pipeline de pré-processamento\nVamos aplicar, em sequência, as principais técnicas apresentadas acima sobre um conjunto de dados simulado propositalmente “sujo” — com valores ausentes, duplicatas e um outlier.\n\nimport pandas as pd\nimport numpy as np\n\n# Dataset fictício e propositalmente \"sujo\"\ndados = pd.DataFrame({\n    \"cliente_id\": [1, 2, 3, 4, 5, 5, 6],\n    \"idade\": [25, 32, np.nan, 41, 29, 29, 150],   # valor ausente e outlier\n    \"cidade\": [\"Fortaleza\", \"Itapajé\", \"Fortaleza\", \"Sobral\", \"Itapajé\", \"Itapajé\", \"Fortaleza\"],\n    \"salario\": [2500, 4200, 3100, np.nan, 2800, 2800, 5200]\n})\ndados\n\n\n\n\n\n\n\n\ncliente_id\nidade\ncidade\nsalario\n\n\n\n\n0\n1\n25.0\nFortaleza\n2500.0\n\n\n1\n2\n32.0\nItapajé\n4200.0\n\n\n2\n3\nNaN\nFortaleza\n3100.0\n\n\n3\n4\n41.0\nSobral\nNaN\n\n\n4\n5\n29.0\nItapajé\n2800.0\n\n\n5\n5\n29.0\nItapajé\n2800.0\n\n\n6\n6\n150.0\nFortaleza\n5200.0\n\n\n\n\n\n\n\n\n# 1. Remover duplicatas\ndados_limpos = dados.drop_duplicates()\nprint(f\"Linhas antes: {len(dados)} | Linhas depois de remover duplicatas: {len(dados_limpos)}\")\n\nLinhas antes: 7 | Linhas depois de remover duplicatas: 6\n\n\n\n# 2. Tratar valores ausentes (imputação pela mediana)\ndados_limpos[\"idade\"] = dados_limpos[\"idade\"].fillna(dados_limpos[\"idade\"].median())\ndados_limpos[\"salario\"] = dados_limpos[\"salario\"].fillna(dados_limpos[\"salario\"].median())\ndados_limpos\n\n\n\n\n\n\n\n\ncliente_id\nidade\ncidade\nsalario\n\n\n\n\n0\n1\n25.0\nFortaleza\n2500.0\n\n\n1\n2\n32.0\nItapajé\n4200.0\n\n\n2\n3\n32.0\nFortaleza\n3100.0\n\n\n3\n4\n41.0\nSobral\n3100.0\n\n\n4\n5\n29.0\nItapajé\n2800.0\n\n\n6\n6\n150.0\nFortaleza\n5200.0\n\n\n\n\n\n\n\n\n# 3. Detectar outliers pelo método do IQR (na coluna idade)\nQ1 = dados_limpos[\"idade\"].quantile(0.25)\nQ3 = dados_limpos[\"idade\"].quantile(0.75)\nIQR = Q3 - Q1\nlimite_superior = Q3 + 1.5 * IQR\nlimite_inferior = Q1 - 1.5 * IQR\n\noutliers = dados_limpos[(dados_limpos[\"idade\"] &gt; limite_superior) | (dados_limpos[\"idade\"] &lt; limite_inferior)]\nprint(\"Limite superior aceitável:\", limite_superior)\nprint(\"Outliers encontrados:\\n\", outliers[[\"cliente_id\", \"idade\"]])\n\nLimite superior aceitável: 52.25\nOutliers encontrados:\n    cliente_id  idade\n6           6  150.0\n\n\n\n# 4. Normalização (Min-Max) e padronização (Z-score) do salário\nfrom sklearn.preprocessing import MinMaxScaler, StandardScaler\n\ndados_limpos[\"salario_minmax\"] = MinMaxScaler().fit_transform(dados_limpos[[\"salario\"]])\ndados_limpos[\"salario_zscore\"] = StandardScaler().fit_transform(dados_limpos[[\"salario\"]])\ndados_limpos[[\"cliente_id\", \"salario\", \"salario_minmax\", \"salario_zscore\"]]\n\n\n\n\n\n\n\n\ncliente_id\nsalario\nsalario_minmax\nsalario_zscore\n\n\n\n\n0\n1\n2500.0\n0.000000\n-1.057456\n\n\n1\n2\n4200.0\n0.629630\n0.770689\n\n\n2\n3\n3100.0\n0.222222\n-0.412229\n\n\n3\n4\n3100.0\n0.222222\n-0.412229\n\n\n4\n5\n2800.0\n0.111111\n-0.734843\n\n\n6\n6\n5200.0\n1.000000\n1.846068\n\n\n\n\n\n\n\n\n# 5. Codificação one-hot da variável categórica \"cidade\"\ndados_codificados = pd.get_dummies(dados_limpos, columns=[\"cidade\"], prefix=\"cidade\")\ndados_codificados\n\n\n\n\n\n\n\n\ncliente_id\nidade\nsalario\nsalario_minmax\nsalario_zscore\ncidade_Fortaleza\ncidade_Itapajé\ncidade_Sobral\n\n\n\n\n0\n1\n25.0\n2500.0\n0.000000\n-1.057456\nTrue\nFalse\nFalse\n\n\n1\n2\n32.0\n4200.0\n0.629630\n0.770689\nFalse\nTrue\nFalse\n\n\n2\n3\n32.0\n3100.0\n0.222222\n-0.412229\nTrue\nFalse\nFalse\n\n\n3\n4\n41.0\n3100.0\n0.222222\n-0.412229\nFalse\nFalse\nTrue\n\n\n4\n5\n29.0\n2800.0\n0.111111\n-0.734843\nFalse\nTrue\nFalse\n\n\n6\n6\n150.0\n5200.0\n1.000000\n1.846068\nTrue\nFalse\nFalse\n\n\n\n\n\n\n\n\nInterpretação\nO pipeline acima resolve, em cinco passos, exatamente os problemas mencionados na teoria:\n\nA duplicata do cliente_id 5 foi removida\nOs valores ausentes de idade e salario foram imputados pela mediana — uma escolha mais robusta que a média quando há outliers, como é o caso aqui\nO método do IQR sinalizou corretamente o registro com idade 150 como outlier — um valor claramente inválido que provavelmente representa erro de digitação ou de coleta\nAs colunas salario_minmax e salario_zscore mostram as duas formas mais comuns de reescalar uma variável numérica: uma limitada entre 0 e 1, a outra centrada em 0 com desvio padrão 1\nA variável categórica cidade foi transformada em colunas binárias (one-hot), formato exigido pela maioria dos algoritmos de Machine Learning, que não conseguem operar diretamente sobre texto\n\nEsse é o tipo de pipeline que normalmente antecede qualquer modelo de Machine Learning — sem esses cuidados, o modelo aprenderia padrões distorcidos pelo outlier de idade ou simplesmente falharia ao encontrar valores ausentes ou texto onde esperava números."
-  },
-  {
-    "objectID": "PLD.html#referências",
-    "href": "PLD.html#referências",
-    "title": "Pré-processamento e Limpeza de Dados",
+    "objectID": "ML.html#referências",
+    "href": "ML.html#referências",
+    "title": "Machine Learning: Fundamentos",
     "section": "Referências",
-    "text": "Referências\n\nKuhn, M.; Johnson, K. Feature Engineering and Selection. Chapman & Hall/CRC.\nHan, J.; Pei, J.; Kamber, M. Data Mining: Concepts and Techniques. Morgan Kaufmann.\nMcKinney, W. Python for Data Analysis. O’Reilly, 2022."
+    "text": "Referências\n\nGéron, A. Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. O’Reilly, 2022.\nJames, G. et al. An Introduction to Statistical Learning. Springer, 2021.\nHastie, T.; Tibshirani, R.; Friedman, J. The Elements of Statistical Learning. Springer."
   },
   {
-    "objectID": "SQL.html",
-    "href": "SQL.html",
-    "title": "SQL e Bancos de Dados",
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre o Projeto",
     "section": "",
-    "text": "Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum banco de dados relacional. Saber consultar, filtrar e combinar essas informações com SQL (Structured Query Language) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo."
+    "text": "O Portal de Estatística e Ciência de Dados é uma iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), Campus de Itapajé, coordenado pelo Prof. Dr. Hitalo Joseferson Batista Nascimento.\nO objetivo principal é ampliar o acesso ao conhecimento científico, oferecendo conteúdos introdutórios e tutoriais acessíveis sobre Estatística e Ciência de Dados para diferentes públicos:\n\nEstudantes do Ensino Médio\nEstudantes de Graduação\nComunidade externa interessada na área"
   },
   {
-    "objectID": "SQL.html#introdução",
-    "href": "SQL.html#introdução",
-    "title": "SQL e Bancos de Dados",
+    "objectID": "sobre.html#o-que-é-o-portal",
+    "href": "sobre.html#o-que-é-o-portal",
+    "title": "Sobre o Projeto",
     "section": "",
-    "text": "Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum banco de dados relacional. Saber consultar, filtrar e combinar essas informações com SQL (Structured Query Language) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo."
+    "text": "O Portal de Estatística e Ciência de Dados é uma iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), Campus de Itapajé, coordenado pelo Prof. Dr. Hitalo Joseferson Batista Nascimento.\nO objetivo principal é ampliar o acesso ao conhecimento científico, oferecendo conteúdos introdutórios e tutoriais acessíveis sobre Estatística e Ciência de Dados para diferentes públicos:\n\nEstudantes do Ensino Médio\nEstudantes de Graduação\nComunidade externa interessada na área"
   },
   {
-    "objectID": "SQL.html#o-modelo-relacional",
-    "href": "SQL.html#o-modelo-relacional",
-    "title": "SQL e Bancos de Dados",
-    "section": "O Modelo Relacional",
-    "text": "O Modelo Relacional\nUm banco de dados relacional organiza informações em tabelas (também chamadas de relações), onde:\n\ncada linha representa um registro (ex: um cliente, um pedido)\ncada coluna representa um atributo desse registro (ex: nome, data, valor)\ncada tabela tem uma chave primária (primary key) — um identificador único para cada linha\ntabelas se relacionam entre si por meio de chaves estrangeiras (foreign keys), que apontam para a chave primária de outra tabela\n\nEssa estrutura evita duplicação de dados: em vez de repetir o nome e endereço de um cliente em cada pedido que ele faz, guardamos essa informação uma única vez na tabela clientes, e cada pedido só referencia o id desse cliente."
+    "objectID": "sobre.html#justificativa",
+    "href": "sobre.html#justificativa",
+    "title": "Sobre o Projeto",
+    "section": "Justificativa",
+    "text": "Justificativa\nO avanço da Ciência de Dados transformou a Estatística em um pilar fundamental para a formação de novos profissionais. No entanto, estudantes da área frequentemente enfrentam dificuldades na transição da teoria estatística abstrata para a aplicação prática em código (Python e R).\nO portal busca mitigar essa lacuna, funcionando como um ambiente digital de aprendizagem contínua e suporte acadêmico, democratizando o acesso ao conhecimento estatístico aplicado."
   },
   {
-    "objectID": "SQL.html#comandos-sql-fundamentais",
-    "href": "SQL.html#comandos-sql-fundamentais",
-    "title": "SQL e Bancos de Dados",
-    "section": "Comandos SQL Fundamentais",
-    "text": "Comandos SQL Fundamentais\nSQL é dividido, de forma simplificada, em dois grupos de comandos:\nDDL (Data Definition Language) — define a estrutura do banco:\n\nCREATE TABLE — cria uma tabela\nALTER TABLE — modifica uma tabela existente\nDROP TABLE — remove uma tabela\n\nDML (Data Manipulation Language) — manipula os dados:\n\nSELECT — consulta dados\nINSERT — insere novos registros\nUPDATE — atualiza registros existentes\nDELETE — remove registros"
+    "objectID": "sobre.html#arquitetura-tecnológica",
+    "href": "sobre.html#arquitetura-tecnológica",
+    "title": "Sobre o Projeto",
+    "section": "Arquitetura Tecnológica",
+    "text": "Arquitetura Tecnológica\nO portal é construído com as seguintes ferramentas:\n\nQuarto — geração do site\nR e Python — desenvolvimento de conteúdo e exemplos\nGit / GitHub — versionamento e colaboração em equipe\nGitHub Pages — publicação\nShiny — aplicações interativas (planejado)\n\n\nFluxo de publicação\n\nCriar/editar arquivos .qmd\nRenderizar com Quarto\nVersionar no GitHub\nPublicar via GitHub Pages"
   },
   {
-    "objectID": "SQL.html#cláusulas-do-select",
-    "href": "SQL.html#cláusulas-do-select",
-    "title": "SQL e Bancos de Dados",
-    "section": "Cláusulas do SELECT",
-    "text": "Cláusulas do SELECT\nUma consulta SELECT completa geralmente segue esta ordem lógica:\nSELECT colunas\nFROM tabela\nWHERE condição\nGROUP BY coluna\nHAVING condição_do_grupo\nORDER BY coluna\nLIMIT n;\n\nWHERE filtra linhas individuais, antes de qualquer agrupamento\nGROUP BY agrupa linhas que compartilham um valor, geralmente combinado com funções agregadas (SUM, AVG, COUNT, MAX, MIN)\nHAVING filtra grupos já formados pelo GROUP BY — diferente do WHERE, que filtra linhas antes do agrupamento\nORDER BY ordena o resultado final\nLIMIT restringe o número de linhas retornadas"
+    "objectID": "sobre.html#estrutura-do-portal",
+    "href": "sobre.html#estrutura-do-portal",
+    "title": "Sobre o Projeto",
+    "section": "Estrutura do Portal",
+    "text": "Estrutura do Portal\nO conteúdo está organizado em quatro grandes frentes:\n\nFundamentos — Probabilidade e Inferência\nSimulações — modelos computacionais e visualizações interativas\nTutoriais — exemplos práticos em R e Python\nAplicações — estudos de caso com dados reais\n\n\nPadrão de conteúdo\nCada página do portal deve conter, sempre que possível:\n\nConceito teórico\nExemplo prático\nCódigo (R ou Python)\nInterpretação dos resultados\nAplicação real"
   },
   {
-    "objectID": "SQL.html#joins-combinando-tabelas",
-    "href": "SQL.html#joins-combinando-tabelas",
-    "title": "SQL e Bancos de Dados",
-    "section": "JOINs: Combinando Tabelas",
-    "text": "JOINs: Combinando Tabelas\nO poder de um banco relacional está em combinar dados de várias tabelas através de joins:\n\nINNER JOIN — retorna apenas as linhas que têm correspondência em ambas as tabelas\nLEFT JOIN — retorna todas as linhas da tabela à esquerda, mesmo sem correspondência na direita (preenchendo com NULL)\nRIGHT JOIN — o oposto do LEFT JOIN\nFULL JOIN — retorna todas as linhas de ambas as tabelas, com ou sem correspondência\n\n\n\n\n\n\nerDiagram\n    CLIENTES ||--o{ PEDIDOS : \"faz\"\n    CLIENTES {\n        int id PK\n        string nome\n        string cidade\n    }\n    PEDIDOS {\n        int id PK\n        int cliente_id FK\n        string produto\n        float valor\n        string data\n    }\n\n\n\n\n\n\nO diagrama acima mostra a relação entre clientes e pedidos: cada cliente pode fazer vários pedidos (relação um-para-muitos), e a coluna cliente_id em pedidos é a chave estrangeira que aponta para o id em clientes."
+    "objectID": "sobre.html#organização-da-equipe",
+    "href": "sobre.html#organização-da-equipe",
+    "title": "Sobre o Projeto",
+    "section": "Organização da Equipe",
+    "text": "Organização da Equipe\nO projeto conta atualmente com 8 alunos, distribuídos em quatro equipes:\n\n\n\n\n\n\n\nEquipe\nResponsabilidade\n\n\n\n\nEquipe 1 — Conteúdo Teórico\nProbabilidade, Inferência Estatística, Estatística Descritiva, revisão conceitual e Ciência de Dados\n\n\nEquipe 2 — Conteúdo Aplicado\nExemplos em R e Python, estudos de caso, aplicações práticas\n\n\nEquipe 3 — Simulações\nIntegração com projeto de simulações, modelos computacionais e visualizações interativas\n\n\nEquipe 4 — Plataforma e Deploy\nOrganização do repositório, layout, navegação, deploy no GitHub Pages e manutenção técnica\n\n\n\n\nPesquisa de Conteúdo Teórico\nA pesquisa teórica do 1º semestre foi conduzida por Fernando Barbosa e João Victor Bandeira, com os seguintes objetivos:\n\nMapear os conceitos estatísticos mais críticos e complexos para estudantes de Ciência de Dados\nTraduzir o rigor matemático em linguagem acessível, visual e aplicada\nAlinhar o conteúdo às demandas do mercado de tecnologia e à matriz curricular acadêmica\n\nPara estruturar essa pesquisa, a dupla realizou um benchmarking de portais educacionais consolidados:\n\n\n\n\n\n\n\n\nReferência\nInsight\nAplicação no projeto\n\n\n\n\nStatQuest (Josh Starmer)\nConceitos complexos quebrados em passos visuais, sem perder rigor\nEvitar paredes de texto; focar na intuição por trás das fórmulas\n\n\nPennState Eberly College\nEstrutura modular clara, com exemplos reais\nTrilhas teóricas sequenciais (Descritiva → Inferencial → Modelagem)\n\n\nTowards Data Science\nConexão direta entre teoria e código\nTodo artigo teórico termina com um “Mini-Lab” prático em Python\n\n\nPortal de Estatística IME-USP\nRigor acadêmico e glossário técnico\nCriação de um dicionário de termos para consulta rápida\n\n\n\nOs eixos temáticos pesquisados no período foram:\n\nEixo A — Estatística Descritiva e EDA: medidas de tendência central e dispersão, identificação teórica de outliers, e o impacto dessas métricas no pré-processamento para Machine Learning.\nEixo B — Probabilidade e Distribuições: variáveis aleatórias, distribuições Normal, Binomial e de Poisson, com foco na intuição do Teorema Central do Limite.\nEixo C — Estatística Inferencial e Testes de Hipóteses: formulação de H0/H1, Erros do Tipo I e II, nível de significância, valor-p, e aplicação prática em testes A/B."
   },
   {
-    "objectID": "SQL.html#normalização",
-    "href": "SQL.html#normalização",
-    "title": "SQL e Bancos de Dados",
-    "section": "Normalização",
-    "text": "Normalização\nNormalização é o processo de organizar tabelas para reduzir redundância e evitar inconsistências. As formas normais mais citadas são:\n\n1ª Forma Normal (1FN): cada coluna deve conter valores atômicos (não múltiplos valores em uma célula)\n2ª Forma Normal (2FN): atende a 1FN e todo atributo não-chave depende da chave primária inteira\n3ª Forma Normal (3FN): atende a 2FN e não há dependências entre atributos não-chave (elimina dependências transitivas)\n\nNa prática, bancos bem projetados costumam parar na 3FN — normalizar demais pode tornar as consultas desnecessariamente complexas, exigindo joins em excesso."
+    "objectID": "sobre.html#boas-práticas",
+    "href": "sobre.html#boas-práticas",
+    "title": "Sobre o Projeto",
+    "section": "Boas Práticas",
+    "text": "Boas Práticas\n\nClareza e objetividade\nReprodutibilidade\nDocumentação\nTrabalho em equipe"
   },
   {
-    "objectID": "SQL.html#exemplo-prático-consultando-um-banco-relacional",
-    "href": "SQL.html#exemplo-prático-consultando-um-banco-relacional",
-    "title": "SQL e Bancos de Dados",
-    "section": "Exemplo Prático: consultando um banco relacional",
-    "text": "Exemplo Prático: consultando um banco relacional\nVamos criar duas tabelas relacionadas (clientes e pedidos) em um banco SQLite em memória e explorar consultas reais.\n\nimport sqlite3\nimport pandas as pd\n\nconn = sqlite3.connect(\":memory:\")\ncursor = conn.cursor()\n\n# Criação das tabelas (DDL)\ncursor.execute(\"\"\"\nCREATE TABLE clientes (\n    id INTEGER PRIMARY KEY,\n    nome TEXT,\n    cidade TEXT\n)\n\"\"\")\n\ncursor.execute(\"\"\"\nCREATE TABLE pedidos (\n    id INTEGER PRIMARY KEY,\n    cliente_id INTEGER,\n    produto TEXT,\n    valor REAL,\n    data TEXT,\n    FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n)\n\"\"\")\n\n# Inserção de dados (DML)\nclientes = [\n    (1, \"Ana\", \"Itapajé\"),\n    (2, \"Carlos\", \"Fortaleza\"),\n    (3, \"Beatriz\", \"Sobral\"),\n    (4, \"Diego\", \"Itapajé\"),\n]\ncursor.executemany(\"INSERT INTO clientes VALUES (?, ?, ?)\", clientes)\n\npedidos = [\n    (1, 1, \"Notebook\", 3200.00, \"2025-01-10\"),\n    (2, 1, \"Mouse\", 90.00, \"2025-01-15\"),\n    (3, 2, \"Monitor\", 950.00, \"2025-01-12\"),\n    (4, 3, \"Teclado\", 250.00, \"2025-01-20\"),\n    (5, 1, \"Headset\", 320.00, \"2025-02-02\"),\n    (6, 2, \"Notebook\", 3400.00, \"2025-02-05\"),\n]\ncursor.executemany(\"INSERT INTO pedidos VALUES (?, ?, ?, ?, ?)\", pedidos)\nconn.commit()\n\nprint(\"Tabelas criadas e populadas com sucesso.\")\n\nTabelas criadas e populadas com sucesso.\n\n\n\nConsulta 1: JOIN simples\n\nquery1 = \"\"\"\nSELECT c.nome, c.cidade, p.produto, p.valor, p.data\nFROM clientes c\nINNER JOIN pedidos p ON c.id = p.cliente_id\nORDER BY p.data;\n\"\"\"\npd.read_sql_query(query1, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\nproduto\nvalor\ndata\n\n\n\n\n0\nAna\nItapajé\nNotebook\n3200.0\n2025-01-10\n\n\n1\nCarlos\nFortaleza\nMonitor\n950.0\n2025-01-12\n\n\n2\nAna\nItapajé\nMouse\n90.0\n2025-01-15\n\n\n3\nBeatriz\nSobral\nTeclado\n250.0\n2025-01-20\n\n\n4\nAna\nItapajé\nHeadset\n320.0\n2025-02-02\n\n\n5\nCarlos\nFortaleza\nNotebook\n3400.0\n2025-02-05\n\n\n\n\n\n\n\n\n\nConsulta 2: agregação com GROUP BY\n\nquery2 = \"\"\"\nSELECT c.nome, COUNT(p.id) AS total_pedidos, SUM(p.valor) AS total_gasto\nFROM clientes c\nINNER JOIN pedidos p ON c.id = p.cliente_id\nGROUP BY c.nome\nORDER BY total_gasto DESC;\n\"\"\"\npd.read_sql_query(query2, conn)\n\n\n\n\n\n\n\n\nnome\ntotal_pedidos\ntotal_gasto\n\n\n\n\n0\nCarlos\n2\n4350.0\n\n\n1\nAna\n3\n3610.0\n\n\n2\nBeatriz\n1\n250.0\n\n\n\n\n\n\n\n\n\nConsulta 3: LEFT JOIN (incluindo clientes sem pedidos)\n\nquery3 = \"\"\"\nSELECT c.nome, c.cidade, COUNT(p.id) AS total_pedidos\nFROM clientes c\nLEFT JOIN pedidos p ON c.id = p.cliente_id\nGROUP BY c.nome\nORDER BY total_pedidos;\n\"\"\"\npd.read_sql_query(query3, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\ntotal_pedidos\n\n\n\n\n0\nDiego\nItapajé\n0\n\n\n1\nBeatriz\nSobral\n1\n\n\n2\nCarlos\nFortaleza\n2\n\n\n3\nAna\nItapajé\n3\n\n\n\n\n\n\n\n\n\nConsulta 4: subconsulta (subquery)\n\nquery4 = \"\"\"\nSELECT nome, cidade\nFROM clientes\nWHERE id IN (\n    SELECT cliente_id FROM pedidos WHERE valor &gt; 1000\n);\n\"\"\"\npd.read_sql_query(query4, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\n\n\n\n\n0\nAna\nItapajé\n\n\n1\nCarlos\nFortaleza\n\n\n\n\n\n\n\n\n\nInterpretação\n\nA Consulta 1 mostra como um INNER JOIN conecta cada pedido ao nome e cidade do cliente correspondente — sem isso, a tabela pedidos sozinha seria só uma lista de IDs sem contexto.\nA Consulta 2 demonstra o padrão mais comum em relatórios de negócio: agrupar por cliente e agregar valores, revelando que Carlos é quem mais gastou apesar de ter feito menos pedidos que Ana — um bom exemplo de por que COUNT e SUM juntos contam uma história mais completa que qualquer um sozinho.\nA Consulta 3 usa LEFT JOIN propositalmente: como todos os clientes cadastrados fizeram pelo menos um pedido, ninguém aparece com zero — mas se Beatriz e Diego não tivessem pedidos, essa consulta ainda os listaria (com total_pedidos = 0), diferente do INNER JOIN, que os teria simplesmente omitido.\nA Consulta 4 ilustra uma subconsulta: primeiro descobrimos quais cliente_id têm pedidos acima de R$ 1.000, depois filtramos a tabela de clientes com base nesse resultado."
+    "objectID": "sobre.html#riscos-do-projeto",
+    "href": "sobre.html#riscos-do-projeto",
+    "title": "Sobre o Projeto",
+    "section": "Riscos do Projeto",
+    "text": "Riscos do Projeto\n\nFalta de padronização entre os conteúdos das equipes\nBaixo engajamento\nProblemas de manutenção técnica ao longo do tempo"
   },
   {
-    "objectID": "SQL.html#aplicação-real-em-ciência-de-dados",
-    "href": "SQL.html#aplicação-real-em-ciência-de-dados",
-    "title": "SQL e Bancos de Dados",
-    "section": "Aplicação real em Ciência de Dados",
-    "text": "Aplicação real em Ciência de Dados\nAntes de qualquer análise estatística ou modelo de Machine Learning, é comum que os dados estejam espalhados em várias tabelas de um banco de produção — pedidos, clientes, produtos, pagamentos. Escrever consultas SQL bem construídas (com os JOINs e agregações certas) é frequentemente o que determina se o dataset final para análise está completo e correto, ou se está sutilmente enviesado por informação faltante ou duplicada."
-  },
-  {
-    "objectID": "SQL.html#referências",
-    "href": "SQL.html#referências",
-    "title": "SQL e Bancos de Dados",
-    "section": "Referências",
-    "text": "Referências\n\nDate, C. J. An Introduction to Database Systems. Pearson, 2003.\nSilberschatz, A.; Korth, H.; Sudarshan, S. Database System Concepts. McGraw-Hill, 2020.\nElmasri, R.; Navathe, S. B. Fundamentals of Database Systems. Pearson."
+    "objectID": "sobre.html#próximos-passos",
+    "href": "sobre.html#próximos-passos",
+    "title": "Sobre o Projeto",
+    "section": "Próximos Passos",
+    "text": "Próximos Passos\n\nIntegração com o Google Colab, permitindo que o aluno rode o código do artigo diretamente a partir do portal\nVisualizações interativas (Streamlit/Plotly) para exploração de parâmetros estatísticos em tempo real\nFórum de dúvidas / plantão digital para suporte aos estudantes\nExpansão do conteúdo, revisão e distribuição contínua das tarefas entre as equipes"
   },
   {
     "objectID": "FP.html",
@@ -476,67 +371,256 @@
     "text": "Próximos passos\nDepois de dominar esses fundamentos, os próximos tópicos naturais são: manipulação avançada de DataFrames com Pandas (filtros, groupby, junções), e os conceitos de Estatística Descritiva e Visualização de Dados, abordados nas próximas páginas do portal."
   },
   {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "Sobre o Projeto",
+    "objectID": "SQL.html",
+    "href": "SQL.html",
+    "title": "SQL e Bancos de Dados",
     "section": "",
-    "text": "O Portal de Estatística e Ciência de Dados é uma iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), Campus de Itapajé, coordenado pelo Prof. Dr. Hitalo Joseferson Batista Nascimento.\nO objetivo principal é ampliar o acesso ao conhecimento científico, oferecendo conteúdos introdutórios e tutoriais acessíveis sobre Estatística e Ciência de Dados para diferentes públicos:\n\nEstudantes do Ensino Médio\nEstudantes de Graduação\nComunidade externa interessada na área"
+    "text": "Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum banco de dados relacional. Saber consultar, filtrar e combinar essas informações com SQL (Structured Query Language) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo."
   },
   {
-    "objectID": "sobre.html#o-que-é-o-portal",
-    "href": "sobre.html#o-que-é-o-portal",
-    "title": "Sobre o Projeto",
+    "objectID": "SQL.html#introdução",
+    "href": "SQL.html#introdução",
+    "title": "SQL e Bancos de Dados",
     "section": "",
-    "text": "O Portal de Estatística e Ciência de Dados é uma iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), Campus de Itapajé, coordenado pelo Prof. Dr. Hitalo Joseferson Batista Nascimento.\nO objetivo principal é ampliar o acesso ao conhecimento científico, oferecendo conteúdos introdutórios e tutoriais acessíveis sobre Estatística e Ciência de Dados para diferentes públicos:\n\nEstudantes do Ensino Médio\nEstudantes de Graduação\nComunidade externa interessada na área"
+    "text": "Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum banco de dados relacional. Saber consultar, filtrar e combinar essas informações com SQL (Structured Query Language) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo."
   },
   {
-    "objectID": "sobre.html#justificativa",
-    "href": "sobre.html#justificativa",
-    "title": "Sobre o Projeto",
-    "section": "Justificativa",
-    "text": "Justificativa\nO avanço da Ciência de Dados transformou a Estatística em um pilar fundamental para a formação de novos profissionais. No entanto, estudantes da área frequentemente enfrentam dificuldades na transição da teoria estatística abstrata para a aplicação prática em código (Python e R).\nO portal busca mitigar essa lacuna, funcionando como um ambiente digital de aprendizagem contínua e suporte acadêmico, democratizando o acesso ao conhecimento estatístico aplicado."
+    "objectID": "SQL.html#o-modelo-relacional",
+    "href": "SQL.html#o-modelo-relacional",
+    "title": "SQL e Bancos de Dados",
+    "section": "O Modelo Relacional",
+    "text": "O Modelo Relacional\nUm banco de dados relacional organiza informações em tabelas (também chamadas de relações), onde:\n\ncada linha representa um registro (ex: um cliente, um pedido)\ncada coluna representa um atributo desse registro (ex: nome, data, valor)\ncada tabela tem uma chave primária (primary key) — um identificador único para cada linha\ntabelas se relacionam entre si por meio de chaves estrangeiras (foreign keys), que apontam para a chave primária de outra tabela\n\nEssa estrutura evita duplicação de dados: em vez de repetir o nome e endereço de um cliente em cada pedido que ele faz, guardamos essa informação uma única vez na tabela clientes, e cada pedido só referencia o id desse cliente."
   },
   {
-    "objectID": "sobre.html#arquitetura-tecnológica",
-    "href": "sobre.html#arquitetura-tecnológica",
-    "title": "Sobre o Projeto",
-    "section": "Arquitetura Tecnológica",
-    "text": "Arquitetura Tecnológica\nO portal é construído com as seguintes ferramentas:\n\nQuarto — geração do site\nR e Python — desenvolvimento de conteúdo e exemplos\nGit / GitHub — versionamento e colaboração em equipe\nGitHub Pages — publicação\nShiny — aplicações interativas (planejado)\n\n\nFluxo de publicação\n\nCriar/editar arquivos .qmd\nRenderizar com Quarto\nVersionar no GitHub\nPublicar via GitHub Pages"
+    "objectID": "SQL.html#comandos-sql-fundamentais",
+    "href": "SQL.html#comandos-sql-fundamentais",
+    "title": "SQL e Bancos de Dados",
+    "section": "Comandos SQL Fundamentais",
+    "text": "Comandos SQL Fundamentais\nSQL é dividido, de forma simplificada, em dois grupos de comandos:\nDDL (Data Definition Language) — define a estrutura do banco:\n\nCREATE TABLE — cria uma tabela\nALTER TABLE — modifica uma tabela existente\nDROP TABLE — remove uma tabela\n\nDML (Data Manipulation Language) — manipula os dados:\n\nSELECT — consulta dados\nINSERT — insere novos registros\nUPDATE — atualiza registros existentes\nDELETE — remove registros"
   },
   {
-    "objectID": "sobre.html#estrutura-do-portal",
-    "href": "sobre.html#estrutura-do-portal",
-    "title": "Sobre o Projeto",
-    "section": "Estrutura do Portal",
-    "text": "Estrutura do Portal\nO conteúdo está organizado em quatro grandes frentes:\n\nFundamentos — Probabilidade e Inferência\nSimulações — modelos computacionais e visualizações interativas\nTutoriais — exemplos práticos em R e Python\nAplicações — estudos de caso com dados reais\n\n\nPadrão de conteúdo\nCada página do portal deve conter, sempre que possível:\n\nConceito teórico\nExemplo prático\nCódigo (R ou Python)\nInterpretação dos resultados\nAplicação real"
+    "objectID": "SQL.html#cláusulas-do-select",
+    "href": "SQL.html#cláusulas-do-select",
+    "title": "SQL e Bancos de Dados",
+    "section": "Cláusulas do SELECT",
+    "text": "Cláusulas do SELECT\nUma consulta SELECT completa geralmente segue esta ordem lógica:\nSELECT colunas\nFROM tabela\nWHERE condição\nGROUP BY coluna\nHAVING condição_do_grupo\nORDER BY coluna\nLIMIT n;\n\nWHERE filtra linhas individuais, antes de qualquer agrupamento\nGROUP BY agrupa linhas que compartilham um valor, geralmente combinado com funções agregadas (SUM, AVG, COUNT, MAX, MIN)\nHAVING filtra grupos já formados pelo GROUP BY — diferente do WHERE, que filtra linhas antes do agrupamento\nORDER BY ordena o resultado final\nLIMIT restringe o número de linhas retornadas"
   },
   {
-    "objectID": "sobre.html#organização-da-equipe",
-    "href": "sobre.html#organização-da-equipe",
-    "title": "Sobre o Projeto",
-    "section": "Organização da Equipe",
-    "text": "Organização da Equipe\nO projeto conta atualmente com 8 alunos, distribuídos em quatro equipes:\n\n\n\n\n\n\n\nEquipe\nResponsabilidade\n\n\n\n\nEquipe 1 — Conteúdo Teórico\nProbabilidade, Inferência Estatística, Estatística Descritiva, revisão conceitual e Ciência de Dados\n\n\nEquipe 2 — Conteúdo Aplicado\nExemplos em R e Python, estudos de caso, aplicações práticas\n\n\nEquipe 3 — Simulações\nIntegração com projeto de simulações, modelos computacionais e visualizações interativas\n\n\nEquipe 4 — Plataforma e Deploy\nOrganização do repositório, layout, navegação, deploy no GitHub Pages e manutenção técnica\n\n\n\n\nPesquisa de Conteúdo Teórico\nA pesquisa teórica do 1º semestre foi conduzida por Fernando Barbosa e João Victor Bandeira, com os seguintes objetivos:\n\nMapear os conceitos estatísticos mais críticos e complexos para estudantes de Ciência de Dados\nTraduzir o rigor matemático em linguagem acessível, visual e aplicada\nAlinhar o conteúdo às demandas do mercado de tecnologia e à matriz curricular acadêmica\n\nPara estruturar essa pesquisa, a dupla realizou um benchmarking de portais educacionais consolidados:\n\n\n\n\n\n\n\n\nReferência\nInsight\nAplicação no projeto\n\n\n\n\nStatQuest (Josh Starmer)\nConceitos complexos quebrados em passos visuais, sem perder rigor\nEvitar paredes de texto; focar na intuição por trás das fórmulas\n\n\nPennState Eberly College\nEstrutura modular clara, com exemplos reais\nTrilhas teóricas sequenciais (Descritiva → Inferencial → Modelagem)\n\n\nTowards Data Science\nConexão direta entre teoria e código\nTodo artigo teórico termina com um “Mini-Lab” prático em Python\n\n\nPortal de Estatística IME-USP\nRigor acadêmico e glossário técnico\nCriação de um dicionário de termos para consulta rápida\n\n\n\nOs eixos temáticos pesquisados no período foram:\n\nEixo A — Estatística Descritiva e EDA: medidas de tendência central e dispersão, identificação teórica de outliers, e o impacto dessas métricas no pré-processamento para Machine Learning.\nEixo B — Probabilidade e Distribuições: variáveis aleatórias, distribuições Normal, Binomial e de Poisson, com foco na intuição do Teorema Central do Limite.\nEixo C — Estatística Inferencial e Testes de Hipóteses: formulação de H0/H1, Erros do Tipo I e II, nível de significância, valor-p, e aplicação prática em testes A/B."
+    "objectID": "SQL.html#joins-combinando-tabelas",
+    "href": "SQL.html#joins-combinando-tabelas",
+    "title": "SQL e Bancos de Dados",
+    "section": "JOINs: Combinando Tabelas",
+    "text": "JOINs: Combinando Tabelas\nO poder de um banco relacional está em combinar dados de várias tabelas através de joins:\n\nINNER JOIN — retorna apenas as linhas que têm correspondência em ambas as tabelas\nLEFT JOIN — retorna todas as linhas da tabela à esquerda, mesmo sem correspondência na direita (preenchendo com NULL)\nRIGHT JOIN — o oposto do LEFT JOIN\nFULL JOIN — retorna todas as linhas de ambas as tabelas, com ou sem correspondência\n\n\n\n\n\n\nerDiagram\n    CLIENTES ||--o{ PEDIDOS : \"faz\"\n    CLIENTES {\n        int id PK\n        string nome\n        string cidade\n    }\n    PEDIDOS {\n        int id PK\n        int cliente_id FK\n        string produto\n        float valor\n        string data\n    }\n\n\n\n\n\n\nO diagrama acima mostra a relação entre clientes e pedidos: cada cliente pode fazer vários pedidos (relação um-para-muitos), e a coluna cliente_id em pedidos é a chave estrangeira que aponta para o id em clientes."
   },
   {
-    "objectID": "sobre.html#boas-práticas",
-    "href": "sobre.html#boas-práticas",
-    "title": "Sobre o Projeto",
-    "section": "Boas Práticas",
-    "text": "Boas Práticas\n\nClareza e objetividade\nReprodutibilidade\nDocumentação\nTrabalho em equipe"
+    "objectID": "SQL.html#normalização",
+    "href": "SQL.html#normalização",
+    "title": "SQL e Bancos de Dados",
+    "section": "Normalização",
+    "text": "Normalização\nNormalização é o processo de organizar tabelas para reduzir redundância e evitar inconsistências. As formas normais mais citadas são:\n\n1ª Forma Normal (1FN): cada coluna deve conter valores atômicos (não múltiplos valores em uma célula)\n2ª Forma Normal (2FN): atende a 1FN e todo atributo não-chave depende da chave primária inteira\n3ª Forma Normal (3FN): atende a 2FN e não há dependências entre atributos não-chave (elimina dependências transitivas)\n\nNa prática, bancos bem projetados costumam parar na 3FN — normalizar demais pode tornar as consultas desnecessariamente complexas, exigindo joins em excesso."
   },
   {
-    "objectID": "sobre.html#riscos-do-projeto",
-    "href": "sobre.html#riscos-do-projeto",
-    "title": "Sobre o Projeto",
-    "section": "Riscos do Projeto",
-    "text": "Riscos do Projeto\n\nFalta de padronização entre os conteúdos das equipes\nBaixo engajamento\nProblemas de manutenção técnica ao longo do tempo"
+    "objectID": "SQL.html#exemplo-prático-consultando-um-banco-relacional",
+    "href": "SQL.html#exemplo-prático-consultando-um-banco-relacional",
+    "title": "SQL e Bancos de Dados",
+    "section": "Exemplo Prático: consultando um banco relacional",
+    "text": "Exemplo Prático: consultando um banco relacional\nVamos criar duas tabelas relacionadas (clientes e pedidos) em um banco SQLite em memória e explorar consultas reais.\n\nimport sqlite3\nimport pandas as pd\n\nconn = sqlite3.connect(\":memory:\")\ncursor = conn.cursor()\n\n# Criação das tabelas (DDL)\ncursor.execute(\"\"\"\nCREATE TABLE clientes (\n    id INTEGER PRIMARY KEY,\n    nome TEXT,\n    cidade TEXT\n)\n\"\"\")\n\ncursor.execute(\"\"\"\nCREATE TABLE pedidos (\n    id INTEGER PRIMARY KEY,\n    cliente_id INTEGER,\n    produto TEXT,\n    valor REAL,\n    data TEXT,\n    FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n)\n\"\"\")\n\n# Inserção de dados (DML)\nclientes = [\n    (1, \"Ana\", \"Itapajé\"),\n    (2, \"Carlos\", \"Fortaleza\"),\n    (3, \"Beatriz\", \"Sobral\"),\n    (4, \"Diego\", \"Itapajé\"),\n]\ncursor.executemany(\"INSERT INTO clientes VALUES (?, ?, ?)\", clientes)\n\npedidos = [\n    (1, 1, \"Notebook\", 3200.00, \"2025-01-10\"),\n    (2, 1, \"Mouse\", 90.00, \"2025-01-15\"),\n    (3, 2, \"Monitor\", 950.00, \"2025-01-12\"),\n    (4, 3, \"Teclado\", 250.00, \"2025-01-20\"),\n    (5, 1, \"Headset\", 320.00, \"2025-02-02\"),\n    (6, 2, \"Notebook\", 3400.00, \"2025-02-05\"),\n]\ncursor.executemany(\"INSERT INTO pedidos VALUES (?, ?, ?, ?, ?)\", pedidos)\nconn.commit()\n\nprint(\"Tabelas criadas e populadas com sucesso.\")\n\nTabelas criadas e populadas com sucesso.\n\n\n\nConsulta 1: JOIN simples\n\nquery1 = \"\"\"\nSELECT c.nome, c.cidade, p.produto, p.valor, p.data\nFROM clientes c\nINNER JOIN pedidos p ON c.id = p.cliente_id\nORDER BY p.data;\n\"\"\"\npd.read_sql_query(query1, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\nproduto\nvalor\ndata\n\n\n\n\n0\nAna\nItapajé\nNotebook\n3200.0\n2025-01-10\n\n\n1\nCarlos\nFortaleza\nMonitor\n950.0\n2025-01-12\n\n\n2\nAna\nItapajé\nMouse\n90.0\n2025-01-15\n\n\n3\nBeatriz\nSobral\nTeclado\n250.0\n2025-01-20\n\n\n4\nAna\nItapajé\nHeadset\n320.0\n2025-02-02\n\n\n5\nCarlos\nFortaleza\nNotebook\n3400.0\n2025-02-05\n\n\n\n\n\n\n\n\n\nConsulta 2: agregação com GROUP BY\n\nquery2 = \"\"\"\nSELECT c.nome, COUNT(p.id) AS total_pedidos, SUM(p.valor) AS total_gasto\nFROM clientes c\nINNER JOIN pedidos p ON c.id = p.cliente_id\nGROUP BY c.nome\nORDER BY total_gasto DESC;\n\"\"\"\npd.read_sql_query(query2, conn)\n\n\n\n\n\n\n\n\nnome\ntotal_pedidos\ntotal_gasto\n\n\n\n\n0\nCarlos\n2\n4350.0\n\n\n1\nAna\n3\n3610.0\n\n\n2\nBeatriz\n1\n250.0\n\n\n\n\n\n\n\n\n\nConsulta 3: LEFT JOIN (incluindo clientes sem pedidos)\n\nquery3 = \"\"\"\nSELECT c.nome, c.cidade, COUNT(p.id) AS total_pedidos\nFROM clientes c\nLEFT JOIN pedidos p ON c.id = p.cliente_id\nGROUP BY c.nome\nORDER BY total_pedidos;\n\"\"\"\npd.read_sql_query(query3, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\ntotal_pedidos\n\n\n\n\n0\nDiego\nItapajé\n0\n\n\n1\nBeatriz\nSobral\n1\n\n\n2\nCarlos\nFortaleza\n2\n\n\n3\nAna\nItapajé\n3\n\n\n\n\n\n\n\n\n\nConsulta 4: subconsulta (subquery)\n\nquery4 = \"\"\"\nSELECT nome, cidade\nFROM clientes\nWHERE id IN (\n    SELECT cliente_id FROM pedidos WHERE valor &gt; 1000\n);\n\"\"\"\npd.read_sql_query(query4, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\n\n\n\n\n0\nAna\nItapajé\n\n\n1\nCarlos\nFortaleza\n\n\n\n\n\n\n\n\n\nInterpretação\n\nA Consulta 1 mostra como um INNER JOIN conecta cada pedido ao nome e cidade do cliente correspondente — sem isso, a tabela pedidos sozinha seria só uma lista de IDs sem contexto.\nA Consulta 2 demonstra o padrão mais comum em relatórios de negócio: agrupar por cliente e agregar valores, revelando que Carlos é quem mais gastou apesar de ter feito menos pedidos que Ana — um bom exemplo de por que COUNT e SUM juntos contam uma história mais completa que qualquer um sozinho.\nA Consulta 3 usa LEFT JOIN propositalmente: como todos os clientes cadastrados fizeram pelo menos um pedido, ninguém aparece com zero — mas se Beatriz e Diego não tivessem pedidos, essa consulta ainda os listaria (com total_pedidos = 0), diferente do INNER JOIN, que os teria simplesmente omitido.\nA Consulta 4 ilustra uma subconsulta: primeiro descobrimos quais cliente_id têm pedidos acima de R$ 1.000, depois filtramos a tabela de clientes com base nesse resultado."
   },
   {
-    "objectID": "sobre.html#próximos-passos",
-    "href": "sobre.html#próximos-passos",
-    "title": "Sobre o Projeto",
-    "section": "Próximos Passos",
-    "text": "Próximos Passos\n\nIntegração com o Google Colab, permitindo que o aluno rode o código do artigo diretamente a partir do portal\nVisualizações interativas (Streamlit/Plotly) para exploração de parâmetros estatísticos em tempo real\nFórum de dúvidas / plantão digital para suporte aos estudantes\nExpansão do conteúdo, revisão e distribuição contínua das tarefas entre as equipes"
+    "objectID": "SQL.html#aplicação-real-em-ciência-de-dados",
+    "href": "SQL.html#aplicação-real-em-ciência-de-dados",
+    "title": "SQL e Bancos de Dados",
+    "section": "Aplicação real em Ciência de Dados",
+    "text": "Aplicação real em Ciência de Dados\nAntes de qualquer análise estatística ou modelo de Machine Learning, é comum que os dados estejam espalhados em várias tabelas de um banco de produção — pedidos, clientes, produtos, pagamentos. Escrever consultas SQL bem construídas (com os JOINs e agregações certas) é frequentemente o que determina se o dataset final para análise está completo e correto, ou se está sutilmente enviesado por informação faltante ou duplicada."
+  },
+  {
+    "objectID": "SQL.html#referências",
+    "href": "SQL.html#referências",
+    "title": "SQL e Bancos de Dados",
+    "section": "Referências",
+    "text": "Referências\n\nDate, C. J. An Introduction to Database Systems. Pearson, 2003.\nSilberschatz, A.; Korth, H.; Sudarshan, S. Database System Concepts. McGraw-Hill, 2020.\nElmasri, R.; Navathe, S. B. Fundamentals of Database Systems. Pearson."
+  },
+  {
+    "objectID": "PLD.html",
+    "href": "PLD.html",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "",
+    "text": "O pré-processamento de dados corresponde ao conjunto de técnicas aplicadas a dados brutos para torná-los adequados à análise estatística e computacional. Tradicionalmente, essa etapa é considerada essencial para garantir a qualidade e consistência dos dados e, mais recentemente, passou a ser indispensável também no treinamento de modelos de aprendizado de máquina e inteligência artificial. Em síntese, trata-se do processo de transformar dados iniciais em um formato mais estruturado e confiável para tarefas de análise de dados, estatística e ciência de dados."
+  },
+  {
+    "objectID": "PLD.html#o-que-é-pré-processamento",
+    "href": "PLD.html#o-que-é-pré-processamento",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "",
+    "text": "O pré-processamento de dados corresponde ao conjunto de técnicas aplicadas a dados brutos para torná-los adequados à análise estatística e computacional. Tradicionalmente, essa etapa é considerada essencial para garantir a qualidade e consistência dos dados e, mais recentemente, passou a ser indispensável também no treinamento de modelos de aprendizado de máquina e inteligência artificial. Em síntese, trata-se do processo de transformar dados iniciais em um formato mais estruturado e confiável para tarefas de análise de dados, estatística e ciência de dados."
+  },
+  {
+    "objectID": "PLD.html#coleta-e-integração-de-dados",
+    "href": "PLD.html#coleta-e-integração-de-dados",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Coleta e Integração de Dados",
+    "text": "Coleta e Integração de Dados\nA coleta de dados pode ser realizada a partir de diversas fontes, como bancos de dados relacionais, arquivos CSV, APIs, sensores, questionários e dados da web. Quando esses dados vêm de diferentes origens, é necessário integrá-los em um único conjunto para análise.\nA integração de dados consiste em combinar informações de várias fontes de modo a criar um dataset unificado, garantindo consistência e evitando contradições. Esse processo exige cuidados como:\n\nPadronização de formatos: uniformização de estruturas, por exemplo datas no padrão AAAA-MM-DD\nCorrespondência de atributos/esquemas: alinhar campos equivalentes entre bases (ex.: id_cliente ↔︎ cod_cliente)\nEliminação de redundâncias e desduplicação: remover registros repetidos garantindo unicidade\n\nUma coleta ampla e uma integração bem executada são fundamentais para análises estatísticas, aprendizado de máquina e aplicações em ciência de dados."
+  },
+  {
+    "objectID": "PLD.html#técnicas-de-limpeza-valores-ausentes-outliers-duplicações",
+    "href": "PLD.html#técnicas-de-limpeza-valores-ausentes-outliers-duplicações",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)",
+    "text": "Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)\nA limpeza de dados identifica e corrige inconsistências que possam comprometer análises ou modelos. Entre as técnicas mais comuns:\n\nTratamento de valores ausentes: excluir registros ou imputar (média, mediana, moda ou métodos avançados como KNN Imputer)\nRemoção de duplicatas: eliminar ou consolidar registros repetidos\nCorreção de formatos inconsistentes: padronizar tipos e unidades (datas, maiúsculas/minúsculas, medidas)\nDetecção e tratamento de outliers: via boxplot, z-score, IQR ou métodos não supervisionados; pode-se remover ou transformar"
+  },
+  {
+    "objectID": "PLD.html#transformações-e-normalização-de-dados",
+    "href": "PLD.html#transformações-e-normalização-de-dados",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Transformações e Normalização de Dados",
+    "text": "Transformações e Normalização de Dados\nTransformações ajustam os dados para formatos adequados à modelagem, especialmente quando algoritmos são sensíveis a escala.\n\nNormalização (Min-Max): reescala para [0,1]; útil em métodos baseados em distância\nPadronização (Z-score): média 0 e desvio padrão 1\nTransformações log/Box-Cox: reduzem assimetria\nCodificação de variáveis categóricas: one-hot ou label encoding\nEngenharia/extração de atributos: criação, seleção ou redução (PCA, autoencoders)"
+  },
+  {
+    "objectID": "PLD.html#codificação-de-variáveis-categóricas",
+    "href": "PLD.html#codificação-de-variáveis-categóricas",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Codificação de Variáveis Categóricas",
+    "text": "Codificação de Variáveis Categóricas\n\nOne-Hot Encoding: cria uma coluna por categoria (0/1); adequado para dados nominais\nLabel Encoding: mapeia categorias para inteiros; só razoável para variáveis ordinais\nTarget Encoding: mapeia categorias para estatísticas da variável-alvo (ex.: média); risco de overfitting"
+  },
+  {
+    "objectID": "PLD.html#feature-engineering-criação-seleção-e-extração",
+    "href": "PLD.html#feature-engineering-criação-seleção-e-extração",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Feature Engineering (Criação, Seleção e Extração)",
+    "text": "Feature Engineering (Criação, Seleção e Extração)\nProcesso criativo que transforma dados brutos em variáveis mais representativas:\n\nCriação: derivar novas variáveis (ex.: idade a partir da data de nascimento)\nSeleção: escolher as mais relevantes com correlação, testes, árvores ou métodos automáticos\nExtração: reduzir dimensionalidade via PCA ou Autoencoders preservando informação essencial\n\n\nUm bom Feature Engineering costuma impactar mais o desempenho de um modelo do que a escolha do algoritmo em si."
+  },
+  {
+    "objectID": "PLD.html#exemplo-prático-um-mini-pipeline-de-pré-processamento",
+    "href": "PLD.html#exemplo-prático-um-mini-pipeline-de-pré-processamento",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Exemplo prático: um mini pipeline de pré-processamento",
+    "text": "Exemplo prático: um mini pipeline de pré-processamento\nVamos aplicar, em sequência, as principais técnicas apresentadas acima sobre um conjunto de dados simulado propositalmente “sujo” — com valores ausentes, duplicatas e um outlier.\n\nimport pandas as pd\nimport numpy as np\n\n# Dataset fictício e propositalmente \"sujo\"\ndados = pd.DataFrame({\n    \"cliente_id\": [1, 2, 3, 4, 5, 5, 6],\n    \"idade\": [25, 32, np.nan, 41, 29, 29, 150],   # valor ausente e outlier\n    \"cidade\": [\"Fortaleza\", \"Itapajé\", \"Fortaleza\", \"Sobral\", \"Itapajé\", \"Itapajé\", \"Fortaleza\"],\n    \"salario\": [2500, 4200, 3100, np.nan, 2800, 2800, 5200]\n})\ndados\n\n\n\n\n\n\n\n\ncliente_id\nidade\ncidade\nsalario\n\n\n\n\n0\n1\n25.0\nFortaleza\n2500.0\n\n\n1\n2\n32.0\nItapajé\n4200.0\n\n\n2\n3\nNaN\nFortaleza\n3100.0\n\n\n3\n4\n41.0\nSobral\nNaN\n\n\n4\n5\n29.0\nItapajé\n2800.0\n\n\n5\n5\n29.0\nItapajé\n2800.0\n\n\n6\n6\n150.0\nFortaleza\n5200.0\n\n\n\n\n\n\n\n\n# 1. Remover duplicatas\ndados_limpos = dados.drop_duplicates()\nprint(f\"Linhas antes: {len(dados)} | Linhas depois de remover duplicatas: {len(dados_limpos)}\")\n\nLinhas antes: 7 | Linhas depois de remover duplicatas: 6\n\n\n\n# 2. Tratar valores ausentes (imputação pela mediana)\ndados_limpos[\"idade\"] = dados_limpos[\"idade\"].fillna(dados_limpos[\"idade\"].median())\ndados_limpos[\"salario\"] = dados_limpos[\"salario\"].fillna(dados_limpos[\"salario\"].median())\ndados_limpos\n\n\n\n\n\n\n\n\ncliente_id\nidade\ncidade\nsalario\n\n\n\n\n0\n1\n25.0\nFortaleza\n2500.0\n\n\n1\n2\n32.0\nItapajé\n4200.0\n\n\n2\n3\n32.0\nFortaleza\n3100.0\n\n\n3\n4\n41.0\nSobral\n3100.0\n\n\n4\n5\n29.0\nItapajé\n2800.0\n\n\n6\n6\n150.0\nFortaleza\n5200.0\n\n\n\n\n\n\n\n\n# 3. Detectar outliers pelo método do IQR (na coluna idade)\nQ1 = dados_limpos[\"idade\"].quantile(0.25)\nQ3 = dados_limpos[\"idade\"].quantile(0.75)\nIQR = Q3 - Q1\nlimite_superior = Q3 + 1.5 * IQR\nlimite_inferior = Q1 - 1.5 * IQR\n\noutliers = dados_limpos[(dados_limpos[\"idade\"] &gt; limite_superior) | (dados_limpos[\"idade\"] &lt; limite_inferior)]\nprint(\"Limite superior aceitável:\", limite_superior)\nprint(\"Outliers encontrados:\\n\", outliers[[\"cliente_id\", \"idade\"]])\n\nLimite superior aceitável: 52.25\nOutliers encontrados:\n    cliente_id  idade\n6           6  150.0\n\n\n\n# 4. Normalização (Min-Max) e padronização (Z-score) do salário\nfrom sklearn.preprocessing import MinMaxScaler, StandardScaler\n\ndados_limpos[\"salario_minmax\"] = MinMaxScaler().fit_transform(dados_limpos[[\"salario\"]])\ndados_limpos[\"salario_zscore\"] = StandardScaler().fit_transform(dados_limpos[[\"salario\"]])\ndados_limpos[[\"cliente_id\", \"salario\", \"salario_minmax\", \"salario_zscore\"]]\n\n\n\n\n\n\n\n\ncliente_id\nsalario\nsalario_minmax\nsalario_zscore\n\n\n\n\n0\n1\n2500.0\n0.000000\n-1.057456\n\n\n1\n2\n4200.0\n0.629630\n0.770689\n\n\n2\n3\n3100.0\n0.222222\n-0.412229\n\n\n3\n4\n3100.0\n0.222222\n-0.412229\n\n\n4\n5\n2800.0\n0.111111\n-0.734843\n\n\n6\n6\n5200.0\n1.000000\n1.846068\n\n\n\n\n\n\n\n\n# 5. Codificação one-hot da variável categórica \"cidade\"\ndados_codificados = pd.get_dummies(dados_limpos, columns=[\"cidade\"], prefix=\"cidade\")\ndados_codificados\n\n\n\n\n\n\n\n\ncliente_id\nidade\nsalario\nsalario_minmax\nsalario_zscore\ncidade_Fortaleza\ncidade_Itapajé\ncidade_Sobral\n\n\n\n\n0\n1\n25.0\n2500.0\n0.000000\n-1.057456\nTrue\nFalse\nFalse\n\n\n1\n2\n32.0\n4200.0\n0.629630\n0.770689\nFalse\nTrue\nFalse\n\n\n2\n3\n32.0\n3100.0\n0.222222\n-0.412229\nTrue\nFalse\nFalse\n\n\n3\n4\n41.0\n3100.0\n0.222222\n-0.412229\nFalse\nFalse\nTrue\n\n\n4\n5\n29.0\n2800.0\n0.111111\n-0.734843\nFalse\nTrue\nFalse\n\n\n6\n6\n150.0\n5200.0\n1.000000\n1.846068\nTrue\nFalse\nFalse\n\n\n\n\n\n\n\n\nInterpretação\nO pipeline acima resolve, em cinco passos, exatamente os problemas mencionados na teoria:\n\nA duplicata do cliente_id 5 foi removida\nOs valores ausentes de idade e salario foram imputados pela mediana — uma escolha mais robusta que a média quando há outliers, como é o caso aqui\nO método do IQR sinalizou corretamente o registro com idade 150 como outlier — um valor claramente inválido que provavelmente representa erro de digitação ou de coleta\nAs colunas salario_minmax e salario_zscore mostram as duas formas mais comuns de reescalar uma variável numérica: uma limitada entre 0 e 1, a outra centrada em 0 com desvio padrão 1\nA variável categórica cidade foi transformada em colunas binárias (one-hot), formato exigido pela maioria dos algoritmos de Machine Learning, que não conseguem operar diretamente sobre texto\n\nEsse é o tipo de pipeline que normalmente antecede qualquer modelo de Machine Learning — sem esses cuidados, o modelo aprenderia padrões distorcidos pelo outlier de idade ou simplesmente falharia ao encontrar valores ausentes ou texto onde esperava números."
+  },
+  {
+    "objectID": "PLD.html#referências",
+    "href": "PLD.html#referências",
+    "title": "Pré-processamento e Limpeza de Dados",
+    "section": "Referências",
+    "text": "Referências\n\nKuhn, M.; Johnson, K. Feature Engineering and Selection. Chapman & Hall/CRC.\nHan, J.; Pei, J.; Kamber, M. Data Mining: Concepts and Techniques. Morgan Kaufmann.\nMcKinney, W. Python for Data Analysis. O’Reilly, 2022."
+  },
+  {
+    "objectID": "visualizacao.html",
+    "href": "visualizacao.html",
+    "title": "Visualização de Dados",
+    "section": "",
+    "text": "A Visualização de Dados é a área que transforma números e informações abstratas em representações gráficas, facilitando a identificação de padrões, tendências, outliers e relações que seriam difíceis de perceber apenas olhando para tabelas.\nÉ uma etapa central da Análise Exploratória de Dados (EDA): antes de aplicar qualquer modelo estatístico ou de Machine Learning, é fundamental olhar para os dados.\n\n\nUm exemplo clássico é o Quarteto de Anscombe: quatro conjuntos de dados com médias, variâncias e correlações praticamente idênticas — mas que, quando plotados, revelam padrões completamente diferentes (uma reta, uma curva, um outlier isolado, etc.). Isso mostra que estatísticas resumo (média, desvio padrão) escondem informação que só um gráfico revela."
+  },
+  {
+    "objectID": "visualizacao.html#o-que-é-visualização-de-dados",
+    "href": "visualizacao.html#o-que-é-visualização-de-dados",
+    "title": "Visualização de Dados",
+    "section": "",
+    "text": "A Visualização de Dados é a área que transforma números e informações abstratas em representações gráficas, facilitando a identificação de padrões, tendências, outliers e relações que seriam difíceis de perceber apenas olhando para tabelas.\nÉ uma etapa central da Análise Exploratória de Dados (EDA): antes de aplicar qualquer modelo estatístico ou de Machine Learning, é fundamental olhar para os dados.\n\n\nUm exemplo clássico é o Quarteto de Anscombe: quatro conjuntos de dados com médias, variâncias e correlações praticamente idênticas — mas que, quando plotados, revelam padrões completamente diferentes (uma reta, uma curva, um outlier isolado, etc.). Isso mostra que estatísticas resumo (média, desvio padrão) escondem informação que só um gráfico revela."
+  },
+  {
+    "objectID": "visualizacao.html#principais-tipos-de-gráficos",
+    "href": "visualizacao.html#principais-tipos-de-gráficos",
+    "title": "Visualização de Dados",
+    "section": "Principais tipos de gráficos",
+    "text": "Principais tipos de gráficos\n\n\n\n\n\n\n\nGráfico\nQuando usar\n\n\n\n\nHistograma\nDistribuição de uma variável numérica\n\n\nBoxplot\nComparar distribuições, identificar outliers\n\n\nGráfico de dispersão (scatter)\nRelação entre duas variáveis numéricas\n\n\nGráfico de barras\nComparar categorias\n\n\nGráfico de linha\nEvolução ao longo do tempo (séries temporais)\n\n\nHeatmap\nCorrelação entre múltiplas variáveis"
+  },
+  {
+    "objectID": "visualizacao.html#exemplo-prático-em-r-ggplot2",
+    "href": "visualizacao.html#exemplo-prático-em-r-ggplot2",
+    "title": "Visualização de Dados",
+    "section": "Exemplo prático em R (ggplot2)",
+    "text": "Exemplo prático em R (ggplot2)\nO pacote ggplot2 é o padrão de mercado para visualização em R, baseado na “gramática dos gráficos” (camadas que se somam).\n\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.4.3\n\nset.seed(42)\ndados &lt;- data.frame(\n  altura = rnorm(200, mean = 170, sd = 10),\n  peso = rnorm(200, mean = 70, sd = 12)\n)\n\nggplot(dados, aes(x = altura, y = peso)) +\n  geom_point(alpha = 0.6, color = \"#2c3e50\") +\n  geom_smooth(method = \"lm\", color = \"#e74c3c\", se = FALSE) +\n  labs(title = \"Relação entre altura e peso (dados simulados)\",\n       x = \"Altura (cm)\", y = \"Peso (kg)\") +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(dados, aes(x = altura)) +\n  geom_histogram(bins = 20, fill = \"#3498db\", color = \"white\") +\n  labs(title = \"Distribuição da altura\", x = \"Altura (cm)\", y = \"Frequência\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nInterpretação\nO gráfico de dispersão mostra a nuvem de pontos entre altura e peso, com uma linha de tendência ajustada por regressão linear. O histograma, por sua vez, evidencia o formato aproximadamente normal (em sino) da distribuição da altura simulada — algo que não seria óbvio olhando apenas para a média e o desvio padrão em uma tabela."
+  },
+  {
+    "objectID": "visualizacao.html#exemplo-prático-em-python-matplotlib-e-seaborn",
+    "href": "visualizacao.html#exemplo-prático-em-python-matplotlib-e-seaborn",
+    "title": "Visualização de Dados",
+    "section": "Exemplo prático em Python (matplotlib e seaborn)",
+    "text": "Exemplo prático em Python (matplotlib e seaborn)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport numpy as np\nimport pandas as pd\n\nnp.random.seed(42)\ndados = pd.DataFrame({\n    \"altura\": np.random.normal(170, 10, 200),\n    \"peso\": np.random.normal(70, 12, 200)\n})\n\nsns.set_style(\"whitegrid\")\nfig, ax = plt.subplots(figsize=(6, 4))\nsns.regplot(data=dados, x=\"altura\", y=\"peso\", scatter_kws={\"alpha\": 0.6}, line_kws={\"color\": \"red\"}, ax=ax)\nax.set_title(\"Relação entre altura e peso (dados simulados)\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(figsize=(6, 4))\nsns.boxplot(data=dados, y=\"peso\", ax=ax, color=\"#3498db\")\nax.set_title(\"Distribuição do peso\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nInterpretação\nO boxplot resume a distribuição do peso em quartis: a caixa representa os 50% centrais dos dados (entre o 1º e o 3º quartil), a linha central é a mediana, e os pontos fora dos “bigodes” indicam possíveis outliers."
+  },
+  {
+    "objectID": "visualizacao.html#boas-práticas",
+    "href": "visualizacao.html#boas-práticas",
+    "title": "Visualização de Dados",
+    "section": "Boas práticas",
+    "text": "Boas práticas\n\nEscolha o gráfico certo para a pergunta certa — um gráfico de linha não faz sentido para dados categóricos, por exemplo.\nEvite poluição visual: cores em excesso, gráficos 3D desnecessários e efeitos decorativos atrapalham a leitura.\nSempre rotule os eixos e inclua um título que explique o que o gráfico mostra.\nCuidado com a escala dos eixos: começar o eixo Y fora do zero pode exagerar diferenças e distorcer a interpretação.\nConsidere o daltonismo: paletas de cores como viridis (disponível tanto em R quanto em Python) são acessíveis a pessoas com diferentes tipos de daltonismo."
+  },
+  {
+    "objectID": "visualizacao.html#aplicação-real-em-ciência-de-dados",
+    "href": "visualizacao.html#aplicação-real-em-ciência-de-dados",
+    "title": "Visualização de Dados",
+    "section": "Aplicação real em Ciência de Dados",
+    "text": "Aplicação real em Ciência de Dados\nNa prática, a visualização de dados aparece em várias etapas de um projeto:\n\nAntes da modelagem: para entender a distribuição das variáveis, detectar outliers e decidir sobre transformações (normalização, log, etc.)\nDurante a modelagem: para avaliar resíduos de um modelo de regressão ou a matriz de confusão de um classificador\nDepois da modelagem: para comunicar resultados a públicos não técnicos, em dashboards e relatórios\n\nFerramentas interativas como Streamlit e Plotly, mencionadas na apresentação do projeto, permitem ir além dos gráficos estáticos, criando visualizações onde o usuário pode explorar os dados em tempo real."
+  },
+  {
+    "objectID": "FCD.html",
+    "href": "FCD.html",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "",
+    "text": "Ciência de Dados é a área interdisciplinar que combina Estatística, Programação e Conhecimento de Domínio para transformar dados brutos em insights acionáveis, suportando decisões baseadas em evidências:\n\nDados → Informação → Conhecimento → Ação\n\nEm um e-commerce, por exemplo, dados de cliques, compras e tempo de navegação são usados para recomendar produtos, estimar demanda e personalizar ofertas — um caso que retomamos com código mais adiante."
+  },
+  {
+    "objectID": "FCD.html#o-que-é-ciência-de-dados",
+    "href": "FCD.html#o-que-é-ciência-de-dados",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "",
+    "text": "Ciência de Dados é a área interdisciplinar que combina Estatística, Programação e Conhecimento de Domínio para transformar dados brutos em insights acionáveis, suportando decisões baseadas em evidências:\n\nDados → Informação → Conhecimento → Ação\n\nEm um e-commerce, por exemplo, dados de cliques, compras e tempo de navegação são usados para recomendar produtos, estimar demanda e personalizar ofertas — um caso que retomamos com código mais adiante."
+  },
+  {
+    "objectID": "FCD.html#definição",
+    "href": "FCD.html#definição",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Definição",
+    "text": "Definição\nCiência de Dados é o conjunto de métodos, processos e sistemas que permitem coletar, organizar, analisar e comunicar resultados a partir de dados, com o propósito de gerar valor para organizações e sociedade."
+  },
+  {
+    "objectID": "FCD.html#componentes-principais",
+    "href": "FCD.html#componentes-principais",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Componentes principais",
+    "text": "Componentes principais\n\nEstatística e Probabilidade — inferência, testes de hipótese, incerteza\nComputação — linguagens (Python, R, SQL), estruturas de dados, automação\nConhecimento de Domínio — entendimento do problema e das métricas de negócio\nComunicação e Visualização — contar a história dos dados de forma clara"
+  },
+  {
+    "objectID": "FCD.html#etapas-do-processo-de-ciência-de-dados",
+    "href": "FCD.html#etapas-do-processo-de-ciência-de-dados",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Etapas do Processo de Ciência de Dados",
+    "text": "Etapas do Processo de Ciência de Dados\nDois frameworks descrevem bem o fluxo de trabalho típico: CRISP-DM e OSEMN. Embora usem nomes diferentes, ambos seguem essencialmente o mesmo ciclo — entender o problema, preparar os dados, explorar, modelar e comunicar resultados.\n\n\n\n\n\nflowchart LR\n    A[Entendimento do Negócio] --&gt; B[Entendimento dos Dados]\n    B --&gt; C[Preparação dos Dados]\n    C --&gt; D[Modelagem]\n    D --&gt; E[Avaliação]\n    E --&gt; F[Implementação]\n    E -.retorno.-&gt; B\n\n\n\n\n\n\n\nCRISP-DM (Cross Industry Standard Process for Data Mining)\n\nEntendimento do Negócio — definir objetivos, restrições e critérios de sucesso\nEntendimento dos Dados — coleta inicial, análise exploratória e avaliação de qualidade\nPreparação dos Dados — limpeza, integração e transformação (feature engineering)\nModelagem — seleção de algoritmos, ajuste de hiperparâmetros e validação\nAvaliação — verificar alinhamento com os objetivos e riscos de negócio\nImplementação — operacionalização (batch/tempo real), documentação e entrega\n\n\n\nOSEMN (Obtain, Scrub, Explore, Model, Interpret)\n\nObtain — obter dados (APIs, bancos, arquivos, web)\nScrub — limpar e preparar dados; tratar outliers e valores ausentes\nExplore — explorar padrões e hipóteses; visualização e estatística descritiva\nModel — construir modelos preditivos/descritivos; avaliar generalização\nInterpret — interpretar e comunicar resultados; gerar recomendações"
+  },
+  {
+    "objectID": "FCD.html#exemplo-prático-um-mini-pipeline-osemn",
+    "href": "FCD.html#exemplo-prático-um-mini-pipeline-osemn",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Exemplo prático: um mini pipeline OSEMN",
+    "text": "Exemplo prático: um mini pipeline OSEMN\nVamos aplicar as cinco etapas do OSEMN a uma versão simplificada do exemplo de e-commerce citado no início da página.\n\nimport pandas as pd\nimport numpy as np\n\n# 1. Obtain — em um cenário real viria de um banco de dados ou API;\n# aqui simulamos dados de navegação de um e-commerce\nnp.random.seed(7)\nn = 300\ndados = pd.DataFrame({\n    \"tempo_navegacao_min\": np.random.exponential(scale=5, size=n),\n    \"cliques\": np.random.poisson(lam=8, size=n),\n    \"comprou\": np.random.binomial(1, p=0.25, size=n)\n})\n\n# Introduzindo alguns valores ausentes de propósito, como aconteceria na vida real\ndados.loc[np.random.choice(n, 15, replace=False), \"tempo_navegacao_min\"] = np.nan\n\ndados.head()\n\n\n\n\n\n\n\n\ntempo_navegacao_min\ncliques\ncomprou\n\n\n\n\n0\n0.396885\n4\n1\n\n\n1\n7.568793\n12\n0\n\n\n2\n2.884909\n8\n1\n\n\n3\n6.427093\n7\n0\n\n\n4\n19.081181\n4\n1\n\n\n\n\n\n\n\n\n# 2. Scrub — tratamento de valores ausentes\nprint(\"Valores ausentes antes:\", dados[\"tempo_navegacao_min\"].isna().sum())\ndados[\"tempo_navegacao_min\"] = dados[\"tempo_navegacao_min\"].fillna(\n    dados[\"tempo_navegacao_min\"].median()\n)\nprint(\"Valores ausentes depois:\", dados[\"tempo_navegacao_min\"].isna().sum())\n\nValores ausentes antes: 15\nValores ausentes depois: 0\n\n\n\n# 3. Explore — estatística descritiva e relação entre variáveis\ndados.groupby(\"comprou\")[[\"tempo_navegacao_min\", \"cliques\"]].mean()\n\n\n\n\n\n\n\n\ntempo_navegacao_min\ncliques\n\n\ncomprou\n\n\n\n\n\n\n0\n4.452907\n7.896714\n\n\n1\n5.395305\n7.678161\n\n\n\n\n\n\n\n\n# 4. Model — um modelo simples de regressão logística\nfrom sklearn.linear_model import LogisticRegression\n\nX = dados[[\"tempo_navegacao_min\", \"cliques\"]]\ny = dados[\"comprou\"]\n\nmodelo = LogisticRegression()\nmodelo.fit(X, y)\n\nprint(\"Coeficientes:\", dict(zip(X.columns, modelo.coef_[0])))\n\nCoeficientes: {'tempo_navegacao_min': np.float64(0.04492347081331268), 'cliques': np.float64(-0.030455291323640863)}\n\n\n\nInterpretação (etapa Interpret)\nCoeficientes positivos indicam que mais cliques e mais tempo de navegação estão associados a uma maior chance de compra — algo esperado, mas agora quantificado. Em um projeto real, o próximo passo seria validar esse modelo com dados de teste, avaliar métricas como acurácia e AUC, e comunicar o resultado para o time de marketing com uma recomendação de ação: por exemplo, priorizar campanhas de retenção para usuários com baixo tempo de navegação."
+  },
+  {
+    "objectID": "FCD.html#diferenças-entre-estatística-ciência-de-dados-machine-learning-e-engenharia-de-dados",
+    "href": "FCD.html#diferenças-entre-estatística-ciência-de-dados-machine-learning-e-engenharia-de-dados",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Diferenças entre Estatística, Ciência de Dados, Machine Learning e Engenharia de Dados",
+    "text": "Diferenças entre Estatística, Ciência de Dados, Machine Learning e Engenharia de Dados\n\n\n\n\n\n\n\n\nÁrea\nObjetivo\nExemplo\n\n\n\n\nEstatística\nAnalisar dados para explicar fenômenos e testar hipóteses\nVerificar se uma campanha elevou as vendas com significância\n\n\nCiência de Dados\nIntegrar estatística, computação e domínio para extrair conhecimento\nConstruir dashboards e modelos para prever demanda\n\n\nMachine Learning\nAprender padrões para prever ou classificar novos casos\nRecomendação de filmes em plataformas de streaming\n\n\nEngenharia de Dados\nProjetar e manter infraestrutura de dados (coleta, armazenamento, processamento)\nCriar pipelines em Spark/SQL para milhões de registros\n\n\n\nEssas áreas são complementares: a Estatística fornece a base teórica para modelos e inferência, o Machine Learning fornece algoritmos para predição e segmentação, a Engenharia de Dados garante dados confiáveis e acessíveis, e a Ciência de Dados integra as três frentes para gerar valor de negócio."
+  },
+  {
+    "objectID": "FCD.html#tipos-de-dados",
+    "href": "FCD.html#tipos-de-dados",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Tipos de Dados",
+    "text": "Tipos de Dados\n\nEstruturados — organizados em tabelas (linhas/colunas). Exemplos: transações, cadastros, armazenados em bancos SQL.\nSemiestruturados — organização flexível (chave-valor/árvore). Exemplos: JSON, XML, logs, comuns em data lakes e APIs.\nNão estruturados — sem esquema fixo. Exemplos: texto livre, imagens, áudio e vídeo, analisados via NLP, visão computacional e técnicas de big data."
+  },
+  {
+    "objectID": "FCD.html#referências",
+    "href": "FCD.html#referências",
+    "title": "Fundamentos de Ciência de Dados",
+    "section": "Referências",
+    "text": "Referências\n\nProvost, F.; Fawcett, T. Data Science for Business. O’Reilly.\nKuhn, M.; Johnson, K. Feature Engineering and Selection. Chapman & Hall/CRC.\nHan, J.; Pei, J.; Kamber, M. Data Mining: Concepts and Techniques. Morgan Kaufmann.\nMurphy, K. Probabilistic Machine Learning. MIT Press.\nGoodfellow, I.; Bengio, Y.; Courville, A. Deep Learning. MIT Press."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Portal de Estatística e Ciência de Dados",
+    "section": "",
+    "text": "O Portal de Estatística e Ciência de Dados surgiu como iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), coordenado pelo professor Hitalo. Com o compromisso de ampliar o acesso ao conhecimento científico, o projeto tem como objetivo principal oferecer conteúdos introdutórios e tutoriais acessíveis sobre estatística e ciência de dados.\nVoltado para estudantes de graduação, pós-graduação e demais interessados na área, o portal busca facilitar o aprendizado de conceitos fundamentais, técnicas estatísticas e aplicações práticas por meio de materiais didáticos, exemplos comentados e recursos interativos."
   },
   {
     "objectID": "r.html",

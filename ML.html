@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Probabilidade – Portal de Estatistica e Ciencia de Dados</title>
+<title>Machine Learning: Fundamentos – Portal de Estatistica e Ciencia de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,7 +186,7 @@ window.Quarto = {
 <span class="menu-text">Estatística Descritiva</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./PD.html" aria-current="page"> 
+    <a class="nav-link" href="./PD.html"> 
 <span class="menu-text">Probabilidade</span></a>
   </li>  
   <li class="nav-item">
@@ -206,7 +206,7 @@ window.Quarto = {
 <span class="menu-text">SQL e Bancos de Dados</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ML.html"> 
+    <a class="nav-link active" href="./ML.html" aria-current="page"> 
 <span class="menu-text">Machine Learning</span></a>
   </li>  
 </ul>
@@ -226,34 +226,22 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
-  <li><a href="#definições" id="toc-definições" class="nav-link" data-scroll-target="#definições">Definições</a>
+  <li><a href="#tipos-de-aprendizado" id="toc-tipos-de-aprendizado" class="nav-link" data-scroll-target="#tipos-de-aprendizado">Tipos de Aprendizado</a></li>
+  <li><a href="#divisão-em-treino-e-teste" id="toc-divisão-em-treino-e-teste" class="nav-link" data-scroll-target="#divisão-em-treino-e-teste">Divisão em Treino e Teste</a></li>
+  <li><a href="#overfitting-e-underfitting" id="toc-overfitting-e-underfitting" class="nav-link" data-scroll-target="#overfitting-e-underfitting">Overfitting e Underfitting</a></li>
+  <li><a href="#validação-cruzada-k-fold" id="toc-validação-cruzada-k-fold" class="nav-link" data-scroll-target="#validação-cruzada-k-fold">Validação Cruzada (k-fold)</a></li>
+  <li><a href="#métricas-de-avaliação" id="toc-métricas-de-avaliação" class="nav-link" data-scroll-target="#métricas-de-avaliação">Métricas de Avaliação</a></li>
+  <li><a href="#exemplo-prático-1-regressão" id="toc-exemplo-prático-1-regressão" class="nav-link" data-scroll-target="#exemplo-prático-1-regressão">Exemplo Prático 1: Regressão</a>
   <ul class="collapse">
-  <li><a href="#população-e-amostra" id="toc-população-e-amostra" class="nav-link" data-scroll-target="#população-e-amostra">População e Amostra</a></li>
-  <li><a href="#experimento-aleatório" id="toc-experimento-aleatório" class="nav-link" data-scroll-target="#experimento-aleatório">Experimento Aleatório</a></li>
-  <li><a href="#espaço-amostral" id="toc-espaço-amostral" class="nav-link" data-scroll-target="#espaço-amostral">Espaço Amostral</a></li>
-  <li><a href="#evento" id="toc-evento" class="nav-link" data-scroll-target="#evento">Evento</a></li>
-  <li><a href="#axiomas-de-kolmogorov" id="toc-axiomas-de-kolmogorov" class="nav-link" data-scroll-target="#axiomas-de-kolmogorov">Axiomas de Kolmogorov</a></li>
+  <li><a href="#interpretação" id="toc-interpretação" class="nav-link" data-scroll-target="#interpretação">Interpretação</a></li>
   </ul></li>
-  <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades">Propriedades</a></li>
-  <li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional" class="nav-link" data-scroll-target="#probabilidade-condicional">Probabilidade Condicional</a></li>
-  <li><a href="#teorema-da-probabilidade-total" id="toc-teorema-da-probabilidade-total" class="nav-link" data-scroll-target="#teorema-da-probabilidade-total">Teorema da Probabilidade Total</a></li>
-  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes">Teorema de Bayes</a></li>
-  <li><a href="#eventos-independentes" id="toc-eventos-independentes" class="nav-link" data-scroll-target="#eventos-independentes">Eventos Independentes</a></li>
-  <li><a href="#variáveis-aleatórias-e-distribuições" id="toc-variáveis-aleatórias-e-distribuições" class="nav-link" data-scroll-target="#variáveis-aleatórias-e-distribuições">Variáveis Aleatórias e Distribuições</a>
+  <li><a href="#exemplo-prático-2-classificação" id="toc-exemplo-prático-2-classificação" class="nav-link" data-scroll-target="#exemplo-prático-2-classificação">Exemplo Prático 2: Classificação</a>
   <ul class="collapse">
-  <li><a href="#distribuições-discretas" id="toc-distribuições-discretas" class="nav-link" data-scroll-target="#distribuições-discretas">Distribuições Discretas</a></li>
-  <li><a href="#distribuições-contínuas" id="toc-distribuições-contínuas" class="nav-link" data-scroll-target="#distribuições-contínuas">Distribuições Contínuas</a></li>
+  <li><a href="#interpretação-1" id="toc-interpretação-1" class="nav-link" data-scroll-target="#interpretação-1">Interpretação</a></li>
   </ul></li>
-  <li><a href="#esperança-momentos-e-funções-geradoras" id="toc-esperança-momentos-e-funções-geradoras" class="nav-link" data-scroll-target="#esperança-momentos-e-funções-geradoras">Esperança, Momentos e Funções Geradoras</a>
+  <li><a href="#exemplo-prático-3-visualizando-o-overfitting" id="toc-exemplo-prático-3-visualizando-o-overfitting" class="nav-link" data-scroll-target="#exemplo-prático-3-visualizando-o-overfitting">Exemplo Prático 3: Visualizando o Overfitting</a>
   <ul class="collapse">
-  <li><a href="#esperança-e-variância" id="toc-esperança-e-variância" class="nav-link" data-scroll-target="#esperança-e-variância">Esperança e Variância</a></li>
-  <li><a href="#momentos-e-funções-geradoras" id="toc-momentos-e-funções-geradoras" class="nav-link" data-scroll-target="#momentos-e-funções-geradoras">Momentos e Funções Geradoras</a></li>
-  <li><a href="#distribuição-e-esperança-condicionais" id="toc-distribuição-e-esperança-condicionais" class="nav-link" data-scroll-target="#distribuição-e-esperança-condicionais">Distribuição e Esperança Condicionais</a></li>
-  </ul></li>
-  <li><a href="#exemplos-computacionais-em-r-e-python" id="toc-exemplos-computacionais-em-r-e-python" class="nav-link" data-scroll-target="#exemplos-computacionais-em-r-e-python">Exemplos Computacionais em R e Python</a>
-  <ul class="collapse">
-  <li><a href="#python-probabilidade-e-distribuições" id="toc-python-probabilidade-e-distribuições" class="nav-link" data-scroll-target="#python-probabilidade-e-distribuições">Python: Probabilidade e Distribuições</a></li>
-  <li><a href="#r-esperança-e-variância" id="toc-r-esperança-e-variância" class="nav-link" data-scroll-target="#r-esperança-e-variância">R: Esperança e Variância</a></li>
+  <li><a href="#interpretação-2" id="toc-interpretação-2" class="nav-link" data-scroll-target="#interpretação-2">Interpretação</a></li>
   </ul></li>
   <li><a href="#aplicação-real-em-ciência-de-dados" id="toc-aplicação-real-em-ciência-de-dados" class="nav-link" data-scroll-target="#aplicação-real-em-ciência-de-dados">Aplicação real em Ciência de Dados</a></li>
   <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
@@ -265,7 +253,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probabilidade</h1>
+<h1 class="title">Machine Learning: Fundamentos</h1>
 </div>
 
 
@@ -284,177 +272,196 @@ window.Quarto = {
 
 <section id="introdução" class="level2">
 <h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
-<p>A teoria da probabilidade é um dos pilares fundamentais da Estatística e da Ciência de Dados. Ela fornece a estrutura matemática necessária para lidar com incertezas e modelar fenômenos aleatórios — desde a previsão de comportamento de sistemas complexos até a tomada de decisões sob risco. Este guia foi desenvolvido para ser uma referência sólida, abrangendo desde os fundamentos até aplicações práticas com R e Python.</p>
+<p>Machine Learning (aprendizado de máquina) é o ramo da Ciência de Dados dedicado a construir sistemas que <strong>aprendem padrões a partir de dados</strong>, em vez de seguir regras explicitamente programadas. Ao invés de escrever “se a idade for maior que X e a renda maior que Y, então classifique como cliente premium”, um modelo de ML aprende essa regra (e outras muito mais complexas) sozinho, a partir de exemplos.</p>
+<p>Essa é a diferença fundamental em relação à programação tradicional: no lugar de <code>Regras + Dados → Resultado</code>, o Machine Learning inverte a lógica para <code>Dados + Resultado → Regras</code>.</p>
 </section>
-<section id="definições" class="level2">
-<h2 class="anchored" data-anchor-id="definições">Definições</h2>
-<p>A probabilidade é uma área da matemática que estuda experiências aleatórias e quantifica as chances de ocorrência de eventos. Seu uso é essencial para modelar incertezas e tomar decisões baseadas em dados.</p>
-<section id="população-e-amostra" class="level3">
-<h3 class="anchored" data-anchor-id="população-e-amostra">População e Amostra</h3>
+<section id="tipos-de-aprendizado" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-aprendizado">Tipos de Aprendizado</h2>
 <ul>
-<li><strong>População:</strong> conjunto completo de todos os elementos ou resultados possíveis sobre os quais desejamos obter informações. Pode ser finito ou infinito.</li>
-<li><strong>Amostra:</strong> subconjunto da população, geralmente extraído para fins de análise estatística.</li>
+<li><strong>Aprendizado Supervisionado:</strong> o modelo aprende a partir de exemplos rotulados (temos o “gabarito”). Divide-se em:
+<ul>
+<li><strong>Regressão</strong> — prevê um valor numérico contínuo (ex: preço de um imóvel)</li>
+<li><strong>Classificação</strong> — prevê uma categoria (ex: e-mail é spam ou não)</li>
+</ul></li>
+<li><strong>Aprendizado Não Supervisionado:</strong> o modelo encontra padrões em dados sem rótulos (ex: agrupar clientes em segmentos via clustering)</li>
+<li><strong>Aprendizado por Reforço:</strong> um agente aprende por tentativa e erro, recebendo recompensas ou penalidades (ex: um agente jogando xadrez)</li>
 </ul>
-<p>Em probabilidade, normalmente tratamos do comportamento de variáveis em toda a população, diferentemente da estatística inferencial, que analisa amostras para fazer estimativas.</p>
+<p>Este guia foca no aprendizado supervisionado, que é o ponto de partida mais comum.</p>
 </section>
-<section id="experimento-aleatório" class="level3">
-<h3 class="anchored" data-anchor-id="experimento-aleatório">Experimento Aleatório</h3>
-<p>É um processo ou fenômeno que, mesmo repetido sob as mesmas condições, pode produzir diferentes resultados. Exemplo: lançar um dado ou medir a temperatura de uma região.</p>
-<p>O conjunto de todos os possíveis resultados de um experimento aleatório pode ser:</p>
+<section id="divisão-em-treino-e-teste" class="level2">
+<h2 class="anchored" data-anchor-id="divisão-em-treino-e-teste">Divisão em Treino e Teste</h2>
+<p>Um erro comum de iniciantes é avaliar um modelo usando os <strong>mesmos dados</strong> com que ele foi treinado — isso quase sempre superestima a qualidade do modelo, porque ele já “viu” as respostas.</p>
+<p>A prática padrão é dividir os dados em dois conjuntos:</p>
 <ul>
-<li><strong>Finito:</strong> lançamento de um dado, <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span></li>
-<li><strong>Infinito enumerável:</strong> número de tentativas até o primeiro sucesso</li>
-<li><strong>Contínuo:</strong> medida de altura, <span class="math inline">\(\Omega = [0, \infty)\)</span></li>
+<li><strong>Conjunto de treino</strong> (geralmente 70-80% dos dados) — usado para o modelo aprender os padrões</li>
+<li><strong>Conjunto de teste</strong> (os 20-30% restantes) — usado <em>apenas</em> para avaliar o modelo em dados que ele nunca viu, simulando o uso real</li>
 </ul>
+<p>Essa divisão é o que permite saber se um modelo vai <strong>generalizar</strong> bem para novos dados, ou se apenas “decorou” o conjunto de treino.</p>
 </section>
-<section id="espaço-amostral" class="level3">
-<h3 class="anchored" data-anchor-id="espaço-amostral">Espaço Amostral</h3>
-<p>O espaço amostral representa o conjunto de todos os possíveis resultados de um experimento aleatório. Em outras palavras, é a coleção de todos os resultados que podem ocorrer quando um evento aleatório é realizado.</p>
-<p>Por exemplo, quando lançamos um dado justo, o espaço amostral é o conjunto dos números de 1 a 6, pois esses são os resultados possíveis que podem aparecer no dado. Da mesma forma, ao lançar uma moeda, o espaço amostral seria {cara, coroa}, pois essas são as únicas duas opções possíveis.</p>
-<p>O espaço amostral é frequentemente denotado por <span class="math inline">\(\Omega\)</span> ou <span class="math inline">\(S\)</span> e representa o conjunto universal de todas as possibilidades. Cada elemento individual no espaço amostral é chamado de “ponto amostral”. É importante destacar que o espaço amostral deve conter todos os resultados possíveis e distintos de um experimento aleatório. Além disso, o espaço amostral pode ser finito, como nos exemplos anteriores, ou infinito, como no caso de medir a altura de uma pessoa, em que há uma infinidade de valores possíveis.</p>
-<p>O conhecimento do espaço amostral é essencial para calcular probabilidades e compreender as chances associadas aos diferentes eventos que podem ocorrer dentro desse conjunto de possibilidades.</p>
-</section>
-<section id="evento" class="level3">
-<h3 class="anchored" data-anchor-id="evento">Evento</h3>
-<p>É qualquer subconjunto do espaço amostral. Podem ser:</p>
+<section id="overfitting-e-underfitting" class="level2">
+<h2 class="anchored" data-anchor-id="overfitting-e-underfitting">Overfitting e Underfitting</h2>
 <ul>
-<li><strong>Evento simples:</strong> um único resultado (ex: tirar 4 ao lançar um dado)</li>
-<li><strong>Evento composto:</strong> vários resultados (ex: tirar número par)</li>
+<li><strong>Underfitting (subajuste):</strong> o modelo é simples demais para capturar os padrões dos dados — erra tanto no treino quanto no teste.</li>
+<li><strong>Overfitting (sobreajuste):</strong> o modelo é complexo demais e “decora” até o ruído dos dados de treino — acerta quase tudo no treino, mas erra muito no teste, porque aprendeu particularidades que não se repetem em dados novos.</li>
+<li><strong>Ajuste ideal (bom generalização):</strong> o modelo captura o padrão real dos dados sem se apegar ao ruído — desempenho parecido (e bom) tanto no treino quanto no teste.</li>
 </ul>
-<p>A probabilidade é uma função que associa a cada evento um número real entre 0 e 1: <span class="math inline">\(P : \mathcal{F} \to [0, 1]\)</span>. Se todos os resultados são igualmente prováveis (modelo clássico):</p>
-<p><span class="math display">\[P(A) = \frac{n(A)}{n(\Omega)}\]</span></p>
-<p>Em casos gerais, a probabilidade é definida por meio de medidas e requer o uso da teoria da medida (Kolmogorov).</p>
+<p>Esse equilíbrio é conhecido como o <strong>trade-off viés-variância</strong> (<em>bias-variance tradeoff</em>): modelos simples têm alto viés (underfitting), modelos complexos têm alta variância (overfitting).</p>
 </section>
-<section id="axiomas-de-kolmogorov" class="level3">
-<h3 class="anchored" data-anchor-id="axiomas-de-kolmogorov">Axiomas de Kolmogorov</h3>
+<section id="validação-cruzada-k-fold" class="level2">
+<h2 class="anchored" data-anchor-id="validação-cruzada-k-fold">Validação Cruzada (k-fold)</h2>
+<p>Dividir os dados uma única vez em treino/teste pode dar uma avaliação enganosa, dependendo de qual “sorte” caiu em cada conjunto. A <strong>validação cruzada k-fold</strong> resolve isso dividindo os dados em <span class="math inline">\(k\)</span> partes (<em>folds</em>), treinando o modelo <span class="math inline">\(k\)</span> vezes — cada vez usando uma parte diferente como teste e as demais como treino — e depois calculando a média do desempenho. Isso dá uma estimativa muito mais confiável da capacidade de generalização do modelo.</p>
+</section>
+<section id="métricas-de-avaliação" class="level2">
+<h2 class="anchored" data-anchor-id="métricas-de-avaliação">Métricas de Avaliação</h2>
+<p><strong>Para regressão</strong> (variável numérica):</p>
 <ul>
-<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
-<li><span class="math inline">\(P(A) \geq 0\)</span> para todo <span class="math inline">\(A \subseteq \Omega\)</span></li>
-<li>Se <span class="math inline">\(A_1, A_2, \dots\)</span> são disjuntos dois a dois, então:</li>
+<li><strong>MSE (Erro Quadrático Médio):</strong> média dos erros ao quadrado — penaliza mais os erros grandes</li>
+<li><strong>RMSE (Raiz do MSE):</strong> mesma unidade da variável original, mais fácil de interpretar</li>
+<li><strong>R² (coeficiente de determinação):</strong> proporção da variância explicada pelo modelo (0 a 1, quanto maior melhor)</li>
 </ul>
-<p><span class="math display">\[P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i)\]</span></p>
-<p>Esses axiomas são a base teórica da moderna teoria da probabilidade.</p>
-</section>
-</section>
-<section id="propriedades" class="level2">
-<h2 class="anchored" data-anchor-id="propriedades">Propriedades</h2>
+<p><strong>Para classificação</strong> (variável categórica):</p>
 <ul>
-<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span> — a probabilidade está entre 0 e 1</li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span> — a probabilidade de que algum resultado ocorra é 1</li>
-<li><span class="math inline">\(P(\emptyset) = 0\)</span> — o evento vazio nunca ocorre</li>
-<li><span class="math inline">\(P(A^c) = 1 - P(A)\)</span> — complementar</li>
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span> — união de eventos</li>
-<li>Se <span class="math inline">\(A \subseteq B\)</span>, então <span class="math inline">\(P(A) \leq P(B)\)</span></li>
+<li><strong>Acurácia:</strong> proporção de previsões corretas sobre o total</li>
+<li><strong>Precisão:</strong> dos casos que o modelo previu como positivos, quantos realmente eram positivos</li>
+<li><strong>Recall (sensibilidade):</strong> dos casos realmente positivos, quantos o modelo conseguiu identificar</li>
+<li><strong>F1-score:</strong> média harmônica entre precisão e recall, útil quando as classes são desbalanceadas</li>
+<li><strong>Matriz de confusão:</strong> tabela que cruza previsões com valores reais, mostrando acertos e os dois tipos de erro (falsos positivos e falsos negativos)</li>
 </ul>
 </section>
-<section id="probabilidade-condicional" class="level2">
-<h2 class="anchored" data-anchor-id="probabilidade-condicional">Probabilidade Condicional</h2>
-<p>A probabilidade condicional é a probabilidade de ocorrência de um evento A, dado que outro evento B já ocorreu. Ela é representada como <span class="math inline">\(P(A \mid B)\)</span> e é calculada como a razão entre a probabilidade da interseção entre A e B e a probabilidade de B:</p>
-<p><span class="math display">\[P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \quad \text{se } P(B) &gt; 0\]</span></p>
-<p>Essa expressão representa a probabilidade de A dado que B ocorreu.</p>
-</section>
-<section id="teorema-da-probabilidade-total" class="level2">
-<h2 class="anchored" data-anchor-id="teorema-da-probabilidade-total">Teorema da Probabilidade Total</h2>
-<p>O teorema da probabilidade total permite calcular a probabilidade de um evento A com base em uma partição do espaço amostral em eventos <span class="math inline">\(B_1, B_2, \dots, B_n\)</span>. É especialmente útil quando A depende de múltiplos cenários possíveis. Se <span class="math inline">\(B_1, B_2, \dots, B_n\)</span> são partições do espaço amostral:</p>
-<p><span class="math display">\[P(A) = \sum_{i=1}^{n} P(A \mid B_i) \, P(B_i)\]</span></p>
-</section>
-<section id="teorema-de-bayes" class="level2">
-<h2 class="anchored" data-anchor-id="teorema-de-bayes">Teorema de Bayes</h2>
-<p>O teorema de Bayes permite atualizar a probabilidade de um evento com base em novas evidências. Ele inverte a probabilidade condicional e é amplamente usado em inferência estatística e aprendizado de máquina:</p>
-<p><span class="math display">\[P(B_j \mid A) = \frac{P(A \mid B_j) \, P(B_j)}{\sum_{i=1}^{n} P(A \mid B_i) \, P(B_i)}\]</span></p>
-</section>
-<section id="eventos-independentes" class="level2">
-<h2 class="anchored" data-anchor-id="eventos-independentes">Eventos Independentes</h2>
-<p>A independência entre eventos é um conceito central na teoria das probabilidades. Dois eventos A e B são ditos independentes quando a ocorrência de um não afeta a probabilidade de ocorrência do outro. Em outras palavras, saber que B ocorreu não altera a chance de A acontecer, e vice-versa. Formalmente:</p>
-<p><span class="math display">\[P(A \cap B) = P(A) \, P(B)\]</span></p>
-<p>Essa propriedade também se estende a coleções maiores de eventos. Em aplicações práticas, assumir independência pode simplificar bastante o cálculo de probabilidades, mas essa suposição deve ser usada com cautela, especialmente em contextos reais onde variáveis muitas vezes estão correlacionadas.</p>
-</section>
-<section id="variáveis-aleatórias-e-distribuições" class="level2">
-<h2 class="anchored" data-anchor-id="variáveis-aleatórias-e-distribuições">Variáveis Aleatórias e Distribuições</h2>
-<p>Uma variável aleatória é uma função que associa a cada resultado do espaço amostral um número real.</p>
-<section id="distribuições-discretas" class="level3">
-<h3 class="anchored" data-anchor-id="distribuições-discretas">Distribuições Discretas</h3>
-<ul>
-<li>Bernoulli</li>
-<li>Binomial</li>
-<li>Geométrica</li>
-<li>Poisson</li>
-</ul>
-</section>
-<section id="distribuições-contínuas" class="level3">
-<h3 class="anchored" data-anchor-id="distribuições-contínuas">Distribuições Contínuas</h3>
-<ul>
-<li>Uniforme Contínua</li>
-<li>Exponencial</li>
-<li>Normal</li>
-</ul>
-</section>
-</section>
-<section id="esperança-momentos-e-funções-geradoras" class="level2">
-<h2 class="anchored" data-anchor-id="esperança-momentos-e-funções-geradoras">Esperança, Momentos e Funções Geradoras</h2>
-<section id="esperança-e-variância" class="level3">
-<h3 class="anchored" data-anchor-id="esperança-e-variância">Esperança e Variância</h3>
-<p><span class="math display">\[\mathbb{E}[X] = \sum x \, P(X = x) \quad \text{(discreta)}, \qquad \mathbb{E}[X] = \int x f(x) \, dx \quad \text{(contínua)}\]</span></p>
-<p><span class="math display">\[\text{Var}(X) = \mathbb{E}[X^2] - \left( \mathbb{E}[X] \right)^2\]</span></p>
-</section>
-<section id="momentos-e-funções-geradoras" class="level3">
-<h3 class="anchored" data-anchor-id="momentos-e-funções-geradoras">Momentos e Funções Geradoras</h3>
-<ul>
-<li>Momento de ordem r: <span class="math inline">\(E[X^r]\)</span></li>
-<li>Função geradora de momentos: <span class="math inline">\(M_X(t) = E[e^{tX}]\)</span></li>
-</ul>
-</section>
-<section id="distribuição-e-esperança-condicionais" class="level3">
-<h3 class="anchored" data-anchor-id="distribuição-e-esperança-condicionais">Distribuição e Esperança Condicionais</h3>
-<p><span class="math display">\[\mathbb{E}[X \mid Y = y] = \sum_x x \, P(X = x \mid Y = y) \quad \text{(discreta)}\]</span></p>
-<p><span class="math display">\[\mathbb{E}[X \mid Y = y] = \int x \, f_{X \mid Y}(x \mid y) \, dx \quad \text{(contínua)}\]</span></p>
-</section>
-</section>
-<section id="exemplos-computacionais-em-r-e-python" class="level2">
-<h2 class="anchored" data-anchor-id="exemplos-computacionais-em-r-e-python">Exemplos Computacionais em R e Python</h2>
-<section id="python-probabilidade-e-distribuições" class="level3">
-<h3 class="anchored" data-anchor-id="python-probabilidade-e-distribuições">Python: Probabilidade e Distribuições</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilidade de exatamente 3 sucessos em 5 tentativas com p = 0.4</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> binom.pmf(<span class="dv">3</span>, <span class="dv">5</span>, <span class="fl">0.4</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exemplo-prático-1-regressão" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-prático-1-regressão">Exemplo Prático 1: Regressão</h2>
+<p>Vamos prever um valor numérico (salário) a partir de uma variável (anos de experiência), avaliando o modelo em dados de teste que ele nunca viu.</p>
+<div id="79fa3b3c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>experiencia <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">20</span>, n)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>salario <span class="op">=</span> <span class="dv">3000</span> <span class="op">+</span> <span class="dv">450</span> <span class="op">*</span> experiencia <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">800</span>, n)  <span class="co"># relação linear + ruído</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> experiencia.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> salario</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>X_treino, X_teste, y_treino, y_teste <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> LinearRegression()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>modelo.fit(X_treino, y_treino)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> modelo.predict(X_teste)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(mean_squared_error(y_teste, y_pred))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> r2_score(y_teste, y_pred)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Coeficiente (por ano de experiência): </span><span class="sc">{</span>modelo<span class="sc">.</span>coef_[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Intercepto: </span><span class="sc">{</span>modelo<span class="sc">.</span>intercept_<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"RMSE no conjunto de teste: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R² no conjunto de teste: </span><span class="sc">{</span>r2<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.23040000000000008</code></pre>
+<pre><code>Coeficiente (por ano de experiência): 431.34
+Intercepto: 3094.32
+RMSE no conjunto de teste: 635.46
+R² no conjunto de teste: 0.9536</code></pre>
 </div>
 </div>
-<p><strong>Interpretação:</strong> essa é a probabilidade de observar exatamente 3 sucessos em 5 tentativas independentes, cada uma com 40% de chance de sucesso — cerca de 23%. Esse tipo de cálculo aparece em testes A/B, controle de qualidade e qualquer cenário com repetições binárias (sucesso/fracasso).</p>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">Interpretação</h3>
+<p>O R² próximo de 1 indica que o modelo explica bem a variação do salário a partir da experiência nos dados de <strong>teste</strong> — não nos dados de treino, o que é a avaliação que realmente importa. O RMSE está na mesma unidade do salário (R$), facilitando dizer: “em média, o modelo erra a previsão em cerca de R$ {valor}”.</p>
 </section>
-<section id="r-esperança-e-variância" class="level3">
-<h3 class="anchored" data-anchor-id="r-esperança-e-variância">R: Esperança e Variância</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Esperança e variância para Poisson com lambda = 3</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>esperanca <span class="ot">&lt;-</span> lambda</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>variancia <span class="ot">&lt;-</span> lambda</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Esperança:"</span>, esperanca, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exemplo-prático-2-classificação" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-prático-2-classificação">Exemplo Prático 2: Classificação</h2>
+<p>Agora vamos prever uma categoria: se um cliente vai comprar ou não, a partir de idade e renda.</p>
+<div id="93d780c7" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_classification</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, accuracy_score, precision_score, recall_score, f1_score</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_classification(n_samples<span class="op">=</span><span class="dv">300</span>, n_features<span class="op">=</span><span class="dv">2</span>, n_informative<span class="op">=</span><span class="dv">2</span>, n_redundant<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                             n_clusters_per_class<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>X_treino, X_teste, y_treino, y_teste <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>modelo_clf <span class="op">=</span> LogisticRegression()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>modelo_clf.fit(X_treino, y_treino)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>y_pred_clf <span class="op">=</span> modelo_clf.predict(X_teste)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz de confusão:"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_teste, y_pred_clf))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Acurácia: </span><span class="sc">{</span>accuracy_score(y_teste, y_pred_clf)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Precisão: </span><span class="sc">{</span>precision_score(y_teste, y_pred_clf)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Recall: </span><span class="sc">{</span>recall_score(y_teste, y_pred_clf)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"F1-score: </span><span class="sc">{</span>f1_score(y_teste, y_pred_clf)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Esperança: 3 </code></pre>
+<pre><code>Matriz de confusão:
+[[44  2]
+ [ 2 42]]
+
+Acurácia: 0.956
+Precisão: 0.955
+Recall: 0.955
+F1-score: 0.955</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Variância:"</span>, variancia, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Variância: 3 </code></pre>
+</div>
+<section id="interpretação-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-1">Interpretação</h3>
+<p>A matriz de confusão mostra quatro números: verdadeiros negativos e falsos positivos na primeira linha, falsos negativos e verdadeiros positivos na segunda. Se o <strong>recall</strong> for baixo, o modelo está deixando passar muitos casos positivos reais (por exemplo, clientes que comprariam, mas o modelo não identificou); se a <strong>precisão</strong> for baixa, o modelo está “alarmando” demais, classificando casos negativos como positivos.</p>
+</section>
+</section>
+<section id="exemplo-prático-3-visualizando-o-overfitting" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-prático-3-visualizando-o-overfitting">Exemplo Prático 3: Visualizando o Overfitting</h2>
+<p>Vamos treinar árvores de decisão com profundidades crescentes e comparar o desempenho no treino versus no teste — o padrão clássico de overfitting deve aparecer conforme a árvore fica mais complexa.</p>
+<div id="6cd82175" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>profundidades <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">15</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>acuracia_treino <span class="op">=</span> []</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>acuracia_teste <span class="op">=</span> []</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> profundidade <span class="kw">in</span> profundidades:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    arvore <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span>profundidade, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    arvore.fit(X_treino, y_treino)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    acuracia_treino.append(arvore.score(X_treino, y_treino))</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    acuracia_teste.append(arvore.score(X_teste, y_teste))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ax.plot(profundidades, acuracia_treino, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Treino"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax.plot(profundidades, acuracia_teste, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Teste"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Profundidade da árvore (complexidade do modelo)"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Acurácia"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Overfitting: acurácia de treino vs. teste"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ML_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<p><strong>Interpretação:</strong> na distribuição de Poisson, uma propriedade notável é que a esperança e a variância são sempre iguais ao parâmetro <span class="math inline">\(\lambda\)</span> — por isso os dois valores aqui saem idênticos. Essa distribuição é usada para modelar contagens de eventos raros em um intervalo fixo, como número de chamadas recebidas por hora ou defeitos por lote de produção.</p>
+</div>
+<section id="interpretação-2" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-2">Interpretação</h3>
+<p>Conforme a árvore fica mais profunda (mais complexa), a acurácia no <strong>treino</strong> sobe continuamente, se aproximando de 100% — o modelo está “decorando” os dados de treino. Mas a acurácia no <strong>teste</strong> para de melhorar e pode até piorar a partir de um certo ponto: esse é o sinal visual clássico de overfitting. O ponto ideal de complexidade é onde a curva de teste atinge seu pico, antes de começar a divergir da curva de treino.</p>
 </section>
 </section>
 <section id="aplicação-real-em-ciência-de-dados" class="level2">
 <h2 class="anchored" data-anchor-id="aplicação-real-em-ciência-de-dados">Aplicação real em Ciência de Dados</h2>
-<p>O Teorema de Bayes é a base dos <strong>classificadores Naive Bayes</strong>, amplamente usados em filtros de spam e análise de sentimento. As distribuições discretas e contínuas apresentadas aqui fundamentam desde testes de hipótese até a escolha de funções de perda em modelos de Machine Learning — entender a forma de uma distribuição é o primeiro passo antes de assumir que um algoritmo vai funcionar bem sobre esses dados.</p>
+<p>Todo o pipeline construído nas páginas anteriores do portal — estatística descritiva para entender os dados, pré-processamento para limpá-los, visualização para explorá-los — culmina exatamente aqui: um modelo de Machine Learning bem avaliado (com divisão treino/teste correta, métricas apropriadas e atenção ao overfitting) é o que transforma dados históricos em previsões confiáveis para decisões futuras, seja prever demanda, detectar fraude, ou recomendar produtos.</p>
 </section>
 <section id="referências" class="level2">
 <h2 class="anchored" data-anchor-id="referências">Referências</h2>
 <ul>
-<li>Morettin, P. A.; Bussab, W. O. <em>Estatística Básica</em>.</li>
-<li>Ross, S. M. <em>Introdução à Probabilidade e Estatística para Engenharia e Ciências</em>.</li>
-<li>Werkema, C. <em>Inferência Estatística</em>. GEN.</li>
+<li>Géron, A. <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em>. O’Reilly, 2022.</li>
+<li>James, G. et al.&nbsp;<em>An Introduction to Statistical Learning</em>. Springer, 2021.</li>
+<li>Hastie, T.; Tibshirani, R.; Friedman, J. <em>The Elements of Statistical Learning</em>. Springer.</li>
 </ul>
 
 
