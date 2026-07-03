@@ -217,12 +217,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tipos-de-varíaveis" id="toc-tipos-de-varíaveis" class="nav-link active" data-scroll-target="#tipos-de-varíaveis"><strong>Tipos de Varíaveis</strong></a></li>
-  <li><a href="#análise-exploratória-de-variáveis-quantitativas-e-qualitativas" id="toc-análise-exploratória-de-variáveis-quantitativas-e-qualitativas" class="nav-link" data-scroll-target="#análise-exploratória-de-variáveis-quantitativas-e-qualitativas"><strong>Análise Exploratória de variáveis Quantitativas e Qualitativas</strong></a></li>
-  <li><a href="#análise-bidimensional" id="toc-análise-bidimensional" class="nav-link" data-scroll-target="#análise-bidimensional"><strong>Análise bidimensional</strong></a></li>
-  <li><a href="#resumo-do-modelo" id="toc-resumo-do-modelo" class="nav-link" data-scroll-target="#resumo-do-modelo"><strong>Resumo do Modelo</strong></a></li>
-  <li><a href="#exemplos-computacionais-em-r-e-python" id="toc-exemplos-computacionais-em-r-e-python" class="nav-link" data-scroll-target="#exemplos-computacionais-em-r-e-python"><strong>EXEMPLOS COMPUTACIONAIS EM R E PYTHON</strong></a></li>
-  <li><a href="#referências-gerais-complementares" id="toc-referências-gerais-complementares" class="nav-link" data-scroll-target="#referências-gerais-complementares"><strong>Referências Gerais Complementares</strong></a></li>
+  <li><a href="#o-que-é-estatística-descritiva" id="toc-o-que-é-estatística-descritiva" class="nav-link active" data-scroll-target="#o-que-é-estatística-descritiva">O que é Estatística Descritiva?</a></li>
+  <li><a href="#tipos-de-variáveis" id="toc-tipos-de-variáveis" class="nav-link" data-scroll-target="#tipos-de-variáveis">Tipos de Variáveis</a></li>
+  <li><a href="#análise-exploratória-de-variáveis-quantitativas-e-qualitativas" id="toc-análise-exploratória-de-variáveis-quantitativas-e-qualitativas" class="nav-link" data-scroll-target="#análise-exploratória-de-variáveis-quantitativas-e-qualitativas">Análise Exploratória de Variáveis Quantitativas e Qualitativas</a>
+  <ul class="collapse">
+  <li><a href="#variáveis-quantitativas" id="toc-variáveis-quantitativas" class="nav-link" data-scroll-target="#variáveis-quantitativas">Variáveis Quantitativas</a></li>
+  <li><a href="#variáveis-qualitativas" id="toc-variáveis-qualitativas" class="nav-link" data-scroll-target="#variáveis-qualitativas">Variáveis Qualitativas</a></li>
+  <li><a href="#exemplo-prático" id="toc-exemplo-prático" class="nav-link" data-scroll-target="#exemplo-prático">Exemplo prático</a></li>
+  </ul></li>
+  <li><a href="#análise-bidimensional" id="toc-análise-bidimensional" class="nav-link" data-scroll-target="#análise-bidimensional">Análise Bidimensional</a>
+  <ul class="collapse">
+  <li><a href="#tabela-de-contingência" id="toc-tabela-de-contingência" class="nav-link" data-scroll-target="#tabela-de-contingência">Tabela de contingência</a></li>
+  <li><a href="#diagrama-de-dispersão" id="toc-diagrama-de-dispersão" class="nav-link" data-scroll-target="#diagrama-de-dispersão">Diagrama de dispersão</a></li>
+  <li><a href="#coeficiente-de-correlação-r" id="toc-coeficiente-de-correlação-r" class="nav-link" data-scroll-target="#coeficiente-de-correlação-r">Coeficiente de correlação (r)</a></li>
+  <li><a href="#regressão-linear-simples" id="toc-regressão-linear-simples" class="nav-link" data-scroll-target="#regressão-linear-simples">Regressão linear simples</a></li>
+  <li><a href="#resumo-do-modelo" id="toc-resumo-do-modelo" class="nav-link" data-scroll-target="#resumo-do-modelo">Resumo do Modelo</a></li>
+  </ul></li>
+  <li><a href="#exemplos-computacionais-em-r-e-python" id="toc-exemplos-computacionais-em-r-e-python" class="nav-link" data-scroll-target="#exemplos-computacionais-em-r-e-python">Exemplos Computacionais em R e Python</a></li>
+  <li><a href="#referências-gerais-complementares" id="toc-referências-gerais-complementares" class="nav-link" data-scroll-target="#referências-gerais-complementares">Referências Gerais Complementares</a></li>
   </ul>
 </nav>
     </div>
@@ -249,20 +261,19 @@ window.Quarto = {
 
 
 <p>A <strong>Estatística Descritiva</strong> é a parte da estatística responsável por <strong>coletar, organizar, resumir e apresentar</strong> os dados de forma clara, <strong>sem fazer inferências ou generalizações</strong> sobre uma população maior.</p>
-<section id="o-que-é-estatística-descritiva" class="level4">
-<h4 class="anchored" data-anchor-id="o-que-é-estatística-descritiva"><strong><em>O que é Estatística Descritiva?</em></strong></h4>
-<p>É um <strong>conjunto de técnicas</strong> usadas para <strong>descrever as características principais de um conjunto de dados</strong>, seja por meio de:</p>
+<section id="o-que-é-estatística-descritiva" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-estatística-descritiva">O que é Estatística Descritiva?</h2>
+<p>É um conjunto de técnicas usadas para descrever as características principais de um conjunto de dados, seja por meio de:</p>
 <ul>
-<li><p><strong>Tabelas</strong></p></li>
-<li><p><strong>Gráficosu</strong></p></li>
-<li><p><strong>Medidas numéricas</strong></p></li>
-<li><p>Ela ajuda a <strong>entender e visualizar os dados</strong>, mas <strong>não tira conclusões além do que foi observado</strong>.</p></li>
+<li><strong>Tabelas</strong></li>
+<li><strong>Gráficos</strong></li>
+<li><strong>Medidas numéricas</strong></li>
 </ul>
+<p>Ela ajuda a entender e visualizar os dados, mas <strong>não tira conclusões além do que foi observado</strong>.</p>
 </section>
-<section id="tipos-de-varíaveis" class="level3">
-<h3 class="anchored" data-anchor-id="tipos-de-varíaveis"><strong>Tipos de Varíaveis</strong></h3>
+<section id="tipos-de-variáveis" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-variáveis">Tipos de Variáveis</h2>
 <p>As variáveis são características que podem assumir diferentes valores.</p>
-<p><strong><em>Classificação:</em></strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -278,9 +289,9 @@ window.Quarto = {
 <td>Cor dos olhos, sexo, estado</td>
 </tr>
 <tr class="even">
-<td></td>
+<td>Qualitativa</td>
 <td>Ordinal</td>
-<td>Grau de escolaridade, nota(A,B,C)</td>
+<td>Grau de escolaridade, nota (A, B, C)</td>
 </tr>
 <tr class="odd">
 <td>Quantitativa</td>
@@ -288,71 +299,52 @@ window.Quarto = {
 <td>Número de filhos, chamadas</td>
 </tr>
 <tr class="even">
-<td></td>
+<td>Quantitativa</td>
 <td>Contínua</td>
 <td>Altura, peso, tempo</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="análise-exploratória-de-variáveis-quantitativas-e-qualitativas" class="level3">
-<h3 class="anchored" data-anchor-id="análise-exploratória-de-variáveis-quantitativas-e-qualitativas"><strong>Análise Exploratória de variáveis Quantitativas e Qualitativas</strong></h3>
-<p>A <strong>análise exploratória de dados (AED)</strong> tem como objetivo <strong>entender as características principais dos dados</strong> antes de aplicar modelos estatísticos. Ela varia conforme o <strong>tipo de variável</strong>: <strong>quantitativa</strong> ou <strong>qualitativa</strong>.</p>
-<section id="variáveis-quantitativas" class="level4">
-<h4 class="anchored" data-anchor-id="variáveis-quantitativas"><strong>. Variáveis Quantitativas</strong></h4>
-<p>São aquelas que representam <strong>valores numéricos</strong> e podem ser medidas ou calculadas (ex: altura, peso, salário, idade).</p>
-<p><strong><em>a. Medidas de Tendência Central</em></strong></p>
-<p>Indicadores do “centro” dos dados:</p>
+<section id="análise-exploratória-de-variáveis-quantitativas-e-qualitativas" class="level2">
+<h2 class="anchored" data-anchor-id="análise-exploratória-de-variáveis-quantitativas-e-qualitativas">Análise Exploratória de Variáveis Quantitativas e Qualitativas</h2>
+<p>A <strong>análise exploratória de dados (AED)</strong> tem como objetivo entender as características principais dos dados antes de aplicar modelos estatísticos. Ela varia conforme o tipo de variável: quantitativa ou qualitativa.</p>
+<section id="variáveis-quantitativas" class="level3">
+<h3 class="anchored" data-anchor-id="variáveis-quantitativas">Variáveis Quantitativas</h3>
+<p>São aquelas que representam valores numéricos e podem ser medidas ou calculadas (ex: altura, peso, salário, idade).</p>
+<p><strong>a. Medidas de Tendência Central</strong> — indicadores do “centro” dos dados:</p>
 <ul>
-<li><p><strong>Média</strong>: soma dos valores dividida pelo total.</p></li>
-<li><p><strong>Mediana</strong>: valor central após ordenar os dados.</p></li>
-<li><p><strong>Moda</strong>: valor mais frequente.</p></li>
+<li><strong>Média</strong>: soma dos valores dividida pelo total</li>
+<li><strong>Mediana</strong>: valor central após ordenar os dados</li>
+<li><strong>Moda</strong>: valor mais frequente</li>
 </ul>
-<p><strong><em>b. Medidas de Dispersão</em></strong></p>
-<p>Mostram o grau de <strong>variação ou espalhamento</strong> dos dados:</p>
+<p><strong>b. Medidas de Dispersão</strong> — mostram o grau de variação ou espalhamento dos dados:</p>
 <ul>
-<li><p><strong>Amplitude</strong>: diferença entre maior e menor valor.</p></li>
-<li><p><strong>Desvio padrão</strong>: média da distância dos dados à média.</p></li>
-<li><p><strong>Variância</strong>: desvio padrão ao quadrado.</p></li>
+<li><strong>Amplitude</strong>: diferença entre maior e menor valor</li>
+<li><strong>Desvio padrão</strong>: média da distância dos dados à média</li>
+<li><strong>Variância</strong>: desvio padrão ao quadrado</li>
 </ul>
-<p><strong><em>c.&nbsp;Representações Gráficas</em></strong></p>
+<p><strong>c.&nbsp;Representações Gráficas</strong></p>
 <ul>
-<li><p><strong>Histograma</strong>: mostra a distribuição dos valores em intervalos.</p></li>
-<li><p><strong>Boxplot (diagrama de caixa)</strong>: destaca a mediana, quartis e outliers.</p></li>
-<li><p><strong>Gráfico de densidade</strong>: versão suavizada do histograma.</p></li>
+<li><strong>Histograma</strong>: mostra a distribuição dos valores em intervalos</li>
+<li><strong>Boxplot (diagrama de caixa)</strong>: destaca a mediana, quartis e outliers</li>
+<li><strong>Gráfico de densidade</strong>: versão suavizada do histograma</li>
 </ul>
 </section>
-<section id="variáveis-qualitativas" class="level4">
-<h4 class="anchored" data-anchor-id="variáveis-qualitativas"><strong>. Variáveis Qualitativas</strong></h4>
-<p><strong><em>Frequência Absoluta</em></strong></p>
+<section id="variáveis-qualitativas" class="level3">
+<h3 class="anchored" data-anchor-id="variáveis-qualitativas">Variáveis Qualitativas</h3>
+<p><strong>Frequência Absoluta</strong> — é o número de vezes que uma categoria aparece. Exemplo: 20 pessoas preferem o produto A.</p>
+<p><strong>Frequência Relativa</strong> — é a proporção ou percentual que uma categoria representa dentro do total:</p>
+<p><span class="math display">\[\text{Frequência relativa} = \frac{\text{Frequência absoluta}}{\text{Total de observações}} \times 100\%\]</span></p>
+<p><strong>Gráficos usados:</strong></p>
 <ul>
-<li><p>É o <strong>número de vezes</strong> que uma categoria aparece.</p></li>
-<li><p>Exemplo: 20 pessoas preferem o produto A.</p></li>
+<li><strong>Gráfico de Barras</strong> — cada barra representa uma categoria; a altura mostra a frequência (absoluta ou relativa). É o gráfico mais comum para variáveis qualitativas.</li>
+<li><strong>Gráfico de Setores (Pizza)</strong> — cada “fatia” representa uma categoria proporcionalmente à sua frequência relativa; útil para mostrar percentuais de participação.</li>
+<li><strong>Gráfico de Pareto</strong> — combina gráfico de barras com linha acumulada; as categorias são organizadas da mais frequente para a menos frequente. Ajuda a identificar o “pouco que causa muito” (Princípio de Pareto — 80/20).</li>
 </ul>
-<p><strong><em>Frequência Relativa</em></strong></p>
-<ul>
-<li><p>É a <strong>proporção</strong> ou <strong>percentual</strong> que uma categoria representa dentro do total.</p></li>
-<li><p>Cálculo:</p>
-<p><span class="math inline">\(\text{Frequência relativa} = \frac{\text{Frequência absoluta}}{\text{Total de observações}} \times 100\%\)</span></p>
-<h4 id="gráficos-usados" class="anchored"><strong>Gráficos Usados</strong></h4>
-<p><strong>Gráfico de Barras</strong></p>
-<ul>
-<li><p>Cada barra representa uma categoria.</p></li>
-<li><p>A altura da barra mostra a frequência (absoluta ou relativa).</p></li>
-<li><p>É o gráfico mais comum para variáveis qualitativas.</p></li>
-</ul>
-<p><strong>Gráfico de Setores (Pizza)</strong></p>
-<ul>
-<li><p>Cada “fatia” representa uma categoria proporcionalmente à sua frequência relativa.</p></li>
-<li><p>Útil para mostrar <strong>percentuais</strong> de participação.</p></li>
-</ul>
-<p><strong>Gráfico de Pareto</strong></p>
-<ul>
-<li><p>Combina <strong>gráfico de barras</strong> com <strong>linha acumulada</strong>.</p></li>
-<li><p>As categorias são organizadas da <strong>mais frequente para a menos frequente</strong>.</p></li>
-<li><p>Ajuda a identificar o <strong>“pouco que causa muito”</strong> (Princípio de Pareto – 80/20).</p></li>
-</ul></li>
-</ul>
+</section>
+<section id="exemplo-prático" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-prático">Exemplo prático</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo com dados fictícios</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>)</span>
@@ -365,6 +357,8 @@ window.Quarto = {
 F M 
 3 2 </code></pre>
 </div>
+</div>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Média, mediana e moda</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(idade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -374,45 +368,48 @@ F M
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(idade), <span class="at">decreasing=</span><span class="cn">TRUE</span>))[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(idade), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22</code></pre>
 </div>
+</div>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(idade, <span class="at">main=</span><span class="st">"Boxplot Idade"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(idade, <span class="at">main =</span> <span class="st">"Boxplot Idade"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="descritiva_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="descritiva_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="análise-bidimensional" class="level3">
-<h3 class="anchored" data-anchor-id="análise-bidimensional"><strong>Análise bidimensional</strong></h3>
-<p>A <strong>análise bidimensional</strong> (ou análise bivariada) tem como objetivo <strong>investigar a relação entre duas variáveis</strong>. Dependendo do tipo de variável (qualitativa ou quantitativa), utilizam-se métodos diferentes para essa análise.</p>
-<section id="tipos-de-análise" class="level4">
-<h4 class="anchored" data-anchor-id="tipos-de-análise"><strong>Tipos de análise:</strong></h4>
-<p><strong><em>• Tabela de contingência</em></strong>:</p>
+<section id="análise-bidimensional" class="level2">
+<h2 class="anchored" data-anchor-id="análise-bidimensional">Análise Bidimensional</h2>
+<p>A <strong>análise bidimensional</strong> (ou análise bivariada) tem como objetivo investigar a relação entre duas variáveis. Dependendo do tipo de variável (qualitativa ou quantitativa), utilizam-se métodos diferentes para essa análise.</p>
+<section id="tabela-de-contingência" class="level3">
+<h3 class="anchored" data-anchor-id="tabela-de-contingência">Tabela de contingência</h3>
 <ul>
-<li><p>Usada quando <strong>ambas as variáveis são qualitativas</strong> (ou categóricas).</p></li>
-<li><p>Mostra a <strong>frequência conjunta</strong> de ocorrência das categorias das duas variáveis.</p></li>
-<li><p>Permite analisar se existe <strong>dependência</strong> ou <strong>associação</strong> entre elas.</p></li>
-<li><p><strong>Exemplo:</strong> Uma tabela cruzando <strong>gênero</strong> (masculino/feminino) e <strong>preferência de produto</strong> (A/B/C).</p></li>
+<li>Usada quando <strong>ambas as variáveis são qualitativas</strong> (ou categóricas)</li>
+<li>Mostra a frequência conjunta de ocorrência das categorias das duas variáveis</li>
+<li>Permite analisar se existe dependência ou associação entre elas</li>
+<li><strong>Exemplo:</strong> uma tabela cruzando gênero (masculino/feminino) e preferência de produto (A/B/C)</li>
 </ul>
-<p><strong><em>• Diagrama de dispersão</em></strong>:</p>
+</section>
+<section id="diagrama-de-dispersão" class="level3">
+<h3 class="anchored" data-anchor-id="diagrama-de-dispersão">Diagrama de dispersão</h3>
 <ul>
-<li><p>Utilizado quando <strong>ambas as variáveis são quantitativas</strong>.</p></li>
-<li><p>Cada ponto no gráfico representa um par de valores (x, y).</p></li>
-<li><p>Permite <strong>visualizar a forma da relação</strong> entre as variáveis: linear, exponencial, nenhuma, etc.</p></li>
-<li><p><strong>Exemplo:</strong> Analisar a relação entre <strong>tempo de estudo</strong> e <strong>nota em uma prova</strong>.</p></li>
+<li>Utilizado quando <strong>ambas as variáveis são quantitativas</strong></li>
+<li>Cada ponto no gráfico representa um par de valores (x, y)</li>
+<li>Permite visualizar a forma da relação entre as variáveis: linear, exponencial, nenhuma, etc.</li>
+<li><strong>Exemplo:</strong> analisar a relação entre tempo de estudo e nota em uma prova</li>
 </ul>
-<p><strong><em>• Coeficiente de correlação (r):</em></strong> força e direção da relação linear.</p>
-<ul>
-<li><p>Mede a <strong>força</strong> e a <strong>direção</strong> da relação <strong>linear</strong> entre duas variáveis quantitativas.</p></li>
-<li><p>Varia entre -1 e +1:</p>
+</section>
+<section id="coeficiente-de-correlação-r" class="level3">
+<h3 class="anchored" data-anchor-id="coeficiente-de-correlação-r">Coeficiente de correlação (r)</h3>
+<p>Mede a força e a direção da relação <strong>linear</strong> entre duas variáveis quantitativas. Varia entre -1 e +1:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -430,31 +427,33 @@ F M
 <td>Correlação perfeita positiva</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(r= -1\)</span></td>
+<td><span class="math inline">\(r = -1\)</span></td>
 <td>Correlação perfeita negativa</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(r= 0\)</span></td>
+<td><span class="math inline">\(r = 0\)</span></td>
 <td>Sem correlação linear</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(0.7 &lt;= |r| &lt; 1\)</span></td>
-<td>A correlação é <strong>forte</strong>, seja ela positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
+<td><span class="math inline">\(0.7 \leq \lvert r \rvert &lt; 1\)</span></td>
+<td>Correlação <strong>forte</strong>, positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(0.3 &lt;=|r| &lt; 1\)</span></td>
-<td>A correlação é <strong>modera</strong>, seja ela positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
+<td><span class="math inline">\(0.3 \leq \lvert r \rvert &lt; 0.7\)</span></td>
+<td>Correlação <strong>moderada</strong>, positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(0 &lt;|r|&lt;0.3\)</span></td>
-<td>A correlação é <strong>fraca</strong>, seja ela positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
+<td><span class="math inline">\(0 &lt; \lvert r \rvert &lt; 0.3\)</span></td>
+<td>Correlação <strong>fraca</strong>, positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
 </tr>
 </tbody>
-</table></li>
-<li><p><strong>Importante</strong>: correlação <strong>não implica causalidade</strong>.</p></li>
-<li><p><strong>Exemplo:</strong> Se r = 0.85, há <strong>forte correlação positiva</strong>: à medida que uma variável aumenta, a outra tende a aumentar também.</p></li>
-</ul>
-<p><strong><em>• Regressão linear simples:</em></strong> modela relação entre duas variáveis numéricas.</p>
+</table>
+<p><strong>Importante:</strong> correlação <strong>não implica causalidade</strong>.</p>
+<p><strong>Exemplo:</strong> se r = 0.85, há forte correlação positiva — à medida que uma variável aumenta, a outra tende a aumentar também.</p>
+</section>
+<section id="regressão-linear-simples" class="level3">
+<h3 class="anchored" data-anchor-id="regressão-linear-simples">Regressão linear simples</h3>
+<p>Modela a relação entre duas variáveis numéricas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">29</span>, <span class="dv">41</span>, <span class="dv">49</span>)</span>
@@ -464,6 +463,8 @@ F M
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9921567</code></pre>
 </div>
+</div>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regressão</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -487,25 +488,25 @@ Residual standard error: 1.932 on 3 degrees of freedom
 Multiple R-squared:  0.9844,    Adjusted R-squared:  0.9792 
 F-statistic:   189 on 1 and 3 DF,  p-value: 0.0008329</code></pre>
 </div>
+</div>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main=</span><span class="st">"Dispersão com Regressão"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(modelo, <span class="at">col=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main =</span> <span class="st">"Dispersão com Regressão"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(modelo, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="descritiva_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="descritiva_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Esse é o <strong>resultado de uma regressão linear simples</strong> obtida em R com o modelo lm(y ~ x). Vamos <strong>interpretar detalhadamente</strong> cada parte do output:</p>
-</section>
+<p>Esse é o resultado de uma regressão linear simples obtida em R com o modelo <code>lm(y ~ x)</code>. Vamos interpretar detalhadamente cada parte do output.</p>
 </section>
 <section id="resumo-do-modelo" class="level3">
-<h3 class="anchored" data-anchor-id="resumo-do-modelo"><strong>Resumo do Modelo</strong></h3>
-<p>y = 6,6 + 0,84x</p>
-<section id="coeficientes-estimate" class="level4">
-<h4 class="anchored" data-anchor-id="coeficientes-estimate"><strong>1.Coeficientes (Estimate)</strong></h4>
+<h3 class="anchored" data-anchor-id="resumo-do-modelo">Resumo do Modelo</h3>
+<p><span class="math display">\[y = 6{,}6 + 0{,}84x\]</span></p>
+<p><strong>1. Coeficientes (Estimate)</strong></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -532,9 +533,7 @@ F-statistic:   189 on 1 and 3 DF,  p-value: 0.0008329</code></pre>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="significância-dos-coeficientes" class="level4">
-<h4 class="anchored" data-anchor-id="significância-dos-coeficientes"><strong>2. Significância dos Coeficientes</strong></h4>
+<p><strong>2. Significância dos coeficientes</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -547,106 +546,90 @@ F-statistic:   189 on 1 and 3 DF,  p-value: 0.0008329</code></pre>
 <tr class="odd">
 <td>(Intercept)</td>
 <td>0.047244</td>
-<td>Significativo ao nível de 5% (<em>)</em></td>
+<td>Significativo ao nível de 5% (*)</td>
 </tr>
 <tr class="even">
 <td>x</td>
 <td>0.000833</td>
-<td><em>Muito significativo (</em>**)</td>
+<td>Muito significativo (***)</td>
 </tr>
 </tbody>
 </table>
-<p>A variável x tem um <strong>forte efeito estatístico sobre</strong> y, com <strong>baixo p-valor</strong> (menor que 0.001)</p>
-</section>
-<section id="como-interpretar-esses-valores" class="level4">
-<h4 class="anchored" data-anchor-id="como-interpretar-esses-valores"><strong>Como interpretar esses valores:</strong></h4>
-<ul>
-<li><p>O <strong>p-valor</strong> mede a <strong>probabilidade de obter um coeficiente igual ou mais extremo</strong>, assumindo que ele é <strong>nulo</strong> (sem efeito).</p></li>
-<li><p>Se o p-valor for <strong>menor que 0,05</strong>, consideramos o coeficiente <strong>estatisticamente significativo</strong> (ao nível de 5%).</p>
-<ul>
-<li><p><strong>Códigos de significância usados em R:</strong></p>
+<p>A variável x tem um forte efeito estatístico sobre y, com baixo p-valor (menor que 0.001).</p>
+<p><strong>Como interpretar esses valores:</strong></p>
+<p>O p-valor mede a probabilidade de obter um coeficiente igual ou mais extremo, assumindo que ele é nulo (sem efeito). Se o p-valor for menor que 0,05, consideramos o coeficiente estatisticamente significativo (ao nível de 5%).</p>
+<p><strong>Códigos de significância usados em R:</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><strong>Código</strong></th>
+<th>Código</th>
 <th>Nível de significância</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>***</td>
-<td>p&lt;0.001</td>
+<td><code>***</code></td>
+<td>p &lt; 0.001</td>
 </tr>
 <tr class="even">
-<td>**</td>
-<td>p&lt;0.01</td>
+<td><code>**</code></td>
+<td>p &lt; 0.01</td>
 </tr>
 <tr class="odd">
-<td>*</td>
-<td>p&lt;0.05</td>
+<td><code>*</code></td>
+<td>p &lt; 0.05</td>
 </tr>
 <tr class="even">
-<td>.</td>
-<td>p&lt;0.1(marginalmente significativo)</td>
+<td><code>.</code></td>
+<td>p &lt; 0.1 (marginalmente significativo)</td>
 </tr>
 <tr class="odd">
 <td>(vazio)</td>
-<td>p&gt;= 0.1(não significativo)</td>
+<td>p ≥ 0.1 (não significativo)</td>
 </tr>
 </tbody>
-</table></li>
-</ul></li>
-</ul>
-</section>
-<section id="erro-padrão-residual" class="level4">
-<h4 class="anchored" data-anchor-id="erro-padrão-residual"><strong>3. Erro padrão residual</strong></h4>
-<p><span class="math inline">\(\text{Residual standard error} = 1.932\)</span></p>
-<p>→ Em média, o modelo erra em cerca de <strong>1,93 unidades de</strong> y.</p>
-</section>
-<section id="section" class="level4">
-<h4 class="anchored" data-anchor-id="section"></h4>
+</table>
+<p><strong>3. Erro padrão residual</strong></p>
+<p><span class="math display">\[\text{Residual standard error} = 1.932\]</span></p>
+<p>Em média, o modelo erra em cerca de 1,93 unidades de y.</p>
 <p><strong>4. R² (R-squared)</strong></p>
-<p><span class="math inline">\(R^2 = 0.9844\)</span></p>
-<p>→ O modelo explica <strong>98,44% da variação de</strong> y com base em x.</p>
-<p>É um modelo <strong>extremamente ajustado aos dados</strong>.</p>
-</section>
-<section id="estatística-f" class="level4">
-<h4 class="anchored" data-anchor-id="estatística-f"><strong>5. Estatística F</strong></h4>
-<p><span class="math inline">\(F = 189,\quad p\text{-value} = 0.0008329\)</span></p>
-<p>→ Indica que o modelo é <strong>estatisticamente significativo</strong> como um todo.</p>
-<p>Há evidências fortes de que <strong>pelo menos um coeficiente (neste caso,</strong> x<strong>) é diferente de zero</strong>.</p>
-</section>
-<section id="conclusão" class="level4">
-<h4 class="anchored" data-anchor-id="conclusão"><strong>Conclusão:</strong></h4>
+<p><span class="math display">\[R^2 = 0.9844\]</span></p>
+<p>O modelo explica 98,44% da variação de y com base em x — um modelo extremamente ajustado aos dados.</p>
+<p><strong>5. Estatística F</strong></p>
+<p><span class="math display">\[F = 189, \quad p\text{-value} = 0.0008329\]</span></p>
+<p>Indica que o modelo é estatisticamente significativo como um todo. Há evidências fortes de que pelo menos um coeficiente (neste caso, x) é diferente de zero.</p>
+<p><strong>Conclusão:</strong></p>
 <ul>
-<li><p>O modelo é <strong>forte e ajustado</strong>.</p></li>
-<li><p>A variável x é altamente significativa.</p></li>
-<li><p>R² muito alto indica que quase toda a variação de y é explicada por x.</p></li>
-<li><p>O modelo pode ser confiável para <strong>previsão e interpretação</strong>, com base nessa amostra.</p></li>
+<li>O modelo é forte e ajustado</li>
+<li>A variável x é altamente significativa</li>
+<li>R² muito alto indica que quase toda a variação de y é explicada por x</li>
+<li>O modelo pode ser confiável para previsão e interpretação, com base nessa amostra</li>
 </ul>
 </section>
 </section>
-<section id="exemplos-computacionais-em-r-e-python" class="level3">
-<h3 class="anchored" data-anchor-id="exemplos-computacionais-em-r-e-python"><strong>EXEMPLOS COMPUTACIONAIS EM R E PYTHON</strong></h3>
-<section id="dataset-real-opcional-para-prática" class="level4">
-<h4 class="anchored" data-anchor-id="dataset-real-opcional-para-prática"><strong><em>Dataset real (opcional para prática):</em></strong></h4>
-<p>• iris, mtcars, penguins (R)</p>
-<p>• seaborn.load_dataset(‘iris’), titanic (Python)</p>
+<section id="exemplos-computacionais-em-r-e-python" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos-computacionais-em-r-e-python">Exemplos Computacionais em R e Python</h2>
+<p><strong>Datasets reais (opcional para prática):</strong></p>
+<ul>
+<li><code>iris</code>, <code>mtcars</code>, <code>penguins</code> (R)</li>
+<li><code>seaborn.load_dataset('iris')</code>, <code>titanic</code> (Python)</li>
+</ul>
+<p><strong>Recursos online:</strong></p>
+<ul>
+<li>Kaggle Datasets</li>
+<li>UCI Machine Learning Repository</li>
+</ul>
 </section>
-<section id="recursos-online" class="level4">
-<h4 class="anchored" data-anchor-id="recursos-online"><strong><em>Recursos online:</em></strong></h4>
-<p>• Kaggle Datasets</p>
-<p>• UCI Machine Learning Repository</p>
-</section>
-</section>
-<section id="referências-gerais-complementares" class="level3">
-<h3 class="anchored" data-anchor-id="referências-gerais-complementares"><strong>Referências Gerais Complementares</strong></h3>
-<pre><code>1.  Triola, M. F. Introdução à Estatística.
-2.  Bussab, W. O., Morettin, P. A. Estatística Básica.
-3.  Moore, D. S. et al. A Prática da Estatística.
-4.  Tukey, J. W. Exploratory Data Analysis.
-5.  McKinney, W. Python for Data Analysis, O’Reilly, 2022.
-6.  Wickham, H., Grolemund, G. R for Data Science, O’Reilly, 2017 (acesso livre: r4ds.had.co.nz).</code></pre>
+<section id="referências-gerais-complementares" class="level2">
+<h2 class="anchored" data-anchor-id="referências-gerais-complementares">Referências Gerais Complementares</h2>
+<ol type="1">
+<li>Triola, M. F. <em>Introdução à Estatística</em>.</li>
+<li>Bussab, W. O.; Morettin, P. A. <em>Estatística Básica</em>.</li>
+<li>Moore, D. S. et al.&nbsp;<em>A Prática da Estatística</em>.</li>
+<li>Tukey, J. W. <em>Exploratory Data Analysis</em>.</li>
+<li>McKinney, W. <em>Python for Data Analysis</em>. O’Reilly, 2022.</li>
+<li>Wickham, H.; Grolemund, G. <em>R for Data Science</em>. O’Reilly, 2017 (acesso livre: r4ds.had.co.nz).</li>
+</ol>
 
 
 </section>
