@@ -9,36 +9,41 @@ website:
         href: index.qmd
       - text: "Sobre o Projeto"
         href: sobre.qmd
-      - text: "Fundamentos de Ciência de Dados"
-        href: FCD.qmd 
-      - text: "Fundamentos de Programação"
-        href: FP.qmd
-      - text: "Ferramentas e Linguagens"
-        href: FL.qmd
-      - text: "Introdução a R"
-        href: r.qmd
-      - text: "Introdução a Estatística e Probabilidade"
-        href: IEP.qmd
-      - text: "Estatística Descritiva"
-        href: descritiva.qmd
-      - text: "Probabilidade"
-        href: PD.qmd
-      - text: "Inferência Estatistíca"
-        href: IF.qmd
-      - text: "Pré-processamento e Limpeza de Dados"
-        href: PLD.qmd
-      - text: "Visualização de Dados"
-        href: visualizacao.qmd
-      - text: "SQL e Bancos de Dados"
-        href: SQL.qmd
-      - text: "Machine Learning"
-        href: ML.qmd
+      - text: "Fundamentos"
+        menu:
+          - text: "Fundamentos de Ciência de Dados"
+            href: FCD.qmd
+          - text: "Fundamentos de Programação"
+            href: FP.qmd
+          - text: "Ferramentas e Linguagens"
+            href: FL.qmd
+          - text: "Introdução a R"
+            href: r.qmd
+      - text: "Estatística"
+        menu:
+          - text: "Introdução a Estatística e Probabilidade"
+            href: IEP.qmd
+          - text: "Estatística Descritiva"
+            href: descritiva.qmd
+          - text: "Probabilidade"
+            href: PD.qmd
+          - text: "Inferência Estatística"
+            href: IF.qmd
+      - text: "Dados e Modelagem"
+        menu:
+          - text: "Pré-processamento e Limpeza de Dados"
+            href: PLD.qmd
+          - text: "Visualização de Dados"
+            href: visualizacao.qmd
+          - text: "SQL e Bancos de Dados"
+            href: SQL.qmd
+          - text: "Machine Learning"
+            href: ML.qmd
   page-footer: "(c) 2025 Equipe do Portal"
-    
+
 format:
   html:
     theme: flatly
-    css: styles.css
     toc: true
 
 editor: visual
