@@ -1,0 +1,9 @@
+---
+title: "Portal de Estatística e Ciência de Dados"
+format: html
+editor: visual
+---
+
+O Portal de Estatística e Ciência de Dados surgiu como iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), coordenado pelo professor Hitalo. Com o compromisso de ampliar o acesso ao conhecimento científico, o projeto tem como objetivo principal oferecer conteúdos introdutórios e tutoriais acessíveis sobre estatística e ciência de dados.
+
+Voltado para estudantes de graduação, pós-graduação e demais interessados na área, o portal busca facilitar o aprendizado de conceitos fundamentais, técnicas estatísticas e aplicações práticas por meio de materiais didáticos, exemplos comentados e recursos interativos.

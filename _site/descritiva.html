@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Estatística Descritiva – Portal de Estatistica e Ciencia de Dados</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6bdd2aebeb936dcddaa5f935a5de481c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Portal de Estatistica e Ciencia de Dados</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sobre.html"> 
+<span class="menu-text">Sobre o Projeto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./FDC.qmd"> 
+<span class="menu-text">Fundamentos de Ciência de Dados</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./FD.qmd"> 
+<span class="menu-text">Fundamentos de Programação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./FL.qmd"> 
+<span class="menu-text">Ferramentas e Linguagens</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./r.qmd"> 
+<span class="menu-text">Introdução a R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./IEP.html"> 
+<span class="menu-text">Introdução a Estatística e Probabilidade</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./descritiva.html" aria-current="page"> 
+<span class="menu-text">Estatística Descritiva</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./PD.qmd"> 
+<span class="menu-text">Probabilidade</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./IF.html"> 
+<span class="menu-text">Inferência Estatistíca</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./PLD.qmd"> 
+<span class="menu-text">Pré-processamento e Limpeza de Dados</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tipos-de-varíaveis" id="toc-tipos-de-varíaveis" class="nav-link active" data-scroll-target="#tipos-de-varíaveis"><strong>Tipos de Varíaveis</strong></a></li>
+  <li><a href="#análise-exploratória-de-variáveis-quantitativas-e-qualitativas" id="toc-análise-exploratória-de-variáveis-quantitativas-e-qualitativas" class="nav-link" data-scroll-target="#análise-exploratória-de-variáveis-quantitativas-e-qualitativas"><strong>Análise Exploratória de variáveis Quantitativas e Qualitativas</strong></a></li>
+  <li><a href="#análise-bidimensional" id="toc-análise-bidimensional" class="nav-link" data-scroll-target="#análise-bidimensional"><strong>Análise bidimensional</strong></a></li>
+  <li><a href="#resumo-do-modelo" id="toc-resumo-do-modelo" class="nav-link" data-scroll-target="#resumo-do-modelo"><strong>Resumo do Modelo</strong></a></li>
+  <li><a href="#exemplos-computacionais-em-r-e-python" id="toc-exemplos-computacionais-em-r-e-python" class="nav-link" data-scroll-target="#exemplos-computacionais-em-r-e-python"><strong>EXEMPLOS COMPUTACIONAIS EM R E PYTHON</strong></a></li>
+  <li><a href="#referências-gerais-complementares" id="toc-referências-gerais-complementares" class="nav-link" data-scroll-target="#referências-gerais-complementares"><strong>Referências Gerais Complementares</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Estatística Descritiva</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A <strong>Estatística Descritiva</strong> é a parte da estatística responsável por <strong>coletar, organizar, resumir e apresentar</strong> os dados de forma clara, <strong>sem fazer inferências ou generalizações</strong> sobre uma população maior.</p>
+<section id="o-que-é-estatística-descritiva" class="level4">
+<h4 class="anchored" data-anchor-id="o-que-é-estatística-descritiva"><strong><em>O que é Estatística Descritiva?</em></strong></h4>
+<p>É um <strong>conjunto de técnicas</strong> usadas para <strong>descrever as características principais de um conjunto de dados</strong>, seja por meio de:</p>
+<ul>
+<li><p><strong>Tabelas</strong></p></li>
+<li><p><strong>Gráficosu</strong></p></li>
+<li><p><strong>Medidas numéricas</strong></p></li>
+<li><p>Ela ajuda a <strong>entender e visualizar os dados</strong>, mas <strong>não tira conclusões além do que foi observado</strong>.</p></li>
+</ul>
+</section>
+<section id="tipos-de-varíaveis" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-varíaveis"><strong>Tipos de Varíaveis</strong></h3>
+<p>As variáveis são características que podem assumir diferentes valores.</p>
+<p><strong><em>Classificação:</em></strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo de Variável</th>
+<th>Subtipo</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Qualitativa</td>
+<td>Nominal</td>
+<td>Cor dos olhos, sexo, estado</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Ordinal</td>
+<td>Grau de escolaridade, nota(A,B,C)</td>
+</tr>
+<tr class="odd">
+<td>Quantitativa</td>
+<td>Discreta</td>
+<td>Número de filhos, chamadas</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Contínua</td>
+<td>Altura, peso, tempo</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="análise-exploratória-de-variáveis-quantitativas-e-qualitativas" class="level3">
+<h3 class="anchored" data-anchor-id="análise-exploratória-de-variáveis-quantitativas-e-qualitativas"><strong>Análise Exploratória de variáveis Quantitativas e Qualitativas</strong></h3>
+<p>A <strong>análise exploratória de dados (AED)</strong> tem como objetivo <strong>entender as características principais dos dados</strong> antes de aplicar modelos estatísticos. Ela varia conforme o <strong>tipo de variável</strong>: <strong>quantitativa</strong> ou <strong>qualitativa</strong>.</p>
+<section id="variáveis-quantitativas" class="level4">
+<h4 class="anchored" data-anchor-id="variáveis-quantitativas"><strong>. Variáveis Quantitativas</strong></h4>
+<p>São aquelas que representam <strong>valores numéricos</strong> e podem ser medidas ou calculadas (ex: altura, peso, salário, idade).</p>
+<p><strong><em>a. Medidas de Tendência Central</em></strong></p>
+<p>Indicadores do “centro” dos dados:</p>
+<ul>
+<li><p><strong>Média</strong>: soma dos valores dividida pelo total.</p></li>
+<li><p><strong>Mediana</strong>: valor central após ordenar os dados.</p></li>
+<li><p><strong>Moda</strong>: valor mais frequente.</p></li>
+</ul>
+<p><strong><em>b. Medidas de Dispersão</em></strong></p>
+<p>Mostram o grau de <strong>variação ou espalhamento</strong> dos dados:</p>
+<ul>
+<li><p><strong>Amplitude</strong>: diferença entre maior e menor valor.</p></li>
+<li><p><strong>Desvio padrão</strong>: média da distância dos dados à média.</p></li>
+<li><p><strong>Variância</strong>: desvio padrão ao quadrado.</p></li>
+</ul>
+<p><strong><em>c.&nbsp;Representações Gráficas</em></strong></p>
+<ul>
+<li><p><strong>Histograma</strong>: mostra a distribuição dos valores em intervalos.</p></li>
+<li><p><strong>Boxplot (diagrama de caixa)</strong>: destaca a mediana, quartis e outliers.</p></li>
+<li><p><strong>Gráfico de densidade</strong>: versão suavizada do histograma.</p></li>
+</ul>
+</section>
+<section id="variáveis-qualitativas" class="level4">
+<h4 class="anchored" data-anchor-id="variáveis-qualitativas"><strong>. Variáveis Qualitativas</strong></h4>
+<p><strong><em>Frequência Absoluta</em></strong></p>
+<ul>
+<li><p>É o <strong>número de vezes</strong> que uma categoria aparece.</p></li>
+<li><p>Exemplo: 20 pessoas preferem o produto A.</p></li>
+</ul>
+<p><strong><em>Frequência Relativa</em></strong></p>
+<ul>
+<li><p>É a <strong>proporção</strong> ou <strong>percentual</strong> que uma categoria representa dentro do total.</p></li>
+<li><p>Cálculo:</p>
+<p><span class="math inline">\(\text{Frequência relativa} = \frac{\text{Frequência absoluta}}{\text{Total de observações}} \times 100\%\)</span></p>
+<h4 id="gráficos-usados" class="anchored"><strong>Gráficos Usados</strong></h4>
+<p><strong>Gráfico de Barras</strong></p>
+<ul>
+<li><p>Cada barra representa uma categoria.</p></li>
+<li><p>A altura da barra mostra a frequência (absoluta ou relativa).</p></li>
+<li><p>É o gráfico mais comum para variáveis qualitativas.</p></li>
+</ul>
+<p><strong>Gráfico de Setores (Pizza)</strong></p>
+<ul>
+<li><p>Cada “fatia” representa uma categoria proporcionalmente à sua frequência relativa.</p></li>
+<li><p>Útil para mostrar <strong>percentuais</strong> de participação.</p></li>
+</ul>
+<p><strong>Gráfico de Pareto</strong></p>
+<ul>
+<li><p>Combina <strong>gráfico de barras</strong> com <strong>linha acumulada</strong>.</p></li>
+<li><p>As categorias são organizadas da <strong>mais frequente para a menos frequente</strong>.</p></li>
+<li><p>Ajuda a identificar o <strong>“pouco que causa muito”</strong> (Princípio de Pareto – 80/20).</p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo com dados fictícios</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">22</span>, <span class="dv">26</span>, <span class="dv">28</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela de frequência</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sexo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sexo
+F M 
+3 2 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Média, mediana e moda</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(idade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(idade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(idade), <span class="at">decreasing=</span><span class="cn">TRUE</span>))[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(idade, <span class="at">main=</span><span class="st">"Boxplot Idade"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="descritiva_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="análise-bidimensional" class="level3">
+<h3 class="anchored" data-anchor-id="análise-bidimensional"><strong>Análise bidimensional</strong></h3>
+<p>A <strong>análise bidimensional</strong> (ou análise bivariada) tem como objetivo <strong>investigar a relação entre duas variáveis</strong>. Dependendo do tipo de variável (qualitativa ou quantitativa), utilizam-se métodos diferentes para essa análise.</p>
+<section id="tipos-de-análise" class="level4">
+<h4 class="anchored" data-anchor-id="tipos-de-análise"><strong>Tipos de análise:</strong></h4>
+<p><strong><em>• Tabela de contingência</em></strong>:</p>
+<ul>
+<li><p>Usada quando <strong>ambas as variáveis são qualitativas</strong> (ou categóricas).</p></li>
+<li><p>Mostra a <strong>frequência conjunta</strong> de ocorrência das categorias das duas variáveis.</p></li>
+<li><p>Permite analisar se existe <strong>dependência</strong> ou <strong>associação</strong> entre elas.</p></li>
+<li><p><strong>Exemplo:</strong> Uma tabela cruzando <strong>gênero</strong> (masculino/feminino) e <strong>preferência de produto</strong> (A/B/C).</p></li>
+</ul>
+<p><strong><em>• Diagrama de dispersão</em></strong>:</p>
+<ul>
+<li><p>Utilizado quando <strong>ambas as variáveis são quantitativas</strong>.</p></li>
+<li><p>Cada ponto no gráfico representa um par de valores (x, y).</p></li>
+<li><p>Permite <strong>visualizar a forma da relação</strong> entre as variáveis: linear, exponencial, nenhuma, etc.</p></li>
+<li><p><strong>Exemplo:</strong> Analisar a relação entre <strong>tempo de estudo</strong> e <strong>nota em uma prova</strong>.</p></li>
+</ul>
+<p><strong><em>• Coeficiente de correlação (r):</em></strong> força e direção da relação linear.</p>
+<ul>
+<li><p>Mede a <strong>força</strong> e a <strong>direção</strong> da relação <strong>linear</strong> entre duas variáveis quantitativas.</p></li>
+<li><p>Varia entre -1 e +1:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Valor de r</th>
+<th>Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(r = +1\)</span></td>
+<td>Correlação perfeita positiva</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(r= -1\)</span></td>
+<td>Correlação perfeita negativa</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(r= 0\)</span></td>
+<td>Sem correlação linear</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0.7 &lt;= |r| &lt; 1\)</span></td>
+<td>A correlação é <strong>forte</strong>, seja ela positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(0.3 &lt;=|r| &lt; 1\)</span></td>
+<td>A correlação é <strong>modera</strong>, seja ela positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0 &lt;|r|&lt;0.3\)</span></td>
+<td>A correlação é <strong>fraca</strong>, seja ela positiva (r &gt; 0) ou negativa (r &lt; 0)</td>
+</tr>
+</tbody>
+</table></li>
+<li><p><strong>Importante</strong>: correlação <strong>não implica causalidade</strong>.</p></li>
+<li><p><strong>Exemplo:</strong> Se r = 0.85, há <strong>forte correlação positiva</strong>: à medida que uma variável aumenta, a outra tende a aumentar também.</p></li>
+</ul>
+<p><strong><em>• Regressão linear simples:</em></strong> modela relação entre duas variáveis numéricas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">29</span>, <span class="dv">41</span>, <span class="dv">49</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlação</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9921567</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regressão</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+         1          2          3          4          5 
+ 8.547e-16  1.600e+00 -2.800e+00  8.000e-01  4.000e-01 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   6.6000     2.0265   3.257 0.047244 *  
+x             0.8400     0.0611  13.748 0.000833 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.932 on 3 degrees of freedom
+Multiple R-squared:  0.9844,    Adjusted R-squared:  0.9792 
+F-statistic:   189 on 1 and 3 DF,  p-value: 0.0008329</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main=</span><span class="st">"Dispersão com Regressão"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(modelo, <span class="at">col=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="descritiva_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esse é o <strong>resultado de uma regressão linear simples</strong> obtida em R com o modelo lm(y ~ x). Vamos <strong>interpretar detalhadamente</strong> cada parte do output:</p>
+</section>
+</section>
+<section id="resumo-do-modelo" class="level3">
+<h3 class="anchored" data-anchor-id="resumo-do-modelo"><strong>Resumo do Modelo</strong></h3>
+<p>y = 6,6 + 0,84x</p>
+<section id="coeficientes-estimate" class="level4">
+<h4 class="anchored" data-anchor-id="coeficientes-estimate"><strong>1.Coeficientes (Estimate)</strong></h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Termo</th>
+<th>Valor</th>
+<th>Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td>6.6000</td>
+<td>Quando x = 0, a previsão de y é 6.6</td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>0.8400</td>
+<td>A cada aumento de 1 unidade em x, y aumenta em média 0.84 unidades</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="significância-dos-coeficientes" class="level4">
+<h4 class="anchored" data-anchor-id="significância-dos-coeficientes"><strong>2. Significância dos Coeficientes</strong></h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Termo</th>
+<th>Pr(&gt;|t|)</th>
+<th>Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td>0.047244</td>
+<td>Significativo ao nível de 5% (<em>)</em></td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>0.000833</td>
+<td><em>Muito significativo (</em>**)</td>
+</tr>
+</tbody>
+</table>
+<p>A variável x tem um <strong>forte efeito estatístico sobre</strong> y, com <strong>baixo p-valor</strong> (menor que 0.001)</p>
+</section>
+<section id="como-interpretar-esses-valores" class="level4">
+<h4 class="anchored" data-anchor-id="como-interpretar-esses-valores"><strong>Como interpretar esses valores:</strong></h4>
+<ul>
+<li><p>O <strong>p-valor</strong> mede a <strong>probabilidade de obter um coeficiente igual ou mais extremo</strong>, assumindo que ele é <strong>nulo</strong> (sem efeito).</p></li>
+<li><p>Se o p-valor for <strong>menor que 0,05</strong>, consideramos o coeficiente <strong>estatisticamente significativo</strong> (ao nível de 5%).</p>
+<ul>
+<li><p><strong>Códigos de significância usados em R:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Código</strong></th>
+<th>Nível de significância</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>***</td>
+<td>p&lt;0.001</td>
+</tr>
+<tr class="even">
+<td>**</td>
+<td>p&lt;0.01</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>p&lt;0.05</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>p&lt;0.1(marginalmente significativo)</td>
+</tr>
+<tr class="odd">
+<td>(vazio)</td>
+<td>p&gt;= 0.1(não significativo)</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+</section>
+<section id="erro-padrão-residual" class="level4">
+<h4 class="anchored" data-anchor-id="erro-padrão-residual"><strong>3. Erro padrão residual</strong></h4>
+<p><span class="math inline">\(\text{Residual standard error} = 1.932\)</span></p>
+<p>→ Em média, o modelo erra em cerca de <strong>1,93 unidades de</strong> y.</p>
+</section>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section"></h4>
+<p><strong>4. R² (R-squared)</strong></p>
+<p><span class="math inline">\(R^2 = 0.9844\)</span></p>
+<p>→ O modelo explica <strong>98,44% da variação de</strong> y com base em x.</p>
+<p>É um modelo <strong>extremamente ajustado aos dados</strong>.</p>
+</section>
+<section id="estatística-f" class="level4">
+<h4 class="anchored" data-anchor-id="estatística-f"><strong>5. Estatística F</strong></h4>
+<p><span class="math inline">\(F = 189,\quad p\text{-value} = 0.0008329\)</span></p>
+<p>→ Indica que o modelo é <strong>estatisticamente significativo</strong> como um todo.</p>
+<p>Há evidências fortes de que <strong>pelo menos um coeficiente (neste caso,</strong> x<strong>) é diferente de zero</strong>.</p>
+</section>
+<section id="conclusão" class="level4">
+<h4 class="anchored" data-anchor-id="conclusão"><strong>Conclusão:</strong></h4>
+<ul>
+<li><p>O modelo é <strong>forte e ajustado</strong>.</p></li>
+<li><p>A variável x é altamente significativa.</p></li>
+<li><p>R² muito alto indica que quase toda a variação de y é explicada por x.</p></li>
+<li><p>O modelo pode ser confiável para <strong>previsão e interpretação</strong>, com base nessa amostra.</p></li>
+</ul>
+</section>
+</section>
+<section id="exemplos-computacionais-em-r-e-python" class="level3">
+<h3 class="anchored" data-anchor-id="exemplos-computacionais-em-r-e-python"><strong>EXEMPLOS COMPUTACIONAIS EM R E PYTHON</strong></h3>
+<section id="dataset-real-opcional-para-prática" class="level4">
+<h4 class="anchored" data-anchor-id="dataset-real-opcional-para-prática"><strong><em>Dataset real (opcional para prática):</em></strong></h4>
+<p>• iris, mtcars, penguins (R)</p>
+<p>• seaborn.load_dataset(‘iris’), titanic (Python)</p>
+</section>
+<section id="recursos-online" class="level4">
+<h4 class="anchored" data-anchor-id="recursos-online"><strong><em>Recursos online:</em></strong></h4>
+<p>• Kaggle Datasets</p>
+<p>• UCI Machine Learning Repository</p>
+</section>
+</section>
+<section id="referências-gerais-complementares" class="level3">
+<h3 class="anchored" data-anchor-id="referências-gerais-complementares"><strong>Referências Gerais Complementares</strong></h3>
+<pre><code>1.  Triola, M. F. Introdução à Estatística.
+2.  Bussab, W. O., Morettin, P. A. Estatística Básica.
+3.  Moore, D. S. et al. A Prática da Estatística.
+4.  Tukey, J. W. Exploratory Data Analysis.
+5.  McKinney, W. Python for Data Analysis, O’Reilly, 2022.
+6.  Wickham, H., Grolemund, G. R for Data Science, O’Reilly, 2017 (acesso livre: r4ds.had.co.nz).</code></pre>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<ol start="3" type="a">
+<li>2025 Equipe do Portal</li>
+</ol>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

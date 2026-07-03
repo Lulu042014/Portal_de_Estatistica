@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "Portal de Estatistica e Ciencia de Dados"
+  navbar:
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Sobre o Projeto"
+        href: sobre.qmd
+      - text: "Fundamentos de Ciência de Dados"
+        href: FDC.qmd 
+      - text: "Fundamentos de Programação"
+        href: FD.qmd
+      - text: "Ferramentas e Linguagens"
+        href: FL.qmd
+      - text: "Introdução a R"
+        href: r.qmd
+      - text: "Introdução a Estatística e Probabilidade"
+        href: IEP.qmd
+      - text: "Estatística Descritiva"
+        href: descritiva.qmd
+      - text: "Probabilidade"
+        href: PD.qmd
+      - text: "Inferência Estatistíca"
+        href: IF.qmd
+      - text: "Pré-processamento e Limpeza de Dados"
+        href: PLD.qmd
+  page-footer: "(c) 2025 Equipe do Portal"
+    
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+
+editor: visual

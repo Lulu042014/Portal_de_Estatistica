@@ -1,0 +1,152 @@
+---
+title: "Introdução a R"
+format: html
+---
+
+### **INTRODUÇÃO AO R**
+
+#### ***O que é o R?***
+
+R é uma linguagem de programação voltada para análise estatística e visualização de dados. É gratuita, de código aberto e amplamente utilizada em ciência de dados, estatística, bioinformática e pesquisa acadêmica.
+
+### **Instalação e Ambiente de Trabalho**
+
+#### ***Instalar:***
+
+• R: https://cran.r-project.org
+
+• RStudio (IDE recomendada): https://posit.co/download/rstudio-desktop/
+
+#### ***Principais arquivos:***
+
+• .R: script de código puro
+
+• .Rmd: R Markdown (mistura código + texto)
+
+• .qmd: Quarto (nova forma de relatórios interativos)
+
+### **Conceitos Básicos**
+
+```{{r}}
+# Isso é um comentário
+
+#ATRIBUIÇÃO DE VALORES 
+x <- 5      # preferido
+y = 10      # também funciona
+
+#TIPOS DE DADOS 
+numero <- 3.14        # numérico
+texto <- "Olá"        # texto (string)
+logico <- TRUE        # booleano
+vetor <- c(1, 2, 3)   # vetor numérico
+
+#FUNÇÕES BÁSICAS
+length(vetor)     # número de elementos
+sum(vetor)        # soma
+mean(vetor)       # média
+```
+
+### **Estruturas de Dados**
+
+| ESTRUTURA  | DESCRIÇÃO                    | EXEMPLO                        |
+|------------|------------------------------|--------------------------------|
+| Vetor      | coleção de elementos         | c(1, 2, 3)                     |
+| Matriz     | tabela bidimensional         | matrix(1:6, nrow = 2)          |
+| Lista      | coleção heterogênea          | list( nome ="Ana", idade = 30) |
+| data.frame | tabela de dados (como Excel) | data.frame(nome, idade)        |
+
+```{r}
+#EXEMPLO COM DATA.FRAME
+dados <- data.frame(
+  nome = c("Ana", "Carlos"),
+  idade = c(22, 35)
+)
+print(dados)
+```
+
+### **Importação e Visualização de Dados**
+
+```{r}
+#IMPORTAR CSV
+#dados <- read.csv("caminho/arquivo.csv")
+#head(dados)        # primeiras linhas
+#str(dados)         # estrutura dos dados
+
+
+```
+
+```{r}
+#GRÁFICOS BÁSICOS 
+hist(dados$idade)                  # histograma
+#boxplot(dados$idade ~ dados$sexo) # boxplot por grupo
+plot(dados$idade, dados$salario)  # dispersão
+```
+
+### **Controle de Fluxo**
+
+```{r}
+# Condicional
+x <- c(3, 12, 8)
+if (any(x > 10)) {
+  print("Pelo menos um valor é maior que 10")
+}
+
+# Todos os valores são maiores que 10?
+if (all(x > 10)) {
+  print("Todos os valores são maiores que 10")
+}
+
+# Laço for
+for (i in 1:5) {
+  print(i^2)
+}
+```
+
+### **Pacotes úteis**
+
+#### ***Instalar e carregar pacotes:***
+
+```{r}
+#install.packages("ggplot2")
+#library(ggplot2)
+```
+
+#### ***Outros pacotes populares:***
+
+• dplyr – manipulação de dados
+
+• tidyr – limpeza de dados
+
+• readr – leitura de arquivos
+
+• ggplot2 – visualizações gráficas
+
+• lubridate – manipulação de datas
+
+### **Prática guiada**
+
+```{r}
+# Criando vetores
+sexo <- c("F", "M", "F", "M", "F")
+idade <- c(23, 25, 22, 27, 29)
+
+# Resumo estatístico
+summary(idade)
+
+# Tabela de frequência
+table(sexo)
+
+# Gráfico de barras
+barplot(table(sexo), col="skyblue", main="Distribuição por Sexo")
+
+# Boxplot
+boxplot(idade, main="Boxplot de Idades", col="orange")
+```
+
+### **Referências e Cursos Gratuitos**
+
+• R for Data Science – Hadley Wickham
+
+• Curso gratuito da USP no Coursera: Introdução ao R (link)
+
+• Posit Cloud – plataforma online gratuita para rodar códigos R

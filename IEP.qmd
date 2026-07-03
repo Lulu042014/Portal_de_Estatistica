@@ -1,0 +1,208 @@
+---
+title: "Introdução a Estatística e Probabilidade"
+format: html
+---
+
+### **História e Introdução**
+
+A Estatística surgiu da necessidade de organizar informações sobre populações e territórios. O termo deriva do latim status, relacionado a “estado” ou “condição”, e era usado inicialmente para coleta de dados populacionais (censos) por governos.
+
+### **Origem histórica:**
+
+**• Antigo Egito e Babilônia:** Registros agrícolas e censos rudimentares.
+
+**• Império Romano:** Contagem populacional para fins tributários.
+
+**• Século XVII**: Formalização da estatística como ciência com John Graunt e Pierre-Simon Laplace.
+
+**• Século XX:** Aplicação ampla na biologia, psicologia, indústria, economia, entre outros.
+
+### **Ramos da Estatística**
+
+-   ***Estatística descritiva***
+
+    -   É a área da estatística responsável por **coletar, organizar, resumir e apresentar os dados** de maneira clara, sem tirar conclusões além dos dados disponíveis.
+
+-   ***Estatítica inferencial***
+
+    -   É a área da estatística que permite **tirar conclusões sobre uma população com base em dados de uma amostra**.
+
+### **FÓRMULAS**
+
+#### A **média aritmética**
+
+é uma medida de tendência central que representa o valor médio de um conjunto de dados. Ela é obtida somando todos os valores observados e dividindo pelo número total de observações.
+
+É dada por $\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n}$.
+
+| Símbolo | Significado |
+|----|----|
+| $\bar{x}$ | Média aritmética (lê-se: “x barra”) |
+| $x_1 + x_2 + \dots + x_n$ | Valores individuais da amostra ou conjunto de dados |
+| ${n}$ | Número total de valores (tamanho da amostra ou população) |
+
+-   Exemplo em r:
+
+```{r}
+# Vetor de dados
+x <- c(10, 12, 15, 13, 10)
+
+# Cálculo da média
+media <- mean(x)
+
+# Mostrar o resultado
+print(media)
+```
+
+#### A **variância**
+
+é uma medida de dispersão que indica o quanto os valores de um conjunto de dados se afastam da média. Quanto maior a variância, mais os dados estão espalhados.
+
+É dada por $\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2$
+
+| Símbulo | Significado |
+|----|----|
+| $\sigma^2$ | Variância populacional (lê-se “sigma ao quadrado”) |
+| ${N}$ | Número total de elementos da população |
+| $x_i$ | Cada valor individual do conjunto de dados |
+| $\mu$ | Média da população (valor médio dos dados) |
+| $\sum_{i=1}^N$ | Somatório — indica que vamos somar para todos os valores de i = 1 até N |
+
+-   Exemplo em r:
+
+```{r}
+# Variância populacional
+variancia_pop <- sum((x - mean(x))^2) / length(x)
+variancia_pop
+```
+
+#### **Variância (amostral)**
+
+é uma medida de **dispersão**, ou seja, mede o quanto os valores de um conjunto de dados amostrais estão espalhados em torno da média amostral.
+
+É dada por $s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2$
+
+| Símbolo          | Significado                                      |
+|------------------|--------------------------------------------------|
+| $s^2$            | Variância amostral (letra “s” ao quadrado)       |
+| ${n}$            | Tamanho da amostra (quantidade de observações)   |
+| $x_i$            | Valor individual da amostra                      |
+| $\bar{x}$        | Média da amostra                                 |
+| $\sum_{i=1}^{n}$ | Somatório (somar todos os termos de i = 1 até n) |
+
+-   Por que usamos ${n - 1}$ no denominador ?
+    -   Isso se chama **correção de Bessel**.
+
+    -   Quando calculamos a variância de uma **amostra** (e não da população inteira), usamos ${n - 1}$ para **corrigir o viés** da estimativa.
+
+    -   Ajuda a garantir que a variância amostral seja uma **boa estimativa da variância populacional**.
+-   Exemplo em r:
+
+```{r}
+# Vetor de dados (amostra)
+x <- c(10, 12, 15, 13, 10)
+
+# Variância amostral
+variancia_amostral <- var(x)
+
+# Exibir resultado
+print(variancia_amostral)
+
+```
+
+#### O **desvio padrão**
+
+é a raiz quadrada da variância. Ele indica, em média, o quanto os dados se afastam da média. Diferente da variância, o desvio padrão está na **mesma unidade dos dados**, o que facilita a interpretação.
+
+É dada por $\sigma = \sqrt{\sigma^2}$
+
+| Símbolo | Significado |
+|----|----|
+| $\sigma^2$ | Variância populacional: mede o quanto os dados se afastam da média, **em unidades ao quadrado** |
+| \$\\sigma \$ | Desvio padrão populacional: mede a **dispersão dos dados** em relação à média, **na mesma unidade dos dados** |
+| $\sqrt{}$ | Raiz quadrada |
+
+-   Exemplo em r:
+
+```{r}
+# Desvio padrão populacional
+desvio_padrao_pop <- sqrt(variancia_pop)
+desvio_padrao_pop
+```
+
+#### **Desvio Padrão (amostral)**
+
+mede o **grau de dispersão dos dados** em torno da **média amostral**. Ou seja, indica **o quão “espalhados” os dados estão**.
+
+É dada por $s = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2}$
+
+| Símbolo | Significado |
+|----|----|
+| $s$ | Desvio padrão amostral |
+| ${n}$ | Tamanho da amostra |
+| $x_i$ | Valor individual da amostra |
+| $\bar{x}$ | Média amostral |
+| $\sum_{i=1}^n$ | Somatório — indica que a operação será feita para todos os valores i = 1 até n |
+| ${n-1}$ | Grau de liberdade da amostra (correção de Bessel) |
+
+-   Exemplo em r:
+
+```{r}
+# Desvio padrão amostral
+desvio_padrao_amostral <- sd(x)
+desvio_padrao_amostral
+```
+
+### **Probabilidade Básica**
+
+#### ***Probabilidade de um evento A:***
+
+Essa é a **definição clássica de probabilidade**. Ela mede **a chance de um evento A acontecer**, em uma situação onde todos os resultados são igualmente prováveis.
+
+$P(A) = \frac{\text{número de casos favoráveis}}{\text{número total de casos possíveis}}$
+
+**Exemplo:**
+
+Lançar um dado comum (6 lados).
+
+Qual a probabilidade de sair um número **par**?
+
+-   Casos favoráveis: 2, 4, 6 → 3 resultados
+
+-   Casos possíveis: 1 a 6 → 6 resultados
+
+    $P(\text{par}) = \frac{3}{6} = 0{,}5$
+
+#### ***Regra da soma (eventos mutuamente exclusivos):***
+
+Essa regra vale quando **os eventos A e B não podem ocorrer juntos** (ou seja, são **mutuamente exclusivos**).
+
+Se um evento acontece, o outro não pode acontecer ao mesmo tempo.
+
+$P(A \cup B) = P(A) + P(B)$
+
+**Exemplo:**
+
+Lançar um dado. Qual a probabilidade de sair **1** ou **6**?
+
+-   $P(1) = \frac{1}{6}$
+
+-   $P(6) = \frac{1}{6}$
+
+    $P(1 \text{ ou } 6) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}$
+
+#### ***Regra do produto (eventos independentes):***
+
+Essa fórmula é usada quando os eventos **A e B são independentes**, ou seja, **o resultado de um não afeta o outro**.
+
+$P(A \cap B) = P(A) \cdot P(B)$
+
+**Exemplo:**
+
+Lançar **duas moedas**. Qual a probabilidade de sair **cara nas duas**?
+
+-   $P(\text{cara na 1ª}) = \frac{1}{2}$
+
+-   $P(\text{cara na 2ª}) = \frac{1}{2}$
+
+    $P(\text{cara e cara}) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$

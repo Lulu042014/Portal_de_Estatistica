@@ -1,0 +1,110 @@
+---
+title: "Sobre o Projeto"
+format: html
+---
+
+## O que é o Portal
+
+O **Portal de Estatística e Ciência de Dados** é uma iniciativa de um projeto de extensão da Universidade Federal do Ceará (UFC), Campus de Itapajé, coordenado pelo **Prof. Dr. Hitalo Joseferson Batista Nascimento**.
+
+O objetivo principal é ampliar o acesso ao conhecimento científico, oferecendo conteúdos introdutórios e tutoriais acessíveis sobre Estatística e Ciência de Dados para diferentes públicos:
+
+-   Estudantes do **Ensino Médio**
+-   Estudantes de **Graduação**
+-   **Comunidade externa** interessada na área
+
+## Justificativa
+
+O avanço da Ciência de Dados transformou a Estatística em um pilar fundamental para a formação de novos profissionais. No entanto, estudantes da área frequentemente enfrentam dificuldades na transição da teoria estatística abstrata para a aplicação prática em código (Python e R).
+
+O portal busca mitigar essa lacuna, funcionando como um ambiente digital de aprendizagem contínua e suporte acadêmico, democratizando o acesso ao conhecimento estatístico aplicado.
+
+## Arquitetura Tecnológica
+
+O portal é construído com as seguintes ferramentas:
+
+-   **Quarto** — geração do site
+-   **R e Python** — desenvolvimento de conteúdo e exemplos
+-   **Git / GitHub** — versionamento e colaboração em equipe
+-   **GitHub Pages** — publicação
+-   **Shiny** — aplicações interativas (planejado)
+
+### Fluxo de publicação
+
+1.  Criar/editar arquivos `.qmd`
+2.  Renderizar com Quarto
+3.  Versionar no GitHub
+4.  Publicar via GitHub Pages
+
+## Estrutura do Portal
+
+O conteúdo está organizado em quatro grandes frentes:
+
+-   **Fundamentos** — Probabilidade e Inferência
+-   **Simulações** — modelos computacionais e visualizações interativas
+-   **Tutoriais** — exemplos práticos em R e Python
+-   **Aplicações** — estudos de caso com dados reais
+
+### Padrão de conteúdo
+
+Cada página do portal deve conter, sempre que possível:
+
+-   Conceito teórico
+-   Exemplo prático
+-   Código (R ou Python)
+-   Interpretação dos resultados
+-   Aplicação real
+
+## Organização da Equipe
+
+O projeto conta atualmente com **8 alunos**, distribuídos em quatro equipes:
+
+| Equipe | Responsabilidade |
+|----|----|
+| Equipe 1 — Conteúdo Teórico | Probabilidade, Inferência Estatística, Estatística Descritiva, revisão conceitual e Ciência de Dados |
+| Equipe 2 — Conteúdo Aplicado | Exemplos em R e Python, estudos de caso, aplicações práticas |
+| Equipe 3 — Simulações | Integração com projeto de simulações, modelos computacionais e visualizações interativas |
+| Equipe 4 — Plataforma e Deploy | Organização do repositório, layout, navegação, deploy no GitHub Pages e manutenção técnica |
+
+### Pesquisa de Conteúdo Teórico
+
+A pesquisa teórica do 1º semestre foi conduzida por **Fernando Barbosa** e **João Victor Bandeira**, com os seguintes objetivos:
+
+-   Mapear os conceitos estatísticos mais críticos e complexos para estudantes de Ciência de Dados
+-   Traduzir o rigor matemático em linguagem acessível, visual e aplicada
+-   Alinhar o conteúdo às demandas do mercado de tecnologia e à matriz curricular acadêmica
+
+Para estruturar essa pesquisa, a dupla realizou um *benchmarking* de portais educacionais consolidados:
+
+| Referência | Insight | Aplicação no projeto |
+|----|----|----|
+| StatQuest (Josh Starmer) | Conceitos complexos quebrados em passos visuais, sem perder rigor | Evitar paredes de texto; focar na intuição por trás das fórmulas |
+| PennState Eberly College | Estrutura modular clara, com exemplos reais | Trilhas teóricas sequenciais (Descritiva → Inferencial → Modelagem) |
+| Towards Data Science | Conexão direta entre teoria e código | Todo artigo teórico termina com um "Mini-Lab" prático em Python |
+| Portal de Estatística IME-USP | Rigor acadêmico e glossário técnico | Criação de um dicionário de termos para consulta rápida |
+
+Os eixos temáticos pesquisados no período foram:
+
+-   **Eixo A — Estatística Descritiva e EDA:** medidas de tendência central e dispersão, identificação teórica de outliers, e o impacto dessas métricas no pré-processamento para Machine Learning.
+-   **Eixo B — Probabilidade e Distribuições:** variáveis aleatórias, distribuições Normal, Binomial e de Poisson, com foco na intuição do Teorema Central do Limite.
+-   **Eixo C — Estatística Inferencial e Testes de Hipóteses:** formulação de H0/H1, Erros do Tipo I e II, nível de significância, valor-p, e aplicação prática em testes A/B.
+
+## Boas Práticas
+
+-   Clareza e objetividade
+-   Reprodutibilidade
+-   Documentação
+-   Trabalho em equipe
+
+## Riscos do Projeto
+
+-   Falta de padronização entre os conteúdos das equipes
+-   Baixo engajamento
+-   Problemas de manutenção técnica ao longo do tempo
+
+## Próximos Passos
+
+-   Integração com o Google Colab, permitindo que o aluno rode o código do artigo diretamente a partir do portal
+-   Visualizações interativas (Streamlit/Plotly) para exploração de parâmetros estatísticos em tempo real
+-   Fórum de dúvidas / plantão digital para suporte aos estudantes
+-   Expansão do conteúdo, revisão e distribuição contínua das tarefas entre as equipes

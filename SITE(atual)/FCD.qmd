@@ -1,0 +1,104 @@
+---
+title: "Fundamentos de Ciência de Dados"
+format: html
+---
+
+## O que é Ciência de Dados?
+
+Ciência de Dados é uma área **interdisciplinar** que combina **Estatística**, **Programação** e **Conhecimento de Domínio** para extrair valor de dados.\
+O objetivo é transformar dados em **insights acionáveis** para suportar a **tomada de decisão baseada em evidências**.
+
+De forma simplificada:
+
+> **Dados → Informação → Conhecimento → Ação**
+
+------------------------------------------------------------------------
+
+### Exemplo
+
+Em um e-commerce, dados como **cliques**, **compras** e **tempo de navegação** são utilizados para:
+
+-   recomendar produtos
+-   estimar demanda
+-   personalizar ofertas
+
+## Definição
+
+Ciência de Dados é o conjunto de métodos, processos e sistemas que permitem coletar, organizar, analisar e comunicar resultados a partir de dados, com o propósito de gerar valor para organizações e sociedade.
+
+------------------------------------------------------------------------
+
+## Componentes principais
+
+-   **Estatística e Probabilidade** — inferência, testes de hipótese, incerteza.\
+-   **Computação** — linguagens (Python, R, SQL), estruturas de dados, automação.\
+-   **Conhecimento de Domínio** — entendimento do problema, métricas de negócio.\
+-   **Comunicação e Visualização** — contar a história dos dados de forma clara.
+
+------------------------------------------------------------------------
+
+## Etapas do Processo de Ciência de Dados
+
+Diversos frameworks descrevem o fluxo de trabalho em Ciência de Dados.\
+Aqui apresentamos dois dos mais utilizados: **CRISP-DM** e **OSEMN**.
+
+### CRISP-DM (Cross Industry Standard Process for Data Mining)
+
+1.  **Entendimento do Negócio** — definir objetivos, restrições e critérios de sucesso.\
+2.  **Entendimento dos Dados** — coleta inicial, análise exploratória e avaliação de qualidade.\
+3.  **Preparação dos Dados** — limpeza, integração e transformação (*feature engineering*).\
+4.  **Modelagem** — seleção de algoritmos, ajuste de hiperparâmetros e validação.\
+5.  **Avaliação** — verificar alinhamento com os objetivos e riscos de negócio.\
+6.  **Implementação** — operacionalização (batch/tempo real), documentação e entrega.
+
+### OSEMN (Obtain, Scrub, Explore, Model, Interpret)
+
+1.  **Obtain** — obter dados (APIs, bancos, arquivos, web).\
+2.  **Scrub** — limpar e preparar dados; tratar outliers e valores ausentes.\
+3.  **Explore** — explorar padrões e hipóteses; visualização e estatística descritiva.\
+4.  **Model** — construir modelos preditivos/descritivos; avaliar generalização.\
+5.  **Interpret** — interpretar e comunicar resultados; gerar recomendações.
+
+------------------------------------------------------------------------
+
+## Diferenças entre Estatística, Ciência de Dados, Machine Learning e Engenharia de Dados
+
+### Visão geral
+
+| Área | Objetivo | Exemplo |
+|----|----|----|
+| **Estatística** | Analisar dados para explicar fenômenos e testar hipóteses | Verificar se uma campanha elevou as vendas com significância |
+| **Ciência de Dados** | Integrar estatística, computação e domínio para extrair conhecimento | Construir dashboards e modelos para prever demanda |
+| **Machine Learning** | Aprender padrões para prever ou classificar novos casos | Recomendação de filmes em plataformas de streaming |
+| **Engenharia de Dados** | Projetar e manter infraestrutura de dados (coleta, armazenamento, processamento) | Criar pipelines em Spark/SQL para milhões de registros |
+
+### Relações e complementaridades
+
+-   Estatística fornece a base teórica para modelos e inferência.\
+-   Machine Learning fornece algoritmos para predição/segmentação.\
+-   Engenharia de Dados garante dados confiáveis e acessíveis.\
+-   Ciência de Dados integra as três frentes para gerar valor de negócio.
+
+------------------------------------------------------------------------
+
+## Tipos de Dados
+
+-   **Estruturados** — organizados em tabelas (linhas/colunas).\
+    Exemplos: transações, cadastros. Armazenados em bancos SQL.
+
+-   **Semiestruturados** — organização flexível (chave-valor/árvore).\
+    Exemplos: JSON, XML, logs. Comuns em data lakes e APIs.
+
+-   **Não estruturados** — sem esquema fixo.\
+    Exemplos: texto livre, imagens, áudio e vídeo.\
+    Análise via NLP, visão computacional e técnicas de big data.
+
+------------------------------------------------------------------------
+
+## Referências
+
+-   Provost, F.; Fawcett, T. *Data Science for Business*. O’Reilly.\
+-   Kuhn, M.; Johnson, K. *Feature Engineering and Selection*. Chapman & Hall/CRC.\
+-   Han, J.; Pei, J.; Kamber, M. *Data Mining: Concepts and Techniques*. Morgan Kaufmann.\
+-   Murphy, K. *Probabilistic Machine Learning*. MIT Press.\
+-   Goodfellow, I.; Bengio, Y.; Courville, A. *Deep Learning*. MIT Press.

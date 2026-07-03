@@ -1,0 +1,32 @@
+{
+    "id": "A3504577",
+    "path": "~/Downloads/ciencia_de_dados/portal-ciencia-dados/FCD.qmd",
+    "project_path": "FCD.qmd",
+    "type": "quarto_markdown",
+    "hash": "3956011765",
+    "contents": "",
+    "dirty": false,
+    "created": 1779214328226.0,
+    "source_on_save": true,
+    "relative_order": 3,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "363:0",
+        "docOutlineSize": "16",
+        "cursorPosition": "5,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1783102116,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1783102116855,
+    "read_only": false,
+    "read_only_alternatives": []
+}

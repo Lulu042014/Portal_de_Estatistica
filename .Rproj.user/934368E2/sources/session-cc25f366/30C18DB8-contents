@@ -1,0 +1,152 @@
+---
+title: "styles"
+format: html
+---
+/* ===== Estilo padrão (modo claro) ===== */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  line-height: 1.6;
+  font-size: 16px;
+  padding-bottom: 50px;
+}
+
+h1, h2, h3, h4 {
+  color: #005c99;
+  font-weight: 600;
+  margin-top: 1.2em;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005c99;
+  text-decoration: underline;
+}
+
+pre, code {
+  background-color: #eaeef2;
+  border-radius: 5px;
+  padding: 3px 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th, td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e0ecf8;
+  color: #00334d;
+}
+
+.alert {
+  padding: 15px;
+  background-color: #d9edf7;
+  border-left: 6px solid #31708f;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  color: #31708f;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  padding: 20px;
+}
+
+.navbar {
+  background-color: #005c99 !important;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+.navbar a:hover {
+  color: #a0d8ff !important;
+}
+
+pre code {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+  padding: 1em !important;
+  border-radius: 6px !important;
+  display: block;
+  overflow-x: auto;
+}
+
+/* ===== Estilo para modo escuro ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  h1, h2, h3, h4 {
+    color: #58a6ff;
+  }
+
+  a {
+    color: #79c0ff;
+  }
+
+  a:hover {
+    color: #58a6ff;
+  }
+
+  pre, code, pre code {
+    background-color: #1e1e1e !important;
+    color: #dcdcdc !important;
+  }
+
+  table {
+    background-color: #1a1a1a;
+    border-color: #444;
+  }
+
+  th {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  td {
+    color: #e0e0e0;
+  }
+
+  .alert {
+    background-color: #1e2a38;
+    color: #9ecbff;
+    border-left: 6px solid #31708f;
+  }
+
+  footer {
+    color: #aaaaaa;
+  }
+
+  .navbar {
+    background-color: #1f2c3d !important;
+  }
+
+  .navbar a {
+    color: #d0eaff !important;
+  }
+
+  .navbar a:hover {
+    color: #90d8ff !important;
+  }
+}
