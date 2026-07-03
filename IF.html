@@ -217,13 +217,35 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><strong>Introdução</strong></a></li>
-  <li><a href="#população-e-amostra" id="toc-população-e-amostra" class="nav-link" data-scroll-target="#população-e-amostra"><strong>População e Amostra</strong></a></li>
-  <li><a href="#testes-de-hipóteses" id="toc-testes-de-hipóteses" class="nav-link" data-scroll-target="#testes-de-hipóteses"><strong>Testes de Hipóteses</strong></a></li>
-  <li><a href="#métodos-de-estimação" id="toc-métodos-de-estimação" class="nav-link" data-scroll-target="#métodos-de-estimação"><strong>Métodos de Estimação</strong></a></li>
-  <li><a href="#exemplos-computacionais-em-r-e-python" id="toc-exemplos-computacionais-em-r-e-python" class="nav-link" data-scroll-target="#exemplos-computacionais-em-r-e-python">Exemplos computacionais em R e Python</a></li>
-  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><strong>Referências</strong></a></li>
-  <li><a href="#a-apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais" id="toc-a-apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais" class="nav-link" data-scroll-target="#a-apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais"><strong>A Apêndice A: Comparação entre Parâmetros Populacionais e Estatísticas Amostrais</strong></a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#população-e-amostra" id="toc-população-e-amostra" class="nav-link" data-scroll-target="#população-e-amostra">População e Amostra</a></li>
+  <li><a href="#testes-de-hipóteses" id="toc-testes-de-hipóteses" class="nav-link" data-scroll-target="#testes-de-hipóteses">Testes de Hipóteses</a>
+  <ul class="collapse">
+  <li><a href="#conceito" id="toc-conceito" class="nav-link" data-scroll-target="#conceito">Conceito</a></li>
+  <li><a href="#hipóteses-estatísticas" id="toc-hipóteses-estatísticas" class="nav-link" data-scroll-target="#hipóteses-estatísticas">Hipóteses Estatísticas</a></li>
+  <li><a href="#tipos-de-hipóteses" id="toc-tipos-de-hipóteses" class="nav-link" data-scroll-target="#tipos-de-hipóteses">Tipos de Hipóteses</a></li>
+  <li><a href="#tipos-de-teste" id="toc-tipos-de-teste" class="nav-link" data-scroll-target="#tipos-de-teste">Tipos de Teste</a></li>
+  <li><a href="#nível-de-significância" id="toc-nível-de-significância" class="nav-link" data-scroll-target="#nível-de-significância">Nível de Significância</a></li>
+  <li><a href="#tipos-de-erros" id="toc-tipos-de-erros" class="nav-link" data-scroll-target="#tipos-de-erros">Tipos de Erros</a></li>
+  <li><a href="#regiões-de-aceitação-e-rejeição" id="toc-regiões-de-aceitação-e-rejeição" class="nav-link" data-scroll-target="#regiões-de-aceitação-e-rejeição">Regiões de Aceitação e Rejeição</a></li>
+  <li><a href="#construção-do-teste" id="toc-construção-do-teste" class="nav-link" data-scroll-target="#construção-do-teste">Construção do Teste</a></li>
+  <li><a href="#teste-de-hipóteses-para-a-média-populacional-mu" id="toc-teste-de-hipóteses-para-a-média-populacional-mu" class="nav-link" data-scroll-target="#teste-de-hipóteses-para-a-média-populacional-mu">Teste de Hipóteses para a Média Populacional (<span class="math inline">\(\mu\)</span>)</a></li>
+  <li><a href="#teste-de-hipóteses-para-a-proporção-populacional-p" id="toc-teste-de-hipóteses-para-a-proporção-populacional-p" class="nav-link" data-scroll-target="#teste-de-hipóteses-para-a-proporção-populacional-p">Teste de Hipóteses para a Proporção Populacional (<span class="math inline">\(p\)</span>)</a></li>
+  </ul></li>
+  <li><a href="#métodos-de-estimação" id="toc-métodos-de-estimação" class="nav-link" data-scroll-target="#métodos-de-estimação">Métodos de Estimação</a>
+  <ul class="collapse">
+  <li><a href="#estimação-por-ponto" id="toc-estimação-por-ponto" class="nav-link" data-scroll-target="#estimação-por-ponto">Estimação por Ponto</a></li>
+  <li><a href="#estimação-intervalar" id="toc-estimação-intervalar" class="nav-link" data-scroll-target="#estimação-intervalar">Estimação Intervalar</a></li>
+  </ul></li>
+  <li><a href="#exemplos-computacionais-em-r-e-python" id="toc-exemplos-computacionais-em-r-e-python" class="nav-link" data-scroll-target="#exemplos-computacionais-em-r-e-python">Exemplos Computacionais em R e Python</a>
+  <ul class="collapse">
+  <li><a href="#intervalo-de-confiança-para-a-média" id="toc-intervalo-de-confiança-para-a-média" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-média">Intervalo de confiança para a média</a></li>
+  <li><a href="#intervalo-de-confiança-para-a-proporção" id="toc-intervalo-de-confiança-para-a-proporção" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-proporção">Intervalo de confiança para a proporção</a></li>
+  <li><a href="#teste-de-hipóteses-para-a-média" id="toc-teste-de-hipóteses-para-a-média" class="nav-link" data-scroll-target="#teste-de-hipóteses-para-a-média">Teste de Hipóteses para a Média</a></li>
+  <li><a href="#interpretação" id="toc-interpretação" class="nav-link" data-scroll-target="#interpretação">Interpretação</a></li>
+  </ul></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
+  <li><a href="#apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais" id="toc-apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais" class="nav-link" data-scroll-target="#apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais">Apêndice A: Comparação entre Parâmetros Populacionais e Estatísticas Amostrais</a></li>
   </ul>
 </nav>
     </div>
@@ -249,105 +271,94 @@ window.Quarto = {
 </header>
 
 
-<section id="introdução" class="level3">
-<h3 class="anchored" data-anchor-id="introdução"><strong>Introdução</strong></h3>
+<section id="introdução" class="level2">
+<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
 <p>De acordo com Morettin e Bussab (2017, p.276), o objetivo da Inferência Estatística é produzir afirmações sobre determinada característica da população a partir de informações colhidas de uma parte dessa população.</p>
-<p>Ou seja, é como uma espécie de “ponte” que nos permite usar as informações obtidas da amostra para fazer afirmações ou estimativas sobre a população (maior).</p>
-<p>É como se a amostra representasse a população e, com base nessa representação, podemos fazer previsões, tirar conclusões e tomar decisões sobre a característica que estamos interessados em estudar.</p>
+<p>Ou seja, é como uma espécie de “ponte” que nos permite usar as informações obtidas da amostra para fazer afirmações ou estimativas sobre a população (maior). É como se a amostra representasse a população e, com base nessa representação, podemos fazer previsões, tirar conclusões e tomar decisões sobre a característica que estamos interessados em estudar.</p>
 </section>
-<section id="população-e-amostra" class="level3">
-<h3 class="anchored" data-anchor-id="população-e-amostra"><strong>População e Amostra</strong></h3>
+<section id="população-e-amostra" class="level2">
+<h2 class="anchored" data-anchor-id="população-e-amostra">População e Amostra</h2>
 <p>Segundo Werkema (2014, p.10), população é a totalidade dos elementos de um universo sobre o qual desejamos estabelecer conclusões ou exercer ações. A população de interesse pode ser finita ou infinita. Uma população finita possui um número limitado de elementos. Já a população infinita possui um número não limitado de elementos.</p>
-<p>Morettin e Bussab (2017, p.276) dizem que, uma amostra é um subconjunto de uma população. A ideia é que, ao estudar essa amostra, seja possível fazer inferências ou tirar conclusões sobre toda a população, sem precisar analisar todos os seus elementos.</p>
+<p>Morettin e Bussab (2017, p.276) dizem que uma amostra é um subconjunto de uma população. A ideia é que, ao estudar essa amostra, seja possível fazer inferências ou tirar conclusões sobre toda a população, sem precisar analisar todos os seus elementos.</p>
 </section>
-<section id="testes-de-hipóteses" class="level3">
-<h3 class="anchored" data-anchor-id="testes-de-hipóteses"><strong>Testes de Hipóteses</strong></h3>
-<section id="conceito" class="level4">
-<h4 class="anchored" data-anchor-id="conceito"><strong><em>Conceito</em></strong></h4>
+<section id="testes-de-hipóteses" class="level2">
+<h2 class="anchored" data-anchor-id="testes-de-hipóteses">Testes de Hipóteses</h2>
+<section id="conceito" class="level3">
+<h3 class="anchored" data-anchor-id="conceito">Conceito</h3>
 <p>Os testes de hipóteses são procedimentos estatísticos utilizados para tomar decisões sobre afirmações ou suposições feitas a respeito de uma população com base em informações obtidas a partir de uma amostra. O objetivo principal de um teste de hipóteses é avaliar se os dados fornecem evidências suficientes para rejeitar ou não uma afirmação sobre o parâmetro populacional.</p>
-<p>As afirmações que são testadas em um teste de hipóteses são chamadas de hipóteses estatísticas. Uma hipótese é geralmente dividida em duas partes: a hipótese nula H0 e a hipótese alternativa H1. A hipótese nula é a afirmação inicial que assume que não há efeito ou diferença real, enquanto a hipótese alternativa é a afirmação que o pesquisador pretende testar e mostra a direção da diferença ou efeito.</p>
+<p>As afirmações que são testadas em um teste de hipóteses são chamadas de hipóteses estatísticas. Uma hipótese é geralmente dividida em duas partes: a hipótese nula <span class="math inline">\(H_0\)</span> e a hipótese alternativa <span class="math inline">\(H_1\)</span>. A hipótese nula é a afirmação inicial que assume que não há efeito ou diferença real, enquanto a hipótese alternativa é a afirmação que o pesquisador pretende testar e mostra a direção da diferença ou efeito.</p>
 </section>
-<section id="hipóteses-estatísticas" class="level4">
-<h4 class="anchored" data-anchor-id="hipóteses-estatísticas"><strong><em>Hipóteses Estatísticas</em></strong></h4>
-<p>A partir de amostras, realizamos inferências suposições sobre os parâmetros de uma população, o que implica em formular suposições que podem ser verídicas ou não. São exemplos de hipóteses estatísticas:</p>
-<p>A média populacional de renda dos residentes de um determinado bairro é de R$ 3.500, ou seja,</p>
-<p>• μ = 3500</p>
-<p>A proporção de estudantes aprovados em um exame é de 75%, o que equivale a</p>
-<p>• p = 0,75</p>
+<section id="hipóteses-estatísticas" class="level3">
+<h3 class="anchored" data-anchor-id="hipóteses-estatísticas">Hipóteses Estatísticas</h3>
+<p>A partir de amostras, realizamos inferências e suposições sobre os parâmetros de uma população, o que implica em formular suposições que podem ser verídicas ou não. São exemplos de hipóteses estatísticas:</p>
+<ul>
+<li>A média populacional de renda dos residentes de um determinado bairro é de R$ 3.500, ou seja, <span class="math inline">\(\mu = 3500\)</span></li>
+<li>A proporção de estudantes aprovados em um exame é de 75%, o que equivale a <span class="math inline">\(p = 0{,}75\)</span></li>
+</ul>
 </section>
-<section id="tipos-de-hipóteses" class="level4">
-<h4 class="anchored" data-anchor-id="tipos-de-hipóteses"><strong><em>Tipos de Hipóteses</em></strong></h4>
-<p>No procedimento de teste de hipóteses, são elaboradas duas proposições, conhecidas como Hipótese Nula Hº e Hipótese Alternativa H1. Ambas estão relacionadas, principalmente, a um parâmetro que representa um valor na população e à sua estimativa correspondente a partir da amostra.</p>
-<p>A Hipótese Nula Hº representa a suposição que está sujeita a teste. Em outras palavras, é a hipótese que se busca verificar por meio do teste estatístico.</p>
-<p>A Hipótese Alternativa H1 engloba todas as outras possíveis proposições que são distintas da Hipótese Nula. É uma afirmação que se coloca como alternativa à Hipótese Nula, refletindo diferentes cenários ou resultados que podem ocorrer. Recapitulando:</p>
-<p>• Hipótese Nula (Hº): sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador.</p>
-<p>• Hipótese Alternativa (H1): tem a obrigação de refutar a hipótese nula em todos os casos.</p>
+<section id="tipos-de-hipóteses" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-hipóteses">Tipos de Hipóteses</h3>
+<p>No procedimento de teste de hipóteses, são elaboradas duas proposições, conhecidas como Hipótese Nula <span class="math inline">\(H_0\)</span> e Hipótese Alternativa <span class="math inline">\(H_1\)</span>. Ambas estão relacionadas, principalmente, a um parâmetro que representa um valor na população e à sua estimativa correspondente a partir da amostra.</p>
+<p>A Hipótese Nula <span class="math inline">\(H_0\)</span> representa a suposição que está sujeita a teste. Em outras palavras, é a hipótese que se busca verificar por meio do teste estatístico.</p>
+<p>A Hipótese Alternativa <span class="math inline">\(H_1\)</span> engloba todas as outras possíveis proposições que são distintas da Hipótese Nula. É uma afirmação que se coloca como alternativa à Hipótese Nula, refletindo diferentes cenários ou resultados que podem ocorrer. Recapitulando:</p>
+<ul>
+<li><strong>Hipótese Nula (<span class="math inline">\(H_0\)</span>):</strong> sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador.</li>
+<li><strong>Hipótese Alternativa (<span class="math inline">\(H_1\)</span>):</strong> tem a obrigação de refutar a hipótese nula em todos os casos.</li>
+</ul>
 </section>
-<section id="tipos-de-teste" class="level4">
-<h4 class="anchored" data-anchor-id="tipos-de-teste"><strong><em>Tipos de Teste</em></strong></h4>
-<p>Um teste estatístico de hipótese é um procedimento que, quando aplicado a valores amostrais, orienta a escolha entre aceitar ou rejeitar uma hipótese específica. Em geral, quando o parâmetro de interesse é a média (μ) de uma população, as hipóteses nula e alternativa são formuladas da seguinte maneira:</p>
-<p>• Teste bicaudal ou bilateral: Hº : μ = μº, H1 : μ̸ =μ0</p>
-<p>• Teste unicaudal ou unilateral à direita: H1 : μ &gt; μ0</p>
-<p>• Teste unicaudal ou unilateral à esquerda: H1 : μ &lt; μ0</p>
+<section id="tipos-de-teste" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-teste">Tipos de Teste</h3>
+<p>Um teste estatístico de hipótese é um procedimento que, quando aplicado a valores amostrais, orienta a escolha entre aceitar ou rejeitar uma hipótese específica. Em geral, quando o parâmetro de interesse é a média (<span class="math inline">\(\mu\)</span>) de uma população, as hipóteses nula e alternativa são formuladas da seguinte maneira:</p>
+<ul>
+<li><strong>Teste bicaudal ou bilateral:</strong> <span class="math inline">\(H_0 : \mu = \mu_0\)</span>, <span class="math inline">\(H_1 : \mu \neq \mu_0\)</span></li>
+<li><strong>Teste unicaudal ou unilateral à direita:</strong> <span class="math inline">\(H_1 : \mu &gt; \mu_0\)</span></li>
+<li><strong>Teste unicaudal ou unilateral à esquerda:</strong> <span class="math inline">\(H_1 : \mu &lt; \mu_0\)</span></li>
+</ul>
 </section>
-<section id="nível-de-significância" class="level4">
-<h4 class="anchored" data-anchor-id="nível-de-significância"><strong><em>Nível de Significância</em></strong></h4>
-<p>Ao tomar uma decisão com base na análise de hipóteses estatísticas, existe sempre a possibilidade de cometer um erro, o que significa aceitar erroneamente uma hipótese. Essa probabilidade é denominada nível de significância e é representada por α.</p>
+<section id="nível-de-significância" class="level3">
+<h3 class="anchored" data-anchor-id="nível-de-significância">Nível de Significância</h3>
+<p>Ao tomar uma decisão com base na análise de hipóteses estatísticas, existe sempre a possibilidade de cometer um erro, o que significa aceitar erroneamente uma hipótese. Essa probabilidade é denominada nível de significância e é representada por <span class="math inline">\(\alpha\)</span>.</p>
 </section>
-<section id="tipos-de-erros" class="level4">
-<h4 class="anchored" data-anchor-id="tipos-de-erros"><strong><em>Tipos de Erros</em></strong></h4>
+<section id="tipos-de-erros" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-erros">Tipos de Erros</h3>
 <p>Em um teste de hipótese, existem duas categorias de erros possíveis. Um erro de decisão ocorre quando uma hipótese que é comprovadamente falsa é aceita como verdadeira, ou quando uma hipótese que é verdadeira é erroneamente considerada falsa.</p>
-<p>• Erro do Tipo 1: ocorre quando a hipótese Hº é rejeitada, mesmo que seja verdadeira. O nível de significância do teste, representado por α, indica a probabilidade de cometer esse tipo de erro.</p>
-<p>• Erro do Tipo 2: ocorre quando a hipótese Hº é aceita, embora seja falsa. Rejeitar Hº implica a aceitação de H1, e vice-versa. A probabilidade de cometer um erro do Tipo 2 é igual a 1 menos o nível de significância (1 − α).</p>
+<ul>
+<li><strong>Erro do Tipo I:</strong> ocorre quando a hipótese <span class="math inline">\(H_0\)</span> é rejeitada, mesmo que seja verdadeira. O nível de significância do teste, representado por <span class="math inline">\(\alpha\)</span>, indica a probabilidade de cometer esse tipo de erro.</li>
+<li><strong>Erro do Tipo II:</strong> ocorre quando a hipótese <span class="math inline">\(H_0\)</span> é aceita, embora seja falsa. Rejeitar <span class="math inline">\(H_0\)</span> implica a aceitação de <span class="math inline">\(H_1\)</span>, e vice-versa. A probabilidade de cometer um erro do Tipo II é igual a <span class="math inline">\(1 - \alpha\)</span>.</li>
+</ul>
 </section>
-<section id="regiões-de-aceitação-e-rejeição" class="level4">
-<h4 class="anchored" data-anchor-id="regiões-de-aceitação-e-rejeição"><strong><em>Regiões de Aceitação e Rejeição</em></strong></h4>
-<p>• Região de Aceitação</p>
-<p>É a região onde a hipótese nula Hº é considerada válida.</p>
-<p>• Região de Rejeição</p>
-<p>É a região onde a hipótese nula Hº é descartada, e é o oposto da região de aceitação, que também é conhecida como região crítica.</p>
+<section id="regiões-de-aceitação-e-rejeição" class="level3">
+<h3 class="anchored" data-anchor-id="regiões-de-aceitação-e-rejeição">Regiões de Aceitação e Rejeição</h3>
+<ul>
+<li><strong>Região de Aceitação:</strong> é a região onde a hipótese nula <span class="math inline">\(H_0\)</span> é considerada válida.</li>
+<li><strong>Região de Rejeição:</strong> é a região onde a hipótese nula <span class="math inline">\(H_0\)</span> é descartada, e é o oposto da região de aceitação — também conhecida como região crítica.</li>
+</ul>
 </section>
-<section id="construção-do-teste" class="level4">
-<h4 class="anchored" data-anchor-id="construção-do-teste"><strong><em>Construção do Teste</em></strong></h4>
+<section id="construção-do-teste" class="level3">
+<h3 class="anchored" data-anchor-id="construção-do-teste">Construção do Teste</h3>
 <p>A construção de um teste de hipóteses envolve os seguintes passos:</p>
 <ol type="1">
-<li><u><strong>Formular as hipóteses e o tipo de teste:</strong></u></li>
+<li><p><strong>Formular as hipóteses e o tipo de teste</strong> — a hipótese nula <span class="math inline">\(H_0\)</span> sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador; a hipótese alternativa <span class="math inline">\(H_1\)</span> tem a obrigação de refutar a hipótese nula em todos os casos. Teste bicaudal <span class="math inline">\(\mu \neq \mu_0\)</span>, teste unilateral à direita <span class="math inline">\(\mu &gt; \mu_0\)</span> ou teste unilateral à esquerda <span class="math inline">\(\mu &lt; \mu_0\)</span>.</p></li>
+<li><p><strong>Escolher o nível de significância <span class="math inline">\(\alpha\)</span></strong> — a probabilidade de cometer um erro do Tipo I, ou seja, rejeitar a hipótese nula quando ela é verdadeira. É geralmente definido em 5% (0,05) ou 1% (0,01).</p></li>
+<li><p><strong>Selecionar a estatística de teste apropriada</strong> — depende da natureza dos dados e do parâmetro que está sendo testado. Algumas delas são:</p>
+<ul>
+<li><strong>Teste t de Student:</strong> usado para testar diferenças entre médias de duas amostras ou uma amostra em relação a um valor teórico</li>
+<li><strong>Teste Z:</strong> similar ao teste t de Student, mas usado quando a população tem distribuição normal e o desvio padrão populacional é conhecido</li>
+<li><strong>Teste Qui-quadrado:</strong> utilizado para testar a independência entre duas variáveis categóricas</li>
+<li><strong>Teste de ANOVA (Análise de Variância):</strong> usado para testar a igualdade de médias entre três ou mais grupos</li>
+<li><strong>Teste de Wilcoxon-Mann-Whitney:</strong> usado para testar diferenças entre medianas de duas amostras independentes</li>
+<li><strong>Teste de Kolmogorov-Smirnov:</strong> utilizado para testar se uma amostra segue uma determinada distribuição teórica</li>
+</ul></li>
+<li><p><strong>Calcular o valor da estatística de teste</strong> — após escolher o teste, a estatística é calculada a partir dos dados da amostra e usada para comparar com um valor crítico.</p></li>
+<li><p><strong>Comparar o valor da estatística de teste com o valor crítico</strong> — determinado pelo nível de significância e pelo tipo de teste (bicaudal ou unilateral). Se o valor da estatística estiver na região de rejeição, rejeitamos <span class="math inline">\(H_0\)</span> e aceitamos <span class="math inline">\(H_1\)</span>. Caso contrário, não rejeitamos <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p><strong>Interpretar os resultados</strong> — com base na decisão tomada, interpretamos os resultados do teste e tiramos conclusões sobre <span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_1\)</span>.</p></li>
 </ol>
-<p>• A hipótese nula Hº sustenta que não existe qualquer discrepância entre o parâmetro e seu estimador.</p>
-<p>• A hipótese alternativa H1 tem a obrigação de refutar a hipótese nula em todos os casos</p>
-<p>• Teste bicaudal μ̸ = μ0, teste unilateral à direita μ &gt; μ0 ou teste unilateral à esquerda μ &lt; μ0.</p>
-<ol start="2" type="1">
-<li><u><strong>Escolher o nível de significância α:</strong></u></li>
-</ol>
-<p>O nível de significância é a probabilidade de cometer um erro do tipo I, ou seja, rejeitar a hipótese nula quando ela é verdadeira. É geralmente definido comumente em 5% (0,05) ou 1% (0,01).</p>
-<ol start="3" type="1">
-<li><u><strong>Selecionar a estatística de teste apropriada:</strong></u></li>
-</ol>
-<p>A escolha da estatística de teste depende da natureza dos dados e do parâmetro que está sendo testado. Algumas delas são:</p>
-<p>• Teste t de Student: Usado para testar diferenças entre médias de duas amostras ou uma amostra em relação a um valor teórico.</p>
-<p>• Teste Z: Similar ao teste t de Student, mas é usado quando a população tem uma distribuição normal e o desvio padrão populacional é conhecido.</p>
-<p>• Teste Qui-quadrado: Utilizado para testar a independência entre duas variáveis categóricas.</p>
-<p>• Teste de ANOVA (Análise de Variância): Usado para testar a igualdade de médias entre três ou mais grupos.</p>
-<p>• Teste de Wilcoxon-Mann-Whitney: Usado para testar diferenças entre medianas de duas amostras independentes.</p>
-<p>• Teste de Kolmogorov-Smirnov : Utilizado para testar se uma amostra segue uma determinada distribuição teórica.</p>
-<ol start="4" type="1">
-<li><u><strong>Calcular o valor da estatística de teste:</strong></u></li>
-</ol>
-<p>Após escolher o teste, a estatística de teste é calculada a partir dos dados da amostra e é usada para comparar com um valor crítico.</p>
-<ol start="5" type="1">
-<li><u><strong>Comparar o valor da estatística de teste com o valor crítico:</strong></u></li>
-</ol>
-<p>Você compara o valor da estatística de teste com o valor crítico adequado, determinado pelo nível de significância e pelo tipo de teste (bicaudal ou uni- lateral). A decisão de rejeitar ou não rejeitar a hipótese nula é tomada com base nessa comparação. Se o valor da estatística de teste estiver na região de rejeição, rejeitamos a hipótese nula e aceitamos a hipótese alternativa. Caso contrário, não rejeitamos a hipótese nula.</p>
-<ol start="6" type="1">
-<li><u><strong>Interpretar os resultados:</strong></u></li>
-</ol>
-<p>Com base na decisão tomada, interpretamos os resultados do teste e tiramos conclusões sobre a hipótese nula e a hipótese alternativa.</p>
 </section>
-<section id="teste-de-hipóteses-para-a-média-populacional-μ" class="level4">
-<h4 class="anchored" data-anchor-id="teste-de-hipóteses-para-a-média-populacional-μ"><strong><em>Teste de Hipóteses para a Média Populacional (μ)</em></strong></h4>
+<section id="teste-de-hipóteses-para-a-média-populacional-mu" class="level3">
+<h3 class="anchored" data-anchor-id="teste-de-hipóteses-para-a-média-populacional-mu">Teste de Hipóteses para a Média Populacional (<span class="math inline">\(\mu\)</span>)</h3>
 <ol type="1">
-<li><p><strong>Determinar a hipótese nula Hº : μ = μ0;</strong></p></li>
-<li><p><strong>Determinar a hipótese alternativa;</strong></p></li>
+<li>Determinar a hipótese nula <span class="math inline">\(H_0 : \mu = \mu_0\)</span></li>
+<li>Determinar a hipótese alternativa:</li>
 </ol>
 <p><span class="math display">\[
 H_1 :
@@ -358,23 +369,20 @@ H_1 :
 \end{cases}
 \]</span></p>
 <ol start="3" type="1">
-<li><p><strong>Fixar o nível de significância α;</strong></p></li>
-<li><p><strong>Determinar a região de rejeição (bilateral, unilateral à direita ou unilateral à esquerda);</strong></p></li>
-<li><p><strong>Calcular a estatística amostral;</strong></p></li>
+<li>Fixar o nível de significância <span class="math inline">\(\alpha\)</span></li>
+<li>Determinar a região de rejeição (bilateral, unilateral à direita ou unilateral à esquerda)</li>
+<li>Calcular a estatística amostral:</li>
 </ol>
-<p><span class="math display">\[
-z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}
-\]</span></p>
-<p><span class="math display">\[
-t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
-\]</span></p>
+<p><span class="math display">\[z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}} \qquad t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}\]</span></p>
 <p>onde:</p>
-<p>• X é a média da amostra;</p>
-<p>• μ0 é a média da população (hipótese a ser testada);</p>
-<p>• σ é o desvio padrão da população;</p>
-<p>• n é o número de elementos da amostra. Para grandes amostras n ≥ 30 pode-se utilizar o desvio padrão da amostra (s). Quando a amostra for pequena n ≤ 30 devemos utilizar a distribuição de Student.</p>
+<ul>
+<li><span class="math inline">\(\bar{x}\)</span> é a média da amostra</li>
+<li><span class="math inline">\(\mu_0\)</span> é a média da população (hipótese a ser testada)</li>
+<li><span class="math inline">\(\sigma\)</span> é o desvio padrão da população</li>
+<li><span class="math inline">\(n\)</span> é o número de elementos da amostra. Para grandes amostras (<span class="math inline">\(n \geq 30\)</span>) pode-se utilizar o desvio padrão da amostra (<span class="math inline">\(s\)</span>). Quando a amostra for pequena (<span class="math inline">\(n &lt; 30\)</span>), devemos utilizar a distribuição de Student.</li>
+</ul>
 <ol start="6" type="1">
-<li><strong>Conclusões:</strong></li>
+<li>Conclusões:</li>
 </ol>
 <p><span class="math display">\[
 \begin{aligned}
@@ -426,72 +434,73 @@ t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
 </tbody>
 </table>
 <p>Tabela 1: Valores críticos da distribuição normal padrão para diferentes níveis de significância.</p>
-<p>OBS.: Os valores críticos de t devem ser retirados da tabela da Distribuição de Student, visto que dependem do grau de liberdade v = n − 1. Nos testes bilaterais, para determinar o t crítico, utilizar como parâmetro na tabela de Student a metade do valor do nível de significância.</p>
+<blockquote class="blockquote">
+<p><strong>Observação:</strong> os valores críticos de t devem ser retirados da tabela da Distribuição de Student, visto que dependem do grau de liberdade <span class="math inline">\(v = n - 1\)</span>. Nos testes bilaterais, para determinar o t crítico, utiliza-se como parâmetro na tabela de Student a metade do valor do nível de significância.</p>
+</blockquote>
 </section>
-<section id="teste-de-hipóteses-para-a-proporção-populacional-p" class="level4">
-<h4 class="anchored" data-anchor-id="teste-de-hipóteses-para-a-proporção-populacional-p"><strong><em>Teste de Hipóteses para a Proporção Populacional (p)</em></strong></h4>
+<section id="teste-de-hipóteses-para-a-proporção-populacional-p" class="level3">
+<h3 class="anchored" data-anchor-id="teste-de-hipóteses-para-a-proporção-populacional-p">Teste de Hipóteses para a Proporção Populacional (<span class="math inline">\(p\)</span>)</h3>
 <ol type="1">
-<li><p><strong>Estabelecer a hipótese nula Hº: p = pº;</strong></p></li>
-<li><p><strong>Estabelecer a hipótese alternativa;</strong> <span class="math display">\[
+<li>Estabelecer a hipótese nula <span class="math inline">\(H_0: p = p_0\)</span></li>
+<li>Estabelecer a hipótese alternativa:</li>
+</ol>
+<p><span class="math display">\[
 \begin{aligned}
 H_1 &amp;: \; p \ne p_0 \\
 H_1 &amp;: \; p &gt; p_0 \\
 H_1 &amp;: \; p &lt; p_0
 \end{aligned}
-\]</span></p></li>
-<li><p><strong>Fixar o nível de significância α;</strong></p></li>
-<li><p><strong>Determinar a região de rejeição;</strong></p></li>
-<li><p><strong>Calcular a estatística Zcalc:</strong></p></li>
-</ol>
-<p><span class="math display">\[
-Z_{\text{calc}} = \frac{\hat{p} - p}{\sqrt{\frac{pq}{n}}}
 \]</span></p>
+<ol start="3" type="1">
+<li>Fixar o nível de significância <span class="math inline">\(\alpha\)</span></li>
+<li>Determinar a região de rejeição</li>
+<li>Calcular a estatística <span class="math inline">\(Z_{\text{calc}}\)</span>:</li>
+</ol>
+<p><span class="math display">\[Z_{\text{calc}} = \frac{\hat{p} - p}{\sqrt{\frac{pq}{n}}}\]</span></p>
 <p>onde:</p>
-<p>•ˆp é a proporção ou percentagem da amostra.</p>
-<p>• p é a proporção ou percentagem da população.</p>
-<p>• q é (1 - p).</p>
-<p>• n é o número de elementos da amostra.</p>
+<ul>
+<li><span class="math inline">\(\hat{p}\)</span> é a proporção ou percentagem da amostra</li>
+<li><span class="math inline">\(p\)</span> é a proporção ou percentagem da população</li>
+<li><span class="math inline">\(q\)</span> é <span class="math inline">\((1 - p)\)</span></li>
+<li><span class="math inline">\(n\)</span> é o número de elementos da amostra</li>
+</ul>
 <ol start="6" type="1">
-<li><strong>Conclusões:</strong></li>
+<li>Conclusões:</li>
 </ol>
 <p><span class="math display">\[
 \begin{aligned}
-\text{(a)} &amp;\quad \text{Se } |Z_{\text{calc}}| &gt; Z_{\alpha/2}, \text{ rejeita-se } H_0, \text{ onde: } Z_{\alpha/2} = Z_{\text{crítico}} = Z(\textit{tabelado}). \\
+\text{(a)} &amp;\quad \text{Se } |Z_{\text{calc}}| &gt; Z_{\alpha/2}, \text{ rejeita-se } H_0, \text{ onde } Z_{\alpha/2} \text{ é o valor crítico tabelado}. \\
 \text{(b)} &amp;\quad \text{Se } Z &gt; Z_{\alpha}, \text{ rejeita-se } H_0. \\
 \text{(c)} &amp;\quad \text{Se } Z &lt; -Z_{\alpha}, \text{ rejeita-se } H_0.
 \end{aligned}
 \]</span></p>
 </section>
 </section>
-<section id="métodos-de-estimação" class="level3">
-<h3 class="anchored" data-anchor-id="métodos-de-estimação"><strong>Métodos de Estimação</strong></h3>
-<p>Nessa seção veremos duas maneiras de estimar parâmetros a partir dos estima- dores selecionados: a estimação por ponto e a estimação por intervalo de confiança.</p>
-<section id="estimação-por-ponto" class="level4">
-<h4 class="anchored" data-anchor-id="estimação-por-ponto"><strong><em>Estimação por Ponto</em></strong></h4>
-<p>É o processo através do qual obtemos um único ponto, ou seja, um único valor para estimar o parâmetro. Exemplo: Amostra (1, 3, 5)</p>
-<p><span class="math display">\[
-\bar{x} = \frac{1 + 3 + 5}{3} = 3 \leftarrow \text{estimativa pontual de } \mu \tag{4}
-\]</span></p>
-<p><span class="math display">\[
-S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estimativa pontual de } \sigma^2 \tag{5}
-\]</span></p>
+<section id="métodos-de-estimação" class="level2">
+<h2 class="anchored" data-anchor-id="métodos-de-estimação">Métodos de Estimação</h2>
+<p>Nesta seção veremos duas maneiras de estimar parâmetros a partir dos estimadores selecionados: a estimação por ponto e a estimação por intervalo de confiança.</p>
+<section id="estimação-por-ponto" class="level3">
+<h3 class="anchored" data-anchor-id="estimação-por-ponto">Estimação por Ponto</h3>
+<p>É o processo através do qual obtemos um único ponto, ou seja, um único valor para estimar o parâmetro. Exemplo: amostra (1, 3, 5)</p>
+<p><span class="math display">\[\bar{x} = \frac{1 + 3 + 5}{3} = 3 \quad \leftarrow \text{estimativa pontual de } \mu\]</span></p>
+<p><span class="math display">\[S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \quad \leftarrow \text{estimativa pontual de } \sigma^2\]</span></p>
 </section>
-<section id="estimação-intervalar" class="level4">
-<h4 class="anchored" data-anchor-id="estimação-intervalar"><strong><em>Estimação Intervalar</em></strong></h4>
-<p>A estimação por ponto é uma técnica prática e comum para obter uma estimativa do valor de um parâmetro desconhecido em uma população, com base em informações amostrais. No entanto, é importante ressaltar que essas estimativas estão sujeitas a um certo grau de incerteza, uma vez que as estimativas pontuais podem diferir do valor real do parâmetro. Para obter uma melhor noção da incerteza associada à estimação, construímos o que chamamos de “intervalo de confiança”em torno da estimativa pontual. Todo intervalo de confiança conta com dois parâmetros importantes, são eles:</p>
-<p>• α = significância</p>
-<p>• 1 − α = confiança</p>
-<p>Por serem variáveis aleatórias, os estimadores pontuais possuem uma distribuição de probabilidade (distribuições amostrais). Com isso, podemos apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido → estimativa intervalar ou intervalo de confiança. Os intervalos de confiança são obtidos a partir da distribuição amostral de seus estimadores.</p>
+<section id="estimação-intervalar" class="level3">
+<h3 class="anchored" data-anchor-id="estimação-intervalar">Estimação Intervalar</h3>
+<p>A estimação por ponto é uma técnica prática e comum para obter uma estimativa do valor de um parâmetro desconhecido em uma população, com base em informações amostrais. No entanto, é importante ressaltar que essas estimativas estão sujeitas a um certo grau de incerteza, uma vez que as estimativas pontuais podem diferir do valor real do parâmetro. Para obter uma melhor noção da incerteza associada à estimação, construímos o que chamamos de “intervalo de confiança” em torno da estimativa pontual. Todo intervalo de confiança conta com dois parâmetros importantes:</p>
+<ul>
+<li><span class="math inline">\(\alpha\)</span> = significância</li>
+<li><span class="math inline">\(1 - \alpha\)</span> = confiança</li>
+</ul>
+<p>Por serem variáveis aleatórias, os estimadores pontuais possuem uma distribuição de probabilidade (distribuições amostrais). Com isso, podemos apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido — a estimativa intervalar, ou intervalo de confiança. Os intervalos de confiança são obtidos a partir da distribuição amostral de seus estimadores.</p>
 </section>
 </section>
-<section id="exemplos-computacionais-em-r-e-python" class="level3">
-<h3 class="anchored" data-anchor-id="exemplos-computacionais-em-r-e-python">Exemplos computacionais em R e Python</h3>
-<section id="sobre-população-e-amostra" class="level4">
-<h4 class="anchored" data-anchor-id="sobre-população-e-amostra">Sobre População e Amostra</h4>
+<section id="exemplos-computacionais-em-r-e-python" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos-computacionais-em-r-e-python">Exemplos Computacionais em R e Python</h2>
+<section id="intervalo-de-confiança-para-a-média" class="level3">
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança-para-a-média">Intervalo de confiança para a média</h3>
 <p>Um instituto de pesquisa quer estimar a altura média de adultos em uma cidade de 500.000 habitantes. Para isso, eles selecionam aleatoriamente uma amostra de 1.000 adultos e medem suas alturas. A altura média na amostra é de 170 cm com um desvio padrão de 10 cm. Calcule um intervalo de confiança de 95% para a altura média da população.</p>
-</section>
-<section id="exemplo-em-python" class="level4">
-<h4 class="anchored" data-anchor-id="exemplo-em-python">Exemplo em Python:</h4>
+<p><strong>Exemplo em Python:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
@@ -501,33 +510,30 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>mean_sample <span class="op">=</span> <span class="dv">170</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sd_sample <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Erro padrao</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>se <span class="op">=</span> sd_sample <span class="op">/</span> np.sqrt ( n )</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Erro padrão</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>se <span class="op">=</span> sd_sample <span class="op">/</span> np.sqrt(n)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor critico para 95% de confianca</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> norm.ppf (<span class="fl">0.975</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor crítico para 95% de confiança</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo de confianca</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo de confiança</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="op">=</span> mean_sample <span class="op">-</span> z <span class="op">*</span> se</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="op">=</span> mean_sample <span class="op">+</span> z <span class="op">*</span> se</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar os resultados</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> ( <span class="st">" Media amostral : "</span> , mean_sample , <span class="st">" cm "</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Media amostral:"</span>, mean_sample, <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Media amostral :  170  cm </code></pre>
+<pre><code>Media amostral: 170 cm</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> ( <span class="st">" Erro padrao : "</span> , se , <span class="st">" cm "</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Erro padrao:"</span>, se, <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Erro padrao :  0.31622776601683794  cm </code></pre>
+<pre><code>Erro padrao: 0.31622776601683794 cm</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> ( <span class="st">" Intervalo de confianca 95%: (</span><span class="sc">{:.2f}</span><span class="st"> cm ) "</span> . <span class="bu">format</span> ( ci_lower, ci_upper ) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Intervalo de confianca 95%: (</span><span class="sc">{:.2f}</span><span class="st">, </span><span class="sc">{:.2f}</span><span class="st">) cm"</span>.<span class="bu">format</span>(ci_lower, ci_upper))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Intervalo de confianca 95%: (169.38 cm ) </code></pre>
+<pre><code>Intervalo de confianca 95%: (169.38, 170.62) cm</code></pre>
 </div>
 </div>
-</section>
-<section id="exemplo-em-r" class="level4">
-<h4 class="anchored" data-anchor-id="exemplo-em-r">Exemplo em R:</h4>
+<p><strong>Exemplo em R:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
@@ -535,7 +541,7 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sd_sample <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Erro padrao</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sd_sample <span class="sc">/</span> <span class="fu">sqrt</span> ( n )</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sd_sample <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor critico para 95% de confianca</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fl">1.96</span></span>
@@ -544,8 +550,7 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="ot">&lt;-</span> mean_sample <span class="sc">-</span> z <span class="sc">*</span> se</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="ot">&lt;-</span> mean_sample <span class="sc">+</span> z <span class="sc">*</span> se</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar os resultados</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media amostral:"</span>, mean_sample, <span class="st">"cm</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media amostral:"</span>, mean_sample, <span class="st">"cm</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Media amostral: 170 cm</code></pre>
 </div>
@@ -558,24 +563,24 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <pre><code>Intervalo de confianca 95%: 169.3802 a 170.6198 </code></pre>
 </div>
 </div>
-<p>Uma empresa quer saber a proporção de seus 1.000 funcionários que estão satisfeitos com o ambiente de trabalho. Para isso, ela decide entrevistar uma amostra aleatória de 100 funcionários. Dos 100 entrevistados, 78 disseram estar satisfeitos.</p>
-<p>Calcule um intervalo de confiança de 95% para a proporção de todos os funcionários da empresa que estão satisfeitos com o ambiente de trabalho.</p>
 </section>
-<section id="exemplo-em-python-1" class="level4">
-<h4 class="anchored" data-anchor-id="exemplo-em-python-1">Exemplo em Python:</h4>
+<section id="intervalo-de-confiança-para-a-proporção" class="level3">
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança-para-a-proporção">Intervalo de confiança para a proporção</h3>
+<p>Uma empresa quer saber a proporção de seus 1.000 funcionários que estão satisfeitos com o ambiente de trabalho. Para isso, ela decide entrevistar uma amostra aleatória de 100 funcionários. Dos 100 entrevistados, 78 disseram estar satisfeitos. Calcule um intervalo de confiança de 95% para a proporção de todos os funcionários da empresa que estão satisfeitos com o ambiente de trabalho.</p>
+<p><strong>Exemplo em Python:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span><span class="dv">78</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">78</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Proporcao amostral</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>p_hat <span class="op">=</span> x <span class="op">/</span> n</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Erro padrao</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>se <span class="op">=</span> np.sqrt( p_hat <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_hat ) <span class="op">/</span> n )</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>se <span class="op">=</span> np.sqrt(p_hat <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> p_hat) <span class="op">/</span> n)</span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor critico para 95% de confianca</span></span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> norm.ppf(<span class="fl">0.975</span>)</span>
@@ -584,23 +589,20 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="op">=</span> p_hat <span class="op">-</span> z <span class="op">*</span> se</span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="op">=</span> p_hat <span class="op">+</span> z <span class="op">*</span> se</span>
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> ( <span class="st">" Proporcao amostral : "</span> , p_hat )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Proporcao amostral:"</span>, p_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Proporcao amostral :  0.78</code></pre>
+<pre><code>Proporcao amostral: 0.78</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> ( <span class="st">" Erro padrao : "</span> , se )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Erro padrao:"</span>, se)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Erro padrao :  0.04142463035441595</code></pre>
+<pre><code>Erro padrao: 0.04142463035441595</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> ( <span class="st">" Intervalo de confianca 95%: (</span><span class="sc">{:.4f}</span><span class="st"> , (</span><span class="sc">{:.4f}</span><span class="st">) "</span>.<span class="bu">format</span> ( ci_lower , ci_upper ) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Intervalo de confianca 95%: (</span><span class="sc">{:.4f}</span><span class="st">, </span><span class="sc">{:.4f}</span><span class="st">)"</span>.<span class="bu">format</span>(ci_lower, ci_upper))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Intervalo de confianca 95%: (0.6988 , (0.8612) </code></pre>
+<pre><code>Intervalo de confianca 95%: (0.6988, 0.8612)</code></pre>
 </div>
 </div>
-</section>
-<section id="exemplo-em-r-1" class="level4">
-<h4 class="anchored" data-anchor-id="exemplo-em-r-1">Exemplo em R:</h4>
+<p><strong>Exemplo em R:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
@@ -610,7 +612,7 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>p_hat <span class="ot">&lt;-</span> x <span class="sc">/</span> n</span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Erro padrao</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span> ( p_hat <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p_hat ) <span class="sc">/</span> n )</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p_hat <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p_hat) <span class="sc">/</span> n)</span>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor critico para 95% de confianca</span></span>
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fl">1.96</span></span>
@@ -619,109 +621,93 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="ot">&lt;-</span> p_hat <span class="sc">-</span> z <span class="sc">*</span> se</span>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="ot">&lt;-</span> p_hat <span class="sc">+</span> z <span class="sc">*</span> se</span>
 <span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ( <span class="st">" Proporcao amostral : "</span> , p_hat , <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Proporcao amostral:"</span>, p_hat, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Proporcao amostral :  0.78 </code></pre>
+<pre><code>Proporcao amostral: 0.78 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ( <span class="st">" Erro padrao : "</span> , se ,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Erro padrao:"</span>, se, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Erro padrao :  0.04142463 </code></pre>
+<pre><code>Erro padrao: 0.04142463 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ( <span class="st">" Intervalo de confianca 95%: "</span> ,ci_lower , <span class="st">" a "</span> , ci_upper ,<span class="st">" </span><span class="sc">\n</span><span class="st"> "</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Intervalo de confianca 95%:"</span>, ci_lower, <span class="st">"a"</span>, ci_upper, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Intervalo de confianca 95%:  0.6988077  a  0.8611923  
- </code></pre>
+<pre><code>Intervalo de confianca 95%: 0.6988077 a 0.8611923 </code></pre>
 </div>
 </div>
 </section>
-<section id="sobre-teste-de-hipóteses" class="level4">
-<h4 class="anchored" data-anchor-id="sobre-teste-de-hipóteses">Sobre Teste de Hipóteses</h4>
-<p>Teste de Hipóteses para Média</p>
+<section id="teste-de-hipóteses-para-a-média" class="level3">
+<h3 class="anchored" data-anchor-id="teste-de-hipóteses-para-a-média">Teste de Hipóteses para a Média</h3>
 <p>Suponha que uma empresa de e-commerce deseje avaliar se o tempo médio de entrega de seus pedidos é menor do que 4 dias. Para isso, eles coletam uma amostra aleatória de 50 pedidos e registram o tempo de entrega de cada um deles. O tempo médio de entrega na amostra é de 3,8 dias, e o desvio padrão é de 0,6 dias.</p>
-<p>A hipótese nula H0 é que o tempo médio de entrega é igual a 4 dias, e a hipótese alternativa H1 é que o tempo médio de entrega é menor do que 4 dias.</p>
-</section>
-<section id="exemplo-em-python-2" class="level4">
-<h4 class="anchored" data-anchor-id="exemplo-em-python-2">Exemplo em Python:</h4>
+<p>A hipótese nula <span class="math inline">\(H_0\)</span> é que o tempo médio de entrega é igual a 4 dias, e a hipótese alternativa <span class="math inline">\(H_1\)</span> é que o tempo médio de entrega é menor do que 4 dias.</p>
+<p><strong>Exemplo em Python:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_1samp</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados da amostra</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>amostra <span class="op">=</span> np.array ([<span class="fl">3.2</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">4.1</span> , <span class="fl">3.6</span> , <span class="fl">3.9</span> , <span class="fl">4.2</span> , <span class="fl">3.8</span> ,</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fl">3.5</span> , <span class="fl">3.9</span> ,</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fl">4.0</span> , <span class="fl">3.6</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">3.8</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> , <span class="fl">4.0</span> ,</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fl">3.8</span> , <span class="fl">4.1</span> ,</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="fl">3.7</span> , <span class="fl">3.9</span> , <span class="fl">4.3</span> , <span class="fl">3.6</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">4.0</span> , <span class="fl">3.8</span> ,</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fl">4.2</span> , <span class="fl">3.9</span> ,</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fl">4.1</span> , <span class="fl">3.6</span> , <span class="fl">4.0</span> , <span class="fl">3.8</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> ,</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fl">3.6</span> , <span class="fl">4.1</span> ,</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fl">3.7</span> , <span class="fl">3.8</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> , <span class="fl">3.6</span> , <span class="fl">3.8</span> , <span class="fl">4.0</span> , <span class="fl">3.9</span> ,</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="fl">3.7</span> , <span class="fl">3.5</span>])</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizando o teste de hipoteses</span></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>resultado_teste <span class="op">=</span> ttest_1samp( amostra , popmean <span class="op">=</span><span class="dv">4</span> , alternative <span class="op">=</span> <span class="st">'less'</span>)</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraindo os resultados do teste</span></span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>valor_p <span class="op">=</span> resultado_teste.pvalue</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>estatistica_teste <span class="op">=</span> resultado_teste.statistic</span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo os resultados</span></span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">" Resultado do Teste de Hipoteses para Medias no Python "</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados da amostra (tempos de entrega em dias)</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>amostra <span class="op">=</span> np.array([<span class="fl">3.2</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">4.1</span>, <span class="fl">3.6</span>, <span class="fl">3.9</span>, <span class="fl">4.2</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                     <span class="fl">4.0</span>, <span class="fl">3.6</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>, <span class="fl">4.0</span>, <span class="fl">3.8</span>, <span class="fl">4.1</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                     <span class="fl">3.7</span>, <span class="fl">3.9</span>, <span class="fl">4.3</span>, <span class="fl">3.6</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">4.0</span>, <span class="fl">3.8</span>, <span class="fl">4.2</span>, <span class="fl">3.9</span>,</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                     <span class="fl">4.1</span>, <span class="fl">3.6</span>, <span class="fl">4.0</span>, <span class="fl">3.8</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>, <span class="fl">3.6</span>, <span class="fl">4.1</span>,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>                     <span class="fl">3.7</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>, <span class="fl">3.6</span>, <span class="fl">3.8</span>, <span class="fl">4.0</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.5</span>])</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizando o teste de hipoteses</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>resultado_teste <span class="op">=</span> ttest_1samp(amostra, popmean<span class="op">=</span><span class="dv">4</span>, alternative<span class="op">=</span><span class="st">'less'</span>)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Resultado do Teste de Hipoteses para Medias no Python"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Resultado do Teste de Hipoteses para Medias no Python </code></pre>
+<pre><code>Resultado do Teste de Hipoteses para Medias no Python</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">" Valor-p : "</span> , valor_p )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valor-p:"</span>, resultado_teste.pvalue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Valor-p :  1.2009651768828692e-07</code></pre>
+<pre><code>Valor-p: 1.2009651768828692e-07</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">" Estatistica do Teste : "</span> , estatistica_teste )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estatistica do Teste:"</span>, resultado_teste.statistic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Estatistica do Teste :  -5.992686840489195</code></pre>
+<pre><code>Estatistica do Teste: -5.992686840489195</code></pre>
 </div>
 </div>
-<p>Exemplo em R:</p>
+<p><strong>Exemplo em R:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados da amostra</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>amostra <span class="ot">&lt;-</span> <span class="fu">c</span> (<span class="fl">3.2</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">4.1</span> , <span class="fl">3.6</span> , <span class="fl">3.9</span> , <span class="fl">4.2</span> , <span class="fl">3.8</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> ,</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fl">4.0</span> , <span class="fl">3.6</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">3.8</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> , <span class="fl">4.0</span> , <span class="fl">3.8</span> , <span class="fl">4.1</span> ,</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fl">3.7</span> , <span class="fl">3.9</span> , <span class="fl">4.3</span> , <span class="fl">3.6</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">4.0</span> , <span class="fl">3.8</span> , <span class="fl">4.2</span> , <span class="fl">3.9</span> ,</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fl">4.1</span> , <span class="fl">3.6</span> , <span class="fl">4.0</span> , <span class="fl">3.8</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> , <span class="fl">3.6</span> , <span class="fl">4.1</span> ,</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fl">3.7</span> , <span class="fl">3.8</span> , <span class="fl">3.5</span> , <span class="fl">3.9</span> , <span class="fl">3.6</span> , <span class="fl">3.8</span> , <span class="fl">4.0</span> , <span class="fl">3.9</span> , <span class="fl">3.7</span> , <span class="fl">3.5</span>)</span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados da amostra (tempos de entrega em dias)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>amostra <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.2</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">4.1</span>, <span class="fl">3.6</span>, <span class="fl">3.9</span>, <span class="fl">4.2</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>             <span class="fl">4.0</span>, <span class="fl">3.6</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>, <span class="fl">4.0</span>, <span class="fl">3.8</span>, <span class="fl">4.1</span>,</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>             <span class="fl">3.7</span>, <span class="fl">3.9</span>, <span class="fl">4.3</span>, <span class="fl">3.6</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">4.0</span>, <span class="fl">3.8</span>, <span class="fl">4.2</span>, <span class="fl">3.9</span>,</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>             <span class="fl">4.1</span>, <span class="fl">3.6</span>, <span class="fl">4.0</span>, <span class="fl">3.8</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>, <span class="fl">3.6</span>, <span class="fl">4.1</span>,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>             <span class="fl">3.7</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">3.9</span>, <span class="fl">3.6</span>, <span class="fl">3.8</span>, <span class="fl">4.0</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.5</span>)</span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizando o teste de hipoteses</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>resultado_teste <span class="ot">&lt;-</span> <span class="fu">t.test</span> ( amostra , <span class="at">mu =</span> <span class="dv">4</span> , <span class="at">alternative =</span> <span class="st">"less"</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>resultado_teste <span class="ot">&lt;-</span> <span class="fu">t.test</span>(amostra, <span class="at">mu =</span> <span class="dv">4</span>, <span class="at">alternative =</span> <span class="st">"less"</span>)</span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraindo os resultados do teste</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>valor_p <span class="ot">&lt;-</span> resultado_teste <span class="sc">$</span> p.value</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>estatistica_teste <span class="ot">&lt;-</span> resultado_teste <span class="sc">$</span> statistic</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo os resultados</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>( <span class="st">" Resultado do Teste de Hipoteses para Medias no R </span><span class="sc">\n</span><span class="st"> "</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Resultado do Teste de Hipoteses para Medias no R</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Resultado do Teste de Hipoteses para Medias no R 
- </code></pre>
+<pre><code>Resultado do Teste de Hipoteses para Medias no R</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>( <span class="st">" Valor-p : "</span> , valor_p , <span class="st">" </span><span class="sc">\n</span><span class="st"> "</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Valor-p:"</span>, resultado_teste<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Valor-p :  1.200965e-07  
- </code></pre>
+<pre><code>Valor-p: 1.200965e-07 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>( <span class="st">" Estatistica do Teste : "</span> , estatistica_teste )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Estatistica do Teste:"</span>, resultado_teste<span class="sc">$</span>statistic, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Estatistica do Teste :  -5.992687</code></pre>
+<pre><code>Estatistica do Teste: -5.992687 </code></pre>
 </div>
 </div>
 </section>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">Interpretação</h3>
+<p>Em ambos os casos, o valor-p obtido é extremamente pequeno (bem abaixo de 0,05), o que significa que <strong>rejeitamos <span class="math inline">\(H_0\)</span></strong>: há evidência estatística forte de que o tempo médio real de entrega é, de fato, menor que 4 dias. Note que R e Python chegam exatamente ao mesmo valor-p e à mesma estatística de teste — o que é esperado, já que ambos implementam o mesmo teste t de Student sobre os mesmos dados.</p>
 </section>
-<section id="referências" class="level3">
-<h3 class="anchored" data-anchor-id="referências"><strong>Referências</strong></h3>
-<p>• Morettin, P. A.; Bussab, W. O. Estatística Básica. São Paulo: Editora Saraiva, 2017.</p>
-<p>• Werkema, C. Inferência Estatística. Grupo GEN, 2014.</p>
 </section>
-<section id="a-apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais" class="level3">
-<h3 class="anchored" data-anchor-id="a-apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais"><strong>A Apêndice A: Comparação entre Parâmetros Populacionais e Estatísticas Amostrais</strong></h3>
-<p>Na tabela a seguir, será apresentado os principais parâmetros da população e estatísticas da amostra. Esses parâmetros e estatísticas são valores numéricos que nos permitem resumir e descrever características importantes da população e da amostra.</p>
+<section id="referências" class="level2">
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<ul>
+<li>Morettin, P. A.; Bussab, W. O. <em>Estatística Básica</em>. São Paulo: Editora Saraiva, 2017.</li>
+<li>Werkema, C. <em>Inferência Estatística</em>. Grupo GEN, 2014.</li>
+</ul>
+</section>
+<section id="apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais" class="level2">
+<h2 class="anchored" data-anchor-id="apêndice-a-comparação-entre-parâmetros-populacionais-e-estatísticas-amostrais">Apêndice A: Comparação entre Parâmetros Populacionais e Estatísticas Amostrais</h2>
+<p>Na tabela a seguir, são apresentados os principais parâmetros da população e estatísticas da amostra. Esses parâmetros e estatísticas são valores numéricos que nos permitem resumir e descrever características importantes da população e da amostra.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -731,24 +717,24 @@ S^2 = \frac{(1 - 3)^2 + (3 - 3)^2 + (5 - 3)^2}{3 - 1} = 4 \leftarrow \text{estim
 </thead>
 <tbody>
 <tr class="odd">
-<td>Média μ</td>
+<td>Média <span class="math inline">\(\mu\)</span></td>
 <td>Média <span class="math inline">\(\bar{x}\)</span></td>
 </tr>
 <tr class="even">
 <td>Desvio padrão <span class="math inline">\(\sigma\)</span></td>
-<td>Desvio padrão <span class="math inline">\({s}\)</span></td>
+<td>Desvio padrão <span class="math inline">\(s\)</span></td>
 </tr>
 <tr class="odd">
 <td>Variância <span class="math inline">\(\sigma^2\)</span></td>
 <td>Variância <span class="math inline">\(s^2\)</span></td>
 </tr>
 <tr class="even">
-<td>Proporção p</td>
-<td>Proporção <span class="math inline">\(pˆ\)</span></td>
+<td>Proporção <span class="math inline">\(p\)</span></td>
+<td>Proporção <span class="math inline">\(\hat{p}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Os parâmetros populacionais, como a média e o desvio padrão , são medidas que resumem características da população como um todo. Por outro lado, as estatísticas amostrais, como a média amostral x e o desvio padrão amostral s, são calculadas a partir dos dados coletados na amostra e servem como estimativas dos parâmetros populacionais</p>
+<p>Os parâmetros populacionais, como a média e o desvio padrão, são medidas que resumem características da população como um todo. Por outro lado, as estatísticas amostrais, como a média amostral <span class="math inline">\(\bar{x}\)</span> e o desvio padrão amostral <span class="math inline">\(s\)</span>, são calculadas a partir dos dados coletados na amostra e servem como estimativas dos parâmetros populacionais.</p>
 
 
 </section>
