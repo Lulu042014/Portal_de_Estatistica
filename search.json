@@ -329,6 +329,76 @@
     "text": "Referências\n\nKuhn, M.; Johnson, K. Feature Engineering and Selection. Chapman & Hall/CRC.\nHan, J.; Pei, J.; Kamber, M. Data Mining: Concepts and Techniques. Morgan Kaufmann.\nMcKinney, W. Python for Data Analysis. O’Reilly, 2022."
   },
   {
+    "objectID": "SQL.html",
+    "href": "SQL.html",
+    "title": "SQL e Bancos de Dados",
+    "section": "",
+    "text": "Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum banco de dados relacional. Saber consultar, filtrar e combinar essas informações com SQL (Structured Query Language) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo."
+  },
+  {
+    "objectID": "SQL.html#introdução",
+    "href": "SQL.html#introdução",
+    "title": "SQL e Bancos de Dados",
+    "section": "",
+    "text": "Praticamente todo projeto de Ciência de Dados começa com dados armazenados em algum banco de dados relacional. Saber consultar, filtrar e combinar essas informações com SQL (Structured Query Language) é uma habilidade tão fundamental quanto programar em Python ou R — muitas vezes, é a etapa que antecede qualquer análise ou modelo."
+  },
+  {
+    "objectID": "SQL.html#o-modelo-relacional",
+    "href": "SQL.html#o-modelo-relacional",
+    "title": "SQL e Bancos de Dados",
+    "section": "O Modelo Relacional",
+    "text": "O Modelo Relacional\nUm banco de dados relacional organiza informações em tabelas (também chamadas de relações), onde:\n\ncada linha representa um registro (ex: um cliente, um pedido)\ncada coluna representa um atributo desse registro (ex: nome, data, valor)\ncada tabela tem uma chave primária (primary key) — um identificador único para cada linha\ntabelas se relacionam entre si por meio de chaves estrangeiras (foreign keys), que apontam para a chave primária de outra tabela\n\nEssa estrutura evita duplicação de dados: em vez de repetir o nome e endereço de um cliente em cada pedido que ele faz, guardamos essa informação uma única vez na tabela clientes, e cada pedido só referencia o id desse cliente."
+  },
+  {
+    "objectID": "SQL.html#comandos-sql-fundamentais",
+    "href": "SQL.html#comandos-sql-fundamentais",
+    "title": "SQL e Bancos de Dados",
+    "section": "Comandos SQL Fundamentais",
+    "text": "Comandos SQL Fundamentais\nSQL é dividido, de forma simplificada, em dois grupos de comandos:\nDDL (Data Definition Language) — define a estrutura do banco:\n\nCREATE TABLE — cria uma tabela\nALTER TABLE — modifica uma tabela existente\nDROP TABLE — remove uma tabela\n\nDML (Data Manipulation Language) — manipula os dados:\n\nSELECT — consulta dados\nINSERT — insere novos registros\nUPDATE — atualiza registros existentes\nDELETE — remove registros"
+  },
+  {
+    "objectID": "SQL.html#cláusulas-do-select",
+    "href": "SQL.html#cláusulas-do-select",
+    "title": "SQL e Bancos de Dados",
+    "section": "Cláusulas do SELECT",
+    "text": "Cláusulas do SELECT\nUma consulta SELECT completa geralmente segue esta ordem lógica:\nSELECT colunas\nFROM tabela\nWHERE condição\nGROUP BY coluna\nHAVING condição_do_grupo\nORDER BY coluna\nLIMIT n;\n\nWHERE filtra linhas individuais, antes de qualquer agrupamento\nGROUP BY agrupa linhas que compartilham um valor, geralmente combinado com funções agregadas (SUM, AVG, COUNT, MAX, MIN)\nHAVING filtra grupos já formados pelo GROUP BY — diferente do WHERE, que filtra linhas antes do agrupamento\nORDER BY ordena o resultado final\nLIMIT restringe o número de linhas retornadas"
+  },
+  {
+    "objectID": "SQL.html#joins-combinando-tabelas",
+    "href": "SQL.html#joins-combinando-tabelas",
+    "title": "SQL e Bancos de Dados",
+    "section": "JOINs: Combinando Tabelas",
+    "text": "JOINs: Combinando Tabelas\nO poder de um banco relacional está em combinar dados de várias tabelas através de joins:\n\nINNER JOIN — retorna apenas as linhas que têm correspondência em ambas as tabelas\nLEFT JOIN — retorna todas as linhas da tabela à esquerda, mesmo sem correspondência na direita (preenchendo com NULL)\nRIGHT JOIN — o oposto do LEFT JOIN\nFULL JOIN — retorna todas as linhas de ambas as tabelas, com ou sem correspondência\n\n\n\n\n\n\nerDiagram\n    CLIENTES ||--o{ PEDIDOS : \"faz\"\n    CLIENTES {\n        int id PK\n        string nome\n        string cidade\n    }\n    PEDIDOS {\n        int id PK\n        int cliente_id FK\n        string produto\n        float valor\n        string data\n    }\n\n\n\n\n\n\nO diagrama acima mostra a relação entre clientes e pedidos: cada cliente pode fazer vários pedidos (relação um-para-muitos), e a coluna cliente_id em pedidos é a chave estrangeira que aponta para o id em clientes."
+  },
+  {
+    "objectID": "SQL.html#normalização",
+    "href": "SQL.html#normalização",
+    "title": "SQL e Bancos de Dados",
+    "section": "Normalização",
+    "text": "Normalização\nNormalização é o processo de organizar tabelas para reduzir redundância e evitar inconsistências. As formas normais mais citadas são:\n\n1ª Forma Normal (1FN): cada coluna deve conter valores atômicos (não múltiplos valores em uma célula)\n2ª Forma Normal (2FN): atende a 1FN e todo atributo não-chave depende da chave primária inteira\n3ª Forma Normal (3FN): atende a 2FN e não há dependências entre atributos não-chave (elimina dependências transitivas)\n\nNa prática, bancos bem projetados costumam parar na 3FN — normalizar demais pode tornar as consultas desnecessariamente complexas, exigindo joins em excesso."
+  },
+  {
+    "objectID": "SQL.html#exemplo-prático-consultando-um-banco-relacional",
+    "href": "SQL.html#exemplo-prático-consultando-um-banco-relacional",
+    "title": "SQL e Bancos de Dados",
+    "section": "Exemplo Prático: consultando um banco relacional",
+    "text": "Exemplo Prático: consultando um banco relacional\nVamos criar duas tabelas relacionadas (clientes e pedidos) em um banco SQLite em memória e explorar consultas reais.\n\nimport sqlite3\nimport pandas as pd\n\nconn = sqlite3.connect(\":memory:\")\ncursor = conn.cursor()\n\n# Criação das tabelas (DDL)\ncursor.execute(\"\"\"\nCREATE TABLE clientes (\n    id INTEGER PRIMARY KEY,\n    nome TEXT,\n    cidade TEXT\n)\n\"\"\")\n\ncursor.execute(\"\"\"\nCREATE TABLE pedidos (\n    id INTEGER PRIMARY KEY,\n    cliente_id INTEGER,\n    produto TEXT,\n    valor REAL,\n    data TEXT,\n    FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n)\n\"\"\")\n\n# Inserção de dados (DML)\nclientes = [\n    (1, \"Ana\", \"Itapajé\"),\n    (2, \"Carlos\", \"Fortaleza\"),\n    (3, \"Beatriz\", \"Sobral\"),\n    (4, \"Diego\", \"Itapajé\"),\n]\ncursor.executemany(\"INSERT INTO clientes VALUES (?, ?, ?)\", clientes)\n\npedidos = [\n    (1, 1, \"Notebook\", 3200.00, \"2025-01-10\"),\n    (2, 1, \"Mouse\", 90.00, \"2025-01-15\"),\n    (3, 2, \"Monitor\", 950.00, \"2025-01-12\"),\n    (4, 3, \"Teclado\", 250.00, \"2025-01-20\"),\n    (5, 1, \"Headset\", 320.00, \"2025-02-02\"),\n    (6, 2, \"Notebook\", 3400.00, \"2025-02-05\"),\n]\ncursor.executemany(\"INSERT INTO pedidos VALUES (?, ?, ?, ?, ?)\", pedidos)\nconn.commit()\n\nprint(\"Tabelas criadas e populadas com sucesso.\")\n\nTabelas criadas e populadas com sucesso.\n\n\n\nConsulta 1: JOIN simples\n\nquery1 = \"\"\"\nSELECT c.nome, c.cidade, p.produto, p.valor, p.data\nFROM clientes c\nINNER JOIN pedidos p ON c.id = p.cliente_id\nORDER BY p.data;\n\"\"\"\npd.read_sql_query(query1, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\nproduto\nvalor\ndata\n\n\n\n\n0\nAna\nItapajé\nNotebook\n3200.0\n2025-01-10\n\n\n1\nCarlos\nFortaleza\nMonitor\n950.0\n2025-01-12\n\n\n2\nAna\nItapajé\nMouse\n90.0\n2025-01-15\n\n\n3\nBeatriz\nSobral\nTeclado\n250.0\n2025-01-20\n\n\n4\nAna\nItapajé\nHeadset\n320.0\n2025-02-02\n\n\n5\nCarlos\nFortaleza\nNotebook\n3400.0\n2025-02-05\n\n\n\n\n\n\n\n\n\nConsulta 2: agregação com GROUP BY\n\nquery2 = \"\"\"\nSELECT c.nome, COUNT(p.id) AS total_pedidos, SUM(p.valor) AS total_gasto\nFROM clientes c\nINNER JOIN pedidos p ON c.id = p.cliente_id\nGROUP BY c.nome\nORDER BY total_gasto DESC;\n\"\"\"\npd.read_sql_query(query2, conn)\n\n\n\n\n\n\n\n\nnome\ntotal_pedidos\ntotal_gasto\n\n\n\n\n0\nCarlos\n2\n4350.0\n\n\n1\nAna\n3\n3610.0\n\n\n2\nBeatriz\n1\n250.0\n\n\n\n\n\n\n\n\n\nConsulta 3: LEFT JOIN (incluindo clientes sem pedidos)\n\nquery3 = \"\"\"\nSELECT c.nome, c.cidade, COUNT(p.id) AS total_pedidos\nFROM clientes c\nLEFT JOIN pedidos p ON c.id = p.cliente_id\nGROUP BY c.nome\nORDER BY total_pedidos;\n\"\"\"\npd.read_sql_query(query3, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\ntotal_pedidos\n\n\n\n\n0\nDiego\nItapajé\n0\n\n\n1\nBeatriz\nSobral\n1\n\n\n2\nCarlos\nFortaleza\n2\n\n\n3\nAna\nItapajé\n3\n\n\n\n\n\n\n\n\n\nConsulta 4: subconsulta (subquery)\n\nquery4 = \"\"\"\nSELECT nome, cidade\nFROM clientes\nWHERE id IN (\n    SELECT cliente_id FROM pedidos WHERE valor &gt; 1000\n);\n\"\"\"\npd.read_sql_query(query4, conn)\n\n\n\n\n\n\n\n\nnome\ncidade\n\n\n\n\n0\nAna\nItapajé\n\n\n1\nCarlos\nFortaleza\n\n\n\n\n\n\n\n\n\nInterpretação\n\nA Consulta 1 mostra como um INNER JOIN conecta cada pedido ao nome e cidade do cliente correspondente — sem isso, a tabela pedidos sozinha seria só uma lista de IDs sem contexto.\nA Consulta 2 demonstra o padrão mais comum em relatórios de negócio: agrupar por cliente e agregar valores, revelando que Carlos é quem mais gastou apesar de ter feito menos pedidos que Ana — um bom exemplo de por que COUNT e SUM juntos contam uma história mais completa que qualquer um sozinho.\nA Consulta 3 usa LEFT JOIN propositalmente: como todos os clientes cadastrados fizeram pelo menos um pedido, ninguém aparece com zero — mas se Beatriz e Diego não tivessem pedidos, essa consulta ainda os listaria (com total_pedidos = 0), diferente do INNER JOIN, que os teria simplesmente omitido.\nA Consulta 4 ilustra uma subconsulta: primeiro descobrimos quais cliente_id têm pedidos acima de R$ 1.000, depois filtramos a tabela de clientes com base nesse resultado."
+  },
+  {
+    "objectID": "SQL.html#aplicação-real-em-ciência-de-dados",
+    "href": "SQL.html#aplicação-real-em-ciência-de-dados",
+    "title": "SQL e Bancos de Dados",
+    "section": "Aplicação real em Ciência de Dados",
+    "text": "Aplicação real em Ciência de Dados\nAntes de qualquer análise estatística ou modelo de Machine Learning, é comum que os dados estejam espalhados em várias tabelas de um banco de produção — pedidos, clientes, produtos, pagamentos. Escrever consultas SQL bem construídas (com os JOINs e agregações certas) é frequentemente o que determina se o dataset final para análise está completo e correto, ou se está sutilmente enviesado por informação faltante ou duplicada."
+  },
+  {
+    "objectID": "SQL.html#referências",
+    "href": "SQL.html#referências",
+    "title": "SQL e Bancos de Dados",
+    "section": "Referências",
+    "text": "Referências\n\nDate, C. J. An Introduction to Database Systems. Pearson, 2003.\nSilberschatz, A.; Korth, H.; Sudarshan, S. Database System Concepts. McGraw-Hill, 2020.\nElmasri, R.; Navathe, S. B. Fundamentals of Database Systems. Pearson."
+  },
+  {
     "objectID": "FP.html",
     "href": "FP.html",
     "title": "Fundamentos de Programação",
