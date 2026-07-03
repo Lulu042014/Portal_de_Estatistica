@@ -23,17 +23,24 @@ Para mais detalhes sobre justificativa, metodologia, organização das equipes e
 - Probabilidade
 - Inferência Estatística
 - Pré-processamento e Limpeza de Dados
+- Visualização de Dados
 
 ## Tecnologias
 
 - [Quarto](https://quarto.org/) — geração do site
-- R e Python — conteúdo e exemplos executáveis
+- R e Python — conteúdo e exemplos executáveis (histogramas, regressões, testes de hipótese, pipelines de pré-processamento, simulações Monte Carlo)
 - Git / GitHub — versionamento
 - GitHub Pages — publicação
 
 ## Rodando localmente
 
-Pré-requisitos: [Quarto CLI](https://quarto.org/docs/get-started/), R e Python instalados, com os pacotes `knitr`, `rmarkdown` e `reticulate` (R) e `jupyter`, `nbformat` (Python).
+**Pré-requisitos:**
+
+- [Quarto CLI](https://quarto.org/docs/get-started/)
+- R, com os pacotes `knitr`, `rmarkdown`, `reticulate`, `ggplot2` e `dplyr`
+- Python, com os pacotes `jupyter`, `nbformat`, `ipykernel`, `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy` e `scikit-learn`
+
+> ⚠️ Se os blocos de código Python derem erro de `ModuleNotFoundError` ao renderizar (mesmo com os pacotes instalados), confira se o kernel Jupyter usado pelo `reticulate` aponta para o Python certo: `jupyter kernelspec list`, e edite o `kernel.json` correspondente para usar o caminho completo do interpretador Python do seu ambiente.
 
 ```bash
 git clone https://github.com/Lulu042014/Portal_de_Estatistica.git
@@ -50,21 +57,21 @@ quarto publish gh-pages
 
 ## Estrutura do repositório
 
-```
-├── _quarto.yml              # configuração do site e navbar
-├── index.qmd                # página inicial
-├── sobre.qmd                # sobre o projeto
-├── FCD.qmd                  # Fundamentos de Ciência de Dados
-├── FP.qmd                   # Fundamentos de Programação
-├── FL.qmd                   # Ferramentas e Linguagens
-├── r.qmd                    # Introdução a R
-├── IEP.qmd                  # Introdução a Estatística e Probabilidade
-├── descritiva.qmd           # Estatística Descritiva
-├── PD.qmd                   # Probabilidade
-├── IF.qmd                   # Inferência Estatística
-├── PLD.qmd                  # Pré-processamento e Limpeza de Dados
-└── apresentacoes_e_documentos/  # materiais de apoio do projeto
-```
+├── _quarto.yml                    # configuração do site e navbar
+├── .gitignore                     # ignora cache do Quarto, .Rproj.user, _site, etc.
+├── index.qmd                      # página inicial
+├── sobre.qmd                      # sobre o projeto
+├── FCD.qmd                        # Fundamentos de Ciência de Dados
+├── FP.qmd                         # Fundamentos de Programação
+├── FL.qmd                         # Ferramentas e Linguagens
+├── r.qmd                          # Introdução a R
+├── IEP.qmd                        # Introdução a Estatística e Probabilidade
+├── descritiva.qmd                 # Estatística Descritiva
+├── PD.qmd                         # Probabilidade
+├── IF.qmd                         # Inferência Estatística
+├── PLD.qmd                        # Pré-processamento e Limpeza de Dados
+├── visualizacao.qmd                # Visualização de Dados
+└── apresentacoes_e_documentos/    # materiais de apoio do projeto
 
 ## Equipe
 
