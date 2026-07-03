@@ -188,15 +188,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introdução-ao-r" id="toc-introdução-ao-r" class="nav-link active" data-scroll-target="#introdução-ao-r"><strong>INTRODUÇÃO AO R</strong></a></li>
-  <li><a href="#instalação-e-ambiente-de-trabalho" id="toc-instalação-e-ambiente-de-trabalho" class="nav-link" data-scroll-target="#instalação-e-ambiente-de-trabalho"><strong>Instalação e Ambiente de Trabalho</strong></a></li>
-  <li><a href="#conceitos-básicos" id="toc-conceitos-básicos" class="nav-link" data-scroll-target="#conceitos-básicos"><strong>Conceitos Básicos</strong></a></li>
-  <li><a href="#estruturas-de-dados" id="toc-estruturas-de-dados" class="nav-link" data-scroll-target="#estruturas-de-dados"><strong>Estruturas de Dados</strong></a></li>
-  <li><a href="#importação-e-visualização-de-dados" id="toc-importação-e-visualização-de-dados" class="nav-link" data-scroll-target="#importação-e-visualização-de-dados"><strong>Importação e Visualização de Dados</strong></a></li>
-  <li><a href="#controle-de-fluxo" id="toc-controle-de-fluxo" class="nav-link" data-scroll-target="#controle-de-fluxo"><strong>Controle de Fluxo</strong></a></li>
-  <li><a href="#pacotes-úteis" id="toc-pacotes-úteis" class="nav-link" data-scroll-target="#pacotes-úteis"><strong>Pacotes úteis</strong></a></li>
-  <li><a href="#prática-guiada" id="toc-prática-guiada" class="nav-link" data-scroll-target="#prática-guiada"><strong>Prática guiada</strong></a></li>
-  <li><a href="#referências-e-cursos-gratuitos" id="toc-referências-e-cursos-gratuitos" class="nav-link" data-scroll-target="#referências-e-cursos-gratuitos"><strong>Referências e Cursos Gratuitos</strong></a></li>
+  <li><a href="#introdução-ao-r" id="toc-introdução-ao-r" class="nav-link active" data-scroll-target="#introdução-ao-r">Introdução ao R</a>
+  <ul class="collapse">
+  <li><a href="#o-que-é-o-r" id="toc-o-que-é-o-r" class="nav-link" data-scroll-target="#o-que-é-o-r">O que é o R?</a></li>
+  </ul></li>
+  <li><a href="#instalação-e-ambiente-de-trabalho" id="toc-instalação-e-ambiente-de-trabalho" class="nav-link" data-scroll-target="#instalação-e-ambiente-de-trabalho">Instalação e Ambiente de Trabalho</a>
+  <ul class="collapse">
+  <li><a href="#instalar" id="toc-instalar" class="nav-link" data-scroll-target="#instalar">Instalar</a></li>
+  <li><a href="#principais-arquivos" id="toc-principais-arquivos" class="nav-link" data-scroll-target="#principais-arquivos">Principais arquivos</a></li>
+  </ul></li>
+  <li><a href="#conceitos-básicos" id="toc-conceitos-básicos" class="nav-link" data-scroll-target="#conceitos-básicos">Conceitos Básicos</a></li>
+  <li><a href="#estruturas-de-dados" id="toc-estruturas-de-dados" class="nav-link" data-scroll-target="#estruturas-de-dados">Estruturas de Dados</a></li>
+  <li><a href="#importação-e-visualização-de-dados" id="toc-importação-e-visualização-de-dados" class="nav-link" data-scroll-target="#importação-e-visualização-de-dados">Importação e Visualização de Dados</a>
+  <ul class="collapse">
+  <li><a href="#interpretação" id="toc-interpretação" class="nav-link" data-scroll-target="#interpretação">Interpretação</a></li>
+  </ul></li>
+  <li><a href="#controle-de-fluxo" id="toc-controle-de-fluxo" class="nav-link" data-scroll-target="#controle-de-fluxo">Controle de Fluxo</a></li>
+  <li><a href="#pacotes-úteis" id="toc-pacotes-úteis" class="nav-link" data-scroll-target="#pacotes-úteis">Pacotes úteis</a>
+  <ul class="collapse">
+  <li><a href="#instalar-e-carregar-pacotes" id="toc-instalar-e-carregar-pacotes" class="nav-link" data-scroll-target="#instalar-e-carregar-pacotes">Instalar e carregar pacotes</a></li>
+  <li><a href="#outros-pacotes-populares" id="toc-outros-pacotes-populares" class="nav-link" data-scroll-target="#outros-pacotes-populares">Outros pacotes populares</a></li>
+  </ul></li>
+  <li><a href="#prática-guiada" id="toc-prática-guiada" class="nav-link" data-scroll-target="#prática-guiada">Prática guiada</a></li>
+  <li><a href="#referências-e-cursos-gratuitos" id="toc-referências-e-cursos-gratuitos" class="nav-link" data-scroll-target="#referências-e-cursos-gratuitos">Referências e Cursos Gratuitos</a></li>
   </ul>
 </nav>
     </div>
@@ -222,93 +236,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introdução-ao-r" class="level3">
-<h3 class="anchored" data-anchor-id="introdução-ao-r"><strong>INTRODUÇÃO AO R</strong></h3>
-<section id="o-que-é-o-r" class="level4">
-<h4 class="anchored" data-anchor-id="o-que-é-o-r"><strong><em>O que é o R?</em></strong></h4>
+<section id="introdução-ao-r" class="level2">
+<h2 class="anchored" data-anchor-id="introdução-ao-r">Introdução ao R</h2>
+<section id="o-que-é-o-r" class="level3">
+<h3 class="anchored" data-anchor-id="o-que-é-o-r">O que é o R?</h3>
 <p>R é uma linguagem de programação voltada para análise estatística e visualização de dados. É gratuita, de código aberto e amplamente utilizada em ciência de dados, estatística, bioinformática e pesquisa acadêmica.</p>
 </section>
 </section>
-<section id="instalação-e-ambiente-de-trabalho" class="level3">
-<h3 class="anchored" data-anchor-id="instalação-e-ambiente-de-trabalho"><strong>Instalação e Ambiente de Trabalho</strong></h3>
-<section id="instalar" class="level4">
-<h4 class="anchored" data-anchor-id="instalar"><strong><em>Instalar:</em></strong></h4>
-<p>• R: https://cran.r-project.org</p>
-<p>• RStudio (IDE recomendada): https://posit.co/download/rstudio-desktop/</p>
+<section id="instalação-e-ambiente-de-trabalho" class="level2">
+<h2 class="anchored" data-anchor-id="instalação-e-ambiente-de-trabalho">Instalação e Ambiente de Trabalho</h2>
+<section id="instalar" class="level3">
+<h3 class="anchored" data-anchor-id="instalar">Instalar</h3>
+<ul>
+<li>R: <a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a></li>
+<li>RStudio (IDE recomendada): <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
+</ul>
 </section>
-<section id="principais-arquivos" class="level4">
-<h4 class="anchored" data-anchor-id="principais-arquivos"><strong><em>Principais arquivos:</em></strong></h4>
-<p>• .R: script de código puro</p>
-<p>• .Rmd: R Markdown (mistura código + texto)</p>
-<p>• .qmd: Quarto (nova forma de relatórios interativos)</p>
+<section id="principais-arquivos" class="level3">
+<h3 class="anchored" data-anchor-id="principais-arquivos">Principais arquivos</h3>
+<ul>
+<li><code>.R</code> — script de código puro</li>
+<li><code>.Rmd</code> — R Markdown (mistura código + texto)</li>
+<li><code>.qmd</code> — Quarto (nova forma de relatórios interativos)</li>
+</ul>
 </section>
 </section>
-<section id="conceitos-básicos" class="level3">
-<h3 class="anchored" data-anchor-id="conceitos-básicos"><strong>Conceitos Básicos</strong></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Isso é um comentário</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#ATRIBUIÇÃO DE VALORES </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>      <span class="co"># preferido</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">10</span>      <span class="co"># também funciona</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#TIPOS DE DADOS </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="fl">3.14</span>        <span class="co"># numérico</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="st">"Olá"</span>        <span class="co"># texto (string)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>logico <span class="ot">&lt;-</span> <span class="cn">TRUE</span>        <span class="co"># booleano</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)   <span class="co"># vetor numérico</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#FUNÇÕES BÁSICAS</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(vetor)     <span class="co"># número de elementos</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vetor)        <span class="co"># soma</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vetor)       <span class="co"># média</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="conceitos-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="conceitos-básicos">Conceitos Básicos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Isso é um comentário</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ATRIBUIÇÃO DE VALORES</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>      <span class="co"># preferido</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">10</span>      <span class="co"># também funciona</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># TIPOS DE DADOS</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="fl">3.14</span>        <span class="co"># numérico</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="st">"Olá"</span>        <span class="co"># texto (string)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>logico <span class="ot">&lt;-</span> <span class="cn">TRUE</span>         <span class="co"># booleano</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)   <span class="co"># vetor numérico</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># FUNÇÕES BÁSICAS</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(vetor)     <span class="co"># número de elementos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vetor)        <span class="co"># soma</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vetor)       <span class="co"># média</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
 </section>
-<section id="estruturas-de-dados" class="level3">
-<h3 class="anchored" data-anchor-id="estruturas-de-dados"><strong>Estruturas de Dados</strong></h3>
+<section id="estruturas-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="estruturas-de-dados">Estruturas de Dados</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 40%">
-<col style="width: 43%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>ESTRUTURA</th>
-<th>DESCRIÇÃO</th>
-<th>EXEMPLO</th>
+<th>Estrutura</th>
+<th>Descrição</th>
+<th>Exemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Vetor</td>
 <td>coleção de elementos</td>
-<td>c(1, 2, 3)</td>
+<td><code>c(1, 2, 3)</code></td>
 </tr>
 <tr class="even">
 <td>Matriz</td>
 <td>tabela bidimensional</td>
-<td>matrix(1:6, nrow = 2)</td>
+<td><code>matrix(1:6, nrow = 2)</code></td>
 </tr>
 <tr class="odd">
 <td>Lista</td>
 <td>coleção heterogênea</td>
-<td>list( nome =“Ana”, idade = 30)</td>
+<td><code>list(nome = "Ana", idade = 30)</code></td>
 </tr>
 <tr class="even">
 <td>data.frame</td>
 <td>tabela de dados (como Excel)</td>
-<td>data.frame(nome, idade)</td>
+<td><code>data.frame(nome, idade)</code></td>
 </tr>
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#EXEMPLO COM DATA.FRAME</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">nome =</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Carlos"</span>),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">35</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EXEMPLO COM DATA.FRAME</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dados_pessoas <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">nome =</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Carlos"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">35</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dados_pessoas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    nome idade
 1    Ana    22
@@ -316,55 +343,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="importação-e-visualização-de-dados" class="level3">
-<h3 class="anchored" data-anchor-id="importação-e-visualização-de-dados"><strong>Importação e Visualização de Dados</strong></h3>
+<section id="importação-e-visualização-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="importação-e-visualização-de-dados">Importação e Visualização de Dados</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#IMPORTAR CSV</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#dados &lt;- read.csv("caminho/arquivo.csv")</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#head(dados)        # primeiras linhas</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#str(dados)         # estrutura dos dados</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IMPORTAR CSV (exemplo ilustrativo — descomente e ajuste o caminho)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># dados &lt;- read.csv("caminho/arquivo.csv")</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># head(dados)   # primeiras linhas</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># str(dados)    # estrutura dos dados</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Para os gráficos abaixo, simulamos um pequeno conjunto de dados de exemplo</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">nome =</span> <span class="fu">paste0</span>(<span class="st">"Pessoa_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">sexo =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>), <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">28</span>, <span class="at">sd =</span> <span class="dv">6</span>)),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">salario =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">3500</span>, <span class="at">sd =</span> <span class="dv">800</span>))</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      nome sexo idade salario
+1 Pessoa_1    F    36    3864
+2 Pessoa_2    F    42    4064
+3 Pessoa_3    F    20    4328
+4 Pessoa_4    F    26    3013
+5 Pessoa_5    M    27    3904
+6 Pessoa_6    M    32    2126</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#GRÁFICOS BÁSICOS </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dados<span class="sc">$</span>idade)                  <span class="co"># histograma</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GRÁFICOS BÁSICOS</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dados<span class="sc">$</span>idade, <span class="at">main =</span> <span class="st">"Histograma de Idade"</span>, <span class="at">xlab =</span> <span class="st">"Idade"</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="r_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="r_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#boxplot(dados$idade ~ dados$sexo) # boxplot por grupo</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dados<span class="sc">$</span>idade, dados<span class="sc">$</span>salario)  <span class="co"># dispersão</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(dados<span class="sc">$</span>idade <span class="sc">~</span> dados<span class="sc">$</span>sexo, <span class="at">main =</span> <span class="st">"Idade por Sexo"</span>, <span class="at">xlab =</span> <span class="st">"Sexo"</span>, <span class="at">ylab =</span> <span class="st">"Idade"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="r_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="r_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dados<span class="sc">$</span>idade, dados<span class="sc">$</span>salario, <span class="at">main =</span> <span class="st">"Idade x Salário"</span>, <span class="at">xlab =</span> <span class="st">"Idade"</span>, <span class="at">ylab =</span> <span class="st">"Salário (R$)"</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"#2c3e50"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">Interpretação</h3>
+<p>O histograma mostra a forma da distribuição de idade da amostra simulada, o boxplot compara essa distribuição entre os dois grupos de sexo, e o gráfico de dispersão explora se existe alguma relação visual entre idade e salário nos dados — nesse caso simulado, não esperamos padrão nenhum, já que os valores foram gerados de forma independente.</p>
 </section>
-<section id="controle-de-fluxo" class="level3">
-<h3 class="anchored" data-anchor-id="controle-de-fluxo"><strong>Controle de Fluxo</strong></h3>
+</section>
+<section id="controle-de-fluxo" class="level2">
+<h2 class="anchored" data-anchor-id="controle-de-fluxo">Controle de Fluxo</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Condicional</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">12</span>, <span class="dv">8</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(x <span class="sc">&gt;</span> <span class="dv">10</span>)) {</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Pelo menos um valor é maior que 10"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Condicional</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">12</span>, <span class="dv">8</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(valores <span class="sc">&gt;</span> <span class="dv">10</span>)) {</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Pelo menos um valor é maior que 10"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Pelo menos um valor é maior que 10"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Todos os valores são maiores que 10?</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">all</span>(x <span class="sc">&gt;</span> <span class="dv">10</span>)) {</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Todos os valores são maiores que 10"</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Laço for</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">all</span>(valores <span class="sc">&gt;</span> <span class="dv">10</span>)) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Todos os valores são maiores que 10"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Laço for</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 4
@@ -374,69 +435,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="pacotes-úteis" class="level3">
-<h3 class="anchored" data-anchor-id="pacotes-úteis"><strong>Pacotes úteis</strong></h3>
-<section id="instalar-e-carregar-pacotes" class="level4">
-<h4 class="anchored" data-anchor-id="instalar-e-carregar-pacotes"><strong><em>Instalar e carregar pacotes:</em></strong></h4>
+<section id="pacotes-úteis" class="level2">
+<h2 class="anchored" data-anchor-id="pacotes-úteis">Pacotes úteis</h2>
+<section id="instalar-e-carregar-pacotes" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-e-carregar-pacotes">Instalar e carregar pacotes</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2")</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2")</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="outros-pacotes-populares" class="level4">
-<h4 class="anchored" data-anchor-id="outros-pacotes-populares"><strong><em>Outros pacotes populares:</em></strong></h4>
-<p>• dplyr – manipulação de dados</p>
-<p>• tidyr – limpeza de dados</p>
-<p>• readr – leitura de arquivos</p>
-<p>• ggplot2 – visualizações gráficas</p>
-<p>• lubridate – manipulação de datas</p>
+<section id="outros-pacotes-populares" class="level3">
+<h3 class="anchored" data-anchor-id="outros-pacotes-populares">Outros pacotes populares</h3>
+<ul>
+<li><code>dplyr</code> — manipulação de dados</li>
+<li><code>tidyr</code> — limpeza de dados</li>
+<li><code>readr</code> — leitura de arquivos</li>
+<li><code>ggplot2</code> — visualizações gráficas</li>
+<li><code>lubridate</code> — manipulação de datas</li>
+</ul>
 </section>
 </section>
-<section id="prática-guiada" class="level3">
-<h3 class="anchored" data-anchor-id="prática-guiada"><strong>Prática guiada</strong></h3>
+<section id="prática-guiada" class="level2">
+<h2 class="anchored" data-anchor-id="prática-guiada">Prática guiada</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando vetores</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">22</span>, <span class="dv">27</span>, <span class="dv">29</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumo estatístico</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(idade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando vetores</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">22</span>, <span class="dv">27</span>, <span class="dv">29</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumo estatístico</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(idade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    22.0    23.0    25.0    25.2    27.0    29.0 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela de frequência</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sexo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela de frequência</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sexo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>sexo
 F M 
 3 2 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de barras</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(sexo), <span class="at">col=</span><span class="st">"skyblue"</span>, <span class="at">main=</span><span class="st">"Distribuição por Sexo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de barras</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(sexo), <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">main =</span> <span class="st">"Distribuição por Sexo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="r_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="r_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(idade, <span class="at">main=</span><span class="st">"Boxplot de Idades"</span>, <span class="at">col=</span><span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(idade, <span class="at">main =</span> <span class="st">"Boxplot de Idades"</span>, <span class="at">col =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="r_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="r_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="referências-e-cursos-gratuitos" class="level3">
-<h3 class="anchored" data-anchor-id="referências-e-cursos-gratuitos"><strong>Referências e Cursos Gratuitos</strong></h3>
-<p>• R for Data Science – Hadley Wickham</p>
-<p>• Curso gratuito da USP no Coursera: Introdução ao R (link)</p>
-<p>• Posit Cloud – plataforma online gratuita para rodar códigos R</p>
+<section id="referências-e-cursos-gratuitos" class="level2">
+<h2 class="anchored" data-anchor-id="referências-e-cursos-gratuitos">Referências e Cursos Gratuitos</h2>
+<ul>
+<li><em>R for Data Science</em> — Hadley Wickham</li>
+<li>Curso gratuito da USP no Coursera: Introdução ao R</li>
+<li>Posit Cloud — plataforma online gratuita para rodar códigos R</li>
+</ul>
 
 
 </section>

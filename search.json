@@ -298,7 +298,70 @@
     "href": "r.html",
     "title": "Introdução a R",
     "section": "",
-    "text": "INTRODUÇÃO AO R\n\nO que é o R?\nR é uma linguagem de programação voltada para análise estatística e visualização de dados. É gratuita, de código aberto e amplamente utilizada em ciência de dados, estatística, bioinformática e pesquisa acadêmica.\n\n\n\nInstalação e Ambiente de Trabalho\n\nInstalar:\n• R: https://cran.r-project.org\n• RStudio (IDE recomendada): https://posit.co/download/rstudio-desktop/\n\n\nPrincipais arquivos:\n• .R: script de código puro\n• .Rmd: R Markdown (mistura código + texto)\n• .qmd: Quarto (nova forma de relatórios interativos)\n\n\n\nConceitos Básicos\n```{r}\n# Isso é um comentário\n\n#ATRIBUIÇÃO DE VALORES \nx &lt;- 5      # preferido\ny = 10      # também funciona\n\n#TIPOS DE DADOS \nnumero &lt;- 3.14        # numérico\ntexto &lt;- \"Olá\"        # texto (string)\nlogico &lt;- TRUE        # booleano\nvetor &lt;- c(1, 2, 3)   # vetor numérico\n\n#FUNÇÕES BÁSICAS\nlength(vetor)     # número de elementos\nsum(vetor)        # soma\nmean(vetor)       # média\n```\n\n\nEstruturas de Dados\n\n\n\n\n\n\n\n\nESTRUTURA\nDESCRIÇÃO\nEXEMPLO\n\n\n\n\nVetor\ncoleção de elementos\nc(1, 2, 3)\n\n\nMatriz\ntabela bidimensional\nmatrix(1:6, nrow = 2)\n\n\nLista\ncoleção heterogênea\nlist( nome =“Ana”, idade = 30)\n\n\ndata.frame\ntabela de dados (como Excel)\ndata.frame(nome, idade)\n\n\n\n\n#EXEMPLO COM DATA.FRAME\ndados &lt;- data.frame(\n  nome = c(\"Ana\", \"Carlos\"),\n  idade = c(22, 35)\n)\nprint(dados)\n\n    nome idade\n1    Ana    22\n2 Carlos    35\n\n\n\n\nImportação e Visualização de Dados\n\n#IMPORTAR CSV\n#dados &lt;- read.csv(\"caminho/arquivo.csv\")\n#head(dados)        # primeiras linhas\n#str(dados)         # estrutura dos dados\n\n\n#GRÁFICOS BÁSICOS \nhist(dados$idade)                  # histograma\n\n\n\n\n\n\n\n#boxplot(dados$idade ~ dados$sexo) # boxplot por grupo\nplot(dados$idade, dados$salario)  # dispersão\n\n\n\n\n\n\n\n\n\n\nControle de Fluxo\n\n# Condicional\nx &lt;- c(3, 12, 8)\nif (any(x &gt; 10)) {\n  print(\"Pelo menos um valor é maior que 10\")\n}\n\n[1] \"Pelo menos um valor é maior que 10\"\n\n# Todos os valores são maiores que 10?\nif (all(x &gt; 10)) {\n  print(\"Todos os valores são maiores que 10\")\n}\n\n# Laço for\nfor (i in 1:5) {\n  print(i^2)\n}\n\n[1] 1\n[1] 4\n[1] 9\n[1] 16\n[1] 25\n\n\n\n\nPacotes úteis\n\nInstalar e carregar pacotes:\n\n#install.packages(\"ggplot2\")\n#library(ggplot2)\n\n\n\nOutros pacotes populares:\n• dplyr – manipulação de dados\n• tidyr – limpeza de dados\n• readr – leitura de arquivos\n• ggplot2 – visualizações gráficas\n• lubridate – manipulação de datas\n\n\n\nPrática guiada\n\n# Criando vetores\nsexo &lt;- c(\"F\", \"M\", \"F\", \"M\", \"F\")\nidade &lt;- c(23, 25, 22, 27, 29)\n\n# Resumo estatístico\nsummary(idade)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   22.0    23.0    25.0    25.2    27.0    29.0 \n\n# Tabela de frequência\ntable(sexo)\n\nsexo\nF M \n3 2 \n\n# Gráfico de barras\nbarplot(table(sexo), col=\"skyblue\", main=\"Distribuição por Sexo\")\n\n\n\n\n\n\n\n# Boxplot\nboxplot(idade, main=\"Boxplot de Idades\", col=\"orange\")\n\n\n\n\n\n\n\n\n\n\nReferências e Cursos Gratuitos\n• R for Data Science – Hadley Wickham\n• Curso gratuito da USP no Coursera: Introdução ao R (link)\n• Posit Cloud – plataforma online gratuita para rodar códigos R"
+    "text": "R é uma linguagem de programação voltada para análise estatística e visualização de dados. É gratuita, de código aberto e amplamente utilizada em ciência de dados, estatística, bioinformática e pesquisa acadêmica."
+  },
+  {
+    "objectID": "r.html#introdução-ao-r",
+    "href": "r.html#introdução-ao-r",
+    "title": "Introdução a R",
+    "section": "",
+    "text": "R é uma linguagem de programação voltada para análise estatística e visualização de dados. É gratuita, de código aberto e amplamente utilizada em ciência de dados, estatística, bioinformática e pesquisa acadêmica."
+  },
+  {
+    "objectID": "r.html#instalação-e-ambiente-de-trabalho",
+    "href": "r.html#instalação-e-ambiente-de-trabalho",
+    "title": "Introdução a R",
+    "section": "Instalação e Ambiente de Trabalho",
+    "text": "Instalação e Ambiente de Trabalho\n\nInstalar\n\nR: https://cran.r-project.org\nRStudio (IDE recomendada): https://posit.co/download/rstudio-desktop/\n\n\n\nPrincipais arquivos\n\n.R — script de código puro\n.Rmd — R Markdown (mistura código + texto)\n.qmd — Quarto (nova forma de relatórios interativos)"
+  },
+  {
+    "objectID": "r.html#conceitos-básicos",
+    "href": "r.html#conceitos-básicos",
+    "title": "Introdução a R",
+    "section": "Conceitos Básicos",
+    "text": "Conceitos Básicos\n\n# Isso é um comentário\n\n# ATRIBUIÇÃO DE VALORES\nx &lt;- 5      # preferido\ny = 10      # também funciona\n\n# TIPOS DE DADOS\nnumero &lt;- 3.14        # numérico\ntexto &lt;- \"Olá\"        # texto (string)\nlogico &lt;- TRUE         # booleano\nvetor &lt;- c(1, 2, 3)   # vetor numérico\n\n# FUNÇÕES BÁSICAS\nlength(vetor)     # número de elementos\n\n[1] 3\n\nsum(vetor)        # soma\n\n[1] 6\n\nmean(vetor)       # média\n\n[1] 2"
+  },
+  {
+    "objectID": "r.html#estruturas-de-dados",
+    "href": "r.html#estruturas-de-dados",
+    "title": "Introdução a R",
+    "section": "Estruturas de Dados",
+    "text": "Estruturas de Dados\n\n\n\n\n\n\n\n\nEstrutura\nDescrição\nExemplo\n\n\n\n\nVetor\ncoleção de elementos\nc(1, 2, 3)\n\n\nMatriz\ntabela bidimensional\nmatrix(1:6, nrow = 2)\n\n\nLista\ncoleção heterogênea\nlist(nome = \"Ana\", idade = 30)\n\n\ndata.frame\ntabela de dados (como Excel)\ndata.frame(nome, idade)\n\n\n\n\n# EXEMPLO COM DATA.FRAME\ndados_pessoas &lt;- data.frame(\n  nome = c(\"Ana\", \"Carlos\"),\n  idade = c(22, 35)\n)\nprint(dados_pessoas)\n\n    nome idade\n1    Ana    22\n2 Carlos    35"
+  },
+  {
+    "objectID": "r.html#importação-e-visualização-de-dados",
+    "href": "r.html#importação-e-visualização-de-dados",
+    "title": "Introdução a R",
+    "section": "Importação e Visualização de Dados",
+    "text": "Importação e Visualização de Dados\n\n# IMPORTAR CSV (exemplo ilustrativo — descomente e ajuste o caminho)\n# dados &lt;- read.csv(\"caminho/arquivo.csv\")\n# head(dados)   # primeiras linhas\n# str(dados)    # estrutura dos dados\n\n# Para os gráficos abaixo, simulamos um pequeno conjunto de dados de exemplo\nset.seed(42)\ndados &lt;- data.frame(\n  nome = paste0(\"Pessoa_\", 1:20),\n  sexo = sample(c(\"F\", \"M\"), 20, replace = TRUE),\n  idade = round(rnorm(20, mean = 28, sd = 6)),\n  salario = round(rnorm(20, mean = 3500, sd = 800))\n)\nhead(dados)\n\n      nome sexo idade salario\n1 Pessoa_1    F    36    3864\n2 Pessoa_2    F    42    4064\n3 Pessoa_3    F    20    4328\n4 Pessoa_4    F    26    3013\n5 Pessoa_5    M    27    3904\n6 Pessoa_6    M    32    2126\n\n\n\n# GRÁFICOS BÁSICOS\nhist(dados$idade, main = \"Histograma de Idade\", xlab = \"Idade\", col = \"skyblue\")\n\n\n\n\n\n\n\n\n\nboxplot(dados$idade ~ dados$sexo, main = \"Idade por Sexo\", xlab = \"Sexo\", ylab = \"Idade\")\n\n\n\n\n\n\n\n\n\nplot(dados$idade, dados$salario, main = \"Idade x Salário\", xlab = \"Idade\", ylab = \"Salário (R$)\", pch = 19, col = \"#2c3e50\")\n\n\n\n\n\n\n\n\n\nInterpretação\nO histograma mostra a forma da distribuição de idade da amostra simulada, o boxplot compara essa distribuição entre os dois grupos de sexo, e o gráfico de dispersão explora se existe alguma relação visual entre idade e salário nos dados — nesse caso simulado, não esperamos padrão nenhum, já que os valores foram gerados de forma independente."
+  },
+  {
+    "objectID": "r.html#controle-de-fluxo",
+    "href": "r.html#controle-de-fluxo",
+    "title": "Introdução a R",
+    "section": "Controle de Fluxo",
+    "text": "Controle de Fluxo\n\n# Condicional\nvalores &lt;- c(3, 12, 8)\n\nif (any(valores &gt; 10)) {\n  print(\"Pelo menos um valor é maior que 10\")\n}\n\n[1] \"Pelo menos um valor é maior que 10\"\n\nif (all(valores &gt; 10)) {\n  print(\"Todos os valores são maiores que 10\")\n}\n\n# Laço for\nfor (i in 1:5) {\n  print(i^2)\n}\n\n[1] 1\n[1] 4\n[1] 9\n[1] 16\n[1] 25"
+  },
+  {
+    "objectID": "r.html#pacotes-úteis",
+    "href": "r.html#pacotes-úteis",
+    "title": "Introdução a R",
+    "section": "Pacotes úteis",
+    "text": "Pacotes úteis\n\nInstalar e carregar pacotes\n\n# install.packages(\"ggplot2\")\n# library(ggplot2)\n\n\n\nOutros pacotes populares\n\ndplyr — manipulação de dados\ntidyr — limpeza de dados\nreadr — leitura de arquivos\nggplot2 — visualizações gráficas\nlubridate — manipulação de datas"
+  },
+  {
+    "objectID": "r.html#prática-guiada",
+    "href": "r.html#prática-guiada",
+    "title": "Introdução a R",
+    "section": "Prática guiada",
+    "text": "Prática guiada\n\n# Criando vetores\nsexo &lt;- c(\"F\", \"M\", \"F\", \"M\", \"F\")\nidade &lt;- c(23, 25, 22, 27, 29)\n\n# Resumo estatístico\nsummary(idade)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   22.0    23.0    25.0    25.2    27.0    29.0 \n\n\n\n# Tabela de frequência\ntable(sexo)\n\nsexo\nF M \n3 2 \n\n\n\n# Gráfico de barras\nbarplot(table(sexo), col = \"skyblue\", main = \"Distribuição por Sexo\")\n\n\n\n\n\n\n\n\n\n# Boxplot\nboxplot(idade, main = \"Boxplot de Idades\", col = \"orange\")"
+  },
+  {
+    "objectID": "r.html#referências-e-cursos-gratuitos",
+    "href": "r.html#referências-e-cursos-gratuitos",
+    "title": "Introdução a R",
+    "section": "Referências e Cursos Gratuitos",
+    "text": "Referências e Cursos Gratuitos\n\nR for Data Science — Hadley Wickham\nCurso gratuito da USP no Coursera: Introdução ao R\nPosit Cloud — plataforma online gratuita para rodar códigos R"
   },
   {
     "objectID": "PD.html",
