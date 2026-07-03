@@ -3,184 +3,140 @@ title: "Probabilidade"
 format: html
 ---
 
-### **Introdução**
+## Introdução
 
-A teoria da probabilidade é um dos pilares fundamentais da Estatística e da Ciência de Dados. Ela fornece a estrutura matemática necessária para lidar com incertezas e modelar fenômenos aleatórios desde a previsão de comportamento de sistemas complexos até a tomada de decisões sob risco. Este guia foi desenvolvido para ser uma referência sólida, abrangendo desde os fundamentos até aplicações práticas com R e Python.
+A teoria da probabilidade é um dos pilares fundamentais da Estatística e da Ciência de Dados. Ela fornece a estrutura matemática necessária para lidar com incertezas e modelar fenômenos aleatórios — desde a previsão de comportamento de sistemas complexos até a tomada de decisões sob risco. Este guia foi desenvolvido para ser uma referência sólida, abrangendo desde os fundamentos até aplicações práticas com R e Python.
 
-### **Definições**
+## Definições
 
 A probabilidade é uma área da matemática que estuda experiências aleatórias e quantifica as chances de ocorrência de eventos. Seu uso é essencial para modelar incertezas e tomar decisões baseadas em dados.
 
-#### ***População e Amostra***
+### População e Amostra
 
-```         
-•   População: Conjunto completo de todos os elementos ou resultados possíveis sobre os quais desejamos obter informações. Pode ser finito ou infinito.
-
-•   Amostra: Subconjunto da população, geralmente extraído para fins de análise estatística.
-```
+- **População:** conjunto completo de todos os elementos ou resultados possíveis sobre os quais desejamos obter informações. Pode ser finito ou infinito.
+- **Amostra:** subconjunto da população, geralmente extraído para fins de análise estatística.
 
 Em probabilidade, normalmente tratamos do comportamento de variáveis em toda a população, diferentemente da estatística inferencial, que analisa amostras para fazer estimativas.
 
-#### ***Experimento Aleatório***
+### Experimento Aleatório
 
 É um processo ou fenômeno que, mesmo repetido sob as mesmas condições, pode produzir diferentes resultados. Exemplo: lançar um dado ou medir a temperatura de uma região.
 
 O conjunto de todos os possíveis resultados de um experimento aleatório pode ser:
 
-```         
-•   Finito: Lançamento de um dado Ω = {1, 2, 3, 4, 5, 6}
+- **Finito:** lançamento de um dado, $\Omega = \{1, 2, 3, 4, 5, 6\}$
+- **Infinito enumerável:** número de tentativas até o primeiro sucesso
+- **Contínuo:** medida de altura, $\Omega = [0, \infty)$
 
-•   Infinito enumerável: Número de tentativas até o primeiro sucesso
-
-•   Contínuo: Medida de altura Ω = [0, ∞)
-```
-
-#### ***Espaço Amostral***
+### Espaço Amostral
 
 O espaço amostral representa o conjunto de todos os possíveis resultados de um experimento aleatório. Em outras palavras, é a coleção de todos os resultados que podem ocorrer quando um evento aleatório é realizado.
 
 Por exemplo, quando lançamos um dado justo, o espaço amostral é o conjunto dos números de 1 a 6, pois esses são os resultados possíveis que podem aparecer no dado. Da mesma forma, ao lançar uma moeda, o espaço amostral seria {cara, coroa}, pois essas são as únicas duas opções possíveis.
 
-O espaço amostral é frequentemente denotado por "Ω" ou "S" e representa o conjunto universal de todas as possibilidades. Cada elemento individual no espaço amostral é chamado de "ponto amostral". É importante destacar que o espaço amostral deve conter todos os resultados possíveis e distintos de um experimento aleatório. Além disso, o espaço amostral pode ser finito, como nos exemplos anteriores, ou infinito, como no caso de medir a altura de uma pessoa, em que há uma infinidade de valores possíveis.
+O espaço amostral é frequentemente denotado por $\Omega$ ou $S$ e representa o conjunto universal de todas as possibilidades. Cada elemento individual no espaço amostral é chamado de "ponto amostral". É importante destacar que o espaço amostral deve conter todos os resultados possíveis e distintos de um experimento aleatório. Além disso, o espaço amostral pode ser finito, como nos exemplos anteriores, ou infinito, como no caso de medir a altura de uma pessoa, em que há uma infinidade de valores possíveis.
 
 O conhecimento do espaço amostral é essencial para calcular probabilidades e compreender as chances associadas aos diferentes eventos que podem ocorrer dentro desse conjunto de possibilidades.
 
-#### ***Evento***
+### Evento
 
 É qualquer subconjunto do espaço amostral. Podem ser:
 
--   **Evento simples:** Um único resultado (ex: tirar 4 ao lançar um dado)
+- **Evento simples:** um único resultado (ex: tirar 4 ao lançar um dado)
+- **Evento composto:** vários resultados (ex: tirar número par)
 
--   **Evento composto:** Vários resultados (ex: tirar número par)
+A probabilidade é uma função que associa a cada evento um número real entre 0 e 1: $P : \mathcal{F} \to [0, 1]$. Se todos os resultados são igualmente prováveis (modelo clássico):
 
-A probabilidade é uma função que associa a cada evento um número real entre 0 e 1:P : F → \[0, 1\]. Se todos os resultados são igualmente prováveis (modelo clássico):$$P(A) = \frac{n(A)}{n(Ω)}$$
+$$P(A) = \frac{n(A)}{n(\Omega)}$$
 
 Em casos gerais, a probabilidade é definida por meio de medidas e requer o uso da teoria da medida (Kolmogorov).
 
-#### ***Axiomas de Kolmogorov***
+### Axiomas de Kolmogorov
 
--   P(Ω) = 1;
+- $P(\Omega) = 1$
+- $P(A) \geq 0$ para todo $A \subseteq \Omega$
+- Se $A_1, A_2, \dots$ são disjuntos dois a dois, então:
 
--   P(A) ≥ 0 para todo A ⊆ Ω;
-
--   Se A1, A2, ... são disjuntos dois a dois, então:
-
-$$
-P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i).
-$$
+$$P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i)$$
 
 Esses axiomas são a base teórica da moderna teoria da probabilidade.
 
-### **Propriedades**
+## Propriedades
 
--   0 ≤ P(A) ≤ 1: A probabilidade está entre 0 e 1.
+- $0 \leq P(A) \leq 1$ — a probabilidade está entre 0 e 1
+- $P(\Omega) = 1$ — a probabilidade de que algum resultado ocorra é 1
+- $P(\emptyset) = 0$ — o evento vazio nunca ocorre
+- $P(A^c) = 1 - P(A)$ — complementar
+- $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ — união de eventos
+- Se $A \subseteq B$, então $P(A) \leq P(B)$
 
--   P(Ω) = 1: A probabilidade de que algum resultado ocorra é 1.
+## Probabilidade Condicional
 
--   P(∅) = 0: O evento vazio nunca ocorre.
+A probabilidade condicional é a probabilidade de ocorrência de um evento A, dado que outro evento B já ocorreu. Ela é representada como $P(A \mid B)$ e é calculada como a razão entre a probabilidade da interseção entre A e B e a probabilidade de B:
 
--   P(A\^c) = 1 - P(A): Complementar.
-
--   P(A ∪ B) = P(A) + P(B) - P(A ∩ B): União de eventos.
-
--   Se A ⊆ B, então P(A) ≤ P(B).
-
-### **Probabilidade Condicional**
-
-A probabilidade condicional é a probabilidade de ocorrência de um evento A, dado que outro evento B já ocorreu. Ela é representada como P(A\|B) e é calculada como a razão entre a probabilidade da interseção entre A e B e a probabilidade de B. Matematicamente:
-
-$$
-P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \quad \text{se } P(B) > 0.
-$$
+$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \quad \text{se } P(B) > 0$$
 
 Essa expressão representa a probabilidade de A dado que B ocorreu.
 
-### **Teorema da Probabilidade Total**
+## Teorema da Probabilidade Total
 
-O teorema da probabilidade total permite calcular a probabilidade de um evento A com base em uma partição do espaço amostral em eventos B1, B2, ..., Bn. É especialmente útil quando A depende de múltiplos cenários possíveis. Se B1, B2, ..., Bn são partições do espaço amostral:
+O teorema da probabilidade total permite calcular a probabilidade de um evento A com base em uma partição do espaço amostral em eventos $B_1, B_2, \dots, B_n$. É especialmente útil quando A depende de múltiplos cenários possíveis. Se $B_1, B_2, \dots, B_n$ são partições do espaço amostral:
 
-$$
-P(A) = \sum_{i=1}^{n} P(A \mid B_i) \, P(B_i).
-$$
+$$P(A) = \sum_{i=1}^{n} P(A \mid B_i) \, P(B_i)$$
 
-### **Teorema de Bayes**
+## Teorema de Bayes
 
-O teorema de Bayes permite atualizar a probabilidade de um evento com base em novas evidências. Ele inverte a probabilidade condicional e é amplamente usado em inferência estatística e aprendizado de máquina. Matematicamente:
+O teorema de Bayes permite atualizar a probabilidade de um evento com base em novas evidências. Ele inverte a probabilidade condicional e é amplamente usado em inferência estatística e aprendizado de máquina:
 
-$$
-P(B_j \mid A) = \frac{P(A \mid B_j) \, P(B_j)}{\sum_{i=1}^{n} P(A \mid B_i) \, P(B_i)}.
-$$
+$$P(B_j \mid A) = \frac{P(A \mid B_j) \, P(B_j)}{\sum_{i=1}^{n} P(A \mid B_i) \, P(B_i)}$$
 
-### **Eventos Independentes**
+## Eventos Independentes
 
 A independência entre eventos é um conceito central na teoria das probabilidades. Dois eventos A e B são ditos independentes quando a ocorrência de um não afeta a probabilidade de ocorrência do outro. Em outras palavras, saber que B ocorreu não altera a chance de A acontecer, e vice-versa. Formalmente:
 
-$$
-P(A \cap B) = P(A) \, P(B).
-$$
+$$P(A \cap B) = P(A) \, P(B)$$
 
 Essa propriedade também se estende a coleções maiores de eventos. Em aplicações práticas, assumir independência pode simplificar bastante o cálculo de probabilidades, mas essa suposição deve ser usada com cautela, especialmente em contextos reais onde variáveis muitas vezes estão correlacionadas.
 
-### **Variáveis Aleatórias e Distribuições**
+## Variáveis Aleatórias e Distribuições
 
 Uma variável aleatória é uma função que associa a cada resultado do espaço amostral um número real.
 
-#### ***Distribuições Discretas***
+### Distribuições Discretas
 
--   Bernoulli
+- Bernoulli
+- Binomial
+- Geométrica
+- Poisson
 
--   Binomial
+### Distribuições Contínuas
 
--   Geométrica
+- Uniforme Contínua
+- Exponencial
+- Normal
 
--   Poisson
+## Esperança, Momentos e Funções Geradoras
 
-#### ***Distribuições Contínuas***
+### Esperança e Variância
 
--   Uniforme Contínua
+$$\mathbb{E}[X] = \sum x \, P(X = x) \quad \text{(discreta)}, \qquad \mathbb{E}[X] = \int x f(x) \, dx \quad \text{(contínua)}$$
 
--   Exponencial
+$$\text{Var}(X) = \mathbb{E}[X^2] - \left( \mathbb{E}[X] \right)^2$$
 
--   Normal
+### Momentos e Funções Geradoras
 
-### **Esperança, Momentos e Funções Geradoras**
+- Momento de ordem r: $E[X^r]$
+- Função geradora de momentos: $M_X(t) = E[e^{tX}]$
 
-#### ***Esperança e Variância***
+### Distribuição e Esperança Condicionais
 
-$$
-\mathbb{E}[X] = \sum x \, P(X = x) \quad \text{(discreta)}, \qquad 
-\mathbb{E}[X] = \int x f(x) \, dx \quad \text{(contínua)}
-$$
+$$\mathbb{E}[X \mid Y = y] = \sum_x x \, P(X = x \mid Y = y) \quad \text{(discreta)}$$
 
-$$
-\text{Var}(X) = \mathbb{E}[X^2] - \left( \mathbb{E}[X] \right)^2
-$$
+$$\mathbb{E}[X \mid Y = y] = \int x \, f_{X \mid Y}(x \mid y) \, dx \quad \text{(contínua)}$$
 
-#### ***Momentos e Funções Geradoras***
+## Exemplos Computacionais em R e Python
 
--   Momento de ordem r: $E[X^r]$
-
--   Função geradora de momentos: $M_X(t) = E[e^{tX}]$
-
-#### ***Distribuição e Esperança Condicionais***
-
-$$
-\mathbb{E}[X \mid Y = y] = \sum_x x \, P(X = x \mid Y = y) \quad \text{(discreta)}
-$$
-
-$$
-\mathbb{E}[X \mid Y = y] = \int x \, f_{X \mid Y}(x \mid y) \, dx \quad \text{(contínua)}
-$$
-
-#### ***Distribuição e Esperança Condicionais***
-
--   (discreta)
-
--   (contínua)
-
-### **Exemplos computacionais em R e Python**
-
-#### ***Python: Probabilidade e Distribuições***
+### Python: Probabilidade e Distribuições
 
 ```{python}
 from scipy.stats import binom
@@ -190,24 +146,27 @@ prob = binom.pmf(3, 5, 0.4)
 print(prob)
 ```
 
-#### ***R: Esperança e Variância***
+**Interpretação:** essa é a probabilidade de observar exatamente 3 sucessos em 5 tentativas independentes, cada uma com 40% de chance de sucesso — cerca de 23%. Esse tipo de cálculo aparece em testes A/B, controle de qualidade e qualquer cenário com repetições binárias (sucesso/fracasso).
+
+### R: Esperança e Variância
 
 ```{r}
-#Esperança e variância para Poisson com lambda = 3
-
+# Esperança e variância para Poisson com lambda = 3
 lambda <- 3
-
 esperanca <- lambda
 variancia <- lambda
-
 cat("Esperança:", esperanca, "\n")
 cat("Variância:", variancia, "\n")
 ```
 
-### **Referências**
+**Interpretação:** na distribuição de Poisson, uma propriedade notável é que a esperança e a variância são sempre iguais ao parâmetro $\lambda$ — por isso os dois valores aqui saem idênticos. Essa distribuição é usada para modelar contagens de eventos raros em um intervalo fixo, como número de chamadas recebidas por hora ou defeitos por lote de produção.
 
--   Morettin, P. A.; Bussab, W. O. Estatística Básica.
+## Aplicação real em Ciência de Dados
 
--   Ross, S. M. Introdução à Probabilidade e Estatística para Engenharia e Ciências.
+O Teorema de Bayes é a base dos **classificadores Naive Bayes**, amplamente usados em filtros de spam e análise de sentimento. As distribuições discretas e contínuas apresentadas aqui fundamentam desde testes de hipótese até a escolha de funções de perda em modelos de Machine Learning — entender a forma de uma distribuição é o primeiro passo antes de assumir que um algoritmo vai funcionar bem sobre esses dados.
 
--   Werkema, C. Inferência Estatística. GEN.
+## Referências
+
+- Morettin, P. A.; Bussab, W. O. *Estatística Básica*.
+- Ross, S. M. *Introdução à Probabilidade e Estatística para Engenharia e Ciências*.
+- Werkema, C. *Inferência Estatística*. GEN.
