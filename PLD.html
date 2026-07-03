@@ -20,10 +20,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -67,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -153,14 +191,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#o-que-é-pré-processamento" id="toc-o-que-é-pré-processamento" class="nav-link active" data-scroll-target="#o-que-é-pré-processamento">O que é Pré-processamento?</a>
+  <li><a href="#o-que-é-pré-processamento" id="toc-o-que-é-pré-processamento" class="nav-link active" data-scroll-target="#o-que-é-pré-processamento">O que é Pré-processamento?</a></li>
+  <li><a href="#coleta-e-integração-de-dados" id="toc-coleta-e-integração-de-dados" class="nav-link" data-scroll-target="#coleta-e-integração-de-dados">Coleta e Integração de Dados</a></li>
+  <li><a href="#técnicas-de-limpeza-valores-ausentes-outliers-duplicações" id="toc-técnicas-de-limpeza-valores-ausentes-outliers-duplicações" class="nav-link" data-scroll-target="#técnicas-de-limpeza-valores-ausentes-outliers-duplicações">Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)</a></li>
+  <li><a href="#transformações-e-normalização-de-dados" id="toc-transformações-e-normalização-de-dados" class="nav-link" data-scroll-target="#transformações-e-normalização-de-dados">Transformações e Normalização de Dados</a></li>
+  <li><a href="#codificação-de-variáveis-categóricas" id="toc-codificação-de-variáveis-categóricas" class="nav-link" data-scroll-target="#codificação-de-variáveis-categóricas">Codificação de Variáveis Categóricas</a></li>
+  <li><a href="#feature-engineering-criação-seleção-e-extração" id="toc-feature-engineering-criação-seleção-e-extração" class="nav-link" data-scroll-target="#feature-engineering-criação-seleção-e-extração">Feature Engineering (Criação, Seleção e Extração)</a></li>
+  <li><a href="#exemplo-prático-um-mini-pipeline-de-pré-processamento" id="toc-exemplo-prático-um-mini-pipeline-de-pré-processamento" class="nav-link" data-scroll-target="#exemplo-prático-um-mini-pipeline-de-pré-processamento">Exemplo prático: um mini pipeline de pré-processamento</a>
   <ul class="collapse">
-  <li><a href="#coleta-e-integração-de-dados" id="toc-coleta-e-integração-de-dados" class="nav-link" data-scroll-target="#coleta-e-integração-de-dados">Coleta e integração de dados</a></li>
-  <li><a href="#técnicas-de-limpeza-valores-ausentes-outliers-duplicações" id="toc-técnicas-de-limpeza-valores-ausentes-outliers-duplicações" class="nav-link" data-scroll-target="#técnicas-de-limpeza-valores-ausentes-outliers-duplicações">Técnicas de limpeza (valores ausentes, outliers, duplicações)</a></li>
-  <li><a href="#transformações-e-normalização-de-dados" id="toc-transformações-e-normalização-de-dados" class="nav-link" data-scroll-target="#transformações-e-normalização-de-dados">Transformações e normalização de dados</a></li>
-  <li><a href="#codificação-de-variáveis-categóricas" id="toc-codificação-de-variáveis-categóricas" class="nav-link" data-scroll-target="#codificação-de-variáveis-categóricas">Codificação de variáveis categóricas</a></li>
-  <li><a href="#feature-engineering-criação-seleção-e-extração" id="toc-feature-engineering-criação-seleção-e-extração" class="nav-link" data-scroll-target="#feature-engineering-criação-seleção-e-extração">Feature Engineering (criação, seleção e extração)</a></li>
+  <li><a href="#interpretação" id="toc-interpretação" class="nav-link" data-scroll-target="#interpretação">Interpretação</a></li>
   </ul></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -189,65 +230,425 @@ ul.task-list li input[type="checkbox"] {
 <section id="o-que-é-pré-processamento" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-é-pré-processamento">O que é Pré-processamento?</h2>
 <p>O pré-processamento de dados corresponde ao conjunto de técnicas aplicadas a dados brutos para torná-los adequados à análise estatística e computacional. Tradicionalmente, essa etapa é considerada essencial para garantir a qualidade e consistência dos dados e, mais recentemente, passou a ser indispensável também no treinamento de modelos de aprendizado de máquina e inteligência artificial. Em síntese, trata-se do processo de transformar dados iniciais em um formato mais estruturado e confiável para tarefas de análise de dados, estatística e ciência de dados.</p>
-<hr>
-<section id="coleta-e-integração-de-dados" class="level3">
-<h3 class="anchored" data-anchor-id="coleta-e-integração-de-dados">Coleta e integração de dados</h3>
+</section>
+<section id="coleta-e-integração-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="coleta-e-integração-de-dados">Coleta e Integração de Dados</h2>
 <p>A coleta de dados pode ser realizada a partir de diversas fontes, como bancos de dados relacionais, arquivos CSV, APIs, sensores, questionários e dados da web. Quando esses dados vêm de diferentes origens, é necessário integrá-los em um único conjunto para análise.</p>
 <p>A integração de dados consiste em combinar informações de várias fontes de modo a criar um dataset unificado, garantindo consistência e evitando contradições. Esse processo exige cuidados como:</p>
 <ul>
-<li><strong>Padronização de formatos:</strong> uniformização de estruturas, por exemplo datas no padrão <code>AAAA-MM-DD</code>.</li>
-<li><strong>Correspondência de atributos/esquemas:</strong> alinhar campos equivalentes entre bases (ex.: <code>id_cliente</code> ↔︎ <code>cod_cliente</code>).</li>
-<li><strong>Eliminação de redundâncias e desduplicação:</strong> remover registros repetidos garantindo unicidade.</li>
+<li><strong>Padronização de formatos:</strong> uniformização de estruturas, por exemplo datas no padrão <code>AAAA-MM-DD</code></li>
+<li><strong>Correspondência de atributos/esquemas:</strong> alinhar campos equivalentes entre bases (ex.: <code>id_cliente</code> ↔︎ <code>cod_cliente</code>)</li>
+<li><strong>Eliminação de redundâncias e desduplicação:</strong> remover registros repetidos garantindo unicidade</li>
 </ul>
 <p>Uma coleta ampla e uma integração bem executada são fundamentais para análises estatísticas, aprendizado de máquina e aplicações em ciência de dados.</p>
-<hr>
 </section>
-<section id="técnicas-de-limpeza-valores-ausentes-outliers-duplicações" class="level3">
-<h3 class="anchored" data-anchor-id="técnicas-de-limpeza-valores-ausentes-outliers-duplicações">Técnicas de limpeza (valores ausentes, outliers, duplicações)</h3>
+<section id="técnicas-de-limpeza-valores-ausentes-outliers-duplicações" class="level2">
+<h2 class="anchored" data-anchor-id="técnicas-de-limpeza-valores-ausentes-outliers-duplicações">Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)</h2>
 <p>A limpeza de dados identifica e corrige inconsistências que possam comprometer análises ou modelos. Entre as técnicas mais comuns:</p>
 <ul>
-<li><strong>Tratamento de valores ausentes:</strong> excluir registros ou imputar (média, mediana, moda ou métodos avançados como KNN Imputer).</li>
-<li><strong>Remoção de duplicatas:</strong> eliminar ou consolidar registros repetidos.</li>
-<li><strong>Correção de formatos inconsistentes:</strong> padronizar tipos e unidades (datas, maiúsculas/minúsculas, medidas).</li>
-<li><strong>Detecção e tratamento de outliers:</strong> via boxplot, z-score, IQR ou métodos não supervisionados; pode-se remover ou transformar.</li>
+<li><strong>Tratamento de valores ausentes:</strong> excluir registros ou imputar (média, mediana, moda ou métodos avançados como KNN Imputer)</li>
+<li><strong>Remoção de duplicatas:</strong> eliminar ou consolidar registros repetidos</li>
+<li><strong>Correção de formatos inconsistentes:</strong> padronizar tipos e unidades (datas, maiúsculas/minúsculas, medidas)</li>
+<li><strong>Detecção e tratamento de outliers:</strong> via boxplot, z-score, IQR ou métodos não supervisionados; pode-se remover ou transformar</li>
 </ul>
-<hr>
 </section>
-<section id="transformações-e-normalização-de-dados" class="level3">
-<h3 class="anchored" data-anchor-id="transformações-e-normalização-de-dados">Transformações e normalização de dados</h3>
+<section id="transformações-e-normalização-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="transformações-e-normalização-de-dados">Transformações e Normalização de Dados</h2>
 <p>Transformações ajustam os dados para formatos adequados à modelagem, especialmente quando algoritmos são sensíveis a escala.</p>
 <ul>
-<li><strong>Normalização (Min-Max):</strong> reescala para <code>[0,1]</code>; útil em métodos baseados em distância.</li>
-<li><strong>Padronização (Z-score):</strong> média 0 e desvio padrão 1.</li>
-<li><strong>Transformações log/Box-Cox:</strong> reduzem assimetria.</li>
-<li><strong>Codificação de variáveis categóricas:</strong> one-hot ou label encoding.</li>
-<li><strong>Engenharia/extração de atributos:</strong> criação, seleção ou redução (PCA, autoencoders).</li>
+<li><strong>Normalização (Min-Max):</strong> reescala para <code>[0,1]</code>; útil em métodos baseados em distância</li>
+<li><strong>Padronização (Z-score):</strong> média 0 e desvio padrão 1</li>
+<li><strong>Transformações log/Box-Cox:</strong> reduzem assimetria</li>
+<li><strong>Codificação de variáveis categóricas:</strong> one-hot ou label encoding</li>
+<li><strong>Engenharia/extração de atributos:</strong> criação, seleção ou redução (PCA, autoencoders)</li>
 </ul>
-<hr>
 </section>
-<section id="codificação-de-variáveis-categóricas" class="level3">
-<h3 class="anchored" data-anchor-id="codificação-de-variáveis-categóricas">Codificação de variáveis categóricas</h3>
+<section id="codificação-de-variáveis-categóricas" class="level2">
+<h2 class="anchored" data-anchor-id="codificação-de-variáveis-categóricas">Codificação de Variáveis Categóricas</h2>
 <ul>
-<li><strong>One-Hot Encoding:</strong> cria uma coluna por categoria (0/1); adequado para dados nominais.</li>
-<li><strong>Label Encoding:</strong> mapeia categorias para inteiros; só razoável para variáveis ordinais.</li>
-<li><strong>Target Encoding:</strong> mapeia categorias para estatísticas da variável-alvo (ex.: média); risco de overfitting.</li>
+<li><strong>One-Hot Encoding:</strong> cria uma coluna por categoria (0/1); adequado para dados nominais</li>
+<li><strong>Label Encoding:</strong> mapeia categorias para inteiros; só razoável para variáveis ordinais</li>
+<li><strong>Target Encoding:</strong> mapeia categorias para estatísticas da variável-alvo (ex.: média); risco de overfitting</li>
 </ul>
-<hr>
 </section>
-<section id="feature-engineering-criação-seleção-e-extração" class="level3">
-<h3 class="anchored" data-anchor-id="feature-engineering-criação-seleção-e-extração">Feature Engineering (criação, seleção e extração)</h3>
+<section id="feature-engineering-criação-seleção-e-extração" class="level2">
+<h2 class="anchored" data-anchor-id="feature-engineering-criação-seleção-e-extração">Feature Engineering (Criação, Seleção e Extração)</h2>
 <p>Processo criativo que transforma dados brutos em variáveis mais representativas:</p>
 <ul>
-<li><strong>Criação:</strong> derivar novas variáveis (ex.: idade a partir da data de nascimento).</li>
-<li><strong>Seleção:</strong> escolher as mais relevantes com correlação, testes, árvores ou métodos automáticos.</li>
-<li><strong>Extração:</strong> reduzir dimensionalidade via PCA ou Autoencoders preservando informação essencial.</li>
+<li><strong>Criação:</strong> derivar novas variáveis (ex.: idade a partir da data de nascimento)</li>
+<li><strong>Seleção:</strong> escolher as mais relevantes com correlação, testes, árvores ou métodos automáticos</li>
+<li><strong>Extração:</strong> reduzir dimensionalidade via PCA ou Autoencoders preservando informação essencial</li>
 </ul>
 <blockquote class="blockquote">
 <p>Um bom Feature Engineering costuma impactar mais o desempenho de um modelo do que a escolha do algoritmo em si.</p>
 </blockquote>
-
-
 </section>
+<section id="exemplo-prático-um-mini-pipeline-de-pré-processamento" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-prático-um-mini-pipeline-de-pré-processamento">Exemplo prático: um mini pipeline de pré-processamento</h2>
+<p>Vamos aplicar, em sequência, as principais técnicas apresentadas acima sobre um conjunto de dados simulado propositalmente “sujo” — com valores ausentes, duplicatas e um outlier.</p>
+<div id="e657dcfe" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataset fictício e propositalmente "sujo"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cliente_id"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"idade"</span>: [<span class="dv">25</span>, <span class="dv">32</span>, np.nan, <span class="dv">41</span>, <span class="dv">29</span>, <span class="dv">29</span>, <span class="dv">150</span>],   <span class="co"># valor ausente e outlier</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cidade"</span>: [<span class="st">"Fortaleza"</span>, <span class="st">"Itapajé"</span>, <span class="st">"Fortaleza"</span>, <span class="st">"Sobral"</span>, <span class="st">"Itapajé"</span>, <span class="st">"Itapajé"</span>, <span class="st">"Fortaleza"</span>],</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salario"</span>: [<span class="dv">2500</span>, <span class="dv">4200</span>, <span class="dv">3100</span>, np.nan, <span class="dv">2800</span>, <span class="dv">2800</span>, <span class="dv">5200</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>dados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cliente_id</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">salario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>25.0</td>
+<td>Fortaleza</td>
+<td>2500.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>32.0</td>
+<td>Itapajé</td>
+<td>4200.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>NaN</td>
+<td>Fortaleza</td>
+<td>3100.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>41.0</td>
+<td>Sobral</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>29.0</td>
+<td>Itapajé</td>
+<td>2800.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>5</td>
+<td>29.0</td>
+<td>Itapajé</td>
+<td>2800.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>150.0</td>
+<td>Fortaleza</td>
+<td>5200.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="9e3ca0a4" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Remover duplicatas</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dados_limpos <span class="op">=</span> dados.drop_duplicates()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Linhas antes: </span><span class="sc">{</span><span class="bu">len</span>(dados)<span class="sc">}</span><span class="ss"> | Linhas depois de remover duplicatas: </span><span class="sc">{</span><span class="bu">len</span>(dados_limpos)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linhas antes: 7 | Linhas depois de remover duplicatas: 6</code></pre>
+</div>
+</div>
+<div id="058d1abe" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Tratar valores ausentes (imputação pela mediana)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dados_limpos[<span class="st">"idade"</span>] <span class="op">=</span> dados_limpos[<span class="st">"idade"</span>].fillna(dados_limpos[<span class="st">"idade"</span>].median())</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dados_limpos[<span class="st">"salario"</span>] <span class="op">=</span> dados_limpos[<span class="st">"salario"</span>].fillna(dados_limpos[<span class="st">"salario"</span>].median())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>dados_limpos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cliente_id</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">cidade</th>
+<th data-quarto-table-cell-role="th">salario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>25.0</td>
+<td>Fortaleza</td>
+<td>2500.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>32.0</td>
+<td>Itapajé</td>
+<td>4200.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>32.0</td>
+<td>Fortaleza</td>
+<td>3100.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>41.0</td>
+<td>Sobral</td>
+<td>3100.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>29.0</td>
+<td>Itapajé</td>
+<td>2800.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>150.0</td>
+<td>Fortaleza</td>
+<td>5200.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="0dff9570" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Detectar outliers pelo método do IQR (na coluna idade)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Q1 <span class="op">=</span> dados_limpos[<span class="st">"idade"</span>].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Q3 <span class="op">=</span> dados_limpos[<span class="st">"idade"</span>].quantile(<span class="fl">0.75</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>limite_superior <span class="op">=</span> Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>limite_inferior <span class="op">=</span> Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>outliers <span class="op">=</span> dados_limpos[(dados_limpos[<span class="st">"idade"</span>] <span class="op">&gt;</span> limite_superior) <span class="op">|</span> (dados_limpos[<span class="st">"idade"</span>] <span class="op">&lt;</span> limite_inferior)]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Limite superior aceitável:"</span>, limite_superior)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Outliers encontrados:</span><span class="ch">\n</span><span class="st">"</span>, outliers[[<span class="st">"cliente_id"</span>, <span class="st">"idade"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Limite superior aceitável: 52.25
+Outliers encontrados:
+    cliente_id  idade
+6           6  150.0</code></pre>
+</div>
+</div>
+<div id="4fc5392c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Normalização (Min-Max) e padronização (Z-score) do salário</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler, StandardScaler</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dados_limpos[<span class="st">"salario_minmax"</span>] <span class="op">=</span> MinMaxScaler().fit_transform(dados_limpos[[<span class="st">"salario"</span>]])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>dados_limpos[<span class="st">"salario_zscore"</span>] <span class="op">=</span> StandardScaler().fit_transform(dados_limpos[[<span class="st">"salario"</span>]])</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dados_limpos[[<span class="st">"cliente_id"</span>, <span class="st">"salario"</span>, <span class="st">"salario_minmax"</span>, <span class="st">"salario_zscore"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cliente_id</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">salario_minmax</th>
+<th data-quarto-table-cell-role="th">salario_zscore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>2500.0</td>
+<td>0.000000</td>
+<td>-1.057456</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>4200.0</td>
+<td>0.629630</td>
+<td>0.770689</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>3100.0</td>
+<td>0.222222</td>
+<td>-0.412229</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>3100.0</td>
+<td>0.222222</td>
+<td>-0.412229</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>2800.0</td>
+<td>0.111111</td>
+<td>-0.734843</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>5200.0</td>
+<td>1.000000</td>
+<td>1.846068</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="553aed84" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Codificação one-hot da variável categórica "cidade"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dados_codificados <span class="op">=</span> pd.get_dummies(dados_limpos, columns<span class="op">=</span>[<span class="st">"cidade"</span>], prefix<span class="op">=</span><span class="st">"cidade"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>dados_codificados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cliente_id</th>
+<th data-quarto-table-cell-role="th">idade</th>
+<th data-quarto-table-cell-role="th">salario</th>
+<th data-quarto-table-cell-role="th">salario_minmax</th>
+<th data-quarto-table-cell-role="th">salario_zscore</th>
+<th data-quarto-table-cell-role="th">cidade_Fortaleza</th>
+<th data-quarto-table-cell-role="th">cidade_Itapajé</th>
+<th data-quarto-table-cell-role="th">cidade_Sobral</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>25.0</td>
+<td>2500.0</td>
+<td>0.000000</td>
+<td>-1.057456</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>32.0</td>
+<td>4200.0</td>
+<td>0.629630</td>
+<td>0.770689</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>32.0</td>
+<td>3100.0</td>
+<td>0.222222</td>
+<td>-0.412229</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>41.0</td>
+<td>3100.0</td>
+<td>0.222222</td>
+<td>-0.412229</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>29.0</td>
+<td>2800.0</td>
+<td>0.111111</td>
+<td>-0.734843</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>150.0</td>
+<td>5200.0</td>
+<td>1.000000</td>
+<td>1.846068</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">Interpretação</h3>
+<p>O pipeline acima resolve, em cinco passos, exatamente os problemas mencionados na teoria:</p>
+<ol type="1">
+<li>A duplicata do <code>cliente_id</code> 5 foi removida</li>
+<li>Os valores ausentes de <code>idade</code> e <code>salario</code> foram imputados pela mediana — uma escolha mais robusta que a média quando há outliers, como é o caso aqui</li>
+<li>O método do IQR sinalizou corretamente o registro com idade 150 como outlier — um valor claramente inválido que provavelmente representa erro de digitação ou de coleta</li>
+<li>As colunas <code>salario_minmax</code> e <code>salario_zscore</code> mostram as duas formas mais comuns de reescalar uma variável numérica: uma limitada entre 0 e 1, a outra centrada em 0 com desvio padrão 1</li>
+<li>A variável categórica <code>cidade</code> foi transformada em colunas binárias (one-hot), formato exigido pela maioria dos algoritmos de Machine Learning, que não conseguem operar diretamente sobre texto</li>
+</ol>
+<p>Esse é o tipo de pipeline que normalmente antecede qualquer modelo de Machine Learning — sem esses cuidados, o modelo aprenderia padrões distorcidos pelo outlier de idade ou simplesmente falharia ao encontrar valores ausentes ou texto onde esperava números.</p>
+</section>
+</section>
+<section id="referências" class="level2">
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<ul>
+<li>Kuhn, M.; Johnson, K. <em>Feature Engineering and Selection</em>. Chapman &amp; Hall/CRC.</li>
+<li>Han, J.; Pei, J.; Kamber, M. <em>Data Mining: Concepts and Techniques</em>. Morgan Kaufmann.</li>
+<li>McKinney, W. <em>Python for Data Analysis</em>. O’Reilly, 2022.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
