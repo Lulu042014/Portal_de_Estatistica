@@ -13,30 +13,140 @@ Objetivo: apresentar **conceitos básicos de Python** com exemplos mínimos e ex
 
 > Dica: execute os blocos de código (▶️) e observe a **saída logo abaixo**.
 
-------------------------------------------------------------------------
-
 ## 2. Variáveis e tipos
 
--   Variáveis **guardam valores** (texto, números, etc.).\
+- Variáveis **guardam valores** (texto, números, etc.)
+- Tipos principais: `int` (inteiro), `float` (real), `str` (texto), `bool` (lógico)
 
--   Tipos principais: `int` (inteiro), `float` (real), `str` (texto), `bool` (lógico).
+```{python}
+idade = 20        # int
+altura = 1.66      # float
+nome = "Luiza"     # str
+tem_bolsa = True   # bool
 
-    ```{python}
-    idade = 20 # int 
-    altura = 1.66 # float 
-    nome = "Luiza" # str 
-    tem_bolsa = True # bool 
-    type(altura), type(nome), type(tem_bolsa)
-    ```
+type(altura), type(nome), type(tem_bolsa)
+```
+
+## 3. Operadores
+
+Python oferece operadores aritméticos, de comparação e lógicos — usados constantemente em filtros de dados e regras de negócio.
+
+```{python}
+a, b = 10, 3
+
+# Aritméticos
+print("Soma:", a + b)
+print("Divisão inteira:", a // b)
+print("Resto:", a % b)
+print("Potência:", a ** 2)
+
+# Comparação
+print("a > b:", a > b)
+
+# Lógicos
+print("(a > 5) and (b < 5):", (a > 5) and (b < 5))
+```
+
+## 4. Condicionais
+
+Estruturas `if` / `elif` / `else` permitem tomar decisões com base em condições — por exemplo, classificar um cliente por faixa de gasto.
+
+```{python}
+gasto_mensal = 350
+
+if gasto_mensal >= 500:
+    categoria = "Alto valor"
+elif gasto_mensal >= 200:
+    categoria = "Médio valor"
+else:
+    categoria = "Baixo valor"
+
+print(f"Cliente classificado como: {categoria}")
+```
+
+## 5. Laços de repetição
+
+`for` percorre sequências (listas, strings, intervalos); `while` repete enquanto uma condição for verdadeira. São a base de qualquer processamento em lote de dados.
+
+```{python}
+notas = [7.5, 9.0, 6.5, 8.0]
+
+soma = 0
+for nota in notas:
+    soma += nota
+
+media = soma / len(notas)
+print(f"Média das notas: {media:.2f}")
+```
+
+## 6. Strings
+
+Textos são manipulados com métodos prontos e **f-strings** para formatação — essencial para limpar dados textuais antes de qualquer análise.
+
+```{python}
+cidade = "  Itapajé - CE  "
+
+cidade_limpa = cidade.strip().upper()
+print(f"Antes: '{cidade}' | Depois: '{cidade_limpa}'")
+print("Contém 'CE'?", "CE" in cidade_limpa)
+```
+
+## 7. Listas
+
+Listas armazenam coleções ordenadas de valores e são a estrutura mais usada antes de se trabalhar com `arrays` (NumPy) ou `DataFrames` (Pandas).
+
+```{python}
+vendas = [120, 340, 210, 90, 560]
+
+vendas_com_desconto = [v * 0.9 for v in vendas]  # list comprehension
+print("Vendas originais:", vendas)
+print("Com 10% de desconto:", vendas_com_desconto)
+print("Maior venda:", max(vendas))
+```
+
+## 8. Bibliotecas científicas
 
 No contexto da Ciência de Dados, o Python é usado desde etapas iniciais de exploração até a construção de modelos complexos. Dentre as bibliotecas mais utilizadas, destacam-se:
 
--   **NumPy** — É a base do ecossistema científico do Python. Fornece estruturas otimizadas para matrizes e operações numéricas de alto desempenho. É amplamente usada em operações matemáticas e como fundamento de outras bibliotecas, como Pandas, TensorFlow e Scikit-learn.
-
--   **Pandas** — É a biblioteca principal para trabalhar com dados tabulares, semelhante a planilhas do Excel. Permite carregar, limpar, transformar, filtrar e agregar dados de forma rápida e intuitiva. É usada principalmente na etapa de exploração e pré-processamento.
-
--   **Matplotlib** — É a biblioteca padrão para criação de gráficos no Python. Permite gerar visualizações como histogramas, linhas, barras e dispersões, sendo útil para análises exploratórias e relatórios visuais.
-
--   **Seaborn** — É construída sobre o Matplotlib, oferecendo uma interface mais simples e visualmente elegante. É muito utilizada para análises estatísticas, como correlações, distribuições e comparações entre grupos.
+- **NumPy** — a base do ecossistema científico do Python. Fornece estruturas otimizadas para matrizes e operações numéricas de alto desempenho, servindo de fundamento para Pandas, TensorFlow e Scikit-learn.
+- **Pandas** — a biblioteca principal para trabalhar com dados tabulares, semelhante a planilhas do Excel. Permite carregar, limpar, transformar, filtrar e agregar dados de forma rápida e intuitiva.
+- **Matplotlib** — a biblioteca padrão para criação de gráficos no Python. Permite gerar histogramas, linhas, barras e dispersões, úteis em análises exploratórias e relatórios visuais.
+- **Seaborn** — construída sobre o Matplotlib, oferece uma interface mais simples e visualmente elegante, muito utilizada para correlações, distribuições e comparações entre grupos.
 
 O uso integrado dessas bibliotecas torna o Python uma ferramenta central para o cientista de dados, pois reúne em uma única linguagem todo o ciclo de trabalho: ingestão de dados, limpeza, análise exploratória, modelagem, visualização e comunicação de resultados.
+
+### Exemplo prático: das listas ao DataFrame
+
+Retomando a lista de vendas criada acima, vamos ver como as mesmas operações ficam muito mais simples com NumPy e Pandas.
+
+```{python}
+import numpy as np
+import pandas as pd
+
+vendas_np = np.array(vendas)
+print("Média com NumPy:", vendas_np.mean())
+print("Desvio padrão com NumPy:", round(vendas_np.std(), 2))
+
+df_vendas = pd.DataFrame({"vendas": vendas, "com_desconto": vendas_com_desconto})
+df_vendas
+```
+
+```{python}
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(5, 3))
+ax.bar(range(len(vendas)), vendas, color="#3498db")
+ax.set_title("Vendas por período")
+ax.set_xlabel("Período")
+ax.set_ylabel("Valor (R$)")
+plt.tight_layout()
+plt.show()
+```
+
+### Interpretação
+
+Note como a mesma tarefa — calcular média e desvio padrão — que exigiria um laço manual com listas puras (como fizemos na Seção 5) se resume a uma chamada de método com NumPy. Esse ganho de produtividade é o principal motivo pelo qual essas bibliotecas dominam o ecossistema de Ciência de Dados em Python.
+
+## Próximos passos
+
+Depois de dominar esses fundamentos, os próximos tópicos naturais são: manipulação avançada de `DataFrames` com Pandas (filtros, `groupby`, junções), e os conceitos de **Estatística Descritiva** e **Visualização de Dados**, abordados nas próximas páginas do portal.

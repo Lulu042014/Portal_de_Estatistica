@@ -5,100 +5,130 @@ format: html
 
 ## O que é Ciência de Dados?
 
-Ciência de Dados é uma área **interdisciplinar** que combina **Estatística**, **Programação** e **Conhecimento de Domínio** para extrair valor de dados.\
-O objetivo é transformar dados em **insights acionáveis** para suportar a **tomada de decisão baseada em evidências**.
-
-De forma simplificada:
+Ciência de Dados é a área **interdisciplinar** que combina **Estatística**, **Programação** e **Conhecimento de Domínio** para transformar dados brutos em **insights acionáveis**, suportando decisões baseadas em evidências:
 
 > **Dados → Informação → Conhecimento → Ação**
 
-------------------------------------------------------------------------
-
-### Exemplo
-
-Em um e-commerce, dados como **cliques**, **compras** e **tempo de navegação** são utilizados para:
-
--   recomendar produtos
--   estimar demanda
--   personalizar ofertas
+Em um e-commerce, por exemplo, dados de **cliques**, **compras** e **tempo de navegação** são usados para recomendar produtos, estimar demanda e personalizar ofertas — um caso que retomamos com código mais adiante.
 
 ## Definição
 
-Ciência de Dados é o conjunto de métodos, processos e sistemas que permitem coletar, organizar, analisar e comunicar resultados a partir de dados, com o propósito de gerar valor para organizações e sociedade.
-
-------------------------------------------------------------------------
+Ciência de Dados é o conjunto de métodos, processos e sistemas que permitem **coletar, organizar, analisar e comunicar** resultados a partir de dados, com o propósito de gerar valor para organizações e sociedade.
 
 ## Componentes principais
 
--   **Estatística e Probabilidade** — inferência, testes de hipótese, incerteza.\
--   **Computação** — linguagens (Python, R, SQL), estruturas de dados, automação.\
--   **Conhecimento de Domínio** — entendimento do problema, métricas de negócio.\
--   **Comunicação e Visualização** — contar a história dos dados de forma clara.
-
-------------------------------------------------------------------------
+- **Estatística e Probabilidade** — inferência, testes de hipótese, incerteza
+- **Computação** — linguagens (Python, R, SQL), estruturas de dados, automação
+- **Conhecimento de Domínio** — entendimento do problema e das métricas de negócio
+- **Comunicação e Visualização** — contar a história dos dados de forma clara
 
 ## Etapas do Processo de Ciência de Dados
 
-Diversos frameworks descrevem o fluxo de trabalho em Ciência de Dados.\
-Aqui apresentamos dois dos mais utilizados: **CRISP-DM** e **OSEMN**.
+Dois frameworks descrevem bem o fluxo de trabalho típico: **CRISP-DM** e **OSEMN**. Embora usem nomes diferentes, ambos seguem essencialmente o mesmo ciclo — entender o problema, preparar os dados, explorar, modelar e comunicar resultados.
+
+```{mermaid}
+flowchart LR
+    A[Entendimento do Negócio] --> B[Entendimento dos Dados]
+    B --> C[Preparação dos Dados]
+    C --> D[Modelagem]
+    D --> E[Avaliação]
+    E --> F[Implementação]
+    E -.retorno.-> B
+```
 
 ### CRISP-DM (Cross Industry Standard Process for Data Mining)
 
-1.  **Entendimento do Negócio** — definir objetivos, restrições e critérios de sucesso.\
-2.  **Entendimento dos Dados** — coleta inicial, análise exploratória e avaliação de qualidade.\
-3.  **Preparação dos Dados** — limpeza, integração e transformação (*feature engineering*).\
-4.  **Modelagem** — seleção de algoritmos, ajuste de hiperparâmetros e validação.\
-5.  **Avaliação** — verificar alinhamento com os objetivos e riscos de negócio.\
-6.  **Implementação** — operacionalização (batch/tempo real), documentação e entrega.
+1. **Entendimento do Negócio** — definir objetivos, restrições e critérios de sucesso
+2. **Entendimento dos Dados** — coleta inicial, análise exploratória e avaliação de qualidade
+3. **Preparação dos Dados** — limpeza, integração e transformação (*feature engineering*)
+4. **Modelagem** — seleção de algoritmos, ajuste de hiperparâmetros e validação
+5. **Avaliação** — verificar alinhamento com os objetivos e riscos de negócio
+6. **Implementação** — operacionalização (batch/tempo real), documentação e entrega
 
 ### OSEMN (Obtain, Scrub, Explore, Model, Interpret)
 
-1.  **Obtain** — obter dados (APIs, bancos, arquivos, web).\
-2.  **Scrub** — limpar e preparar dados; tratar outliers e valores ausentes.\
-3.  **Explore** — explorar padrões e hipóteses; visualização e estatística descritiva.\
-4.  **Model** — construir modelos preditivos/descritivos; avaliar generalização.\
-5.  **Interpret** — interpretar e comunicar resultados; gerar recomendações.
+1. **Obtain** — obter dados (APIs, bancos, arquivos, web)
+2. **Scrub** — limpar e preparar dados; tratar outliers e valores ausentes
+3. **Explore** — explorar padrões e hipóteses; visualização e estatística descritiva
+4. **Model** — construir modelos preditivos/descritivos; avaliar generalização
+5. **Interpret** — interpretar e comunicar resultados; gerar recomendações
 
-------------------------------------------------------------------------
+## Exemplo prático: um mini pipeline OSEMN
+
+Vamos aplicar as cinco etapas do OSEMN a uma versão simplificada do exemplo de e-commerce citado no início da página.
+
+```{python}
+import pandas as pd
+import numpy as np
+
+# 1. Obtain — em um cenário real viria de um banco de dados ou API;
+# aqui simulamos dados de navegação de um e-commerce
+np.random.seed(7)
+n = 300
+dados = pd.DataFrame({
+    "tempo_navegacao_min": np.random.exponential(scale=5, size=n),
+    "cliques": np.random.poisson(lam=8, size=n),
+    "comprou": np.random.binomial(1, p=0.25, size=n)
+})
+
+# Introduzindo alguns valores ausentes de propósito, como aconteceria na vida real
+dados.loc[np.random.choice(n, 15, replace=False), "tempo_navegacao_min"] = np.nan
+
+dados.head()
+```
+
+```{python}
+# 2. Scrub — tratamento de valores ausentes
+print("Valores ausentes antes:", dados["tempo_navegacao_min"].isna().sum())
+dados["tempo_navegacao_min"] = dados["tempo_navegacao_min"].fillna(
+    dados["tempo_navegacao_min"].median()
+)
+print("Valores ausentes depois:", dados["tempo_navegacao_min"].isna().sum())
+```
+
+```{python}
+# 3. Explore — estatística descritiva e relação entre variáveis
+dados.groupby("comprou")[["tempo_navegacao_min", "cliques"]].mean()
+```
+
+```{python}
+# 4. Model — um modelo simples de regressão logística
+from sklearn.linear_model import LogisticRegression
+
+X = dados[["tempo_navegacao_min", "cliques"]]
+y = dados["comprou"]
+
+modelo = LogisticRegression()
+modelo.fit(X, y)
+
+print("Coeficientes:", dict(zip(X.columns, modelo.coef_[0])))
+```
+
+### Interpretação (etapa Interpret)
+
+Coeficientes positivos indicam que mais cliques e mais tempo de navegação estão associados a uma maior chance de compra — algo esperado, mas agora **quantificado**. Em um projeto real, o próximo passo seria validar esse modelo com dados de teste, avaliar métricas como acurácia e AUC, e comunicar o resultado para o time de marketing com uma recomendação de ação: por exemplo, priorizar campanhas de retenção para usuários com baixo tempo de navegação.
 
 ## Diferenças entre Estatística, Ciência de Dados, Machine Learning e Engenharia de Dados
 
-### Visão geral
-
 | Área | Objetivo | Exemplo |
-|----|----|----|
+|---|---|---|
 | **Estatística** | Analisar dados para explicar fenômenos e testar hipóteses | Verificar se uma campanha elevou as vendas com significância |
 | **Ciência de Dados** | Integrar estatística, computação e domínio para extrair conhecimento | Construir dashboards e modelos para prever demanda |
 | **Machine Learning** | Aprender padrões para prever ou classificar novos casos | Recomendação de filmes em plataformas de streaming |
 | **Engenharia de Dados** | Projetar e manter infraestrutura de dados (coleta, armazenamento, processamento) | Criar pipelines em Spark/SQL para milhões de registros |
 
-### Relações e complementaridades
-
--   Estatística fornece a base teórica para modelos e inferência.\
--   Machine Learning fornece algoritmos para predição/segmentação.\
--   Engenharia de Dados garante dados confiáveis e acessíveis.\
--   Ciência de Dados integra as três frentes para gerar valor de negócio.
-
-------------------------------------------------------------------------
+Essas áreas são complementares: a Estatística fornece a base teórica para modelos e inferência, o Machine Learning fornece algoritmos para predição e segmentação, a Engenharia de Dados garante dados confiáveis e acessíveis, e a Ciência de Dados integra as três frentes para gerar valor de negócio.
 
 ## Tipos de Dados
 
--   **Estruturados** — organizados em tabelas (linhas/colunas).\
-    Exemplos: transações, cadastros. Armazenados em bancos SQL.
-
--   **Semiestruturados** — organização flexível (chave-valor/árvore).\
-    Exemplos: JSON, XML, logs. Comuns em data lakes e APIs.
-
--   **Não estruturados** — sem esquema fixo.\
-    Exemplos: texto livre, imagens, áudio e vídeo.\
-    Análise via NLP, visão computacional e técnicas de big data.
-
-------------------------------------------------------------------------
+- **Estruturados** — organizados em tabelas (linhas/colunas). Exemplos: transações, cadastros, armazenados em bancos SQL.
+- **Semiestruturados** — organização flexível (chave-valor/árvore). Exemplos: JSON, XML, logs, comuns em data lakes e APIs.
+- **Não estruturados** — sem esquema fixo. Exemplos: texto livre, imagens, áudio e vídeo, analisados via NLP, visão computacional e técnicas de big data.
 
 ## Referências
 
--   Provost, F.; Fawcett, T. *Data Science for Business*. O’Reilly.\
--   Kuhn, M.; Johnson, K. *Feature Engineering and Selection*. Chapman & Hall/CRC.\
--   Han, J.; Pei, J.; Kamber, M. *Data Mining: Concepts and Techniques*. Morgan Kaufmann.\
--   Murphy, K. *Probabilistic Machine Learning*. MIT Press.\
--   Goodfellow, I.; Bengio, Y.; Courville, A. *Deep Learning*. MIT Press.
+- Provost, F.; Fawcett, T. *Data Science for Business*. O'Reilly.
+- Kuhn, M.; Johnson, K. *Feature Engineering and Selection*. Chapman & Hall/CRC.
+- Han, J.; Pei, J.; Kamber, M. *Data Mining: Concepts and Techniques*. Morgan Kaufmann.
+- Murphy, K. *Probabilistic Machine Learning*. MIT Press.
+- Goodfellow, I.; Bengio, Y.; Courville, A. *Deep Learning*. MIT Press.
