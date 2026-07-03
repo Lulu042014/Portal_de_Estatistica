@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introdução a Estatística e Probabilidade – Portal de Estatistica e Ciencia de Dados</title>
+<title>Introdução a R – Portal de Estatistica e Ciencia de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,35 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -174,11 +145,11 @@ window.Quarto = {
 <span class="menu-text">Ferramentas e Linguagens</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./r.html"> 
+    <a class="nav-link active" href="./r.html" aria-current="page"> 
 <span class="menu-text">Introdução a R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./IEP.html" aria-current="page"> 
+    <a class="nav-link" href="./IEP.html"> 
 <span class="menu-text">Introdução a Estatística e Probabilidade</span></a>
   </li>  
   <li class="nav-item">
@@ -217,11 +188,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#história-e-introdução" id="toc-história-e-introdução" class="nav-link active" data-scroll-target="#história-e-introdução"><strong>História e Introdução</strong></a></li>
-  <li><a href="#origem-histórica" id="toc-origem-histórica" class="nav-link" data-scroll-target="#origem-histórica"><strong>Origem histórica:</strong></a></li>
-  <li><a href="#ramos-da-estatística" id="toc-ramos-da-estatística" class="nav-link" data-scroll-target="#ramos-da-estatística"><strong>Ramos da Estatística</strong></a></li>
-  <li><a href="#fórmulas" id="toc-fórmulas" class="nav-link" data-scroll-target="#fórmulas"><strong>FÓRMULAS</strong></a></li>
-  <li><a href="#probabilidade-básica" id="toc-probabilidade-básica" class="nav-link" data-scroll-target="#probabilidade-básica"><strong>Probabilidade Básica</strong></a></li>
+  <li><a href="#introdução-ao-r" id="toc-introdução-ao-r" class="nav-link active" data-scroll-target="#introdução-ao-r"><strong>INTRODUÇÃO AO R</strong></a></li>
+  <li><a href="#instalação-e-ambiente-de-trabalho" id="toc-instalação-e-ambiente-de-trabalho" class="nav-link" data-scroll-target="#instalação-e-ambiente-de-trabalho"><strong>Instalação e Ambiente de Trabalho</strong></a></li>
+  <li><a href="#conceitos-básicos" id="toc-conceitos-básicos" class="nav-link" data-scroll-target="#conceitos-básicos"><strong>Conceitos Básicos</strong></a></li>
+  <li><a href="#estruturas-de-dados" id="toc-estruturas-de-dados" class="nav-link" data-scroll-target="#estruturas-de-dados"><strong>Estruturas de Dados</strong></a></li>
+  <li><a href="#importação-e-visualização-de-dados" id="toc-importação-e-visualização-de-dados" class="nav-link" data-scroll-target="#importação-e-visualização-de-dados"><strong>Importação e Visualização de Dados</strong></a></li>
+  <li><a href="#controle-de-fluxo" id="toc-controle-de-fluxo" class="nav-link" data-scroll-target="#controle-de-fluxo"><strong>Controle de Fluxo</strong></a></li>
+  <li><a href="#pacotes-úteis" id="toc-pacotes-úteis" class="nav-link" data-scroll-target="#pacotes-úteis"><strong>Pacotes úteis</strong></a></li>
+  <li><a href="#prática-guiada" id="toc-prática-guiada" class="nav-link" data-scroll-target="#prática-guiada"><strong>Prática guiada</strong></a></li>
+  <li><a href="#referências-e-cursos-gratuitos" id="toc-referências-e-cursos-gratuitos" class="nav-link" data-scroll-target="#referências-e-cursos-gratuitos"><strong>Referências e Cursos Gratuitos</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +205,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introdução a Estatística e Probabilidade</h1>
+<h1 class="title">Introdução a R</h1>
 </div>
 
 
@@ -247,325 +222,223 @@ window.Quarto = {
 </header>
 
 
-<section id="história-e-introdução" class="level3">
-<h3 class="anchored" data-anchor-id="história-e-introdução"><strong>História e Introdução</strong></h3>
-<p>A Estatística surgiu da necessidade de organizar informações sobre populações e territórios. O termo deriva do latim status, relacionado a “estado” ou “condição”, e era usado inicialmente para coleta de dados populacionais (censos) por governos.</p>
+<section id="introdução-ao-r" class="level3">
+<h3 class="anchored" data-anchor-id="introdução-ao-r"><strong>INTRODUÇÃO AO R</strong></h3>
+<section id="o-que-é-o-r" class="level4">
+<h4 class="anchored" data-anchor-id="o-que-é-o-r"><strong><em>O que é o R?</em></strong></h4>
+<p>R é uma linguagem de programação voltada para análise estatística e visualização de dados. É gratuita, de código aberto e amplamente utilizada em ciência de dados, estatística, bioinformática e pesquisa acadêmica.</p>
 </section>
-<section id="origem-histórica" class="level3">
-<h3 class="anchored" data-anchor-id="origem-histórica"><strong>Origem histórica:</strong></h3>
-<p><strong>• Antigo Egito e Babilônia:</strong> Registros agrícolas e censos rudimentares.</p>
-<p><strong>• Império Romano:</strong> Contagem populacional para fins tributários.</p>
-<p><strong>• Século XVII</strong>: Formalização da estatística como ciência com John Graunt e Pierre-Simon Laplace.</p>
-<p><strong>• Século XX:</strong> Aplicação ampla na biologia, psicologia, indústria, economia, entre outros.</p>
 </section>
-<section id="ramos-da-estatística" class="level3">
-<h3 class="anchored" data-anchor-id="ramos-da-estatística"><strong>Ramos da Estatística</strong></h3>
-<ul>
-<li><p><strong><em>Estatística descritiva</em></strong></p>
-<ul>
-<li>É a área da estatística responsável por <strong>coletar, organizar, resumir e apresentar os dados</strong> de maneira clara, sem tirar conclusões além dos dados disponíveis.</li>
-</ul></li>
-<li><p><strong><em>Estatítica inferencial</em></strong></p>
-<ul>
-<li>É a área da estatística que permite <strong>tirar conclusões sobre uma população com base em dados de uma amostra</strong>.</li>
-</ul></li>
-</ul>
+<section id="instalação-e-ambiente-de-trabalho" class="level3">
+<h3 class="anchored" data-anchor-id="instalação-e-ambiente-de-trabalho"><strong>Instalação e Ambiente de Trabalho</strong></h3>
+<section id="instalar" class="level4">
+<h4 class="anchored" data-anchor-id="instalar"><strong><em>Instalar:</em></strong></h4>
+<p>• R: https://cran.r-project.org</p>
+<p>• RStudio (IDE recomendada): https://posit.co/download/rstudio-desktop/</p>
 </section>
-<section id="fórmulas" class="level3">
-<h3 class="anchored" data-anchor-id="fórmulas"><strong>FÓRMULAS</strong></h3>
-<section id="a-média-aritmética" class="level4">
-<h4 class="anchored" data-anchor-id="a-média-aritmética">A <strong>média aritmética</strong></h4>
-<p>é uma medida de tendência central que representa o valor médio de um conjunto de dados. Ela é obtida somando todos os valores observados e dividindo pelo número total de observações.</p>
-<p>É dada por <span class="math inline">\(\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n}\)</span>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Símbolo</th>
-<th>Significado</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\bar{x}\)</span></td>
-<td>Média aritmética (lê-se: “x barra”)</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(x_1 + x_2 + \dots + x_n\)</span></td>
-<td>Valores individuais da amostra ou conjunto de dados</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\({n}\)</span></td>
-<td>Número total de valores (tamanho da amostra ou população)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Exemplo em r:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de dados</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">10</span>)</span>
+<section id="principais-arquivos" class="level4">
+<h4 class="anchored" data-anchor-id="principais-arquivos"><strong><em>Principais arquivos:</em></strong></h4>
+<p>• .R: script de código puro</p>
+<p>• .Rmd: R Markdown (mistura código + texto)</p>
+<p>• .qmd: Quarto (nova forma de relatórios interativos)</p>
+</section>
+</section>
+<section id="conceitos-básicos" class="level3">
+<h3 class="anchored" data-anchor-id="conceitos-básicos"><strong>Conceitos Básicos</strong></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Isso é um comentário</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo da média</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar o resultado</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(media)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
-</div>
-</div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#ATRIBUIÇÃO DE VALORES </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>      <span class="co"># preferido</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">10</span>      <span class="co"># também funciona</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#TIPOS DE DADOS </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="fl">3.14</span>        <span class="co"># numérico</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="st">"Olá"</span>        <span class="co"># texto (string)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>logico <span class="ot">&lt;-</span> <span class="cn">TRUE</span>        <span class="co"># booleano</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)   <span class="co"># vetor numérico</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#FUNÇÕES BÁSICAS</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(vetor)     <span class="co"># número de elementos</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vetor)        <span class="co"># soma</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vetor)       <span class="co"># média</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="a-variância" class="level4">
-<h4 class="anchored" data-anchor-id="a-variância">A <strong>variância</strong></h4>
-<p>é uma medida de dispersão que indica o quanto os valores de um conjunto de dados se afastam da média. Quanto maior a variância, mais os dados estão espalhados.</p>
-<p>É dada por <span class="math inline">\(\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2\)</span></p>
+<section id="estruturas-de-dados" class="level3">
+<h3 class="anchored" data-anchor-id="estruturas-de-dados"><strong>Estruturas de Dados</strong></h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 16%">
+<col style="width: 40%">
+<col style="width: 43%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Símbulo</th>
-<th>Significado</th>
+<th>ESTRUTURA</th>
+<th>DESCRIÇÃO</th>
+<th>EXEMPLO</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\sigma^2\)</span></td>
-<td>Variância populacional (lê-se “sigma ao quadrado”)</td>
+<td>Vetor</td>
+<td>coleção de elementos</td>
+<td>c(1, 2, 3)</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\({N}\)</span></td>
-<td>Número total de elementos da população</td>
+<td>Matriz</td>
+<td>tabela bidimensional</td>
+<td>matrix(1:6, nrow = 2)</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(x_i\)</span></td>
-<td>Cada valor individual do conjunto de dados</td>
+<td>Lista</td>
+<td>coleção heterogênea</td>
+<td>list( nome =“Ana”, idade = 30)</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\mu\)</span></td>
-<td>Média da população (valor médio dos dados)</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\sum_{i=1}^N\)</span></td>
-<td>Somatório — indica que vamos somar para todos os valores de i = 1 até N</td>
+<td>data.frame</td>
+<td>tabela de dados (como Excel)</td>
+<td>data.frame(nome, idade)</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Exemplo em r:</li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variância populacional</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>variancia_pop <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>variancia_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#EXEMPLO COM DATA.FRAME</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">nome =</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Carlos"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">35</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.6</code></pre>
+<pre><code>    nome idade
+1    Ana    22
+2 Carlos    35</code></pre>
 </div>
 </div>
 </section>
-<section id="variância-amostral" class="level4">
-<h4 class="anchored" data-anchor-id="variância-amostral"><strong>Variância (amostral)</strong></h4>
-<p>é uma medida de <strong>dispersão</strong>, ou seja, mede o quanto os valores de um conjunto de dados amostrais estão espalhados em torno da média amostral.</p>
-<p>É dada por <span class="math inline">\(s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2\)</span></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Símbolo</th>
-<th>Significado</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(s^2\)</span></td>
-<td>Variância amostral (letra “s” ao quadrado)</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\({n}\)</span></td>
-<td>Tamanho da amostra (quantidade de observações)</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(x_i\)</span></td>
-<td>Valor individual da amostra</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\bar{x}\)</span></td>
-<td>Média da amostra</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\sum_{i=1}^{n}\)</span></td>
-<td>Somatório (somar todos os termos de i = 1 até n)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Por que usamos <span class="math inline">\({n - 1}\)</span> no denominador ?
-<ul>
-<li><p>Isso se chama <strong>correção de Bessel</strong>.</p></li>
-<li><p>Quando calculamos a variância de uma <strong>amostra</strong> (e não da população inteira), usamos <span class="math inline">\({n - 1}\)</span> para <strong>corrigir o viés</strong> da estimativa.</p></li>
-<li><p>Ajuda a garantir que a variância amostral seja uma <strong>boa estimativa da variância populacional</strong>.</p></li>
-</ul></li>
-<li>Exemplo em r:</li>
-</ul>
+<section id="importação-e-visualização-de-dados" class="level3">
+<h3 class="anchored" data-anchor-id="importação-e-visualização-de-dados"><strong>Importação e Visualização de Dados</strong></h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de dados (amostra)</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">10</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Variância amostral</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>variancia_amostral <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir resultado</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(variancia_amostral)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.5</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#IMPORTAR CSV</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#dados &lt;- read.csv("caminho/arquivo.csv")</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#head(dados)        # primeiras linhas</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#str(dados)         # estrutura dos dados</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="o-desvio-padrão" class="level4">
-<h4 class="anchored" data-anchor-id="o-desvio-padrão">O <strong>desvio padrão</strong></h4>
-<p>é a raiz quadrada da variância. Ele indica, em média, o quanto os dados se afastam da média. Diferente da variância, o desvio padrão está na <strong>mesma unidade dos dados</strong>, o que facilita a interpretação.</p>
-<p>É dada por <span class="math inline">\(\sigma = \sqrt{\sigma^2}\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Símbolo</th>
-<th>Significado</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\sigma^2\)</span></td>
-<td>Variância populacional: mede o quanto os dados se afastam da média, <strong>em unidades ao quadrado</strong></td>
-</tr>
-<tr class="even">
-<td>$\sigma $</td>
-<td>Desvio padrão populacional: mede a <strong>dispersão dos dados</strong> em relação à média, <strong>na mesma unidade dos dados</strong></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\sqrt{}\)</span></td>
-<td>Raiz quadrada</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Exemplo em r:</li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desvio padrão populacional</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>desvio_padrao_pop <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(variancia_pop)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>desvio_padrao_pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.897367</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#GRÁFICOS BÁSICOS </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dados<span class="sc">$</span>idade)                  <span class="co"># histograma</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#boxplot(dados$idade ~ dados$sexo) # boxplot por grupo</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dados<span class="sc">$</span>idade, dados<span class="sc">$</span>salario)  <span class="co"># dispersão</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
-<section id="desvio-padrão-amostral" class="level4">
-<h4 class="anchored" data-anchor-id="desvio-padrão-amostral"><strong>Desvio Padrão (amostral)</strong></h4>
-<p>mede o <strong>grau de dispersão dos dados</strong> em torno da <strong>média amostral</strong>. Ou seja, indica <strong>o quão “espalhados” os dados estão</strong>.</p>
-<p>É dada por <span class="math inline">\(s = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2}\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Símbolo</th>
-<th>Significado</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(s\)</span></td>
-<td>Desvio padrão amostral</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\({n}\)</span></td>
-<td>Tamanho da amostra</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(x_i\)</span></td>
-<td>Valor individual da amostra</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\bar{x}\)</span></td>
-<td>Média amostral</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\sum_{i=1}^n\)</span></td>
-<td>Somatório — indica que a operação será feita para todos os valores i = 1 até n</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\({n-1}\)</span></td>
-<td>Grau de liberdade da amostra (correção de Bessel)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Exemplo em r:</li>
-</ul>
+<section id="controle-de-fluxo" class="level3">
+<h3 class="anchored" data-anchor-id="controle-de-fluxo"><strong>Controle de Fluxo</strong></h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desvio padrão amostral</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>desvio_padrao_amostral <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>desvio_padrao_amostral</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Condicional</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">12</span>, <span class="dv">8</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(x <span class="sc">&gt;</span> <span class="dv">10</span>)) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Pelo menos um valor é maior que 10"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.12132</code></pre>
+<pre><code>[1] "Pelo menos um valor é maior que 10"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Todos os valores são maiores que 10?</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">all</span>(x <span class="sc">&gt;</span> <span class="dv">10</span>)) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Todos os valores são maiores que 10"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Laço for</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 4
+[1] 9
+[1] 16
+[1] 25</code></pre>
 </div>
 </div>
 </section>
+<section id="pacotes-úteis" class="level3">
+<h3 class="anchored" data-anchor-id="pacotes-úteis"><strong>Pacotes úteis</strong></h3>
+<section id="instalar-e-carregar-pacotes" class="level4">
+<h4 class="anchored" data-anchor-id="instalar-e-carregar-pacotes"><strong><em>Instalar e carregar pacotes:</em></strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2")</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="probabilidade-básica" class="level3">
-<h3 class="anchored" data-anchor-id="probabilidade-básica"><strong>Probabilidade Básica</strong></h3>
-<section id="probabilidade-de-um-evento-a" class="level4">
-<h4 class="anchored" data-anchor-id="probabilidade-de-um-evento-a"><strong><em>Probabilidade de um evento A:</em></strong></h4>
-<p>Essa é a <strong>definição clássica de probabilidade</strong>. Ela mede <strong>a chance de um evento A acontecer</strong>, em uma situação onde todos os resultados são igualmente prováveis.</p>
-<p><span class="math inline">\(P(A) = \frac{\text{número de casos favoráveis}}{\text{número total de casos possíveis}}\)</span></p>
-<p><strong>Exemplo:</strong></p>
-<p>Lançar um dado comum (6 lados).</p>
-<p>Qual a probabilidade de sair um número <strong>par</strong>?</p>
-<ul>
-<li><p>Casos favoráveis: 2, 4, 6 → 3 resultados</p></li>
-<li><p>Casos possíveis: 1 a 6 → 6 resultados</p>
-<p><span class="math inline">\(P(\text{par}) = \frac{3}{6} = 0{,}5\)</span></p></li>
-</ul>
+<section id="outros-pacotes-populares" class="level4">
+<h4 class="anchored" data-anchor-id="outros-pacotes-populares"><strong><em>Outros pacotes populares:</em></strong></h4>
+<p>• dplyr – manipulação de dados</p>
+<p>• tidyr – limpeza de dados</p>
+<p>• readr – leitura de arquivos</p>
+<p>• ggplot2 – visualizações gráficas</p>
+<p>• lubridate – manipulação de datas</p>
 </section>
-<section id="regra-da-soma-eventos-mutuamente-exclusivos" class="level4">
-<h4 class="anchored" data-anchor-id="regra-da-soma-eventos-mutuamente-exclusivos"><strong><em>Regra da soma (eventos mutuamente exclusivos):</em></strong></h4>
-<p>Essa regra vale quando <strong>os eventos A e B não podem ocorrer juntos</strong> (ou seja, são <strong>mutuamente exclusivos</strong>).</p>
-<p>Se um evento acontece, o outro não pode acontecer ao mesmo tempo.</p>
-<p><span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span></p>
-<p><strong>Exemplo:</strong></p>
-<p>Lançar um dado. Qual a probabilidade de sair <strong>1</strong> ou <strong>6</strong>?</p>
-<ul>
-<li><p><span class="math inline">\(P(1) = \frac{1}{6}\)</span></p></li>
-<li><p><span class="math inline">\(P(6) = \frac{1}{6}\)</span></p>
-<p><span class="math inline">\(P(1 \text{ ou } 6) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}\)</span></p></li>
-</ul>
 </section>
-<section id="regra-do-produto-eventos-independentes" class="level4">
-<h4 class="anchored" data-anchor-id="regra-do-produto-eventos-independentes"><strong><em>Regra do produto (eventos independentes):</em></strong></h4>
-<p>Essa fórmula é usada quando os eventos <strong>A e B são independentes</strong>, ou seja, <strong>o resultado de um não afeta o outro</strong>.</p>
-<p><span class="math inline">\(P(A \cap B) = P(A) \cdot P(B)\)</span></p>
-<p><strong>Exemplo:</strong></p>
-<p>Lançar <strong>duas moedas</strong>. Qual a probabilidade de sair <strong>cara nas duas</strong>?</p>
-<ul>
-<li><p><span class="math inline">\(P(\text{cara na 1ª}) = \frac{1}{2}\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{cara na 2ª}) = \frac{1}{2}\)</span></p>
-<p><span class="math inline">\(P(\text{cara e cara}) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}\)</span></p></li>
-</ul>
+<section id="prática-guiada" class="level3">
+<h3 class="anchored" data-anchor-id="prática-guiada"><strong>Prática guiada</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando vetores</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">22</span>, <span class="dv">27</span>, <span class="dv">29</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumo estatístico</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(idade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   22.0    23.0    25.0    25.2    27.0    29.0 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela de frequência</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sexo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sexo
+F M 
+3 2 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de barras</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(sexo), <span class="at">col=</span><span class="st">"skyblue"</span>, <span class="at">main=</span><span class="st">"Distribuição por Sexo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(idade, <span class="at">main=</span><span class="st">"Boxplot de Idades"</span>, <span class="at">col=</span><span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="referências-e-cursos-gratuitos" class="level3">
+<h3 class="anchored" data-anchor-id="referências-e-cursos-gratuitos"><strong>Referências e Cursos Gratuitos</strong></h3>
+<p>• R for Data Science – Hadley Wickham</p>
+<p>• Curso gratuito da USP no Coursera: Introdução ao R (link)</p>
+<p>• Posit Cloud – plataforma online gratuita para rodar códigos R</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
