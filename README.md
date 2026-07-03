@@ -81,4 +81,4 @@ Projeto de extensão com 8 alunos organizados em quatro frentes: Conteúdo Teór
 
 ## Licença
 
-Nenhuma licença definida ainda.
+Este é um projeto de extensão da **Universidade Federal do Ceará (UFC) — Campus de Itapajé**, sem uma licença de código aberto formal definida até o momento.
