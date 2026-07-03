@@ -107,7 +107,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -135,54 +134,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./sobre.html"> 
 <span class="menu-text">Sobre o Projeto</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FCD.html"> 
-<span class="menu-text">Fundamentos de Ciência de Dados</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="./FCD.html">
+ <span class="dropdown-text">Fundamentos de Ciência de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FP.html"> 
-<span class="menu-text">Fundamentos de Programação</span></a>
+        <li>
+    <a class="dropdown-item" href="./FP.html">
+ <span class="dropdown-text">Fundamentos de Programação</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./FL.html" aria-current="page"> 
-<span class="menu-text">Ferramentas e Linguagens</span></a>
+        <li>
+    <a class="dropdown-item" href="./FL.html">
+ <span class="dropdown-text">Ferramentas e Linguagens</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./r.html"> 
-<span class="menu-text">Introdução a R</span></a>
+        <li>
+    <a class="dropdown-item" href="./r.html">
+ <span class="dropdown-text">Introdução a R</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./IEP.html"> 
-<span class="menu-text">Introdução a Estatística e Probabilidade</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-estatística" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Estatística</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-estatística">    
+        <li>
+    <a class="dropdown-item" href="./IEP.html">
+ <span class="dropdown-text">Introdução a Estatística e Probabilidade</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./descritiva.html"> 
-<span class="menu-text">Estatística Descritiva</span></a>
+        <li>
+    <a class="dropdown-item" href="./descritiva.html">
+ <span class="dropdown-text">Estatística Descritiva</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./PD.html"> 
-<span class="menu-text">Probabilidade</span></a>
+        <li>
+    <a class="dropdown-item" href="./PD.html">
+ <span class="dropdown-text">Probabilidade</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./IF.html"> 
-<span class="menu-text">Inferência Estatistíca</span></a>
+        <li>
+    <a class="dropdown-item" href="./IF.html">
+ <span class="dropdown-text">Inferência Estatística</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./PLD.html"> 
-<span class="menu-text">Pré-processamento e Limpeza de Dados</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dados-e-modelagem" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dados e Modelagem</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dados-e-modelagem">    
+        <li>
+    <a class="dropdown-item" href="./PLD.html">
+ <span class="dropdown-text">Pré-processamento e Limpeza de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./visualizacao.html"> 
-<span class="menu-text">Visualização de Dados</span></a>
+        <li>
+    <a class="dropdown-item" href="./visualizacao.html">
+ <span class="dropdown-text">Visualização de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./SQL.html"> 
-<span class="menu-text">SQL e Bancos de Dados</span></a>
+        <li>
+    <a class="dropdown-item" href="./SQL.html">
+ <span class="dropdown-text">SQL e Bancos de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./ML.html"> 
-<span class="menu-text">Machine Learning</span></a>
+        <li>
+    <a class="dropdown-item" href="./ML.html">
+ <span class="dropdown-text">Machine Learning</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -301,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exemplo-de-consulta" class="level3">
 <h3 class="anchored" data-anchor-id="exemplo-de-consulta">Exemplo de consulta</h3>
 <p>Para tornar o exemplo executável, criamos uma pequena tabela <code>vendas</code> em um banco SQLite em memória e rodamos a consulta de verdade.</p>
-<div id="8a32845c" class="cell" data-execution_count="1">
+<div id="6ef02900" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>

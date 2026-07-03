@@ -110,7 +110,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -138,54 +137,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./sobre.html"> 
 <span class="menu-text">Sobre o Projeto</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FCD.html"> 
-<span class="menu-text">Fundamentos de Ciência de Dados</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="./FCD.html">
+ <span class="dropdown-text">Fundamentos de Ciência de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FP.html"> 
-<span class="menu-text">Fundamentos de Programação</span></a>
+        <li>
+    <a class="dropdown-item" href="./FP.html">
+ <span class="dropdown-text">Fundamentos de Programação</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FL.html"> 
-<span class="menu-text">Ferramentas e Linguagens</span></a>
+        <li>
+    <a class="dropdown-item" href="./FL.html">
+ <span class="dropdown-text">Ferramentas e Linguagens</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./r.html"> 
-<span class="menu-text">Introdução a R</span></a>
+        <li>
+    <a class="dropdown-item" href="./r.html">
+ <span class="dropdown-text">Introdução a R</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./IEP.html"> 
-<span class="menu-text">Introdução a Estatística e Probabilidade</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-estatística" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Estatística</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-estatística">    
+        <li>
+    <a class="dropdown-item" href="./IEP.html">
+ <span class="dropdown-text">Introdução a Estatística e Probabilidade</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./descritiva.html"> 
-<span class="menu-text">Estatística Descritiva</span></a>
+        <li>
+    <a class="dropdown-item" href="./descritiva.html">
+ <span class="dropdown-text">Estatística Descritiva</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./PD.html"> 
-<span class="menu-text">Probabilidade</span></a>
+        <li>
+    <a class="dropdown-item" href="./PD.html">
+ <span class="dropdown-text">Probabilidade</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./IF.html"> 
-<span class="menu-text">Inferência Estatistíca</span></a>
+        <li>
+    <a class="dropdown-item" href="./IF.html">
+ <span class="dropdown-text">Inferência Estatística</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./PLD.html"> 
-<span class="menu-text">Pré-processamento e Limpeza de Dados</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dados-e-modelagem" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dados e Modelagem</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dados-e-modelagem">    
+        <li>
+    <a class="dropdown-item" href="./PLD.html">
+ <span class="dropdown-text">Pré-processamento e Limpeza de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./visualizacao.html"> 
-<span class="menu-text">Visualização de Dados</span></a>
+        <li>
+    <a class="dropdown-item" href="./visualizacao.html">
+ <span class="dropdown-text">Visualização de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./SQL.html" aria-current="page"> 
-<span class="menu-text">SQL e Bancos de Dados</span></a>
+        <li>
+    <a class="dropdown-item" href="./SQL.html">
+ <span class="dropdown-text">SQL e Bancos de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./ML.html"> 
-<span class="menu-text">Machine Learning</span></a>
+        <li>
+    <a class="dropdown-item" href="./ML.html">
+ <span class="dropdown-text">Machine Learning</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -342,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exemplo-prático-consultando-um-banco-relacional" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-consultando-um-banco-relacional">Exemplo Prático: consultando um banco relacional</h2>
 <p>Vamos criar duas tabelas relacionadas (<code>clientes</code> e <code>pedidos</code>) em um banco SQLite em memória e explorar consultas reais.</p>
-<div id="fec30582" class="cell" data-execution_count="1">
+<div id="dfbdc9e0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -396,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="consulta-1-join-simples" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-1-join-simples">Consulta 1: JOIN simples</h3>
-<div id="730e7bc3" class="cell" data-execution_count="2">
+<div id="4283d665" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query1 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT c.nome, c.cidade, p.produto, p.valor, p.data</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes c</span></span>
@@ -477,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consulta-2-agregação-com-group-by" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-2-agregação-com-group-by">Consulta 2: agregação com GROUP BY</h3>
-<div id="16419815" class="cell" data-execution_count="3">
+<div id="fec0d717" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query2 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT c.nome, COUNT(p.id) AS total_pedidos, SUM(p.valor) AS total_gasto</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes c</span></span>
@@ -527,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consulta-3-left-join-incluindo-clientes-sem-pedidos" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-3-left-join-incluindo-clientes-sem-pedidos">Consulta 3: LEFT JOIN (incluindo clientes sem pedidos)</h3>
-<div id="c41b4faa" class="cell" data-execution_count="4">
+<div id="902e9ef8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>query3 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT c.nome, c.cidade, COUNT(p.id) AS total_pedidos</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes c</span></span>
@@ -583,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consulta-4-subconsulta-subquery" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-4-subconsulta-subquery">Consulta 4: subconsulta (subquery)</h3>
-<div id="1adbd1f2" class="cell" data-execution_count="5">
+<div id="3e95c932" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>query4 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT nome, cidade</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes</span></span>

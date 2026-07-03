@@ -133,7 +133,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -161,54 +160,75 @@ window.Quarto = {
     <a class="nav-link" href="./sobre.html"> 
 <span class="menu-text">Sobre o Projeto</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FCD.html"> 
-<span class="menu-text">Fundamentos de Ciência de Dados</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="./FCD.html">
+ <span class="dropdown-text">Fundamentos de Ciência de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FP.html"> 
-<span class="menu-text">Fundamentos de Programação</span></a>
+        <li>
+    <a class="dropdown-item" href="./FP.html">
+ <span class="dropdown-text">Fundamentos de Programação</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./FL.html"> 
-<span class="menu-text">Ferramentas e Linguagens</span></a>
+        <li>
+    <a class="dropdown-item" href="./FL.html">
+ <span class="dropdown-text">Ferramentas e Linguagens</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./r.html"> 
-<span class="menu-text">Introdução a R</span></a>
+        <li>
+    <a class="dropdown-item" href="./r.html">
+ <span class="dropdown-text">Introdução a R</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./IEP.html"> 
-<span class="menu-text">Introdução a Estatística e Probabilidade</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-estatística" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Estatística</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-estatística">    
+        <li>
+    <a class="dropdown-item" href="./IEP.html">
+ <span class="dropdown-text">Introdução a Estatística e Probabilidade</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./descritiva.html"> 
-<span class="menu-text">Estatística Descritiva</span></a>
+        <li>
+    <a class="dropdown-item" href="./descritiva.html">
+ <span class="dropdown-text">Estatística Descritiva</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./PD.html"> 
-<span class="menu-text">Probabilidade</span></a>
+        <li>
+    <a class="dropdown-item" href="./PD.html">
+ <span class="dropdown-text">Probabilidade</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./IF.html"> 
-<span class="menu-text">Inferência Estatistíca</span></a>
+        <li>
+    <a class="dropdown-item" href="./IF.html">
+ <span class="dropdown-text">Inferência Estatística</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./PLD.html"> 
-<span class="menu-text">Pré-processamento e Limpeza de Dados</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dados-e-modelagem" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dados e Modelagem</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dados-e-modelagem">    
+        <li>
+    <a class="dropdown-item" href="./PLD.html">
+ <span class="dropdown-text">Pré-processamento e Limpeza de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./visualizacao.html"> 
-<span class="menu-text">Visualização de Dados</span></a>
+        <li>
+    <a class="dropdown-item" href="./visualizacao.html">
+ <span class="dropdown-text">Visualização de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./SQL.html"> 
-<span class="menu-text">SQL e Bancos de Dados</span></a>
+        <li>
+    <a class="dropdown-item" href="./SQL.html">
+ <span class="dropdown-text">SQL e Bancos de Dados</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./ML.html" aria-current="page"> 
-<span class="menu-text">Machine Learning</span></a>
+        <li>
+    <a class="dropdown-item" href="./ML.html">
+ <span class="dropdown-text">Machine Learning</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -331,7 +351,7 @@ window.Quarto = {
 <section id="exemplo-prático-1-regressão" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-1-regressão">Exemplo Prático 1: Regressão</h2>
 <p>Vamos prever um valor numérico (salário) a partir de uma variável (anos de experiência), avaliando o modelo em dados de teste que ele nunca viu.</p>
-<div id="79fa3b3c" class="cell" data-execution_count="1">
+<div id="734bf320" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -375,7 +395,7 @@ R² no conjunto de teste: 0.9536</code></pre>
 <section id="exemplo-prático-2-classificação" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-2-classificação">Exemplo Prático 2: Classificação</h2>
 <p>Agora vamos prever uma categoria: se um cliente vai comprar ou não, a partir de idade e renda.</p>
-<div id="93d780c7" class="cell" data-execution_count="2">
+<div id="d9dc197c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_classification</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, accuracy_score, precision_score, recall_score, f1_score</span>
@@ -416,7 +436,7 @@ F1-score: 0.955</code></pre>
 <section id="exemplo-prático-3-visualizando-o-overfitting" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-3-visualizando-o-overfitting">Exemplo Prático 3: Visualizando o Overfitting</h2>
 <p>Vamos treinar árvores de decisão com profundidades crescentes e comparar o desempenho no treino versus no teste — o padrão clássico de overfitting deve aparecer conforme a árvore fica mais complexa.</p>
-<div id="6cd82175" class="cell" data-execution_count="3">
+<div id="dd96b840" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
