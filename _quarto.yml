@@ -31,6 +31,8 @@ website:
         href: visualizacao.qmd
       - text: "SQL e Bancos de Dados"
         href: SQL.qmd
+      - text: "Machine Learning"
+        href: ML.qmd
   page-footer: "(c) 2025 Equipe do Portal"
     
 format:
