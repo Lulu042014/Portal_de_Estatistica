@@ -57,6 +57,7 @@ quarto publish gh-pages
 
 ## Estrutura do repositório
 
+```
 ├── _quarto.yml                    # configuração do site e navbar
 ├── .gitignore                     # ignora cache do Quarto, .Rproj.user, _site, etc.
 ├── index.qmd                      # página inicial
@@ -70,8 +71,9 @@ quarto publish gh-pages
 ├── PD.qmd                         # Probabilidade
 ├── IF.qmd                         # Inferência Estatística
 ├── PLD.qmd                        # Pré-processamento e Limpeza de Dados
-├── visualizacao.qmd                # Visualização de Dados
+├── visualizacao.qmd               # Visualização de Dados
 └── apresentacoes_e_documentos/    # materiais de apoio do projeto
+```
 
 ## Equipe
 
