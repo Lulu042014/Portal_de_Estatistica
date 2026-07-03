@@ -7,59 +7,126 @@ format: html
 
 O pré-processamento de dados corresponde ao conjunto de técnicas aplicadas a dados brutos para torná-los adequados à análise estatística e computacional. Tradicionalmente, essa etapa é considerada essencial para garantir a qualidade e consistência dos dados e, mais recentemente, passou a ser indispensável também no treinamento de modelos de aprendizado de máquina e inteligência artificial. Em síntese, trata-se do processo de transformar dados iniciais em um formato mais estruturado e confiável para tarefas de análise de dados, estatística e ciência de dados.
 
-------------------------------------------------------------------------
-
-### Coleta e integração de dados
+## Coleta e Integração de Dados
 
 A coleta de dados pode ser realizada a partir de diversas fontes, como bancos de dados relacionais, arquivos CSV, APIs, sensores, questionários e dados da web. Quando esses dados vêm de diferentes origens, é necessário integrá-los em um único conjunto para análise.
 
 A integração de dados consiste em combinar informações de várias fontes de modo a criar um dataset unificado, garantindo consistência e evitando contradições. Esse processo exige cuidados como:
 
--   **Padronização de formatos:** uniformização de estruturas, por exemplo datas no padrão `AAAA-MM-DD`.
--   **Correspondência de atributos/esquemas:** alinhar campos equivalentes entre bases (ex.: `id_cliente` ↔ `cod_cliente`).
--   **Eliminação de redundâncias e desduplicação:** remover registros repetidos garantindo unicidade.
+- **Padronização de formatos:** uniformização de estruturas, por exemplo datas no padrão `AAAA-MM-DD`
+- **Correspondência de atributos/esquemas:** alinhar campos equivalentes entre bases (ex.: `id_cliente` ↔ `cod_cliente`)
+- **Eliminação de redundâncias e desduplicação:** remover registros repetidos garantindo unicidade
 
 Uma coleta ampla e uma integração bem executada são fundamentais para análises estatísticas, aprendizado de máquina e aplicações em ciência de dados.
 
-------------------------------------------------------------------------
-
-### Técnicas de limpeza (valores ausentes, outliers, duplicações)
+## Técnicas de Limpeza (Valores Ausentes, Outliers, Duplicações)
 
 A limpeza de dados identifica e corrige inconsistências que possam comprometer análises ou modelos. Entre as técnicas mais comuns:
 
--   **Tratamento de valores ausentes:** excluir registros ou imputar (média, mediana, moda ou métodos avançados como KNN Imputer).
--   **Remoção de duplicatas:** eliminar ou consolidar registros repetidos.
--   **Correção de formatos inconsistentes:** padronizar tipos e unidades (datas, maiúsculas/minúsculas, medidas).
--   **Detecção e tratamento de outliers:** via boxplot, z-score, IQR ou métodos não supervisionados; pode-se remover ou transformar.
+- **Tratamento de valores ausentes:** excluir registros ou imputar (média, mediana, moda ou métodos avançados como KNN Imputer)
+- **Remoção de duplicatas:** eliminar ou consolidar registros repetidos
+- **Correção de formatos inconsistentes:** padronizar tipos e unidades (datas, maiúsculas/minúsculas, medidas)
+- **Detecção e tratamento de outliers:** via boxplot, z-score, IQR ou métodos não supervisionados; pode-se remover ou transformar
 
-------------------------------------------------------------------------
-
-### Transformações e normalização de dados
+## Transformações e Normalização de Dados
 
 Transformações ajustam os dados para formatos adequados à modelagem, especialmente quando algoritmos são sensíveis a escala.
 
--   **Normalização (Min-Max):** reescala para `[0,1]`; útil em métodos baseados em distância.
--   **Padronização (Z-score):** média 0 e desvio padrão 1.
--   **Transformações log/Box-Cox:** reduzem assimetria.
--   **Codificação de variáveis categóricas:** one-hot ou label encoding.
--   **Engenharia/extração de atributos:** criação, seleção ou redução (PCA, autoencoders).
+- **Normalização (Min-Max):** reescala para `[0,1]`; útil em métodos baseados em distância
+- **Padronização (Z-score):** média 0 e desvio padrão 1
+- **Transformações log/Box-Cox:** reduzem assimetria
+- **Codificação de variáveis categóricas:** one-hot ou label encoding
+- **Engenharia/extração de atributos:** criação, seleção ou redução (PCA, autoencoders)
 
-------------------------------------------------------------------------
+## Codificação de Variáveis Categóricas
 
-### Codificação de variáveis categóricas
+- **One-Hot Encoding:** cria uma coluna por categoria (0/1); adequado para dados nominais
+- **Label Encoding:** mapeia categorias para inteiros; só razoável para variáveis ordinais
+- **Target Encoding:** mapeia categorias para estatísticas da variável-alvo (ex.: média); risco de overfitting
 
--   **One-Hot Encoding:** cria uma coluna por categoria (0/1); adequado para dados nominais.
--   **Label Encoding:** mapeia categorias para inteiros; só razoável para variáveis ordinais.
--   **Target Encoding:** mapeia categorias para estatísticas da variável-alvo (ex.: média); risco de overfitting.
-
-------------------------------------------------------------------------
-
-### Feature Engineering (criação, seleção e extração)
+## Feature Engineering (Criação, Seleção e Extração)
 
 Processo criativo que transforma dados brutos em variáveis mais representativas:
 
--   **Criação:** derivar novas variáveis (ex.: idade a partir da data de nascimento).
--   **Seleção:** escolher as mais relevantes com correlação, testes, árvores ou métodos automáticos.
--   **Extração:** reduzir dimensionalidade via PCA ou Autoencoders preservando informação essencial.
+- **Criação:** derivar novas variáveis (ex.: idade a partir da data de nascimento)
+- **Seleção:** escolher as mais relevantes com correlação, testes, árvores ou métodos automáticos
+- **Extração:** reduzir dimensionalidade via PCA ou Autoencoders preservando informação essencial
 
 > Um bom Feature Engineering costuma impactar mais o desempenho de um modelo do que a escolha do algoritmo em si.
+
+## Exemplo prático: um mini pipeline de pré-processamento
+
+Vamos aplicar, em sequência, as principais técnicas apresentadas acima sobre um conjunto de dados simulado propositalmente "sujo" — com valores ausentes, duplicatas e um outlier.
+
+```{python}
+import pandas as pd
+import numpy as np
+
+# Dataset fictício e propositalmente "sujo"
+dados = pd.DataFrame({
+    "cliente_id": [1, 2, 3, 4, 5, 5, 6],
+    "idade": [25, 32, np.nan, 41, 29, 29, 150],   # valor ausente e outlier
+    "cidade": ["Fortaleza", "Itapajé", "Fortaleza", "Sobral", "Itapajé", "Itapajé", "Fortaleza"],
+    "salario": [2500, 4200, 3100, np.nan, 2800, 2800, 5200]
+})
+dados
+```
+
+```{python}
+# 1. Remover duplicatas
+dados_limpos = dados.drop_duplicates()
+print(f"Linhas antes: {len(dados)} | Linhas depois de remover duplicatas: {len(dados_limpos)}")
+```
+
+```{python}
+# 2. Tratar valores ausentes (imputação pela mediana)
+dados_limpos["idade"] = dados_limpos["idade"].fillna(dados_limpos["idade"].median())
+dados_limpos["salario"] = dados_limpos["salario"].fillna(dados_limpos["salario"].median())
+dados_limpos
+```
+
+```{python}
+# 3. Detectar outliers pelo método do IQR (na coluna idade)
+Q1 = dados_limpos["idade"].quantile(0.25)
+Q3 = dados_limpos["idade"].quantile(0.75)
+IQR = Q3 - Q1
+limite_superior = Q3 + 1.5 * IQR
+limite_inferior = Q1 - 1.5 * IQR
+
+outliers = dados_limpos[(dados_limpos["idade"] > limite_superior) | (dados_limpos["idade"] < limite_inferior)]
+print("Limite superior aceitável:", limite_superior)
+print("Outliers encontrados:\n", outliers[["cliente_id", "idade"]])
+```
+
+```{python}
+# 4. Normalização (Min-Max) e padronização (Z-score) do salário
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+
+dados_limpos["salario_minmax"] = MinMaxScaler().fit_transform(dados_limpos[["salario"]])
+dados_limpos["salario_zscore"] = StandardScaler().fit_transform(dados_limpos[["salario"]])
+dados_limpos[["cliente_id", "salario", "salario_minmax", "salario_zscore"]]
+```
+
+```{python}
+# 5. Codificação one-hot da variável categórica "cidade"
+dados_codificados = pd.get_dummies(dados_limpos, columns=["cidade"], prefix="cidade")
+dados_codificados
+```
+
+### Interpretação
+
+O pipeline acima resolve, em cinco passos, exatamente os problemas mencionados na teoria:
+
+1. A duplicata do `cliente_id` 5 foi removida
+2. Os valores ausentes de `idade` e `salario` foram imputados pela mediana — uma escolha mais robusta que a média quando há outliers, como é o caso aqui
+3. O método do IQR sinalizou corretamente o registro com idade 150 como outlier — um valor claramente inválido que provavelmente representa erro de digitação ou de coleta
+4. As colunas `salario_minmax` e `salario_zscore` mostram as duas formas mais comuns de reescalar uma variável numérica: uma limitada entre 0 e 1, a outra centrada em 0 com desvio padrão 1
+5. A variável categórica `cidade` foi transformada em colunas binárias (one-hot), formato exigido pela maioria dos algoritmos de Machine Learning, que não conseguem operar diretamente sobre texto
+
+Esse é o tipo de pipeline que normalmente antecede qualquer modelo de Machine Learning — sem esses cuidados, o modelo aprenderia padrões distorcidos pelo outlier de idade ou simplesmente falharia ao encontrar valores ausentes ou texto onde esperava números.
+
+## Referências
+
+- Kuhn, M.; Johnson, K. *Feature Engineering and Selection*. Chapman & Hall/CRC.
+- Han, J.; Pei, J.; Kamber, M. *Data Mining: Concepts and Techniques*. Morgan Kaufmann.
+- McKinney, W. *Python for Data Analysis*. O'Reilly, 2022.
