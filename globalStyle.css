@@ -1,30 +1,30 @@
-/* Estilo global do Portal — blocos de código com fundo azul claro (alto contraste) */
+/* Estilo global do Portal — blocos de código com o mesmo azul da navbar (#2c3e50) */
  
 /* Bloco de saída (output) — <pre> simples, sem classe */
 pre {
-  background-color: #eaf2fb;
-  border: 1px solid #b6d4ee;
+  background-color: #2c3e50;
+  border: 1px solid #1a252f;
   border-radius: 8px;
   padding: 1.1rem;
   overflow-x: auto;
   font-family: 'Fira Code', 'Courier New', monospace;
   font-size: 1em;
-  color: #1c2733;
+  color: #ecf0f1;
   line-height: 1.7;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
  
 pre code {
   background-color: transparent;
-  color: #1c2733;
+  color: #ecf0f1;
 }
  
 /* Bloco de código-fonte (input) — o tema flatly aplica fundo cinza claro
    via div.sourceCode / pre.sourceCode, que é mais específico que "pre" sozinho.
    Precisamos sobrescrever essas regras explicitamente. */
 div.sourceCode {
-  background-color: #eaf2fb !important;
-  border: 1px solid #b6d4ee !important;
+  background-color: #2c3e50 !important;
+  border: 1px solid #1a252f !important;
   border-radius: 8px !important;
 }
  
@@ -36,42 +36,42 @@ pre.sourceCode {
  
 div.sourceCode pre.sourceCode code,
 div.sourceCode pre.sourceCode {
-  color: #1c2733 !important;
+  color: #ecf0f1 !important;
 }
  
 /* Código inline (fora de blocos ```) */
 p code, li code, td code {
-  background-color: #dceafc;
-  color: #0a3069;
+  background-color: #34495e;
+  color: #f5d7a3;
   padding: 0.15em 0.4em;
   border-radius: 4px;
   font-size: 0.95em;
-  border: 1px solid #b6d4ee;
+  border: 1px solid #1a252f;
 }
  
 /* Realce de sintaxe — classes geradas pelo motor Pandoc/Skylighting do Quarto
-   Paleta inspirada no tema claro do GitHub, com bom contraste sobre fundo azulado. */
-.co  { color: #57606a !important; font-style: italic; } /* Comentário */
-.st  { color: #116329 !important; }                     /* String */
-.ss  { color: #116329 !important; }                     /* String especial */
-.sc  { color: #953800 !important; }                     /* Caractere especial */
-.ch  { color: #116329 !important; }                     /* Char */
-.kw  { color: #8250df !important; font-weight: 600; }   /* Palavra-chave */
-.cf  { color: #cf222e !important; font-weight: 600; }   /* Controle de fluxo (if, for, return...) */
-.dv  { color: #0550ae !important; }                     /* Número inteiro */
-.bn  { color: #0550ae !important; }                     /* Número em outra base */
-.fl  { color: #0550ae !important; }                     /* Número decimal */
-.dt  { color: #953800 !important; }                     /* Tipo de dado */
-.fu  { color: #8250df !important; }                     /* Função */
-.va  { color: #1c2733 !important; }                     /* Variável */
-.vs  { color: #116329 !important; }                     /* String verbatim */
-.op  { color: #1c2733 !important; }                     /* Operador */
-.ot  { color: #8250df !important; }                     /* Outro */
-.im  { color: #cf222e !important; }                     /* Import/módulo */
-.pp  { color: #cf222e !important; }                     /* Preprocessador */
-.cn  { color: #0550ae !important; }                     /* Constante */
-.bu  { color: #953800 !important; }                     /* Função/tipo embutido */
-.al  { color: #cf222e !important; font-weight: 600; }   /* Alerta */
-.er  { color: #cf222e !important; text-decoration: underline; } /* Erro */
-.wa  { color: #9a6700 !important; font-style: italic; } /* Aviso */
-.an, .do, .cv { color: #57606a !important; }            /* Anotação / documentação */
+   Cores claras e saturadas para bom contraste sobre o azul #2c3e50 */
+.co  { color: #95a5a6 !important; font-style: italic; } /* Comentário */
+.st  { color: #f5d7a3 !important; }                     /* String */
+.ss  { color: #f5d7a3 !important; }                     /* String especial */
+.sc  { color: #f0b27a !important; }                     /* Caractere especial */
+.ch  { color: #f5d7a3 !important; }                     /* Char */
+.kw  { color: #5dade2 !important; font-weight: 600; }   /* Palavra-chave */
+.cf  { color: #ec7063 !important; font-weight: 600; }   /* Controle de fluxo (if, for, return...) */
+.dv  { color: #82e0aa !important; }                     /* Número inteiro */
+.bn  { color: #82e0aa !important; }                     /* Número em outra base */
+.fl  { color: #82e0aa !important; }                     /* Número decimal */
+.dt  { color: #48c9b0 !important; }                     /* Tipo de dado */
+.fu  { color: #f7dc6f !important; }                     /* Função */
+.va  { color: #ecf0f1 !important; }                     /* Variável */
+.vs  { color: #f5d7a3 !important; }                     /* String verbatim */
+.op  { color: #ecf0f1 !important; }                     /* Operador */
+.ot  { color: #5dade2 !important; }                     /* Outro */
+.im  { color: #ec7063 !important; }                     /* Import/módulo */
+.pp  { color: #ec7063 !important; }                     /* Preprocessador */
+.cn  { color: #82e0aa !important; }                     /* Constante */
+.bu  { color: #48c9b0 !important; }                     /* Função/tipo embutido */
+.al  { color: #ec7063 !important; font-weight: 600; }   /* Alerta */
+.er  { color: #ec7063 !important; text-decoration: underline; } /* Erro */
+.wa  { color: #f7dc6f !important; font-style: italic; } /* Aviso */
+.an, .do, .cv { color: #95a5a6 !important; }            /* Anotação / documentação */
