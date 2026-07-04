@@ -364,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exemplo-prático-consultando-um-banco-relacional" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-consultando-um-banco-relacional">Exemplo Prático: consultando um banco relacional</h2>
 <p>Vamos criar duas tabelas relacionadas (<code>clientes</code> e <code>pedidos</code>) em um banco SQLite em memória e explorar consultas reais.</p>
-<div id="f445bf10" class="cell" data-execution_count="1">
+<div id="4a7f1238" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -418,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="consulta-1-join-simples" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-1-join-simples">Consulta 1: JOIN simples</h3>
-<div id="4f59475c" class="cell" data-execution_count="2">
+<div id="661504be" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query1 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT c.nome, c.cidade, p.produto, p.valor, p.data</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes c</span></span>
@@ -499,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consulta-2-agregação-com-group-by" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-2-agregação-com-group-by">Consulta 2: agregação com GROUP BY</h3>
-<div id="e7c24976" class="cell" data-execution_count="3">
+<div id="c562afb2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query2 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT c.nome, COUNT(p.id) AS total_pedidos, SUM(p.valor) AS total_gasto</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes c</span></span>
@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consulta-3-left-join-incluindo-clientes-sem-pedidos" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-3-left-join-incluindo-clientes-sem-pedidos">Consulta 3: LEFT JOIN (incluindo clientes sem pedidos)</h3>
-<div id="28296e88" class="cell" data-execution_count="4">
+<div id="be89fc8e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>query3 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT c.nome, c.cidade, COUNT(p.id) AS total_pedidos</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes c</span></span>
@@ -605,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consulta-4-subconsulta-subquery" class="level3">
 <h3 class="anchored" data-anchor-id="consulta-4-subconsulta-subquery">Consulta 4: subconsulta (subquery)</h3>
-<div id="d09ad7e9" class="cell" data-execution_count="5">
+<div id="c7ace886" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>query4 <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT nome, cidade</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM clientes</span></span>
