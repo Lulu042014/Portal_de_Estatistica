@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exemplo-prático-um-mini-pipeline-de-pré-processamento" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-um-mini-pipeline-de-pré-processamento">Exemplo prático: um mini pipeline de pré-processamento</h2>
 <p>Vamos aplicar, em sequência, as principais técnicas apresentadas acima sobre um conjunto de dados simulado propositalmente “sujo” — com valores ausentes, duplicatas e um outlier.</p>
-<div id="612ac7df" class="cell" data-execution_count="1">
+<div id="df9375b8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -398,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="c288ad63" class="cell" data-execution_count="2">
+<div id="222a9ff1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Remover duplicatas</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dados_limpos <span class="op">=</span> dados.drop_duplicates()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Linhas antes: </span><span class="sc">{</span><span class="bu">len</span>(dados)<span class="sc">}</span><span class="ss"> | Linhas depois de remover duplicatas: </span><span class="sc">{</span><span class="bu">len</span>(dados_limpos)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -406,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Linhas antes: 7 | Linhas depois de remover duplicatas: 6</code></pre>
 </div>
 </div>
-<div id="a5b7c5f1" class="cell" data-execution_count="3">
+<div id="bae95236" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Tratar valores ausentes (imputação pela mediana)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dados_limpos[<span class="st">"idade"</span>] <span class="op">=</span> dados_limpos[<span class="st">"idade"</span>].fillna(dados_limpos[<span class="st">"idade"</span>].median())</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dados_limpos[<span class="st">"salario"</span>] <span class="op">=</span> dados_limpos[<span class="st">"salario"</span>].fillna(dados_limpos[<span class="st">"salario"</span>].median())</span>
@@ -474,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="28b46d3a" class="cell" data-execution_count="4">
+<div id="bd0ed49e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Detectar outliers pelo método do IQR (na coluna idade)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Q1 <span class="op">=</span> dados_limpos[<span class="st">"idade"</span>].quantile(<span class="fl">0.25</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Q3 <span class="op">=</span> dados_limpos[<span class="st">"idade"</span>].quantile(<span class="fl">0.75</span>)</span>
@@ -492,7 +492,7 @@ Outliers encontrados:
 6           6  150.0</code></pre>
 </div>
 </div>
-<div id="0c21b878" class="cell" data-execution_count="5">
+<div id="02eb6fe0" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Normalização (Min-Max) e padronização (Z-score) do salário</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler, StandardScaler</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -562,7 +562,7 @@ Outliers encontrados:
 </div>
 </div>
 </div>
-<div id="e782694e" class="cell" data-execution_count="6">
+<div id="cc088921" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Codificação one-hot da variável categórica "cidade"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dados_codificados <span class="op">=</span> pd.get_dummies(dados_limpos, columns<span class="op">=</span>[<span class="st">"cidade"</span>], prefix<span class="op">=</span><span class="st">"cidade"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>dados_codificados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
