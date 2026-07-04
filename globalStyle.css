@@ -4,18 +4,18 @@
 pre {
   background-color: #1e1e1e;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.1rem;
   overflow-x: auto;
   font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.9em;
-  color: #d4d4d4;
-  line-height: 1.6;
+  font-size: 1em;
+  color: #e8e8e8;
+  line-height: 1.7;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
  
 pre code {
   background-color: transparent;
-  color: #d4d4d4;
+  color: #e8e8e8;
 }
  
 /* Bloco de código-fonte (input) — o tema flatly aplica fundo cinza claro
@@ -23,34 +23,36 @@ pre code {
    Precisamos sobrescrever essas regras explicitamente. */
 div.sourceCode {
   background-color: #1e1e1e !important;
-  border: 1px solid #333 !important;
+  border: 1px solid #3a3a3a !important;
   border-radius: 8px !important;
 }
  
 pre.sourceCode {
   background-color: transparent !important;
+  font-size: 1em !important;
+  line-height: 1.7 !important;
 }
  
 div.sourceCode pre.sourceCode code,
 div.sourceCode pre.sourceCode {
-  color: #d4d4d4 !important;
+  color: #e8e8e8 !important;
 }
  
 /* Código inline (fora de blocos ```) mantém um contraste mais leve */
 p code, li code, td code {
   background-color: #2d2d2d;
-  color: #ce9178;
+  color: #f0a875;
   padding: 0.15em 0.4em;
   border-radius: 4px;
-  font-size: 0.9em;
+  font-size: 0.95em;
 }
  
 /* Realce de sintaxe — classes geradas pelo motor Pandoc/Skylighting do Quarto */
-.co  { color: #6a9955 !important; font-style: italic; } /* Comentário */
-.st  { color: #ce9178 !important; }                     /* String */
-.ss  { color: #ce9178 !important; }                     /* String especial */
+.co  { color: #8bc27a !important; font-style: normal; } /* Comentário — mais claro, sem itálico */
+.st  { color: #f0a875 !important; }                     /* String */
+.ss  { color: #f0a875 !important; }                     /* String especial */
 .sc  { color: #d7ba7d !important; }                     /* Caractere especial */
-.ch  { color: #ce9178 !important; }                     /* Char */
+.ch  { color: #f0a875 !important; }                     /* Char */
 .kw  { color: #569cd6 !important; font-weight: 600; }   /* Palavra-chave */
 .cf  { color: #c586c0 !important; font-weight: 600; }   /* Controle de fluxo (if, for, return...) */
 .dv  { color: #b5cea8 !important; }                     /* Número inteiro */
@@ -59,7 +61,7 @@ p code, li code, td code {
 .dt  { color: #4ec9b0 !important; }                     /* Tipo de dado */
 .fu  { color: #dcdcaa !important; }                     /* Função */
 .va  { color: #9cdcfe !important; }                     /* Variável */
-.vs  { color: #ce9178 !important; }                     /* String verbatim */
+.vs  { color: #f0a875 !important; }                     /* String verbatim */
 .op  { color: #d4d4d4 !important; }                     /* Operador */
 .ot  { color: #569cd6 !important; }                     /* Outro */
 .im  { color: #c586c0 !important; }                     /* Import/módulo */
