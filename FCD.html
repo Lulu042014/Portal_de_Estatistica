@@ -331,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exemplo-prático-um-mini-pipeline-osemn" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-prático-um-mini-pipeline-osemn">Exemplo prático: um mini pipeline OSEMN</h2>
 <p>Vamos aplicar as cinco etapas do OSEMN a uma versão simplificada do exemplo de e-commerce citado no início da página.</p>
-<div id="b0e8955b" class="cell" data-execution_count="1">
+<div id="1a47cd97" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -399,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="359f464a" class="cell" data-execution_count="2">
+<div id="23b28bf8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Scrub — tratamento de valores ausentes</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valores ausentes antes:"</span>, dados[<span class="st">"tempo_navegacao_min"</span>].isna().<span class="bu">sum</span>())</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">"tempo_navegacao_min"</span>] <span class="op">=</span> dados[<span class="st">"tempo_navegacao_min"</span>].fillna(</span>
@@ -411,7 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Valores ausentes depois: 0</code></pre>
 </div>
 </div>
-<div id="730bca06" class="cell" data-execution_count="3">
+<div id="4b82178e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Explore — estatística descritiva e relação entre variáveis</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dados.groupby(<span class="st">"comprou"</span>)[[<span class="st">"tempo_navegacao_min"</span>, <span class="st">"cliques"</span>]].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -448,7 +448,7 @@ Valores ausentes depois: 0</code></pre>
 </div>
 </div>
 </div>
-<div id="b74a67d9" class="cell" data-execution_count="4">
+<div id="716c2de3" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Model — um modelo simples de regressão logística</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
