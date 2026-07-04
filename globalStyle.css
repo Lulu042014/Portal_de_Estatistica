@@ -1,8 +1,9 @@
+
 /* =========================================================
    Estilo global do Portal — blocos de código (tema escuro)
    Fundo: mesmo azul da navbar (#2c3e50) | Texto: #ecf0f1
    ========================================================= */
-
+ 
 /* ---------------------------------------------------------
    1. Base — todos os blocos de código, entrada e saída
    --------------------------------------------------------- */
@@ -21,7 +22,7 @@ div.sourceCode pre.sourceCode {
   font-size: 1em !important;
   line-height: 1.7 !important;
 }
-
+ 
 /* pre.sourceCode fica dentro de div.sourceCode: o fundo já foi pintado
    pelo div pai, então o pre em si fica transparente para não duplicar
    bordas/sombras — mas mantém a cor do texto herdada acima. */
@@ -31,13 +32,13 @@ div.sourceCode pre.sourceCode {
   border: none !important;
   box-shadow: none !important;
 }
-
+ 
 pre code,
 div.sourceCode pre.sourceCode code {
   background-color: transparent !important;
   color: #ecf0f1 !important;
 }
-
+ 
 /* ---------------------------------------------------------
    2. Código inline (fora de blocos ```) — visual separado
    --------------------------------------------------------- */
@@ -49,7 +50,7 @@ p code, li code, td code, h1 code, h2 code, h3 code, h4 code {
   font-size: 0.95em !important;
   border: 1px solid #1a252f !important;
 }
-
+ 
 /* ---------------------------------------------------------
    3. Realce de sintaxe — classes do Pandoc/Skylighting
    Cores claras e saturadas, testadas para bom contraste
@@ -79,3 +80,75 @@ p code, li code, td code, h1 code, h2 code, h3 code, h4 code {
 .er  { color: #f1948a !important; text-decoration: underline; } /* Erro */
 .wa  { color: #f9e79f !important; font-style: italic; }  /* Aviso */
 .an, .do, .cv { color: #b0bec5 !important; }              /* Anotação / documentação */
+ 
+/* =========================================================
+   Reforço final — seletores com maior especificidade
+   (code span.X em vez de só .X) para garantir precedência
+   sobre qualquer regra do tema Bootswatch/flatly.
+   ========================================================= */
+ 
+/* Força todos os spans do código a ficarem legíveis */
+div.sourceCode pre code span,
+pre.sourceCode code span {
+  color: #ecf0f1 !important;
+}
+ 
+/* Comentários */
+code span.co,
+code span.do,
+code span.an,
+code span.cv {
+  color: #b0bec5 !important;
+  font-style: italic !important;
+}
+ 
+/* Strings */
+code span.st,
+code span.ss,
+code span.ch,
+code span.sc,
+code span.vs {
+  color: #ffe0a3 !important;
+}
+ 
+/* Palavras-chave e controle */
+code span.kw,
+code span.cf {
+  color: #ff9f8f !important;
+  font-weight: 700 !important;
+}
+ 
+/* Tipos */
+code span.dt {
+  color: #7fffd4 !important;
+  font-weight: 600 !important;
+}
+ 
+/* Números */
+code span.dv,
+code span.bn,
+code span.fl,
+code span.cn {
+  color: #a8ffbf !important;
+}
+ 
+/* Funções, variáveis e nomes */
+code span.fu,
+code span.va,
+code span.v,
+code span.ot,
+code span.bu {
+  color: #9fd3ff !important;
+}
+ 
+/* Operadores */
+code span.op {
+  color: #ecf0f1 !important;
+}
+ 
+/* Includes / preprocessador */
+code span.pp,
+code span.im {
+  color: #ff9f8f !important;
+}
+ 
